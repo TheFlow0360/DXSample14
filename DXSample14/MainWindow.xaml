@@ -35,6 +35,13 @@
                     </dxr:RibbonPageGroup>
                     <dxr:RibbonPageGroup Caption="Demo">
                         <dxb:BarButtonItem x:Name="ModalWindowOpen" Content="Open Modal DXWindow" Glyph="{dx:DXImage Image=BugReport_16x16.png}" LargeGlyph="{dx:DXImage Image=BugReport_32x32.png}" ItemClick="ModalWindowOpen_OnItemClick" />
+                        <dxb:BarSplitButtonItem x:Name="PopupDemo" Content="PopupDemo" Glyph="{dx:DXImage Image=ProgrammingLanguage_16x16.png}" LargeGlyph="{dx:DXImage Image=ProgrammingLanguage_32x32.png}">
+                            <dxb:BarSplitButtonItem.PopupControl>
+                                <dxb:PopupMenu>
+                                    <dxb:BarButtonItem Content="Test" />
+                                </dxb:PopupMenu>
+                            </dxb:BarSplitButtonItem.PopupControl>
+                        </dxb:BarSplitButtonItem>
                     </dxr:RibbonPageGroup>
                 </dxr:RibbonPage>
             </dxr:RibbonDefaultPageCategory>
