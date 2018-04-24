@@ -1,0 +1,33 @@
+{
+  "Theme": "SelectLineBase",
+  "Hash": "4436848bdf725f2cb95b00bf4297216d1b470afd",
+  "BaseTheme": "Office2016White",
+  "Palette": [],
+  "Colors": [
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey = BorderEffectActiveColor}']/@Color",
+      "Color": "Black"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=FloatingContainerBorder}']/@Color",
+      "Color": "Black"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=FloatingContainerInactiveBorder}']/@Color",
+      "Color": "#FF999999"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\ThemedWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:ThemedWindowThemeKey ResourceKey=WindowActiveBorderBrush}']/@Color",
+      "Color": "Black"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\ThemedWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveBorderBrush}']/@Color",
+      "Color": "#FF999999"
+    }
+  ]
+}

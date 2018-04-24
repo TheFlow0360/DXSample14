@@ -1,0 +1,10 @@
+{
+  "ApiVersion": "1.0",
+  "Settings": {
+    "ProjectPath": "C:\\Program Files (x86)\\DevExpress 17.2\\Components\\Sources\\DevExpress.Xpf.Themes\\DevExpress.Xpf.Themes.Office2016White\\DevExpress.Xpf.Themes.Office2016White.csproj",
+    "ProjectType": "{F82AFC60-88FC-4846-9EB4-67C5EC382EB7}",
+    "ThemeVersion": "17.2.6.0",
+    "ColorSchemePath": "SelectLineBase.clrx",
+    "ThemeName": "SelectLineBase"
+  }
+}
