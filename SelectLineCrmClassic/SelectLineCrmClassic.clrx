@@ -1,0 +1,1848 @@
+{
+  "Theme": "SelectLineCrmClassic",
+  "Hash": "245a1ddea9766f42c0ea63971d6b2709dae36224",
+  "BaseTheme": "Office2016White",
+  "Palette": [],
+  "Colors": [
+    {
+      "File": "DevExpress.Xpf.Charts\\Office2016White\\Axis.xaml",
+      "Path": "//*[@x:Key='{dxt:ChartBrushesThemeKey ResourceKey=AxisTitleForeground}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Charts\\Office2016White\\ChartControl.xaml",
+      "Path": "//*[@x:Key='{dxt:ChartBrushesThemeKey ResourceKey=RangeControlClientViewBrush}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Charts\\Office2016White\\ChartControl.xaml",
+      "Path": "//*[@x:Key='{dxt:ChartBrushesThemeKey ResourceKey=RangeControlClientViewMarkerBrush}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Charts\\Office2016White\\Titles.xaml",
+      "Path": "//*[@x:Key='{dxt:ChartBrushesThemeKey ResourceKey=TitleForeground}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\AppBar.xaml",
+      "Path": "//*[@x:Key='{dxwuit:AppBarElementsThemeKey ResourceKey=AppBarTileBorderButtonTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\AppBar.xaml",
+      "Path": "//*[@x:Key='{dxwuit:AppBarElementsThemeKey ResourceKey=AppBarTileDropDownButtonTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\AppBar.xaml",
+      "Path": "//*[@x:Key='{dxwuit:AppBarElementsThemeKey ResourceKey=Background}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\AppBar.xaml",
+      "Path": "//*[@x:Key='AppBarTileButtonForeground']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\AppBar.xaml",
+      "Path": "//*[@x:Key='AppBarTileButtonForegroundColor']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\AppBar.xaml",
+      "Path": "//*[@x:Key='contentColorChecked']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\AppBar.xaml",
+      "Path": "//*[@x:Key='contentColorHoverChecked']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\AppBar.xaml",
+      "Path": "//*[@x:Key='contentColorPressed']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\CommandButton.xaml",
+      "Path": "//*[@x:Key='{dxwuit:CommandButtonElementsThemeKey ResourceKey=HoverBorderBrush}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\CommandButton.xaml",
+      "Path": "//*[@x:Key='{dxwuit:CommandButtonElementsThemeKey ResourceKey=HoverForeColor}']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\CommandButton.xaml",
+      "Path": "//*[@x:Key='{dxwuit:CommandButtonElementsThemeKey ResourceKey=PressedBorderBrush}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\CommandButton.xaml",
+      "Path": "//*[@x:Key='{dxwuit:CommandButtonElementsThemeKey ResourceKey=PressedForeColor}']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\CommandButton.xaml",
+      "Path": "//*[@x:Key='colorHover']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\CommandButton.xaml",
+      "Path": "//*[@x:Key='colorPressed']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\CommandButton.xaml",
+      "Path": "//*[@x:Key='ellipseStrokeHover']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\CommandButton.xaml",
+      "Path": "//*[@x:Key='ellipseStrokePressed']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\Flyout.xaml",
+      "Path": "//*[@x:Key='{dxwuit:WindowsUIElementsThemeKey ResourceKey=FlyoutCommandButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\MessageBox.xaml",
+      "Path": "//*[@x:Key='{dxwuit:MessageBoxElementsThemeKey ResourceKey=WindowBackground}']/@Color",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\PageView.xaml",
+      "Path": "//*[@x:Key='ItemHoverBackground']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\PageView.xaml",
+      "Path": "//*[@x:Key='ItemSelectionBackground']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\TileNavPane.xaml",
+      "Path": "//*[@x:Key='{dxwuit:TileNavPaneElementsThemeKey ResourceKey=TileNavPaneBackground}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\TileNavPane.xaml",
+      "Path": "//*[@x:Key='{dxwuit:TileNavPaneElementsThemeKey ResourceKey=TileSelectorItemBackground}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\TileNavPane.xaml",
+      "Path": "//*[@x:Key='{dxwuit:TileNavPaneElementsThemeKey ResourceKey=TileSelectorItemSelection}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\TileNavPane.xaml",
+      "Path": "//*[@x:Key='ItemBackgroundPressed']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\TileNavPane.xaml",
+      "Path": "//*[@x:Key='NavButtonPressedForeBrush']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\TileNavPane.xaml",
+      "Path": "//*[@x:Key='NavButtonPressedForeColor']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\TileNavPane.xaml",
+      "Path": "//*[@x:Key='pathFillDefault']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\TileNavPane.xaml",
+      "Path": "//*[@x:Key='pathFillHover']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\TouchNavigator.xaml",
+      "Path": "//*[@x:Key='{dxwuit:NavigationBarElementsThemeKey ResourceKey=ItemHoverForegroundColor}']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Controls\\WindowsUI\\Office2016White\\TouchNavigator.xaml",
+      "Path": "//*[@x:Key='{dxwuit:NavigationBarElementsThemeKey ResourceKey=ItemSelectedForegroundColor}']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\BarControl.xaml",
+      "Path": "//*[@x:Key='{dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonTemplate}']//*[@cs:id='ColorAnimation_0003']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\BarControl.xaml",
+      "Path": "//*[@x:Key='{dxbt:BarControlThemeKey ResourceKey=QuickCustomizationButtonTemplate}']//*[@cs:id='ColorAnimation_0005']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\BarControl.xaml",
+      "Path": "//*[@x:Key='{dxbt:BarControlThemeKey ResourceKey=StatusBarContentTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\BarControl.xaml",
+      "Path": "//*[@x:Key='{dxbt:BarControlThemeKey ResourceKey=ThumbTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\BarItems.xaml",
+      "Path": "//*[@x:Key='{dxbt:BarItemBorderInMenuThemeKey ResourceKey=Normal}']//*[@cs:id='Border_0003']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\BarItems.xaml",
+      "Path": "//*[@x:Key='{dxbt:BarItemBorderInRibbonPageGroupThemeKey ResourceKey=Normal}']//*[@cs:id='Border_0004']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\BarItems.xaml",
+      "Path": "//*[@x:Key='{dxbt:BarItemBorderInStatusBarThemeKey ResourceKey=Normal}']//*[@cs:id='Border_0004']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\BarItems.xaml",
+      "Path": "//*[@x:Key='{dxbt:BarItemBorderThemeKey ResourceKey=Normal}']//*[@cs:id='Border_0004']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\FloatingBarPopup.xaml",
+      "Path": "//*[@x:Key='{dxbt:FloatingBarPopupThemeKey ResourceKey=CaptionStyle}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\FloatingBarPopup.xaml",
+      "Path": "//*[@x:Key='{dxbt:FloatingBarPopupThemeKey ResourceKey=CloseButtonTemplate}']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\FloatingBarPopup.xaml",
+      "Path": "//*[@x:Key='{dxbt:FloatingBarPopupThemeKey ResourceKey=CloseButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\PopupControlContainer.xaml",
+      "Path": "//*[@x:Key='{dxbt:OfficeTabletItemsControlThemeKey ResourceKey=BackButtonStyle}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\Office2016White\\PopupControlContainer.xaml",
+      "Path": "//*[@x:Key='{dxbt:OfficeTabletItemsControlThemeKey ResourceKey=BackButtonStyle}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\ThemePart\\RadialMenu.xaml",
+      "Path": "//*[@x:Key='BarItemInRadialMenu_MenuColor']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Bars\\Themes\\ThemePart\\RadialMenu.xaml",
+      "Path": "//*[@x:Key='CenterButton_StrokeColor']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\AutoCompleteBox.xaml",
+      "Path": "//*[@x:Key='{dxet:TokenEditorThemeKey ResourceKey=DeleteButtonStyle}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\AutoCompleteBox.xaml",
+      "Path": "//*[@x:Key='{dxet:TokenEditorThemeKey ResourceKey=DeleteButtonStyle}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\AutoCompleteBox.xaml",
+      "Path": "//*[@x:Key='{dxet:TokenEditorThemeKey ResourceKey=TokenContainerTemplate}']//*[@cs:id='Border_0004']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\AutoCompleteBox.xaml",
+      "Path": "//*[@x:Key='{dxet:TokenEditorThemeKey ResourceKey=TokenContainerTemplate}']//*[@cs:id='Border_0005']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\CalcEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:CalculatorThemeKey ResourceKey=ButtonOperationStyle}']//*[@cs:id='Border_0004']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\CalcEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:CalculatorThemeKey ResourceKey=ButtonOperationStyle}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\CalcEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:CalculatorThemeKey ResourceKey=DisplayTemplate}']//*[@cs:id='SolidColorBrush_0000']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\CheckEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:CheckEditThemeKey ResourceKey=CheckEditBoxTemplate}']//*[@cs:id='Border_0000']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\ColorEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:ColorEditThemeKey ResourceKey=GalleryItemControlTemplate}']//*[@cs:id='SolidColorBrush_0000']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\ColorEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:ColorEditThemeKey ResourceKey=GalleryItemControlTemplate}']//*[@cs:id='SolidColorBrush_0001']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\ColorEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:ColorEditThemeKey ResourceKey=GalleryItemControlTemplate}']//*[@cs:id='SolidColorBrush_0002']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\ComboBoxEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:ComboBoxEditThemeKey ResourceKey=LoadingButtonStyle}']//*[@cs:id='ProgressBar_0000']/@Foreground",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:DateEditThemeKey ResourceKey=CellButtonTemplate}']//*[@cs:id='Border_0002']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:DateEditThemeKey ResourceKey=HeaderButtonTemplate}']//*[@cs:id='SolidColorBrush_0000']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:DateEditThemeKey ResourceKey=LeftArrowTemplate}']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:DateEditThemeKey ResourceKey=LeftArrowTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:DateEditThemeKey ResourceKey=RightArrowTemplate}']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:DateEditThemeKey ResourceKey=RightArrowTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateNavigator.xaml",
+      "Path": "//*[@x:Key='{dxet:DateNavigatorThemeKey ResourceKey=CellButtonTemplate}']//*[@cs:id='Border_0002']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateNavigator.xaml",
+      "Path": "//*[@x:Key='{dxet:DateNavigatorThemeKey ResourceKey=CellButtonTemplate}']//*[@cs:id='Border_0003']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateNavigator.xaml",
+      "Path": "//*[@x:Key='{dxet:DateNavigatorThemeKey ResourceKey=LeftArrowTemplate}']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateNavigator.xaml",
+      "Path": "//*[@x:Key='{dxet:DateNavigatorThemeKey ResourceKey=LeftArrowTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateNavigator.xaml",
+      "Path": "//*[@x:Key='{dxet:DateNavigatorThemeKey ResourceKey=RightArrowTemplate}']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\DateNavigator.xaml",
+      "Path": "//*[@x:Key='{dxet:DateNavigatorThemeKey ResourceKey=RightArrowTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\FilterControl.xaml",
+      "Path": "//*[@x:Key='{dxet:FilterControlThemeKey ResourceKey=FieldInOperationButtonTemplate}']//*[@cs:id='XPFContentControl_0000']/@Foreground",
+      "Color": "#FF009933"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\FilterControl.xaml",
+      "Path": "//*[@x:Key='{dxet:FilterControlThemeKey ResourceKey=FilterControlClauseOperationButtonTemplate}']//*[@cs:id='TextBlock_0000']/@Foreground",
+      "Color": "#FF3399FF"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\FilterControl.xaml",
+      "Path": "//*[@x:Key='{dxet:FilterControlThemeKey ResourceKey=FilterControlFirstOperandButtonTemplate}']//*[@cs:id='XPFContentControl_0000']/@Foreground",
+      "Color": "#FF009933"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\FilterControl.xaml",
+      "Path": "//*[@x:Key='{dxet:FilterControlThemeKey ResourceKey=OneLocalDateTimeTemplate}']//*[@cs:id='XPFContentControl_0000']/@Foreground",
+      "Color": "#FF009933"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\FPanelCtrlBase.xaml",
+      "Path": "//*[@x:Key='{dxet:FilterPanelControlBaseThemeKey ResourceKey=ClearFilterButtonTemplate}']//*[@cs:id='SolidColorBrush_0000']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\FPanelCtrlBase.xaml",
+      "Path": "//*[@x:Key='{dxet:FilterPanelControlBaseThemeKey ResourceKey=FilterControlButtonTemplate}']//*[@cs:id='SolidColorBrush_0000']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\GradientMultiSlider.xaml",
+      "Path": "//*[@x:Key='{dxet:GradientMultiSliderThemeKey ResourceKey=NextThumbButtonTemplate}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\GradientMultiSlider.xaml",
+      "Path": "//*[@x:Key='{dxet:GradientMultiSliderThemeKey ResourceKey=NextThumbButtonTemplate}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\GradientMultiSlider.xaml",
+      "Path": "//*[@x:Key='{dxet:GradientMultiSliderThemeKey ResourceKey=PreviousThumbButtonTemplate}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\GradientMultiSlider.xaml",
+      "Path": "//*[@x:Key='{dxet:GradientMultiSliderThemeKey ResourceKey=PreviousThumbButtonTemplate}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\ImageEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:ImageEditThemeKey ResourceKey=EmptyContentTemplate}']//*[@cs:id='Path_0000']/@Fill",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\InplaceBaseEdit.xaml",
+      "Path": "//*[@x:Key='CheckEdit.Normal.FocusBorder.BorderBrush']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\PasswordBoxEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:PasswordBoxEditThemeKey ResourceKey=PasswordBoxStyle}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAACAE3"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\ProgressBarEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarMarqueeHorizontalAnimationElementTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\ProgressBarEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:ProgressBarEditStyleThemeKey ResourceKey=ProgressBarMarqueeVerticalAnimationElementTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\ProgressBarEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:ProgressBarEditThemeKey ResourceKey=PanelLeftSideHorizontalTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\ProgressBarEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:ProgressBarEditThemeKey ResourceKey=PanelLeftSideVerticalTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\RatingEdit.xaml",
+      "Path": "//*[@x:Key='{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.RatingItem}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\RatingEdit.xaml",
+      "Path": "//*[@x:Key='{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.RatingItem}']//*[@cs:id='Setter_0003']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\ToggleSwitch.xaml",
+      "Path": "//*[@x:Key='{dxet:ToggleSwitchThemeKey ResourceKey=SwitchThumbTemplate}']//*[@cs:id='RenderSetter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\TrackBarEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\TrackBarEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:TrackBarEditThemeKey ResourceKey=LeftStepButtonTemplate}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\TrackBarEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\TrackBarEdit.xaml",
+      "Path": "//*[@x:Key='{dxet:TrackBarEditThemeKey ResourceKey=RightStepButtonTemplate}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\TrackBarEdit.xaml",
+      "Path": "//*[@x:Key='TrackBarEdit.Focus.Background']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\TrackBarEdit.xaml",
+      "Path": "//*[@x:Key='TrackBarEdit.SelectionRange.Background']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\TrackBarEdit.xaml",
+      "Path": "//*[@x:Key='TrackBarEditThumb.HoverState']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Editors\\Themes\\Office2016White\\TrackBarEdit.xaml",
+      "Path": "//*[@x:Key='TrackBarEditThumb.PressedState']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\TabControl\\Themes\\Office2016White.xaml",
+      "Path": "//*[@x:Key='CloseButton.Hover.Foreground']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\TabControl\\Themes\\Office2016White.xaml",
+      "Path": "//*[@x:Key='CloseButton.Pressed.Foreground']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\TabControl\\Themes\\Office2016White.xaml",
+      "Path": "//*[@x:Key='ScrollButton.Pressed.Foreground']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\TabControl\\Themes\\Office2016White.xaml",
+      "Path": "//*[@x:Key='TabItem.Focused.BorderBrush']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\TabControl\\Themes\\Office2016White.xaml",
+      "Path": "//*[@x:Key='TabItem.Focused.Foreground']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\TabControl\\Themes\\Office2016White.xaml",
+      "Path": "//*[@x:Key='Window.Border.Active.BorderBrush']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\Buttons.xaml",
+      "Path": "//*[@x:Key='{dxt:DropDownButtonThemeKey ResourceKey=BorderTemplate}']//*[@cs:id='RenderBorder_0000']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\CustomTemplates.xaml",
+      "Path": "//*[@x:Key='{dxet:SearchControlThemeKey ResourceKey=ClearButtonTemplate}']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey = BorderEffectActiveColor}']/@Color",
+      "Color": "Black"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=BorderEffectActiveColor}']/@Color",
+      "Color": "Black"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=FloatingContainerBorder}']/@Color",
+      "Color": "Black"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=FloatingContainerInactiveBorder}']/@Color",
+      "Color": "#FF999999"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCaptionTemplate}']//*[@cs:id='TextBlock_0000']/@Foreground",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonBackgroundMouseOverState}']//*[@cs:id='Border_0001']/@Background",
+      "Color": "#FFAACAE3"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonBackgroundMouseOverState}']//*[@cs:id='Border_0001']/@BorderBrush",
+      "Color": "#FFAACAE3"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDragWidgetTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\ThemedWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:ThemedWindowThemeKey ResourceKey=WindowActiveBorderBrush}']/@Color",
+      "Color": "Black"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\ThemedWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveBorderBrush}']/@Color",
+      "Color": "#FF999999"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\WaitIndicators.xaml",
+      "Path": "//*[@x:Key='{dx:WaitIndicatorThemeKey ResourceKey=WaitIndicatorTemplate}']//*[@cs:id='ProgressBar_0000']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\WaitIndicators.xaml",
+      "Path": "//*[@x:Key='{dx:WaitIndicatorThemeKey ResourceKey=WaitIndicatorTemplate}']//*[@cs:id='ProgressBar_0000']/@Foreground",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\WaitIndicators.xaml",
+      "Path": "//*[@x:Key='{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.ColumnWaitIndicator}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\WaitIndicators.xaml",
+      "Path": "//*[@x:Key='{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.ColumnWaitIndicator}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='{dxt:ThemeColorsThemeKey ResourceKey=WhiteForegroundColor}']/@Color",
+      "Color": "#FF000000"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='ProgressBar.IndicatorAnimatedFill']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='ProgressBar.IndicatorBackground']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='Slider.SelectionRange.Background']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='SliderThumb.HoverState']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='SliderThumb.PressedState']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='TabItem.FocusedState.Bottom']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='TabItem.FocusedState.Left']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='TabItem.FocusedState.Right']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='TabItem.FocusedState.Top']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='TabItem.SelectedState.Foreground']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Brushes.xaml",
+      "Path": "//*[@x:Key='Text.Selection.Background']/@Color",
+      "Color": "#FFAACAE3"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderDownHeaderStyle']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderDownHeaderStyle']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderDownHeaderStyle']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderDownHeaderStyle']//*[@cs:id='Setter_0003']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderLeftHeaderStyle']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderLeftHeaderStyle']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderLeftHeaderStyle']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderLeftHeaderStyle']//*[@cs:id='Setter_0003']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderRightHeaderStyle']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderRightHeaderStyle']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderRightHeaderStyle']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderRightHeaderStyle']//*[@cs:id='Setter_0003']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderUpHeaderStyle']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderUpHeaderStyle']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderUpHeaderStyle']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\Expander.xaml",
+      "Path": "//*[@x:Key='ExpanderUpHeaderStyle']//*[@cs:id='Setter_0003']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\ProgressBar.xaml",
+      "Path": "//*[@x:Key='{dxdst:DefaultStyleThemeKey FullName=System.Windows.Controls.ProgressBar}']//*[@cs:id='GradientStop_0000']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\ProgressBar.xaml",
+      "Path": "//*[@x:Key='{dxdst:DefaultStyleThemeKey FullName=System.Windows.Controls.ProgressBar}']//*[@cs:id='GradientStop_0001']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\SharedResources.xaml",
+      "Path": "//*[@x:Key='FocusTemplate']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFACACAC"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\SharedResources.xaml",
+      "Path": "//*[@x:Key='TabItem.Selection.Bottom']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\SharedResources.xaml",
+      "Path": "//*[@x:Key='TabItem.Selection.Left']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\SharedResources.xaml",
+      "Path": "//*[@x:Key='TabItem.Selection.Right']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\SharedResources.xaml",
+      "Path": "//*[@x:Key='TabItem.Selection.Top']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\SharedResources.xaml",
+      "Path": "//*[@x:Key='TabItem.Selection.Top']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\TreeViewItem.xaml",
+      "Path": "//*[@x:Key='ExpandCollapseToggleStyle']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\TreeViewItem.xaml",
+      "Path": "//*[@x:Key='ExpandCollapseToggleStyle']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\TreeViewItem.xaml",
+      "Path": "//*[@x:Key='ExpandCollapseToggleStyle']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\StandardControls\\TreeViewItem.xaml",
+      "Path": "//*[@x:Key='ExpandCollapseToggleStyle']//*[@cs:id='Setter_0003']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\AutoHidePanel.xaml",
+      "Path": "//*[@x:Key='{dxt:AutoHideTrayElementsThemeKey ResourceKey=Caption}']//*[@cs:id='ColorAnimation_0004']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='{dxt:DockPaneElementsThemeKey ResourceKey=DockPaneButtonStyle}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='{dxt:DockPaneElementsThemeKey ResourceKey=DockPaneButtonStyle}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='{dxt:DocumentPaneElementsThemeKey ResourceKey=DocumentGroupButtonStyle}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='{dxt:DocumentPaneElementsThemeKey ResourceKey=DocumentGroupButtonStyle}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='{dxt:FloatPaneElementsThemeKey ResourceKey=FloatPaneButtonStyle}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='{dxt:FloatPaneElementsThemeKey ResourceKey=FloatPaneButtonStyle}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='{dxt:GroupPaneElementsThemeKey ResourceKey=GroupPaneButtonStyle}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_CloseButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_CloseButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_CollapseButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_CollapseButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_ExpandButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_ExpandButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_HideButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_HideButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_MaximizeButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_MaximizeButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_MinimizeButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_MinimizeButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_PinButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_PinButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_PinButton']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_PinButton']//*[@cs:id='ColorAnimation_0003']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_RestoreButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DockPane_RestoreButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DocumentPane_CloseButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DocumentPane_CloseButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DocumentPane_DropDownButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DocumentPane_DropDownButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DocumentPane_RestoreButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DocumentPane_RestoreButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DocumentPane_ScrollNextButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DocumentPane_ScrollNextButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DocumentPane_ScrollPrevButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='DocumentPane_ScrollPrevButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='FloatPane_CloseButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='FloatPane_CloseButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='FloatPane_MaximizeButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='FloatPane_MaximizeButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='FloatPane_MaximizeButton']//*[@cs:id='Grid_0000']/@Background",
+      "Color": "Transparent"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='FloatPane_MinimizeButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='FloatPane_MinimizeButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='FloatPane_RestoreButton']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='FloatPane_RestoreButton']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='GroupPane_ExpandButton']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\ControlBoxElements.xaml",
+      "Path": "//*[@x:Key='GroupPane_ExpandButton']//*[@cs:id='ColorAnimation_0003']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\CustomizationWindow.xaml",
+      "Path": "//*[@x:Key='psvTreeViewBorderControlTemplate']//*[@cs:id='Border_0001']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\DockPane.xaml",
+      "Path": "//*[@x:Key='{dxt:DockPaneElementsThemeKey ResourceKey=CaptionActiveForeground}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\DocumentPane.xaml",
+      "Path": "//*[@x:Key='{dxt:DocumentPaneElementsThemeKey ResourceKey=MDIDocument}']//*[@cs:id='Border_0001']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\DocumentPane.xaml",
+      "Path": "//*[@x:Key='{dxt:DocumentPaneElementsThemeKey ResourceKey=PageHeader}']//*[@x:Key='activeBrush']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\DocumentPane.xaml",
+      "Path": "//*[@x:Key='{dxt:DocumentPaneElementsThemeKey ResourceKey=TabContainerTemplate}']//*[@cs:id='Border_0000']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\FloatPane.xaml",
+      "Path": "//*[@x:Key='{dxt:FloatPaneElementsThemeKey ResourceKey=FormBorderContentTemplate}']//*[@cs:id='TemplatedCaptionControl_0000']/@Foreground",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\TabbedLayoutGroupPane.xaml",
+      "Path": "//*[@x:Key='TabItem.FocusedState']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\TabbedPane.xaml",
+      "Path": "//*[@x:Key='{dxt:TabbedPaneElementsThemeKey ResourceKey=PageHeader}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\VisualizerElements.xaml",
+      "Path": "//*[@x:Key='{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Docking.VisualElements.DocumentSelectorContainer}']//*[@cs:id='ContentControl_0000']/@Foreground",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\VisualizerElements.xaml",
+      "Path": "//*[@x:Key='{dxt:DockVisualizerThemeKey ResourceKey=Selection}']//*[@cs:id='Rectangle_0000']/@Fill",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Docking\\Office2016White\\VisualizerElements.xaml",
+      "Path": "//*[@x:Key='TabHint.BorderBrush']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\CardView.xaml",
+      "Path": "//*[@x:Key='{dxgt:CardViewThemeKey ResourceKey=ShowHeadersButtonTemplate}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\CardView.xaml",
+      "Path": "//*[@x:Key='{dxgt:CardViewThemeKey ResourceKey=ShowHeadersButtonTemplate}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\CardView.xaml",
+      "Path": "//*[@x:Key='{dxgt:CardViewThemeKey ResourceKey=ShowHeadersButtonTemplate}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\CardView.xaml",
+      "Path": "//*[@x:Key='{dxgt:CardViewThemeKey ResourceKey=ShowHeadersButtonTemplate}']//*[@cs:id='Setter_0003']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\ColumnHeader.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridColumnHeaderThemeKey ResourceKey=ColumnFilterTemplate}']//*[@cs:id='Path_0003']/@Fill",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\ColumnHeaderDragIndicator.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridColumnHeaderThemeKey ResourceKey=DragIndicatorTemplate}']//*[@cs:id='Path_0000']/@Fill",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\ColumnHeaderDragIndicator.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridColumnHeaderThemeKey ResourceKey=DragIndicatorTemplate}']//*[@cs:id='Path_0001']/@Fill",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
+      "Path": "//*[@x:Key='SelectionRectangleColor']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\ExcelColumnFilter.xaml",
+      "Path": "//*[@x:Key='{dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=ButtonHeaderFocusedForeground}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\ExpandButtons.xaml",
+      "Path": "//*[@x:Key='PressedExpandButtonBrush']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\GridCard.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridCardThemeKey ResourceKey=ContainerTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\GridCard.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridCardThemeKey ResourceKey=ContainerTemplate}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\GridCard.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridCardThemeKey ResourceKey=ContainerTemplate}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\GridCard.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridCardThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\GridCard.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridCardThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='Setter_0003']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\GridCard.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridCardThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='Setter_0006']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\GridCard.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridCardThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='Setter_0007']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\GridControlElements.xaml",
+      "Path": "//*[@x:Key='{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.OptionsToggleButton}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\Rows.xaml",
+      "Path": "//*[@x:Key='BorderFocusedBrush']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\WaitIndicators.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridControlThemeKey ResourceKey=DefaultWaitIndicatorTemplate}']//*[@cs:id='ProgressBar_0001']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.LayoutControl\\Colors.xaml",
+      "Path": "//*[@x:Key='GroupBoxButton.MouseOverColor']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.LayoutControl\\Colors.xaml",
+      "Path": "//*[@x:Key='GroupBoxButton.PressedColor']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.LayoutControl\\Colors.xaml",
+      "Path": "//*[@x:Key='LayerSeparator.MouseOverColor']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Map\\Office2016White\\MapControl.xaml",
+      "Path": "//*[@x:Key='{dxt:MapBrushesThemeKey ResourceKey=HighlightShapeStroke}']/@Color",
+      "Color": "#AA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Map\\Office2016White\\MapControl.xaml",
+      "Path": "//*[@x:Key='{dxt:MapBrushesThemeKey ResourceKey=PushpinBackground}']/@Color",
+      "Color": "#FF3190C0"
+    },
+    {
+      "File": "DevExpress.Xpf.Map\\Office2016White\\MapControl.xaml",
+      "Path": "//*[@x:Key='{dxt:MapBrushesThemeKey ResourceKey=PushpinSelectionBrush}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Map\\Office2016White\\MapControl.xaml",
+      "Path": "//*[@x:Key='{dxt:MapBrushesThemeKey ResourceKey=SelectedShapeStroke}']/@Color",
+      "Color": "#AA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Map\\Office2016White\\MapControl.xaml",
+      "Path": "//*[@x:Key='{dxt:MapBrushesThemeKey ResourceKey=ShapeFill}']/@Color",
+      "Color": "#90C0E3"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\CommonElements.xaml",
+      "Path": "//*[@x:Key='{dxnt:CommonElementsThemeKey ResourceKey=ScrollDownButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\CommonElements.xaml",
+      "Path": "//*[@x:Key='{dxnt:CommonElementsThemeKey ResourceKey=ScrollDownGroupButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\CommonElements.xaml",
+      "Path": "//*[@x:Key='{dxnt:CommonElementsThemeKey ResourceKey=ScrollUpButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\CommonElements.xaml",
+      "Path": "//*[@x:Key='{dxnt:CommonElementsThemeKey ResourceKey=ScrollUpGroupButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\CommonElements.xaml",
+      "Path": "//*[@x:Key='{dxnt:ExplorerBarThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\CommonElements.xaml",
+      "Path": "//*[@x:Key='{dxnt:ExplorerBarThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\CommonElements.xaml",
+      "Path": "//*[@x:Key='{dxnt:ExplorerBarThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\CommonElements.xaml",
+      "Path": "//*[@x:Key='{dxnt:ExplorerBarThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0003']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneButtonPanelThemeKey ResourceKey=GroupTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneButtonPanelThemeKey ResourceKey=GroupTemplate}']//*[@cs:id='ColorAnimation_0003']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneButtonPanelThemeKey ResourceKey=GroupTemplate}']//*[@cs:id='ColorAnimation_0005']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneHeaderThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneHeaderThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneHeaderThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneHeaderThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0003']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneOverflowPanelThemeKey ResourceKey=DefaultIconTemplate}']//*[@cs:id='Path_0000']/@Fill",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneOverflowPanelThemeKey ResourceKey=DefaultIconTemplate}']//*[@cs:id='Path_0001']/@Fill",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneOverflowPanelThemeKey ResourceKey=DropDownButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPanePopupThemeKey ResourceKey=ScrollDownButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPanePopupThemeKey ResourceKey=ScrollUpButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.NavBar\\Office2016White\\NavigationPane.xaml",
+      "Path": "//*[@x:Key='{dxnt:NavigationPaneSplitterThemeKey ResourceKey=SplitterTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PdfViewer\\Office2016White\\Templates.xaml",
+      "Path": "//*[@x:Key='{themes:PdfViewerThemeKey ResourceKey=LoadingDocumentLinkForegroundColor}']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PdfViewer\\Office2016White\\Templates.xaml",
+      "Path": "//*[@x:Key='{themes:PdfViewerThemeKey ResourceKey=PdfPageControlItemTemplate}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PdfViewer\\Office2016White\\Templates.xaml",
+      "Path": "//*[@x:Key='{themes:PdfViewerThemeKey ResourceKey=PdfThumbnailControlItemTemplate}']//*[@cs:id='Border_0007']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PdfViewer\\Office2016White\\Templates.xaml",
+      "Path": "//*[@x:Key='{themes:PdfViewerThemeKey ResourceKey=StartScreenDocumentLinkForegroundColor}']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PivotGrid\\Office2016White\\Colors.xaml",
+      "Path": "//*[@x:Key='{dxpgi:AppearanceThemeKey ResourceKey=FilterMouseOverColor}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PivotGrid\\Office2016White\\Colors.xaml",
+      "Path": "//*[@x:Key='{dxpgi:AppearanceThemeKey ResourceKey=FocusedDataItemStroke}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PivotGrid\\Office2016White\\Colors.xaml",
+      "Path": "//*[@x:Key='{dxpgi:AppearanceThemeKey ResourceKey=ValueSelectedForegroundBrush}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PivotGrid\\Office2016White\\ExpandButtons.xaml",
+      "Path": "//*[@x:Key='{dxpgi:ScrollableAreaThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PivotGrid\\Office2016White\\ExpandButtons.xaml",
+      "Path": "//*[@x:Key='{dxpgi:ScrollableAreaThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PivotGrid\\Office2016White\\ExpandButtons.xaml",
+      "Path": "//*[@x:Key='{dxpgi:ScrollableAreaThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PivotGrid\\Office2016White\\ExpandButtons.xaml",
+      "Path": "//*[@x:Key='{dxpgi:ScrollableAreaThemeKey ResourceKey=ExpandButtonTemplate}']//*[@cs:id='ColorAnimation_0003']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PivotGrid\\Office2016White\\FieldHeaders.xaml",
+      "Path": "//*[@x:Key='{dxpgi:FieldHeaderThemeKey ResourceKey=DragIndicatorTemplate}']//*[@cs:id='Path_0000']/@Fill",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PivotGrid\\Office2016White\\FieldHeaders.xaml",
+      "Path": "//*[@x:Key='{dxpgi:FieldHeaderThemeKey ResourceKey=DragIndicatorTemplate}']//*[@cs:id='Path_0001']/@Fill",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PropertyGrid\\Office2016White\\PropertyGridControl.xaml",
+      "Path": "//*[@x:Key='{dxprgt:PropertyGridControlThemeKey ResourceKey=DescriptionPresenterTemplate}']//*[@cs:id='ContentPresenter_0000']/@TextElement.Foreground",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PropertyGrid\\Office2016White\\RenderTemplates.xaml",
+      "Path": "//*[@x:Key='{dxprgt:VSViewRenderTemplateThemeKey ResourceKey=Expander}']//*[@cs:id='RenderSetter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PropertyGrid\\Office2016White\\RenderTemplates.xaml",
+      "Path": "//*[@x:Key='{dxprgt:VSViewRenderTemplateThemeKey ResourceKey=Expander}']//*[@cs:id='RenderSetter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PropertyGrid\\Office2016White\\RenderTemplates.xaml",
+      "Path": "//*[@x:Key='{dxprgt:VSViewRenderTemplateThemeKey ResourceKey=Expander}']//*[@cs:id='RenderSetter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.PropertyGrid\\Office2016White\\RenderTemplates.xaml",
+      "Path": "//*[@x:Key='{dxprgt:VSViewRenderTemplateThemeKey ResourceKey=Expander}']//*[@cs:id='RenderSetter_0003']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationButton.xaml",
+      "Path": "//*[@x:Key='{dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplate2007}']//*[@cs:id='Border_0004']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationButton.xaml",
+      "Path": "//*[@x:Key='{dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplate2007InPopup}']//*[@cs:id='Border_0004']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationButton.xaml",
+      "Path": "//*[@x:Key='{dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplate2010}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationButton.xaml",
+      "Path": "//*[@x:Key='{dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplate2010}']//*[@cs:id='Border_0001']/@Background",
+      "Color": "#FFAACAE3"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationButton.xaml",
+      "Path": "//*[@x:Key='{dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplate2010}']//*[@cs:id='Border_0002']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationButton.xaml",
+      "Path": "//*[@x:Key='{dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplate2010InPopup}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationButton.xaml",
+      "Path": "//*[@x:Key='{dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplateOfficeSlimInPopup}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationButton.xaml",
+      "Path": "//*[@x:Key='{dxrt:ApplicationButtonThemeKey ResourceKey=BorderTemplateTablet}']//*[@cs:id='Path_0000']/@Fill",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationButton.xaml",
+      "Path": "//*[@x:Key='{dxrt:ApplicationButtonThemeKey ResourceKey=PressedTextStyle}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationButton.xaml",
+      "Path": "//*[@x:Key='{dxrt:ApplicationButtonThemeKey ResourceKey=SelectedTextStyle}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationMenu.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBarControlBorderTemplate2007}']//*[@cs:id='Border_0001']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationMenu.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBarControlBorderTemplate2007}']//*[@cs:id='Border_0001']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationMenu.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBottomPaneTemplate}']//*[@cs:id='Border_0001']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\ApplicationMenu.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=ApplicationMenuBottomPaneTemplate}']//*[@cs:id='Border_0001']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\BackstageView.xaml",
+      "Path": "//*[@x:Key='{dxrt:BackstageThemeKey ResourceKey=LeftPartBackground}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\DropDownGallery.xaml",
+      "Path": "//*[@x:Key='{dxrt:GalleryDropDownControlThemeKey ResourceKey=GalleryItemGlyphBorderTemplate}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\DXTreeViewItem.xaml",
+      "Path": "//*[@x:Key='{dxrt:DXTreeViewGroupItemThemeKey ResourceKey=ContentStyle}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\DXTreeViewItem.xaml",
+      "Path": "//*[@x:Key='{dxrt:DXTreeViewItemThemeKey ResourceKey=ExpanderTemplate}']//*[@cs:id='ColorAnimation_0000']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\DXTreeViewItem.xaml",
+      "Path": "//*[@x:Key='{dxrt:DXTreeViewItemThemeKey ResourceKey=ExpanderTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\DXTreeViewItem.xaml",
+      "Path": "//*[@x:Key='{dxrt:DXTreeViewItemThemeKey ResourceKey=ExpanderTemplate}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\DXTreeViewItem.xaml",
+      "Path": "//*[@x:Key='{dxrt:DXTreeViewItemThemeKey ResourceKey=ExpanderTemplate}']//*[@cs:id='ColorAnimation_0003']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\InRibbonGallery.xaml",
+      "Path": "//*[@x:Key='{dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryItemGlyphBorderTemplate}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarCustomizationButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarCustomizationButtonTemplate}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarCustomizationButtonTemplate}']//*[@cs:id='Path_0000']/@Fill",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarCustomizationButtonTemplateInFooter}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarCustomizationButtonTemplateInFooter}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarDropDownButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarDropDownButtonTemplate}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarDropDownButtonTemplate}']//*[@cs:id='Path_0000']/@Fill",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarDropDownButtonTemplateInFooter}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarDropDownButtonTemplateInFooter}']//*[@cs:id='ColorAnimation_0003']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarDropDownButtonTemplateInFooter}']//*[@cs:id='ColorAnimation_0004']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\QuickAccessToolbar.xaml",
+      "Path": "//*[@x:Key='{dxrt:QuickAccessToolbarThemeKey ResourceKey=RibbonToolbarDropDownButtonTemplateInFooter}']//*[@cs:id='ColorAnimation_0005']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=CaptionStyle}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=HeaderBorderTemplateInRibbonWindow}']//*[@cs:id='Border_0001']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=HeaderBorderTemplateInRibbonWindow}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=HoverPageCaptionTextStyle}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=MinimizationButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=MinimizationButtonTemplate}']//*[@cs:id='Path_0000']/@Fill",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=NormalPageCaptionTextStyle}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=RibbonCloseButtonForegroundMouseOverState}']/@Color",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=RibbonCloseButtonForegroundNormalState}']/@Color",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=RibbonCloseButtonForegroundPressedState}']/@Color",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=RibbonDefaultButtonBackgroundMouseOverState}']//*[@cs:id='Border_0001']/@Background",
+      "Color": "#FFAACAE3"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=RibbonDefaultButtonBackgroundMouseOverState}']//*[@cs:id='Border_0001']/@BorderBrush",
+      "Color": "#FFAACAE3"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=RibbonDefaultButtonForegroundMouseOverState}']/@Color",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=RibbonDefaultButtonForegroundNormalState}']/@Color",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=RibbonDefaultButtonForegroundPressedState}']/@Color",
+      "Color": "#FFFFFFFF"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=SelectedPageCaptionTextStyle}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=StandaloneHeaderBorderTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\Ribbon.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=TabPartBorderTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonPage.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonPageThemeKey ResourceKey=SelectedTextStyleInAeroWindow}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonPage.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonPageThemeKey ResourceKey=SelectedTextStyleInAeroWindowInMinimizedRibbon}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonPageCategory.xaml",
+      "Path": "//*[@x:Key='CollapseButtonTemplate']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonPageGroup.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonPageGroupThemeKey ResourceKey=CaptionButtonTemplate}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonPageGroup.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonPageGroupThemeKey ResourceKey=CaptionButtonTemplate}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonPageGroup.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonPageGroupThemeKey ResourceKey=HighlightedPopupButtonBorderTemplate}']//*[@cs:id='Border_0000']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonPageGroup.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonPageGroupThemeKey ResourceKey=PopupButtonBorderTemplate}']//*[@cs:id='Border_0000']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonStatusBar.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonStatusBarThemeKey ResourceKey=LeftPartTemplate}']//*[@cs:id='Border_0001']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonStatusBar.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonStatusBarThemeKey ResourceKey=LeftPartTemplate}']//*[@cs:id='Border_0001']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonStatusBar.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonStatusBarThemeKey ResourceKey=RightPartTemplate}']//*[@cs:id='Border_0001']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonStatusBar.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonStatusBarThemeKey ResourceKey=RightPartTemplate}']//*[@cs:id='Border_0001']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Ribbon\\Office2016White\\RibbonWindow.xaml",
+      "Path": "//*[@x:Key='{dxrt:RibbonThemeKey ResourceKey=FloatingContainerBorderTemplate}']//*[@cs:id='Border_0001']/@BorderBrush",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.RichEdit\\Office2016White\\RichEditViewPage.xaml",
+      "Path": "//*[@x:Key='{dxret:RichEditControlThemeKey ResourceKey=CommentMoreButtonStyle}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.RichEdit\\Office2016White\\RichEditViewPage.xaml",
+      "Path": "//*[@x:Key='{dxret:RichEditControlThemeKey ResourceKey=CommentMoreButtonStyle}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.RichEdit\\Office2016White\\Ruler.xaml",
+      "Path": "//*[@x:Key='{dxret:RichEditRulerThemeKey ResourceKey=DisabledHotZoneControlTemplate}']//*[@cs:id='Border_0000']/@Background",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Scheduler\\Office2016White\\Appointments\\HorizontalAppointment.xaml",
+      "Path": "//*[@x:Key='borderBrush.IsSelected']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Scheduler\\Office2016White\\Appointments\\HorizontalAppointment.xaml",
+      "Path": "//*[@x:Key='defaultBorderColor']",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Scheduler\\Office2016White\\Appointments\\VerticalAppointment.xaml",
+      "Path": "//*[@x:Key='borderBrush.IsSelected']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Scheduler\\Office2016White\\Appointments\\VerticalAppointment.xaml",
+      "Path": "//*[@x:Key='statusBorderBrush']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Scheduler\\Office2016White\\DayView\\MoreButton.xaml",
+      "Path": "//*[@x:Key='{dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonDownStyle}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Scheduler\\Office2016White\\DayView\\MoreButton.xaml",
+      "Path": "//*[@x:Key='{dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonDownStyle}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Scheduler\\Office2016White\\DayView\\MoreButton.xaml",
+      "Path": "//*[@x:Key='{dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonUpStyle}']//*[@cs:id='ColorAnimation_0001']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Scheduler\\Office2016White\\DayView\\MoreButton.xaml",
+      "Path": "//*[@x:Key='{dxscht:SchedulerViewThemeKey ResourceKey=MoreButtonUpStyle}']//*[@cs:id='ColorAnimation_0002']/@To",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Spreadsheet\\Office2016White\\SpreadsheetControl.xaml",
+      "Path": "//*[@x:Key='{themes:SpreadsheetThemeKey ResourceKey=FormulaBarExpandButtonStyle}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Spreadsheet\\Office2016White\\SpreadsheetControl.xaml",
+      "Path": "//*[@x:Key='{themes:SpreadsheetThemeKey ResourceKey=FormulaBarExpandButtonStyle}']//*[@cs:id='Setter_0001']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Spreadsheet\\Office2016White\\SpreadsheetControl.xaml",
+      "Path": "//*[@x:Key='{themes:SpreadsheetThemeKey ResourceKey=FormulaBarExpandButtonStyle}']//*[@cs:id='Setter_0002']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Spreadsheet\\Office2016White\\SpreadsheetControl.xaml",
+      "Path": "//*[@x:Key='{themes:SpreadsheetThemeKey ResourceKey=FormulaBarExpandButtonStyle}']//*[@cs:id='Setter_0003']/@Value",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Spreadsheet\\Office2016White\\SpreadsheetControl.xaml",
+      "Path": "//*[@x:Key='{themes:SpreadsheetThemeKey ResourceKey=TabSelectorItemTemplate}']//*[@cs:id='Setter_0000']/@Value",
+      "Color": "#FFAA1948"
+    }
+  ]
+}
