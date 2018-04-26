@@ -1,0 +1,8 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Printing/SelectLineBase/DocumentPreviewControl.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Printing/SelectLineBase/PreviewSurface.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Printing/SelectLineBase/PageBorderControl.xaml" />
+        
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

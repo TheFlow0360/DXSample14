@@ -1,0 +1,43 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxschc="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxschv="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UICore.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="ResourceNavigator.DefaultTemplate.Horizontal" TargetType="dxschv:ResourceNavigator">
+        <dx:DXBorder x:Name="border" BorderBrush="{StaticResource ResourceNavigator.BorderBrush}" Background="{StaticResource ResourceNavigator.Background}" BorderThickness="{StaticResource ResourceNavigator.BorderThickness}" Padding="{StaticResource ResourceNavigator.Padding}" MinHeight="{StaticResource ResourceNavigator.MinSize}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;9;10">
+            <StackPanel Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;10;14">
+                <Button Style="{DynamicResource {dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_FirstStyle}}" Command="{TemplateBinding FirstCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;11;18" />
+                <Button Style="{DynamicResource {dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_PrevPageStyle}}" Command="{TemplateBinding PrevPageCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;12;18" />
+                <Button Style="{DynamicResource {dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_PrevItemStyle}}" Command="{TemplateBinding PrevCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;13;18" />
+                <Button Style="{DynamicResource {dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_NextItemStyle}}" Command="{TemplateBinding NextCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;14;18" />
+                <Button Style="{DynamicResource {dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_NextPageStyle}}" Command="{TemplateBinding NextPageCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;15;18" />
+                <Button Style="{DynamicResource {dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_LastStyle}}" Command="{TemplateBinding LastCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;16;18" />
+                <Button x:Name="plus" Style="{DynamicResource {dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_PlusStyle}}" Command="{TemplateBinding PlusCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;17;18" />
+                <Button x:Name="minus" Style="{DynamicResource {dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_MinusStyle}}" Command="{TemplateBinding MinusCommand}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;18;18" />
+            </StackPanel>
+        </dx:DXBorder>
+        <ControlTemplate.Triggers>
+            <Trigger Property="PlusCommand" Value="{x:Null}">
+                <Setter TargetName="plus" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="MinusCommand" Value="{x:Null}">
+                <Setter TargetName="minus" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="Orientation" Value="Vertical">
+                <Setter Property="BorderThickness" TargetName="border" Value="{StaticResource ResourceNavigator.VerticalBorderThickness}" />
+                <Setter Property="LayoutTransform">
+                    <Setter.Value>
+                        <RotateTransform Angle="90" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="ResourceNavigator.DefaultStyle" TargetType="dxschv:ResourceNavigator">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\ResourceNavigator.xaml;39;6" /><Setter Property="Template" Value="{StaticResource ResourceNavigator.DefaultTemplate.Horizontal}" />
+    </Style>
+    
+</ResourceDictionary>

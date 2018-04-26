@@ -1,0 +1,80 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxschv="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxschcore="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <DataTemplate x:Key="Scheduler.DayView.GroupByResource">
+        <dxschv:DayViewGroupByResourceControl View="{Binding}" VisualData="{Binding VisualData.GroupByResource}" HorizontalScrollOffset="{Binding VisualData.GroupByResource.HorizontalScrollOffset, Mode=TwoWay}" VerticalScrollOffset="{Binding VisualData.GroupByResource.VerticalScrollOffset, Mode=TwoWay}">
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:ReadOnlyDependencyPropertyBindingBehavior Property="ViewportHeight" Binding="{Binding VisualData.GroupByResource.ViewportHeight, Mode=TwoWay}" />
+            </dxmvvm:Interaction.Behaviors>
+        </dxschv:DayViewGroupByResourceControl>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Scheduler.DayView.GroupByDate">
+        <dxschv:DayViewGroupByDateControl View="{Binding}" VisualData="{Binding VisualData.GroupByDate}" HorizontalScrollOffset="{Binding VisualData.GroupByDate.HorizontalScrollOffset, Mode=TwoWay}" VerticalScrollOffset="{Binding VisualData.GroupByDate.VerticalScrollOffset, Mode=TwoWay}">
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:ReadOnlyDependencyPropertyBindingBehavior Property="ViewportHeight" Binding="{Binding VisualData.GroupByDate.ViewportHeight, Mode=TwoWay}" />
+            </dxmvvm:Interaction.Behaviors>
+        </dxschv:DayViewGroupByDateControl>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Scheduler.MonthView.GroupByNone">
+        <dxschv:MonthViewGroupByResourceControl View="{Binding}" VisualData="{Binding VisualData}" VerticalScrollOffset="{Binding VisualData.VerticalScrollOffset, Mode=TwoWay}">
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:ReadOnlyDependencyPropertyBindingBehavior Property="CellHeight" Binding="{Binding VisualData.CellHeight, Mode=TwoWay}" />
+            </dxmvvm:Interaction.Behaviors>
+        </dxschv:MonthViewGroupByResourceControl>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="Scheduler.MonthView.GroupByResource">
+        <dxschv:MonthViewGroupByResourceControl View="{Binding}" VisualData="{Binding VisualData}" VerticalScrollOffset="{Binding VisualData.VerticalScrollOffset, Mode=TwoWay}" HorizontalScrollOffset="{Binding VisualData.HorizontalScrollOffset, Mode=TwoWay}">
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:ReadOnlyDependencyPropertyBindingBehavior Property="CellHeight" Binding="{Binding VisualData.CellHeight, Mode=TwoWay}" />
+            </dxmvvm:Interaction.Behaviors>
+        </dxschv:MonthViewGroupByResourceControl>
+    </DataTemplate>
+    
+    <DataTemplate x:Key="Scheduler.MonthView.GroupByDate">
+        <dxschv:MonthViewGroupByDateControl View="{Binding}" VisualData="{Binding VisualData}" VerticalScrollOffset="{Binding VisualData.VerticalScrollOffset, Mode=TwoWay}" HorizontalScrollOffset="{Binding VisualData.HorizontalScrollOffset, Mode=TwoWay}">
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:ReadOnlyDependencyPropertyBindingBehavior Property="CellHeight" Binding="{Binding VisualData.CellHeight, Mode=TwoWay}" />
+            </dxmvvm:Interaction.Behaviors>
+        </dxschv:MonthViewGroupByDateControl>
+    </DataTemplate>
+
+    <DataTemplate x:Key="Scheduler.TimelineView">
+        <dxschv:TimelineViewControl View="{Binding}" VisualData="{Binding VisualData}" VerticalScrollOffset="{Binding VisualData.VerticalScrollOffset, Mode=TwoWay}">
+            <dxmvvm:Interaction.Behaviors>
+                <dxmvvm:ReadOnlyDependencyPropertyBindingBehavior Property="CellWidth" Binding="{Binding VisualData.CellWidth, Mode=TwoWay}" />
+                <dxmvvm:ReadOnlyDependencyPropertyBindingBehavior Property="CellHeight" Binding="{Binding VisualData.CellHeight, Mode=TwoWay}" />
+            </dxmvvm:Interaction.Behaviors>
+        </dxschv:TimelineViewControl>
+    </DataTemplate>
+
+    <dxschcore:SchedulerGroupType x:Key="GroupTypeNone">None</dxschcore:SchedulerGroupType>
+    <dxschcore:SchedulerGroupType x:Key="GroupTypeResource">Resource</dxschcore:SchedulerGroupType>
+    <dxschcore:SchedulerGroupType x:Key="GroupTypeDate">Date</dxschcore:SchedulerGroupType>
+
+    <DXDataTemplateSelector x:Key="Scheduler.ViewPresenter.Selector" x:Shared="False">
+        <DXDataTemplateTrigger Binding="{DXBinding '@c.DayViewBase != null and @c.Scheduler.ActualGroupType != @r(GroupTypeDate)'}" Value="True" Template="{StaticResource Scheduler.DayView.GroupByResource}" />
+        <DXDataTemplateTrigger Binding="{DXBinding '@c.DayViewBase != null and @c.Scheduler.ActualGroupType == @r(GroupTypeDate)'}" Value="True" Template="{StaticResource Scheduler.DayView.GroupByDate}" />
+        <DXDataTemplateTrigger Binding="{DXBinding '@c.MonthView != null and @c.Scheduler.ActualGroupType == @r(GroupTypeNone)'}" Value="True" Template="{StaticResource Scheduler.MonthView.GroupByNone}" />
+        <DXDataTemplateTrigger Binding="{DXBinding '@c.MonthView != null and @c.Scheduler.ActualGroupType == @r(GroupTypeResource)'}" Value="True" Template="{StaticResource Scheduler.MonthView.GroupByResource}" />
+        <DXDataTemplateTrigger Binding="{DXBinding '@c.MonthView != null and @c.Scheduler.ActualGroupType == @r(GroupTypeDate)'}" Value="True" Template="{StaticResource Scheduler.MonthView.GroupByDate}" />
+        <DXDataTemplateTrigger Binding="{DXBinding '@c.TimelineView != null'}" Value="True" Template="{StaticResource Scheduler.TimelineView}" />
+    </DXDataTemplateSelector>
+    <Style x:Key="Scheduler.ViewPresenter.Style" TargetType="ContentPresenter">
+        <Setter Property="Content" Value="{Binding Path='(dxsch:SchedulerControl.Scheduler).ActiveView', RelativeSource={RelativeSource Self}}" />
+        <Setter Property="ContentTemplateSelector" Value="{StaticResource Scheduler.ViewPresenter.Selector}" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path='(dxsch:SchedulerControl.Scheduler).ActualGroupType', RelativeSource={RelativeSource Self}}" Value="None">
+                <Setter Property="ContentTemplateSelector" Value="{StaticResource Scheduler.ViewPresenter.Selector}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path='(dxsch:SchedulerControl.Scheduler).ActualGroupType', RelativeSource={RelativeSource Self}}" Value="Resource">
+                <Setter Property="ContentTemplateSelector" Value="{StaticResource Scheduler.ViewPresenter.Selector}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path='(dxsch:SchedulerControl.Scheduler).ActualGroupType', RelativeSource={RelativeSource Self}}" Value="Date">
+                <Setter Property="ContentTemplateSelector" Value="{StaticResource Scheduler.ViewPresenter.Selector}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

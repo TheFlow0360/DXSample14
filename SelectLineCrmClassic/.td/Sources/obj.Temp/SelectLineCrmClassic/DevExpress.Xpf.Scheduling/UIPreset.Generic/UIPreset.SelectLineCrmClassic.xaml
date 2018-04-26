@@ -1,0 +1,18 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.Generic/UIPreset.Base.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <sys:Double x:Key="ResourceNavigatorButton.Width">16</sys:Double>
+    <sys:Double x:Key="ResourceNavigatorButton.Height">17</sys:Double>
+
+    <CornerRadius x:Key="NavigationButton.CornerRadius">0,7,7,0</CornerRadius>
+    <CornerRadius x:Key="NavigationButton.Backward.CornerRadius">0,7,7,0</CornerRadius>
+    <CornerRadius x:Key="NavigationButton.Forward.CornerRadius">7,0,0,7</CornerRadius>
+    <Thickness x:Key="NavigationButton.BorderThickness">1</Thickness>
+    <Thickness x:Key="NavigationButton.Backward.Margin">0</Thickness>
+    <Thickness x:Key="NavigationButton.Forward.Margin">0,0,-1,0</Thickness>
+    <sys:Double x:Key="NavigationButton.Width">25</sys:Double>
+    <sys:Double x:Key="NavigationButton.Height">205</sys:Double>
+</ResourceDictionary>

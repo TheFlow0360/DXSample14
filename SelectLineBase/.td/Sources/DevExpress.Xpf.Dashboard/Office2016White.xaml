@@ -1,0 +1,22 @@
+﻿<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/Generic.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/DeltaValuePresenter.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/Templates.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/CardItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/MapItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/BoundImageItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/ChartItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/ComboBoxItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/GaugeItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/GridItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/ImageItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/ListBoxItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/PieItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/PivotItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/RangeItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/TextBoxItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/TreemapItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Office2016White/TreeViewItem.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,768 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxr="clr-namespace:DevExpress.Xpf.Ribbon;assembly=DevExpress.Xpf.Ribbon.v17.2" xmlns:dxee="clr-namespace:DevExpress.Xpf.Editors;assembly=DevExpress.Xpf.Core.v17.2" xmlns:dxsps="http://schemas.devexpress.com/winfx/2008/xaml/spreadsheet" xmlns:dxspsui="http://schemas.devexpress.com/winfx/2008/xaml/spreadsheet" xmlns:dxspsi="http://schemas.devexpress.com/winfx/2008/xaml/spreadsheet/internal" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:themes="http://schemas.devexpress.com/winfx/2008/xaml/spreadsheet/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:DynamicThemeResource IndependentPart.xaml, ResourcePath=Themes, ResourcePathInTheme='DevExpress.Xpf.Ribbon', TypeInTargetAssembly={x:Type dxr:RibbonControl}, UseGeneric=True}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <dxcore_unique_xmlns:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    <dxspsi:GridLengthConverter x:Key="GridLengthConverter" />
+    <dxspsi:BoolToGridLengthConverter x:Key="BoolToGridLengthConverter" />
+    <dxspsi:InverseVisibilityConverter x:Key="InverseVisibilityConverter" />
+    <dxspsi:ColorToStringConverter x:Key="ColorToStringConverter" />
+    <dxspsui:SpreadsheetControlStringIdConverter x:Key="stringIdConverter" />
+    <dxcore_unique_xmlns:BoolInverseConverter x:Key="BoolInverseConverter" />
+    <dxcore_unique_xmlns:ColorToBrushConverter x:Key="ColorToBrushConverter" />
+
+    <SolidColorBrush x:Key="{themes:SpreadsheetThemeKey ResourceKey=CommentIndicatorBrush}" Color="Red" />
+    <SolidColorBrush x:Key="{themes:SpreadsheetThemeKey ResourceKey=NumberIndicatorBrush}" Color="Green" />
+    <sys:Double x:Key="{themes:SpreadsheetThemeKey ResourceKey=IndicatorWidth}">5</sys:Double>
+
+    <SolidColorBrush x:Key="{themes:SpreadsheetThemeKey ResourceKey=CommentLineBrush}" Color="Black" />
+    <sys:Double x:Key="{themes:SpreadsheetThemeKey ResourceKey=CommentLineWidth}">1</sys:Double>
+
+    <SolidColorBrush x:Key="{themes:SpreadsheetThemeKey ResourceKey=DataValidationCircleBrush}" Color="Red" />
+    <sys:Double x:Key="{themes:SpreadsheetThemeKey ResourceKey=DataValidationCircleWidth}">2</sys:Double>
+    <SolidColorBrush x:Key="{themes:SpreadsheetThemeKey ResourceKey=DataValidationMessageForeBrush}" Color="#FF5D5D5D" />
+    <sys:Double x:Key="{themes:SpreadsheetThemeKey ResourceKey=DataValidationMessageBorderWidth}">1</sys:Double>
+    <SolidColorBrush x:Key="{themes:SpreadsheetThemeKey ResourceKey=DataValidationMessageBorderBrush}" Color="#FF454849" />
+    <SolidColorBrush x:Key="{themes:SpreadsheetThemeKey ResourceKey=DataValidationMessageBackgroudBrush}" Color="#FFFFE1" />
+
+    <ControlTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=Template}" TargetType="{x:Type dxsps:SpreadsheetControl}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;31;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Control x:Name="PART_RibbonHost" Template="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=EmptyRibbonTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;37;14" />
+            <Control x:Name="PART_FormulaBar" Grid.Row="1" Template="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=EmptyFormulaBarTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;38;14" />
+            <dx:DXBorder x:Name="rootBorder" Grid.Row="2" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;39;14">
+                <dxspsi:SpreadsheetViewControl x:Name="PART_View" Focusable="False" IsTabStop="False" ShowTabSelector="{TemplateBinding ShowTabSelector}" />
+            </dx:DXBorder>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="CommandBarStyle" Value="Ribbon">
+                <Setter TargetName="PART_RibbonHost" Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=RibbonTemplate}}" />
+            </Trigger>
+            <Trigger Property="ShowFormulaBar" Value="True">
+                <Setter TargetName="PART_FormulaBar" Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=FormulaBarTemplate}}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=ViewControlTemplate}" TargetType="{x:Type dxspsi:SpreadsheetViewControl}">
+        <dx:DXBorder Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;54;10">
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;55;14">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <dx:DXBorder Grid.Column="1" Visibility="{TemplateBinding ShowVerticalScrollbar,&#xD;&#xA;                                                 Converter={StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;64;18">
+                    <ScrollBar x:Name="PART_VerticalScrollBar" Orientation="Vertical" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;65;22" />
+                </dx:DXBorder>
+                <dxspsi:WorksheetControl x:Name="PART_WorkSheetControl" Focusable="False" LayoutInfo="{Binding Path=(dxspsi:SpreadsheetViewControl.ActiveSpreadsheetView).LayoutInfo, RelativeSource={RelativeSource Self}}" Grid.Row="0" Grid.Column="0" />
+                <dx:DXBorder Style="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=TabSelectorPanelStyle}}" Grid.Row="1" Grid.Column="0" Visibility="{TemplateBinding ShowTabSelector,&#xD;&#xA;                                                 Converter={StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;68;18" />
+                <Grid Grid.Row="1" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;69;18">
+                    <dxspsi:SpreadsheetTabSelector x:Name="PART_TabSelector" AllowStretch="{TemplateBinding ShowHorizontalScrollbar,&#xD;&#xA;                                                                              Converter={StaticResource BoolInverseConverter}}" Focusable="False" VisibleWidth="{Binding ScrollBarPosition, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" Visibility="{TemplateBinding ShowTabSelector,&#xD;&#xA;                                                                            Converter={StaticResource BoolToVisibilityConverter}}" />
+                    <Grid x:Name="PART_ScrollBarContainer" Visibility="{TemplateBinding ShowHorizontalScrollbar,&#xD;&#xA;                                                   Converter={StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;71;22">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="{TemplateBinding ShowTabSelector, Converter={StaticResource BoolToGridLengthConverter}, ConverterParameter=7*}" />
+                            <ColumnDefinition Width="{TemplateBinding ShowTabSelector, Converter={StaticResource BoolToGridLengthConverter}, ConverterParameter=12}" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+                        <Thumb x:Name="PART_ResizeScrollBarThumb" Style="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=ResizeThumbStyle}}" Grid.Column="1" Visibility="{TemplateBinding ShowTabSelector,&#xD;&#xA;                                                        Converter={StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;77;26" />
+                        <ScrollBar x:Name="PART_HorizontalScrollBar" Orientation="Horizontal" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;78;26" />
+                    </Grid>
+                </Grid>
+                <dx:DXBorder Style="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=BottomRightCornerStyle}}" Grid.Row="1" Grid.Column="1" Visibility="{TemplateBinding ShowVerticalScrollbar,&#xD;&#xA;                                                 Converter={StaticResource BoolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;81;18" />
+            </Grid>
+        </dx:DXBorder>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=WorksheetTemplate}" TargetType="{x:Type dxspsi:WorksheetControl}">
+        <dx:DXBorder dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;87;10">
+            <Grid SnapsToDevicePixels="True" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;88;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{Binding GroupWidth, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GridLengthConverter}}" />
+                    <ColumnDefinition Width="{Binding HeaderWidth, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GridLengthConverter}}" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="{Binding GroupHeight, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GridLengthConverter}}" />
+                    <RowDefinition Height="{Binding HeaderHeight, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource GridLengthConverter}}" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <dx:DXBorder x:Name="PART_HorizontalGroupBackgroundControl" Background="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GroupControlBackgroundBrush}}" Grid.ColumnSpan="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;100;18" />
+                <dx:DXBorder x:Name="PART_VerticalGroupBackgroundControl" Background="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GroupControlBackgroundBrush}}" Grid.Row="1" Grid.RowSpan="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;101;18" />
+                <dx:DXBorder x:Name="PART_LeftWorksheetBorder" BorderBrush="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=WorksheetBorderBrush}}" BorderThickness="0,0,1,0" Margin="0,-1,0,0" Grid.Row="1" Grid.RowSpan="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;102;18" />
+                <dx:DXBorder x:Name="PART_TopWorksheetBorder" BorderBrush="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=WorksheetBorderBrush}}" BorderThickness="0,0,0,1" Grid.Column="1" Grid.ColumnSpan="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;103;18" />
+                <dxspsi:WorksheetGroupControl Style="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GroupControlStyle}}" Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <dxspsi:WorksheetBackgroundControl Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <dxspsi:ChartsheetBackgroundControl Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <dxspsi:WorksheetLineControl Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <dxspsi:WorksheetIndicatorControl Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <dx:DXBorder Grid.RowSpan="3" Grid.ColumnSpan="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;109;18">
+                    <dxspsi:WorksheetPanel x:Name="PART_WorksheetPanel" />
+                </dx:DXBorder>
+                <dxspsi:WorksheetDiagonalBorderControl Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <dxspsi:WorksheetSelectionControl Style="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=WorksheetSelectionControlStyle}}" Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <dxspsi:FormulaRangesControl Focusable="False" Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <dxspsi:FloatingObjectsContainer Focusable="False" IsHitTestVisible="False" LayoutInfo="{Binding Path=(dxspsi:SpreadsheetViewControl.ActiveSpreadsheetView).LayoutInfo, RelativeSource={RelativeSource Self}}" Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <dxspsi:WorksheetShapeSelectionControl Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <Canvas Grid.RowSpan="3" Grid.ColumnSpan="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;117;18">
+                    <dx:DXBorder Background="{Binding Path=Background, ElementName=PART_CellEditor}" Canvas.Left="0" Canvas.Top="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;118;22">
+                        <dxspsi:XpfCellInplaceEditor x:Name="PART_CellEditor" />
+                    </dx:DXBorder>
+                </Canvas>
+                <Canvas Grid.RowSpan="3" Grid.ColumnSpan="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;122;18">
+                    <dxspsi:XpfCustomCellInplaceEditor />
+                </Canvas>
+                <dxspsi:WorksheetDataValidationPanel Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <Canvas Grid.RowSpan="3" Grid.ColumnSpan="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;126;18">
+                    <dxspsi:XpfDataValidationInplaceEditor Height="0" IsTextEditable="False" ShowBorder="False">
+                        <dxspsi:XpfDataValidationInplaceEditor.StyleSettings>
+                            <dxe:ComboBoxStyleSettings />
+                        </dxspsi:XpfDataValidationInplaceEditor.StyleSettings>
+                    </dxspsi:XpfDataValidationInplaceEditor>
+                </Canvas>
+                <dxspsi:WorksheetCommentPanel Grid.RowSpan="3" Grid.ColumnSpan="3" />
+                <Canvas Grid.RowSpan="3" Grid.ColumnSpan="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;134;18">
+                    
+                    <dxspsi:XpfCommentInplaceEditor />
+                    
+                </Canvas>
+                <dxspsi:WorksheetHeadersControl x:Name="PART_HorizontalHeadersControl" Style="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=HorizontalHeadersControlStyle}}" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" />
+                <dxspsi:WorksheetHeadersControl x:Name="PART_VerticalHeadersControl" Style="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=VerticalHeadersControlStyle}}" Focusable="False" Orientation="Vertical" Grid.Row="1" Grid.RowSpan="2" Grid.Column="1" />
+                <dx:DXBorder x:Name="PART_TopLeftCorner" Style="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=TopLeftCornerStyle}}" Grid.Row="1" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;141;18" />
+                <dxspsi:VisualFeedbackControl Focusable="False" IsHitTestVisible="False" Grid.RowSpan="3" Grid.ColumnSpan="3" />
+            </Grid>
+        </dx:DXBorder>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=CellControlContentTemplate}" DataType="{x:Type dxsps:CellData}">
+        <dxspsi:CellControl Clip="{Binding Clip}" TextSettings="{Binding TextSettings}" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=ConditionalFormattingIconCellTemplate}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;152;10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Image Stretch="None" Margin="1,0,0,0" Source="{Binding ConditionalFormattingSettings.Image}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;157;14" />
+            <dxspsi:CellControl Clip="{Binding Clip}" TextSettings="{Binding TextSettings}" Grid.Column="1" Panel.ZIndex="1" />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=ConditionalFormattingDataBarCellTemplate}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;162;10">
+            <Rectangle Fill="{Binding ConditionalFormattingSettings.DataBarFillBrush}" Stroke="{Binding ConditionalFormattingSettings.DataBarBorderBrush}" StrokeThickness="1" Width="{Binding ConditionalFormattingSettings.DataBarBounds.Width}" Height="{Binding ConditionalFormattingSettings.DataBarBounds.Height}" Margin="{Binding ConditionalFormattingSettings.DataBarMargin}" HorizontalAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;163;14" />
+            <Line Stroke="{Binding ConditionalFormattingSettings.AxisBrush}" StrokeThickness="1" SnapsToDevicePixels="True" StrokeDashArray="3 1" X1="{Binding ConditionalFormattingSettings.AxisStart.X}" X2="{Binding ConditionalFormattingSettings.AxisEnd.X}" Y1="{Binding ConditionalFormattingSettings.AxisStart.Y}" Y2="{Binding ConditionalFormattingSettings.AxisEnd.Y}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;164;14" />
+            <dxspsi:CellControl Clip="{Binding Clip}" TextSettings="{Binding TextSettings}" Panel.ZIndex="1" />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=UnsupportedChartPresenterTemplate}">
+        <dx:DXBorder BorderBrush="Red" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;169;10">
+            <Grid Background="White" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;170;14">
+                <TextBlock Margin="10,10,10,10" TextWrapping="Wrap" FontSize="14" Text="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_UnsupportedChart, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;171;18" />
+            </Grid>
+        </dx:DXBorder>
+    </DataTemplate>
+    <DataTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=SlicerPresenterTemplate}">
+        <dx:DXBorder BorderBrush="Red" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;176;10">
+            <Grid Background="White" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;177;14">
+                <TextBlock Margin="10,10,10,10" TextWrapping="Wrap" FontSize="14" Text="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_Slicer, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;178;18" />
+            </Grid>
+        </dx:DXBorder>
+    </DataTemplate>
+
+    <ControlTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=FormatBorderControlTemplate}" TargetType="{x:Type dxspsi:FormatBorderControl}">
+        <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;184;10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;194;14">
+                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;195;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <ToggleButton Grid.Row="0" Width="25" Height="25" Margin="0,0,8,0" Padding="0" VerticalAlignment="Top" IsChecked="{Binding ShowTopBorder, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_FormatBorderControlTop, Converter={StaticResource stringIdConverter}}" TabIndex="7" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;201;22">
+                        <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/BorderTop_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;202;26" />
+                    </ToggleButton>
+                    <ToggleButton Grid.Row="1" Width="25" Height="25" Margin="0,0,8,0" Padding="0" VerticalAlignment="Center" IsChecked="{Binding ShowHorizontalInsideBorder, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" IsEnabled="{Binding EnableHorizontalBorderCheckState, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_FormatBorderControlHorizontal, Converter={StaticResource stringIdConverter}}" TabIndex="11" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;204;22">
+                        <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/BorderInsideHorizontal_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;205;26" />
+                    </ToggleButton>
+                    <ToggleButton Grid.Row="2" Width="25" Height="25" Margin="0,0,8,0" Padding="0" VerticalAlignment="Bottom" IsChecked="{Binding ShowBottomBorder, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_FormatBorderControlBottom, Converter={StaticResource stringIdConverter}}" TabIndex="8" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;207;22">
+                        <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/BorderBottom_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;208;26" />
+                    </ToggleButton>
+                </Grid>
+            </Grid>
+            <dxspsi:FormatBorderPreviewControlContainer BorderBrush="LightGray" BorderThickness="1" Grid.Row="0" Grid.Column="1">
+                <dxspsi:FormatBorderPreviewControl IsTabStop="False" />
+            </dxspsi:FormatBorderPreviewControlContainer>
+            <ToggleButton Width="25" Height="25" Margin="0,8,0,0" Padding="0" HorizontalAlignment="Left" IsChecked="{Binding ShowDiagonalUpBorder, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" IsEnabled="{Binding EnableDiagonalBorderCheckState, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_FormatBorderControlDiagonalUp, Converter={StaticResource stringIdConverter}}" Grid.Row="2" Grid.Column="0" TabIndex="13" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;215;14">
+                <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/BorderDiagonalUp_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;216;18" />
+            </ToggleButton>
+            <Grid Grid.Row="2" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;218;14">
+                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;219;18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ToggleButton Grid.Column="0" Width="25" Height="25" Margin="0,8,0,0" Padding="0" HorizontalAlignment="Left" IsChecked="{Binding ShowLeftBorder, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_FormatBorderControlLeft, Converter={StaticResource stringIdConverter}}" TabIndex="6" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;225;22">
+                        <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/BorderLeft_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;226;26" />
+                    </ToggleButton>
+                    <ToggleButton Grid.Column="1" Width="25" Height="25" Margin="0,8,0,0" Padding="0" HorizontalAlignment="Center" IsChecked="{Binding ShowVerticalInsideBorder, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" IsEnabled="{Binding EnableVerticalBorderCheckState, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_FormatBorderControlVertical, Converter={StaticResource stringIdConverter}}" TabIndex="10" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;228;22">
+                        <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/BorderInsideVertical_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;229;26" />
+                    </ToggleButton>
+                    <ToggleButton Grid.Column="2" Width="25" Height="25" Margin="0,8,0,0" Padding="0" HorizontalAlignment="Right" IsChecked="{Binding ShowRightBorder, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_FormatBorderControlRight, Converter={StaticResource stringIdConverter}}" TabIndex="9" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;231;22">
+                        <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/BorderRight_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;232;26" />
+                    </ToggleButton>
+                </Grid>
+            </Grid>
+            <ToggleButton Width="25" Height="25" Margin="8,8,0,0" Padding="0" HorizontalAlignment="Right" IsChecked="{Binding ShowDiagonalDownBorder, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" IsEnabled="{Binding EnableDiagonalBorderCheckState, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_FormatBorderControlDiagonalDown, Converter={StaticResource stringIdConverter}}" Grid.Row="2" Grid.Column="2" TabIndex="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;236;14">
+                <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/BorderDiagonalDown_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;237;18" />
+            </ToggleButton>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=PageMarginsPreviewControlTemplate}" TargetType="{x:Type dxspsi:PageMarginsPreviewControl}">
+        <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;243;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;249;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid Margin="35,0,0,0" Grid.Row="0" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;261;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="0,3,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginTop, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;266;22" />
+                    <dxspsi:SpreadsheetSpinEdit x:Name="edtTopMargin" Width="60" Height="20" Margin="0,0,0,5" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Increment="0.1" IsTextEditable="False" MinValue="0" Value="{Binding TopMargin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginTop, Converter={StaticResource stringIdConverter}}" />
+                </Grid>
+                <Grid Margin="25,0,0,0" Grid.Row="0" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;269;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="0,3,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginHeader, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;274;22" />
+                    <dxspsi:SpreadsheetSpinEdit x:Name="edtHeaderMargin" Width="60" Height="20" Margin="0,0,0,5" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Increment="0.1" IsTextEditable="False" MinValue="0" Value="{Binding HeaderMargin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginHeader, Converter={StaticResource stringIdConverter}}" />
+                </Grid>
+                <Grid Margin="0,0,25,0" Grid.Row="1" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;277;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <StackPanel Margin="0,0,0,5" VerticalAlignment="Center" Orientation="Vertical" Grid.Row="0" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;285;22">
+                        <TextBlock Margin="0,3,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginLeft, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;286;26" />
+                        <dxspsi:SpreadsheetSpinEdit x:Name="edtLeftMargin" Width="60" Height="20" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" Increment="0.1" IsTextEditable="False" MinValue="0" Value="{Binding LeftMargin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginLeft, Converter={StaticResource stringIdConverter}}" />
+                    </StackPanel>
+                </Grid>
+                <Grid Grid.Row="1" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;290;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="130" />
+                    </Grid.RowDefinitions>
+                    <dxspsi:PageMarginsDrawingControlContainer x:Name="portraitOrientationContainer" BorderBrush="LightGray" BorderThickness="1" Width="100" Height="130" Grid.Row="0" Visibility="{Binding OrientationPortrait, Converter={StaticResource ResourceKey=BoolToVisibilityConverter}, ConverterParameter=HiddenOnFalse}">
+                        <dxspsi:PageMarginsDrawingControl />
+                    </dxspsi:PageMarginsDrawingControlContainer>
+                    <dxspsi:PageMarginsDrawingControlContainer x:Name="landscapeOrientationContainer" BorderBrush="LightGray" BorderThickness="1" Width="130" Height="100" Grid.Row="0" Visibility="{Binding OrientationPortrait, Converter={StaticResource InverseVisibilityConverter}}">
+                        <dxspsi:PageMarginsDrawingControl />
+                    </dxspsi:PageMarginsDrawingControlContainer>
+                </Grid>
+                <Grid Margin="25,0,0,0" Grid.Row="1" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;301;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <StackPanel Margin="0,0,0,5" VerticalAlignment="Center" Orientation="Vertical" Grid.Row="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;305;22">
+                        <TextBlock Margin="0,3,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginRight, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;306;26" />
+                        <dxspsi:SpreadsheetSpinEdit x:Name="edtRightMargin" Width="60" Height="20" HorizontalAlignment="Left" HorizontalContentAlignment="Left" VerticalAlignment="Center" Increment="0.1" IsTextEditable="False" MinValue="0" Value="{Binding RightMargin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginRight, Converter={StaticResource stringIdConverter}}" />
+                    </StackPanel>
+                </Grid>
+                <Grid Margin="35,0,0,0" Grid.Row="2" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;310;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="0,3,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginBottom, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;315;22" />
+                    <dxspsi:SpreadsheetSpinEdit x:Name="edtBottomMargin" Width="60" Height="20" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Increment="0.1" IsTextEditable="False" MinValue="0" Value="{Binding BottomMargin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginBottom, Converter={StaticResource stringIdConverter}}" />
+                </Grid>
+                <Grid Margin="25,0,0,0" Grid.Row="2" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;318;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <TextBlock Margin="0,3,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginFooter, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;323;22" />
+                    <dxspsi:SpreadsheetSpinEdit x:Name="edtFooterMargin" Width="60" Height="20" HorizontalAlignment="Left" HorizontalContentAlignment="Left" Increment="0.1" IsTextEditable="False" MinValue="0" Value="{Binding FooterMargin, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Grid.Row="1" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginFooter, Converter={StaticResource stringIdConverter}}" />
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;327;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <TextBlock Margin="0,3,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Text="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginCenterOnPage, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;332;18" />
+                <Separator Margin="10,3,0,0" VerticalAlignment="Center" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;333;18" />
+            </Grid>
+            <StackPanel Margin="10,0,0,0" Orientation="Vertical" Grid.Row="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;335;14">
+                <dxe:CheckEdit Content="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginHorizontally, Converter={StaticResource stringIdConverter}}" EditValue="{Binding CenterHorizontally, Mode=TwoWay}" IsEnabled="{Binding IsWorksheet}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;336;18" />
+                <dxe:CheckEdit Content="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormMarginVertically, Converter={StaticResource stringIdConverter}}" EditValue="{Binding CenterVertically, Mode=TwoWay}" IsEnabled="{Binding IsWorksheet}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;337;18" />
+            </StackPanel>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=HeaderFooterEditControlTemplate}" TargetType="{x:Type dxspsi:HeaderFooterEditControl}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;343;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;352;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Label dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;357;18">
+                    <TextBlock Text="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterDescription, Converter={StaticResource stringIdConverter}}" TextWrapping="Wrap" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;358;22" />
+                </Label>
+            </Grid>
+            <Grid Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;361;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Margin="0,3,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterLeftHeader, Converter={StaticResource stringIdConverter}}" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;367;18" />
+                <Label Margin="3,3,3,3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterCenterHeader, Converter={StaticResource stringIdConverter}}" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;368;18" />
+                <Label Margin="0,3,0,3" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterRightHeader, Converter={StaticResource stringIdConverter}}" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;369;18" />
+            </Grid>
+            <Grid Grid.Row="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;371;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <dxe:TextEdit x:Name="edtLeftHeader" Margin="0,3,0,3" VerticalContentAlignment="Top" AcceptsReturn="True" Text="{Binding LeftHeader, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxspsi:HeaderFooterEditControl}}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterLeftHeader, Converter={StaticResource stringIdConverter}}" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;377;18" />
+                <dxe:TextEdit x:Name="edtCenterHeader" Margin="3,3,3,3" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" AcceptsReturn="True" Text="{Binding CenterHeader, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxspsi:HeaderFooterEditControl}}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterCenterHeader, Converter={StaticResource stringIdConverter}}" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;378;18" />
+                <dxe:TextEdit x:Name="edtRightHeader" Margin="0,3,0,3" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" AcceptsReturn="True" Text="{Binding RightHeader, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxspsi:HeaderFooterEditControl}}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterRightHeader, Converter={StaticResource stringIdConverter}}" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;379;18" />
+            </Grid>
+            <Grid Grid.Row="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;381;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <Button x:Name="btnPage" Width="30" Height="25" Margin="85,3,3,3" Padding="0" ToolTip="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterInsertPageNumber, Converter={StaticResource stringIdConverter}}" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;393;18">
+                    <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/InsertPageNumber_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;394;22" />
+                </Button>
+                <Button x:Name="btnPages" Width="30" Height="25" Margin="3,3,3,3" Padding="0" ToolTip="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterInsertNumberOfPages, Converter={StaticResource stringIdConverter}}" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;396;18">
+                    <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/InsertPageCount_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;397;22" />
+                </Button>
+                <Button x:Name="btnDate" Width="30" Height="25" Margin="30,3,3,3" Padding="0" ToolTip="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterInsertDate, Converter={StaticResource stringIdConverter}}" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;399;18">
+                    <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/InsertDate_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;400;22" />
+                </Button>
+                <Button x:Name="btnTime" Width="30" Height="25" Margin="3,3,3,3" Padding="0" ToolTip="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterInsertTime, Converter={StaticResource stringIdConverter}}" Grid.Column="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;402;18">
+                    <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/FormatNumberTime_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;403;22" />
+                </Button>
+                <Button x:Name="btnFilePath" Width="30" Height="25" Margin="30,3,3,3" Padding="0" ToolTip="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterInsertFilePath, Converter={StaticResource stringIdConverter}}" Grid.Column="4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;405;18">
+                    <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/InsertFilePath_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;406;22" />
+                </Button>
+                <Button x:Name="btnFileName" Width="30" Height="25" Margin="3,3,3,3" Padding="0" ToolTip="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterInsertFileName, Converter={StaticResource stringIdConverter}}" Grid.Column="5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;408;18">
+                    <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/InsertFileName_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;409;22" />
+                </Button>
+                <Button x:Name="btnSheetName" Width="30" Height="25" Margin="3,3,0,3" Padding="0" ToolTip="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterInsertSheetName, Converter={StaticResource stringIdConverter}}" Grid.Column="6" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;411;18">
+                    <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/SingleSheet_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;412;22" />
+                </Button>
+                <Button x:Name="btnInsertPicture" Width="30" Height="25" Margin="30,3,0,3" Padding="0" ToolTip="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterInsertPicture, Converter={StaticResource stringIdConverter}}" Grid.Column="7" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;414;18">
+                    <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/ImportImage_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;415;22" />
+                </Button>
+                <Button x:Name="btnFormatPicture" Width="30" Height="25" Margin="3,3,0,3" Padding="0" ToolTip="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterFormatPicture, Converter={StaticResource stringIdConverter}}" Grid.Column="8" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;417;18">
+                    <Image Stretch="None" Source="/DevExpress.Xpf.Spreadsheet.v17.2;component/Images/Image_16x16.png" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;418;22" />
+                </Button>
+            </Grid>
+            <Grid Grid.Row="4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;421;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <Label Margin="0,3,0,3" HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterLeftFooter, Converter={StaticResource stringIdConverter}}" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;427;18" />
+                <Label Margin="0,3,0,3" HorizontalAlignment="Center" VerticalAlignment="Center" Content="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterCenterFooter, Converter={StaticResource stringIdConverter}}" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;428;18" />
+                <Label Margin="0,3,0,3" HorizontalAlignment="Right" VerticalAlignment="Center" Content="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterRightFooter, Converter={StaticResource stringIdConverter}}" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;429;18" />
+            </Grid>
+            <Grid Grid.Row="5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;431;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <dxe:TextEdit x:Name="edtLeftFooter" Margin="0,3,3,0" VerticalContentAlignment="Top" AcceptsReturn="True" Text="{Binding LeftFooter, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxspsi:HeaderFooterEditControl}}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterLeftFooter, Converter={StaticResource stringIdConverter}}" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;437;18" />
+                <dxe:TextEdit x:Name="edtCenterFooter" Margin="3,3,3,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" AcceptsReturn="True" Text="{Binding CenterFooter, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxspsi:HeaderFooterEditControl}}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterCenterFooter, Converter={StaticResource stringIdConverter}}" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;438;18" />
+                <dxe:TextEdit x:Name="edtRightFooter" Margin="3,3,0,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" AcceptsReturn="True" Text="{Binding RightFooter, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxspsi:HeaderFooterEditControl}}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" AutomationProperties.Name="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_HeaderFooterRightFooter, Converter={StaticResource stringIdConverter}}" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;439;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=HeaderFooterPreviewControlTemplate}" TargetType="{x:Type dxspsi:HeaderFooterPreviewControl}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;445;10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition />
+                <ColumnDefinition />
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <dxe:TextEdit Margin="0,3,3,0" VerticalContentAlignment="Top" AcceptsReturn="True" IsReadOnly="True" Text="{Binding HeaderFooterLeftValue, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxspsi:HeaderFooterPreviewControl}}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;451;14" />
+            <dxe:TextEdit Margin="3,3,3,0" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" AcceptsReturn="True" IsReadOnly="True" Text="{Binding HeaderFooterCenterValue, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxspsi:HeaderFooterPreviewControl}}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;452;14" />
+            <dxe:TextEdit Margin="3,3,0,0" HorizontalContentAlignment="Right" VerticalContentAlignment="Top" AcceptsReturn="True" IsReadOnly="True" Text="{Binding HeaderFooterRightValue, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxspsi:HeaderFooterPreviewControl}}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" TextWrapping="Wrap" Grid.Column="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;453;14" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=PageSetupPrintButtonsControlTemplate}" TargetType="{x:Type dxspsi:PageSetupPrintButtonsControl}">
+        <StackPanel Height="Auto" HorizontalAlignment="Right" VerticalAlignment="Bottom" Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;458;10">
+            <Button x:Name="btnPrint" MinWidth="60" Margin="0,0,0,0" Content="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormPagePrint, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;459;14" />
+            <Button x:Name="btnPrintPreview" MinWidth="60" Margin="10,0,0,0" Content="{Binding Source={StaticResource stringIdConverter}, ConverterParameter=Caption_PageSetupFormPagePrintPreview, Converter={StaticResource stringIdConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;460;14" />
+        </StackPanel>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{themes:SpreadsheetThemeKey ResourceKey=GroupControlTemplate}" TargetType="{x:Type dxspsi:WorksheetGroupControl}">
+        <dxspsi:GroupPanel LayoutInfo="{Binding Path=(dxspsi:SpreadsheetViewControl.ActiveSpreadsheetView).LayoutInfo, RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;465;10" />
+    </ControlTemplate>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.FormatBorderControl}" TargetType="{x:Type dxspsi:FormatBorderControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;468;6" /><Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=FormatBorderControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.PageMarginsPreviewControl}" TargetType="{x:Type dxspsi:PageMarginsPreviewControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;472;6" /><Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=PageMarginsPreviewControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.HeaderFooterEditControl}" TargetType="{x:Type dxspsi:HeaderFooterEditControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;476;6" /><Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=HeaderFooterEditControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.HeaderFooterPreviewControl}" TargetType="{x:Type dxspsi:HeaderFooterPreviewControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;480;6" /><Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=HeaderFooterPreviewControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.PageSetupPrintButtonsControl}" TargetType="{x:Type dxspsi:PageSetupPrintButtonsControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;484;6" /><Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=PageSetupPrintButtonsControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.SpreadsheetFormulaBarControl}" TargetType="{x:Type dxsps:SpreadsheetFormulaBarControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;488;6" /><Setter Property="Focusable" Value="False" />
+        <Setter Property="MinHeight" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=FormulaBarControlMinHeight}}" />
+        <Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=FormulaBarControlTemplate}}" />
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="MinHeight" Value="44" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.CellControl}" TargetType="{x:Type dxspsi:CellControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;499;6" /><Setter Property="Focusable" Value="False" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.VisualFeedbackControl}" TargetType="{x:Type dxspsi:VisualFeedbackControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;502;6" /><Setter Property="LineBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=VisualFeedbackLineBrush}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.WorksheetBackgroundControl}" TargetType="{x:Type dxspsi:WorksheetBackgroundControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;505;6" /><Setter Property="Focusable" Value="False" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.ChartsheetBackgroundControl}" TargetType="{x:Type dxspsi:ChartsheetBackgroundControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;508;6" /><Setter Property="Focusable" Value="False" />
+        <Setter Property="Background" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=SpreadsheetBackgroundBrush}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.WorksheetLineControl}" TargetType="{x:Type dxspsi:WorksheetLineControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;512;6" /><Setter Property="Focusable" Value="False" />
+        <Setter Property="FrozenSeparatorBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=FrozenSeparatorBrush}}" />
+        <Setter Property="GridLinesColor" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GridLinesColor}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.CellPresenter}" TargetType="{x:Type dxspsi:CellPresenter}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;518;6" /><Setter Property="ToolTip" Value="{Binding CellToolTip, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="ToolTipService.IsEnabled" Value="{Binding ShowCellToolTip, RelativeSource={RelativeSource Self}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.TabSelectorItem}" TargetType="{x:Type dxspsi:TabSelectorItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;522;6" /><Setter Property="IsTabStop" Value="False" />
+    </Style>
+    <Style x:Key="{themes:SpreadsheetThemeKey ResourceKey=HorizontalHeadersControlStyle}" TargetType="{x:Type dxspsi:WorksheetHeadersControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;525;6" /><Setter Property="ItemTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=HorizontalHeaderItem}}" />
+    </Style>
+
+    <Style x:Key="{themes:SpreadsheetThemeKey ResourceKey=VerticalHeadersControlStyle}" TargetType="{x:Type dxspsi:WorksheetHeadersControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;529;6" /><Setter Property="ItemTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=VerticalHeaderItem}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.WorksheetHeadersControl}" TargetType="{x:Type dxspsi:WorksheetHeadersControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;533;6" /><Setter Property="Focusable" Value="False" />
+        <Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=HeadersControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.WorksheetGroupControl}" TargetType="{x:Type dxspsi:WorksheetGroupControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;538;6" /><Setter Property="Focusable" Value="False" />
+        <Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GroupControlTemplate}}" />
+    </Style>
+    <Style x:Key="{themes:SpreadsheetThemeKey ResourceKey=GroupControlStyle}" TargetType="{x:Type dxspsi:WorksheetGroupControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;542;6" /><Setter Property="ButtonTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GroupButtonTemplate}}" />
+        <Setter Property="DotBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GroupDotBrush}}" />
+        <Setter Property="DotThickness" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GroupDotThickness}}" />
+        <Setter Property="HeaderTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GroupHeaderTemplate}}" />
+        <Setter Property="LineBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GroupLineBrush}}" />
+        <Setter Property="LineThickness" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GroupLineThickness}}" />
+    </Style>
+
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.SpreadsheetTabSelector}" TargetType="{x:Type dxspsi:SpreadsheetTabSelector}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;552;6" /><Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=TabSelectorTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.WorksheetControl}" TargetType="{x:Type dxspsi:WorksheetControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;557;6" /><Setter Property="CellTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=CellControlContentTemplate}}" />
+        <Setter Property="ConditionalFormattingDataBarTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=ConditionalFormattingDataBarCellTemplate}}" />
+        <Setter Property="ConditionalFormattingIconTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=ConditionalFormattingIconCellTemplate}}" />
+        <Setter Property="HeaderHeight" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=DefaultHeaderHeight}}" />
+        <Setter Property="HeaderWidth" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=DefaultHeaderWidth}}" />
+        <Setter Property="IsManipulationEnabled" Value="True" />
+        <Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=WorksheetTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.FloatingObjectsContainer}" TargetType="{x:Type dxspsi:FloatingObjectsContainer}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;567;6" /><Setter Property="UnsupportedChartTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=UnsupportedChartPresenterTemplate}}" />
+        <Setter Property="SlicerTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=SlicerPresenterTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.SpreadsheetViewControl}" TargetType="{x:Type dxspsi:SpreadsheetViewControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;572;6" /><Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=ViewControlTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.SpreadsheetControl}" TargetType="{x:Type dxsps:SpreadsheetControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;576;6" /><Setter Property="Background" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=SpreadsheetBackgroundBrush}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=SpreadsheetForegroundBrush}}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=SpreadsheetBorderBrush}}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=SpreadsheetBorderThickness}}" />
+
+        <Setter Property="CellToolTip">
+            <Setter.Value>
+                <dxmvvm:ValueFactory>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Cell.DisplayText}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;586;26" />
+                    </DataTemplate>
+                </dxmvvm:ValueFactory>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Focusable" Value="True" />
+        <Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=Template}}" />
+        <Style.Triggers>
+            <Trigger Property="IsEnabled" Value="False">
+                <Trigger.Setters>
+                    <Setter Property="Opacity" Value="0.65" />
+                </Trigger.Setters>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.SpreadsheetDefaultBarItemDataTemplates}" TargetType="{x:Type dxsps:SpreadsheetDefaultBarItemDataTemplates}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;603;6" /><Setter Property="ChartLayoutGalleryGroupTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="dxb:GalleryItemGroup">
+                    <ContentControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;607;22">
+                        <dxb:GalleryItemGroup Caption="{Binding Caption}" ItemsSource="{Binding Items}">
+                            <dxb:GalleryItemGroup.ItemTemplate>
+                                <DataTemplate>
+                                    <dxb:GalleryItem Glyph="{Binding Image}" Hint="{Binding Hint}" AutomationProperties.Name="{Binding Hint}" />
+                                </DataTemplate>
+                            </dxb:GalleryItemGroup.ItemTemplate>
+                        </dxb:GalleryItemGroup>
+                    </ContentControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ChartStylesGalleryGroupTemplate">
+            <Setter.Value>
+                <DataTemplate DataType="dxb:GalleryItemGroup">
+                    <ContentControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;622;22">
+                        <dxb:GalleryItemGroup Caption="{Binding Caption}" ItemsSource="{Binding Items}">
+                            <dxb:GalleryItemGroup.ItemTemplate>
+                                <DataTemplate>
+                                    <dxb:GalleryItem Glyph="{Binding Image}" Hint="{Binding Hint}" AutomationProperties.Name="{Binding Hint}" />
+                                </DataTemplate>
+                            </dxb:GalleryItemGroup.ItemTemplate>
+                        </dxb:GalleryItemGroup>
+                    </ContentControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="StyleGalleryGroupTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <dxb:GalleryItemGroup Caption="{Binding Caption}" ItemsSource="{Binding Items}">
+                        <dxb:GalleryItemGroup.ItemTemplate>
+                            <DataTemplate>
+                                <dxb:GalleryItem Caption="{Binding}" AutomationProperties.Name="{Binding Text}" />
+                            </DataTemplate>
+                        </dxb:GalleryItemGroup.ItemTemplate>
+                    </dxb:GalleryItemGroup>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CellStyleGalleryItemCaptionTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Width="100" Height="22" Background="{Binding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;650;22">
+                        <TextBlock Text="{Binding Text}" FontFamily="{Binding TextSettings.FontFamily}" FontSize="{Binding TextSettings.FontSize}" FontStyle="{Binding TextSettings.FontStyle}" FontWeight="{Binding TextSettings.FontWeight}" Foreground="{Binding TextSettings.Foreground}" TextDecorations="{Binding TextSettings.TextDecorations}" TextWrapping="{Binding TextSettings.TextWrapping}" TextTrimming="{Binding TextSettings.TextTrimming}" HorizontalAlignment="{Binding TextSettings.HorizontalAlignment}" Padding="4" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;651;26" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="StyleGalleryHintCaptionTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Text}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;659;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="TableStyleGalleryItemCaptionTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Width="61" Height="46" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;666;22">
+                        <dxspsui:TableStyleGalleryItem Spreadsheet="{Binding Spreadsheet}" StyleName="{Binding StyleName}" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="PivotTableStyleGalleryItemCaptionTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Width="61" Height="46" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;675;22">
+                        <dxspsui:PivotTableStyleGalleryItem Spreadsheet="{Binding Spreadsheet}" StyleName="{Binding StyleName}" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="CheckEditTemplate" Value="{Binding OfficeDefaultBarItemDataTemplates.CheckEditTemplate, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="MarginBarItemContentTemplate" Value="{Binding OfficeDefaultBarItemDataTemplates.MarginBarItemContentTemplate, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="PaperKindBarItemContentTemplate" Value="{Binding OfficeDefaultBarItemDataTemplates.PaperKindBarItemContentTemplate, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="Template" Value="{Binding OfficeDefaultBarItemDataTemplates.Template, RelativeSource={RelativeSource Self}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.WorksheetIndicatorControl}" TargetType="{x:Type dxspsi:WorksheetIndicatorControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;687;6" /><Setter Property="CommentIndicatorBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=CommentIndicatorBrush}}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IndicatorWidth" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=IndicatorWidth}}" />
+        <Setter Property="NumberIndicatorBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=NumberIndicatorBrush}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.WorksheetCommentPanel}" TargetType="{x:Type dxspsi:WorksheetCommentPanel}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;693;6" /><Setter Property="CommentLineBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=CommentLineBrush}}" />
+        <Setter Property="CommentLineWidth" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=CommentLineWidth}}" />
+        <Setter Property="Focusable" Value="False" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.CommentItem}" TargetType="{x:Type dxspsi:CommentItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;698;6" /><Setter Property="Focusable" Value="False" />
+        <Setter Property="IsReadOnly" Value="True" />
+        <Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=CommentTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.XpfCommentInplaceEditor}" TargetType="{x:Type dxspsi:XpfCommentInplaceEditor}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;703;6" /><Setter Property="Focusable" Value="True" />
+        <Setter Property="IsReadOnly" Value="False" />
+        <Setter Property="Template" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=CommentTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.WorksheetDataValidationPanel}" TargetType="{x:Type dxspsi:WorksheetDataValidationPanel}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;709;6" /><Setter Property="DataValidationBackgroundBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=AutoFilterBackgroundBrush}}" />
+        <Setter Property="DataValidationBorderColor" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=GridLinesColor}}" />
+        <Setter Property="DataValidationCircleBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=DataValidationCircleBrush}}" />
+        <Setter Property="DataValidationCircleWidth" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=DataValidationCircleWidth}}" />
+        <Setter Property="DataValidationMessageBackgroudBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=DataValidationMessageBackgroudBrush}}" />
+        <Setter Property="DataValidationMessageBorderBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=DataValidationMessageBorderBrush}}" />
+        <Setter Property="DataValidationMessageBorderWidth" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=DataValidationMessageBorderWidth}}" />
+        <Setter Property="DataValidationMessageForeBrush" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=DataValidationMessageForeBrush}}" />
+        <Setter Property="Focusable" Value="True" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.ReferenceEdit}" TargetType="{x:Type dxspsi:ReferenceEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ButtonEdit}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;720;6" /><Setter Property="AllowDefaultButton" Value="False" />
+        <Setter Property="CollapseButtonTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=ReferenceEditCollapseButtonTemplate}}" />
+        <Setter Property="ExpandButtonTemplate" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=ReferenceEditExpandButtonTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.UI.SpreadsheetChangeNumberFormatComboBoxEdit}" TargetType="{x:Type dxspsui:SpreadsheetChangeNumberFormatComboBoxEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.ComboBoxEdit}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;725;6" /><Setter Property="IsTextEditable" Value="False" />
+        <Setter Property="PopupMaxHeight" Value="1000" />
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <StackPanel Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;731;22">
+                        <Image Source="{Binding Image}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;732;26" />
+                        <StackPanel Orientation="Vertical" Margin="7,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;733;26">
+                            <TextBlock Text="{Binding Caption}" FontWeight="Bold" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;734;30" />
+                            <TextBlock Text="{Binding Description}" Margin="0,0,0,3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;735;30" />
+                        </StackPanel>
+                    </StackPanel>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.Internal.SpreadsheetPopupColorEdit}" TargetType="{x:Type dxspsi:SpreadsheetPopupColorEdit}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.PopupColorEdit}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;743;6" /><Setter Property="Height" Value="20" />
+        <Setter Property="IsTextEditable" Value="False" />
+        <Setter Property="DisplayTextConverter" Value="{StaticResource ColorToStringConverter}" />
+        <Setter Property="EditNonEditableTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="3,2,0,2" Height="{Binding Path=(dxee:BaseEdit.OwnerEdit).Height, RelativeSource={RelativeSource Self}}" Width="{Binding Path=(dxee:BaseEdit.OwnerEdit).Width, RelativeSource={RelativeSource Self}}" Fill="{Binding Path=(dxee:BaseEdit.OwnerEdit).Color, Converter={StaticResource ColorToBrushConverter}, RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;750;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.UI.CellStyleGalleryBarItemLinkControl}" TargetType="{x:Type dxspsui:CellStyleGalleryBarItemLinkControl}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonGalleryBarItemLinkControl}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;756;6" /><Setter Property="Height" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=CellStyleGalleryBarItemHeight}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.UI.TableStyleGalleryBarItemLinkControl}" TargetType="{x:Type dxspsui:TableStyleGalleryBarItemLinkControl}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonGalleryBarItemLinkControl}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;759;6" /><Setter Property="Height" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=TableStyleGalleryBarItemHeight}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.UI.ChartLayoutGalleryBarItemLinkControl}" TargetType="{x:Type dxspsui:ChartLayoutGalleryBarItemLinkControl}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonGalleryBarItemLinkControl}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;762;6" /><Setter Property="Height" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=ChartLayoutGalleryBarItemHeight}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Spreadsheet.UI.ChartStyleGalleryBarItemLinkControl}" TargetType="{x:Type dxspsui:ChartStyleGalleryBarItemLinkControl}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Ribbon.RibbonGalleryBarItemLinkControl}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Spreadsheet\Generic\DefaultStyles.xaml;765;6" /><Setter Property="Height" Value="{DynamicResource {themes:SpreadsheetThemeKey ResourceKey=ChartStyleGalleryBarItemHeight}}" />
+    </Style>
+</ResourceDictionary>

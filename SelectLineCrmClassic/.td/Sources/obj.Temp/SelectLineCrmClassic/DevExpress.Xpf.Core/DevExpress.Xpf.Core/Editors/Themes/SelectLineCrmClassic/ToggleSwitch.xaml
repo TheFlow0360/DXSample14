@@ -1,0 +1,124 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <sys:Double x:Key="{dxet:ToggleSwitchThemeKey ResourceKey=ToggleSwitchWidth}">48</sys:Double>
+    <sys:Double x:Key="{dxet:ToggleSwitchThemeKey ResourceKey=ToggleSwitchHeight}">22</sys:Double>
+    <sys:Double x:Key="{dxet:ToggleSwitchThemeKey ResourceKey=DisabledStateOpacity}">0.35</sys:Double>
+    <Thickness x:Key="OutsideNearContentMargin">0,0,5,0</Thickness>
+    <Thickness x:Key="InsideNearContentMargin">5,0,0,0</Thickness>
+    <Thickness x:Key="OutsideFarContentMargin">5,0,0,0</Thickness>
+    <Thickness x:Key="InsideFarContentMargin">0,0,5,0</Thickness>
+    
+    <dxcn:RenderTemplate x:Key="{dxet:ToggleSwitchThemeKey ResourceKey=SwitchBorderTemplate}">
+        <dxcn:RenderBorder Name="IsDefault" Background="#FFFFFFFF" BorderBrush="#FFACACAC" BorderThickness="1" cs:Name="RenderBorder_0002" cs:id="RenderBorder_0001" ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Office2016White\ToggleSwitch.xaml;11;10">
+            <dxcn:RenderBorder Name="Indicator" Background="#00000000" Margin="2" cs:Name="RenderBorder_0003" cs:id="RenderBorder_0000" ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Office2016White\ToggleSwitch.xaml;12;14" />
+        </dxcn:RenderBorder>
+        <dxcn:RenderTemplate.Triggers>
+            <dxcn:RenderStateGroup Name="VisualStates">
+                <dxcn:RenderStateTrigger Name="Normal" />
+                <dxcn:RenderStateTrigger Name="MouseOver" />
+            </dxcn:RenderStateGroup>
+            <dxcn:RenderTrigger DependencyProperty="{x:Static ButtonBase.IsPressedProperty}" ValueSource="TemplatedParent" Value="True" />
+            <dxcn:RenderTrigger DependencyProperty="{x:Static dxe:ToggleSwitch.IsCheckedProperty}" ValueSource="TemplatedParent" Value="True">
+                <dxcn:RenderSetter TargetName="IsDefault" Property="Background" Value="#FFFFFFFF" cs:Name="RenderSetter_0001" cs:id="RenderSetter_0000" />
+                <dxcn:RenderSetter TargetName="Indicator" Property="Background" Value="#1F0072C6" cs:Name="RenderSetter_0002" cs:id="RenderSetter_0001" />
+            </dxcn:RenderTrigger>
+            <dxcn:RenderTrigger DependencyProperty="{x:Static dx:ThemeManager.IsTouchEnabledProperty}" ValueSource="TemplatedParent" Value="True">
+                <dxcn:RenderSetter TargetName="Indicator" Property="Margin" Value="4" />
+            </dxcn:RenderTrigger>
+            <dxcn:RenderTrigger DependencyProperty="{x:Static dxe:ToggleSwitch.IsFocusedProperty}" ValueSource="TemplatedParent" Value="True">
+                <dxcn:RenderSetter TargetName="IsDefault" Property="BorderBrush" Value="#FF0072C6" cs:Name="RenderSetter_0004" cs:id="RenderSetter_0002" />
+            </dxcn:RenderTrigger>
+        </dxcn:RenderTemplate.Triggers>
+    </dxcn:RenderTemplate>
+    
+    <dxcn:RenderTemplate x:Key="{dxet:ToggleSwitchThemeKey ResourceKey=SwitchThumbTemplate}">
+        <dxcn:RenderBorder Name="IsDefault" Background="#FF444444" Width="10" Margin="3" cs:Name="RenderBorder_0004" cs:id="RenderBorder_0000" ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Office2016White\ToggleSwitch.xaml;34;10" />
+        <dxcn:RenderTemplate.Triggers>
+            <dxcn:RenderStateGroup Name="VisualStates">
+                <dxcn:RenderStateTrigger Name="Normal" />
+                <dxcn:RenderStateTrigger Name="MouseOver" />
+            </dxcn:RenderStateGroup>
+            <dxcn:RenderTrigger DependencyProperty="{x:Static dxe:ToggleSwitch.IsCheckedProperty}" ValueSource="TemplatedParent" Value="True">
+                <dxcn:RenderSetter TargetName="IsDefault" Property="Background" Value="#FFAA1948" cs:Name="RenderSetter_0003" cs:id="RenderSetter_0000" />
+            </dxcn:RenderTrigger>
+            <dxcn:RenderTrigger DependencyProperty="{x:Static dxe:ToggleSwitch.IsCheckedProperty}" ValueSource="TemplatedParent" Value="{x:Null}" />
+            <dxcn:RenderTrigger DependencyProperty="{x:Static ButtonBase.IsPressedProperty}" ValueSource="TemplatedParent" Value="True" />
+            <dxcn:RenderTrigger DependencyProperty="{x:Static dx:ThemeManager.IsTouchEnabledProperty}" ValueSource="TemplatedParent" Value="True">
+                <dxcn:RenderSetter TargetName="IsDefault" Property="Width" Value="20" />
+                <dxcn:RenderSetter TargetName="IsDefault" Property="Height" Value="32" />
+                <dxcn:RenderSetter TargetName="IsDefault" Property="Margin" Value="6" />
+            </dxcn:RenderTrigger>
+        </dxcn:RenderTemplate.Triggers>
+    </dxcn:RenderTemplate>
+    
+    <dxcn:RenderTemplate x:Key="{dxet:ToggleSwitchThemeKey ResourceKey=CheckedStateContentTemplate}">
+        <dxcn:RenderPanel LayoutProvider="{dxcn:GridPanelLayoutProvider}" ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Office2016White\ToggleSwitch.xaml;54;10">
+            <dxcn:RenderTextBlock Name="TextBlock" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Office2016White\ToggleSwitch.xaml;55;14" />
+        </dxcn:RenderPanel>
+        <dxcn:RenderTemplate.Triggers>
+            <dxcn:RenderBinding ValueSource="DataContext" TargetName="TextBlock" TargetProperty="Text" />
+            <dxcn:RenderTrigger ValueSource="TemplatedParent" DependencyProperty="{x:Static dxe:ToggleSwitch.ContentPlacementProperty}" Value="Near">
+                <dxcn:RenderSetter Property="HorizontalAlignment" TargetName="TextBlock" Value="Left" />
+                <dxcn:RenderSetter Property="Margin" TargetName="TextBlock" Value="{StaticResource OutsideNearContentMargin}" />
+                <dxcn:RenderSetter TargetName="TextBlock" Property="Foreground" Value="#FF3C3C3C" cs:Name="RenderSetter_0005" cs:id="RenderSetter_0000" />
+            </dxcn:RenderTrigger>
+            <dxcn:RenderTrigger ValueSource="TemplatedParent" DependencyProperty="{x:Static dxe:ToggleSwitch.ContentPlacementProperty}" Value="Far">
+                <dxcn:RenderSetter Property="HorizontalAlignment" TargetName="TextBlock" Value="Right" />
+                <dxcn:RenderSetter Property="Margin" TargetName="TextBlock" Value="{StaticResource OutsideFarContentMargin}" />
+                <dxcn:RenderSetter TargetName="TextBlock" Property="Foreground" Value="#FF3C3C3C" cs:Name="RenderSetter_0006" cs:id="RenderSetter_0001" />
+            </dxcn:RenderTrigger>
+            <dxcn:RenderTrigger ValueSource="TemplatedParent" DependencyProperty="{x:Static dxe:ToggleSwitch.ContentPlacementProperty}" Value="Both">
+                <dxcn:RenderSetter Property="HorizontalAlignment" TargetName="TextBlock" Value="Right" />
+                <dxcn:RenderSetter Property="Margin" TargetName="TextBlock" Value="{StaticResource OutsideFarContentMargin}" />
+                <dxcn:RenderSetter TargetName="TextBlock" Property="Foreground" Value="#FF3C3C3C" cs:Name="RenderSetter_0007" cs:id="RenderSetter_0002" />
+            </dxcn:RenderTrigger>
+            <dxcn:RenderTrigger ValueSource="TemplatedParent" DependencyProperty="{x:Static dxe:ToggleSwitch.ContentPlacementProperty}" Value="Inside">
+                <dxcn:RenderSetter Property="HorizontalAlignment" TargetName="TextBlock" Value="Left" />
+                <dxcn:RenderSetter Property="Margin" TargetName="TextBlock" Value="{StaticResource InsideNearContentMargin}" />
+                <dxcn:RenderSetter TargetName="TextBlock" Property="Foreground" Value="#FF3C3C3C" cs:Name="RenderSetter_0008" cs:id="RenderSetter_0003" />
+            </dxcn:RenderTrigger>
+            <dxcn:MultiRenderTrigger>
+                <dxcn:MultiRenderTrigger.Conditions>
+                    <dxcn:RenderCondition ValueSource="TemplatedParent" DependencyProperty="{x:Static dxe:ToggleSwitch.ContentPlacementProperty}" Value="Inside" />
+                    <dxcn:RenderCondition ValueSource="TemplatedParent" DependencyProperty="{x:Static ToggleButton.IsCheckedProperty}" Value="{x:Null}" />
+                </dxcn:MultiRenderTrigger.Conditions>
+                <dxcn:RenderSetter Property="Margin" TargetName="TextBlock" Value="{StaticResource InsideFarContentMargin}" />
+            </dxcn:MultiRenderTrigger>
+        </dxcn:RenderTemplate.Triggers>
+    </dxcn:RenderTemplate>
+    
+    <dxcn:RenderTemplate x:Key="{dxet:ToggleSwitchThemeKey ResourceKey=UncheckedStateContentTemplate}">
+        <dxcn:RenderPanel LayoutProvider="{dxcn:GridPanelLayoutProvider}" ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Office2016White\ToggleSwitch.xaml;90;10">
+            <dxcn:RenderTextBlock Name="TextBlock" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Office2016White\ToggleSwitch.xaml;91;14" />
+        </dxcn:RenderPanel>
+        <dxcn:RenderTemplate.Triggers>
+            <dxcn:RenderBinding ValueSource="DataContext" TargetName="TextBlock" TargetProperty="Text" />
+            <dxcn:RenderTrigger ValueSource="TemplatedParent" DependencyProperty="{x:Static dxe:ToggleSwitch.ContentPlacementProperty}" Value="Near">
+                <dxcn:RenderSetter Property="HorizontalAlignment" TargetName="TextBlock" Value="Left" />
+                <dxcn:RenderSetter Property="Margin" TargetName="TextBlock" Value="{StaticResource OutsideNearContentMargin}" />
+                <dxcn:RenderSetter TargetName="TextBlock" Property="Foreground" Value="#FF3C3C3C" cs:Name="RenderSetter_0009" cs:id="RenderSetter_0000" />
+            </dxcn:RenderTrigger>
+            <dxcn:RenderTrigger ValueSource="TemplatedParent" DependencyProperty="{x:Static dxe:ToggleSwitch.ContentPlacementProperty}" Value="Far">
+                <dxcn:RenderSetter Property="HorizontalAlignment" TargetName="TextBlock" Value="Right" />
+                <dxcn:RenderSetter Property="Margin" TargetName="TextBlock" Value="{StaticResource OutsideFarContentMargin}" />
+                <dxcn:RenderSetter TargetName="TextBlock" Property="Foreground" Value="#FF3C3C3C" cs:Name="RenderSetter_0010" cs:id="RenderSetter_0001" />
+            </dxcn:RenderTrigger>
+            <dxcn:RenderTrigger ValueSource="TemplatedParent" DependencyProperty="{x:Static dxe:ToggleSwitch.ContentPlacementProperty}" Value="Both">
+                <dxcn:RenderSetter Property="HorizontalAlignment" TargetName="TextBlock" Value="Left" />
+                <dxcn:RenderSetter Property="Margin" TargetName="TextBlock" Value="{StaticResource OutsideNearContentMargin}" />
+                <dxcn:RenderSetter TargetName="TextBlock" Property="Foreground" Value="#FF3C3C3C" cs:Name="RenderSetter_0011" cs:id="RenderSetter_0002" />
+            </dxcn:RenderTrigger>
+            <dxcn:RenderTrigger ValueSource="TemplatedParent" DependencyProperty="{x:Static dxe:ToggleSwitch.ContentPlacementProperty}" Value="Inside">
+                <dxcn:RenderSetter Property="HorizontalAlignment" TargetName="TextBlock" Value="Right" />
+                <dxcn:RenderSetter Property="Margin" TargetName="TextBlock" Value="{StaticResource InsideFarContentMargin}" />
+                <dxcn:RenderSetter TargetName="TextBlock" Property="Foreground" Value="#FF3C3C3C" cs:Name="RenderSetter_0012" cs:id="RenderSetter_0003" />
+            </dxcn:RenderTrigger>
+            <dxcn:MultiRenderTrigger>
+                <dxcn:MultiRenderTrigger.Conditions>
+                    <dxcn:RenderCondition ValueSource="TemplatedParent" DependencyProperty="{x:Static dxe:ToggleSwitch.ContentPlacementProperty}" Value="Inside" />
+                    <dxcn:RenderCondition ValueSource="TemplatedParent" DependencyProperty="{x:Static ToggleButton.IsCheckedProperty}" Value="{x:Null}" />
+                </dxcn:MultiRenderTrigger.Conditions>
+                <dxcn:RenderSetter Property="Margin" TargetName="TextBlock" Value="{StaticResource InsideNearContentMargin}" />
+            </dxcn:MultiRenderTrigger>
+        </dxcn:RenderTemplate.Triggers>
+    </dxcn:RenderTemplate>
+</ResourceDictionary>

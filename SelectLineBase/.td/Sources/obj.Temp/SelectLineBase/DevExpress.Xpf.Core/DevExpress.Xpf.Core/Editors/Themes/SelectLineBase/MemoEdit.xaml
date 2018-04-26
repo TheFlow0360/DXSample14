@@ -1,0 +1,10 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/MemoEdit.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <Style x:Key="{dxet:MemoEditThemeKey ResourceKey=MemoBackgroundStyle}" TargetType="Panel">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Office2016White\MemoEdit.xaml;7;6" /><Setter Property="Background" Value="#FFFFFFFF" cs:Name="Setter_0001" cs:id="Setter_0000" />
+    </Style>
+</ResourceDictionary>

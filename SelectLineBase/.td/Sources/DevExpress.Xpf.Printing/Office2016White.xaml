@@ -1,0 +1,10 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" mc:Ignorable="cs">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Printing/Office2016White/DocumentPreviewControl.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Printing/Office2016White/PreviewSurface.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Printing/Office2016White/PageBorderControl.xaml" />
+        <!--ONLY SL
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Printing/Office2016White/InfoPanel.xaml" core:Wpf2SLOptions.AllowProcessNode="False"/>
+        ONLY SL-->
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

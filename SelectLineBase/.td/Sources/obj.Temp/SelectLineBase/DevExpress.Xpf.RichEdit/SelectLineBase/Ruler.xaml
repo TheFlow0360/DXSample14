@@ -1,0 +1,199 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxrec="http://schemas.devexpress.com/winfx/2008/xaml/richedit/internal" xmlns:dxret="http://schemas.devexpress.com/winfx/2008/xaml/richedit/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.RichEdit/SelectLineBase/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=ActiveAreaControlTemplate}" TargetType="dxrec:RulerActiveAreaControl">
+        <dx:DXBorder Background="#FFFFFFFF" BorderBrush="#FFE2E2E2" BorderThickness="1" cs:Name="Border_0002" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;8;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=HorizontalSpaceAreaControlTemplate}" TargetType="dxrec:HorizontalRulerSpaceAreaControl">
+        <dx:DXBorder Background="{StaticResource RulerSpaceAreaBrush}" BorderBrush="{StaticResource RulerBorderBrush}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;11;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=VerticalSpaceAreaControlTemplate}" TargetType="dxrec:VerticalRulerSpaceAreaControl">
+        <dx:DXBorder Background="{StaticResource RulerSpaceAreaBrush}" BorderBrush="{StaticResource RulerBorderBrush}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;14;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=TickMarkControlTemplate}" TargetType="dxrec:RulerTickMarkControl">
+        <dx:DXBorder Background="{StaticResource RulerTickMarkBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;17;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=DefaultTabControlTemplate}" TargetType="dxrec:DefaultTabControl">
+        <dx:DXBorder Background="{StaticResource RulerDefaultTabMarkBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;20;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=DisabledHotZoneControlTemplate}" TargetType="dxrec:DisabledHotZoneControl">
+        <dx:DXBorder Background="#FF0072C6" Width="9" Height="7" cs:Name="Border_0003" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;23;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=LeftIndentHotZoneControlTemplate}" TargetType="dxrec:HorizontalHotZoneControl">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;26;10">
+            <Grid Height="7" Width="9" Visibility="{TemplateBinding EnabledVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;27;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 547,359L 551,355L 552,355L 556,359L 556,362L 547,362L 547,359 Z" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;28;18" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 548,359L 551,356L 552,356L 555,359L 555,361L 548,361L 548,359 Z" Margin="1" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;29;18" />
+            </Grid>
+            <Grid Height="7" Width="9" Visibility="{TemplateBinding DisabledVisibility}" Opacity="0.5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;31;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 547,359L 551,355L 552,355L 556,359L 556,362L 547,362L 547,359 Z" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;32;18" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 548,359L 551,356L 552,356L 555,359L 555,361L 548,361L 548,359 Z" Margin="1" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;33;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=FirstLineIndentHotZoneControlTemplate}" TargetType="dxrec:FirstLineIndentHotZoneControl">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;38;10">
+            <Grid Height="7" Width="9" Margin="0,3,0,0" Visibility="{TemplateBinding EnabledVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;39;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 572,353L 568,357L 567,357L 563,353L 563,350L 572,350L 572,353 Z" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;40;18" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 571,353L 568,356L 567,356L 564,353L 564,351L 571,351L 571,353 Z" Margin="1" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;41;18" />
+            </Grid>
+            <Grid Height="7" Width="9" Margin="0,3,0,0" Visibility="{TemplateBinding DisabledVisibility}" Opacity="0.5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;43;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 572,353L 568,357L 567,357L 563,353L 563,350L 572,350L 572,353 Z" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;44;18" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 571,353L 568,356L 567,356L 564,353L 564,351L 571,351L 571,353 Z" Margin="1" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;45;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=LeftIndentBottomHotZoneControlTemplate}" TargetType="dxrec:LeftIndentBottomHotZoneControl">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;50;10">
+            <Grid Height="6" Width="9" Visibility="{TemplateBinding EnabledVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;51;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 518,356L 527,356L 527,362L 518,362L 518,356 Z" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;52;18" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 519,356L 526,356L 526,361L 519,361L 519,356 Z" Margin="1,0,1,1" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;53;18" />
+            </Grid>
+            <Grid Height="6" Width="9" Opacity="0.5" Visibility="{TemplateBinding DisabledVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;55;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBorderBrush}" Data="F1 M 518,356L 527,356L 527,362L 518,362L 518,356 Z" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;56;18" />
+                <Path Stretch="Fill" Fill="{StaticResource RulerIndentHotZoneBackgroundBrush}" Data="F1 M 519,356L 526,356L 526,361L 519,361L 519,356 Z" Margin="1,0,1,1" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;57;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=RightTabHotZoneControlTemplate}" TargetType="dxrec:RightTabHotZoneControl">
+        <Grid HorizontalAlignment="Left" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;62;10">
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Visibility="{TemplateBinding EnabledVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;63;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 511,330L 513,330L 513,336L 508,336L 508,334L 511,334L 511,330 Z" Width="5" Height="6" VerticalAlignment="Bottom" HorizontalAlignment="Right" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;64;18" />
+            </Grid>
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Opacity="0.5" Visibility="{TemplateBinding DisabledVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;66;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 511,330L 513,330L 513,336L 508,336L 508,334L 511,334L 511,330 Z" Width="5" Height="6" VerticalAlignment="Bottom" HorizontalAlignment="Right" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;67;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=LeftTabHotZoneControlTemplate}" TargetType="dxrec:LeftTabHotZoneControl">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;72;10">
+            <Grid Height="8" Width="8" Margin="0,1,0,0" Visibility="{TemplateBinding EnabledVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;73;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 517,330L 515,330L 515,336L 520,336L 520,334L 517,334L 517,330 Z" Width="5" Height="6" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;74;18" />
+            </Grid>
+            <Grid Height="8" Width="8" Margin="0,1,0,0" Opacity="0.5" Visibility="{TemplateBinding DisabledVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;76;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 517,330L 515,330L 515,336L 520,336L 520,334L 517,334L 517,330 Z" Width="5" Height="6" HorizontalAlignment="Left" VerticalAlignment="Top" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;77;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=HorizontalTableHotZoneControlTemplate}" TargetType="dxrec:HorizontalTableHotZoneControl">
+        <dx:DXBorder Background="{StaticResource RulerSpaceAreaBrush}" BorderBrush="{StaticResource RulerBorderBrush}" BorderThickness="1" Padding="4,0,4,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;82;10">
+            <Grid Margin="0,2,0,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;83;14">
+                <Grid Visibility="{TemplateBinding EnabledVisibility}" Height="9" Width="7" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;84;18">
+                    <Rectangle Stretch="Fill" Fill="{StaticResource RulerTableHotZoneBackgroundBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;85;22" />
+                    <Path Stretch="Fill" Fill="{StaticResource RulerTableHotZoneBorderBrush}" Data="F1 M 66,139L 67,139L 67,148L 66,148L 66,139 Z M 68,139L 69,139L 69,148L 68,148L 68,139 Z M 70,139L 71,139L 71,148L 70,148L 70,139 Z" Margin="1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;86;22" />
+                    <Path Stretch="Fill" Fill="{StaticResource RulerTableHotZoneBorderBrush}" Data="F1 M 65,141L 72,141L 72,142L 65,142L 65,141 Z M 72,143L 72,144L 65,144L 65,143L 72,143 Z M 65,145L 72,145L 72,146L 65,146L 65,145 Z M 65,147L 72,147L 72,148L 65,148L 65,147 Z M 65,139L 72,139L 72,140L 65,140L 65,139 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;87;22" />
+                </Grid>
+                <Grid Visibility="{TemplateBinding DisabledVisibility}" Height="9" Width="7" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;89;18">
+                    <Rectangle Stretch="Fill" Fill="{StaticResource RulerTableHotZoneBackgroundBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;90;22" />
+                    <Path Stretch="Fill" Fill="{StaticResource RulerTableHotZoneBorderBrush}" Data="F1 M 66,139L 67,139L 67,148L 66,148L 66,139 Z M 68,139L 69,139L 69,148L 68,148L 68,139 Z M 70,139L 71,139L 71,148L 70,148L 70,139 Z" Margin="1,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;91;22" />
+                    <Path Stretch="Fill" Fill="{StaticResource RulerTableHotZoneBorderBrush}" Data="F1 M 65,141L 72,141L 72,142L 65,142L 65,141 Z M 72,143L 72,144L 65,144L 65,143L 72,143 Z M 65,145L 72,145L 72,146L 65,146L 65,145 Z M 65,147L 72,147L 72,148L 65,148L 65,147 Z M 65,139L 72,139L 72,140L 65,140L 65,139 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;92;22" />
+                </Grid>
+            </Grid>
+        </dx:DXBorder>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=CenterTabHotZoneControlTemplate}" TargetType="dxrec:CenterTabHotZoneControl">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;98;10">
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Visibility="{TemplateBinding EnabledVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;99;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 538,330L 540,330L 540,334L 543,334L 543,336L 540,336L 535,336L 535,334L 538,334L 538,330 Z" Width="8" Height="6" HorizontalAlignment="Center" VerticalAlignment="Bottom" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;100;18" />
+            </Grid>
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Visibility="{TemplateBinding DisabledVisibility}" Opacity="0.5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;102;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 538,330L 540,330L 540,334L 543,334L 543,336L 540,336L 535,336L 535,334L 538,334L 538,330 Z" Width="8" Height="6" HorizontalAlignment="Center" VerticalAlignment="Bottom" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;103;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=DecimalTabHotZoneControlTemplate}" TargetType="dxrec:DecimalTabHotZoneControl">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;108;10">
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Visibility="{TemplateBinding EnabledVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;109;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 548,330L 550,330L 550,334L 553,334L 553,336L 550,336L 545,336L 545,334L 548,334L 548,330 Z M 551,331L 553,331L 553,333L 551,333L 551,331 Z" Width="8" Height="6" HorizontalAlignment="Center" VerticalAlignment="Bottom" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;110;18" />
+            </Grid>
+            <Grid Height="8" Width="8" Margin="0,-1,0,0" Visibility="{TemplateBinding DisabledVisibility}" Opacity="0.5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;112;14">
+                <Path Stretch="Fill" Fill="{StaticResource RulerTabHotZoneBrush}" Data="F1 M 548,330L 550,330L 550,334L 553,334L 553,336L 550,336L 545,336L 545,334L 548,334L 548,330 Z M 551,331L 553,331L 553,333L 551,333L 551,331 Z" Width="8" Height="6" HorizontalAlignment="Center" VerticalAlignment="Bottom" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;113;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=TabTypeToggleBackgroundControlTemplate}" TargetType="dxrec:TabTypeToggleBackgroundControl" />
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=TabTypeToggleHotZoneControlTemplate}" TargetType="dxrec:TabTypeToggleHotZoneControl">
+        <dx:DXBorder Background="{StaticResource TabTypeToggleHotZoneControlTemplateBackgroundBrush}" BorderBrush="{StaticResource RulerBorderBrush}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;119;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=HorizontalRulerBackgroundControlTemplate}" TargetType="{x:Type ContentControl}" />
+    <ControlTemplate x:Key="{dxret:RichEditRulerThemeKey ResourceKey=VerticalRulerBackgroundControlTemplate}" TargetType="{x:Type ContentControl}" />
+    <Style x:Key="{dxret:RichEditRulerThemeKey ResourceKey=HorizontalRulerContentStyle}" TargetType="{x:Type Canvas}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;123;6" /><Setter Property="Margin" Value="0,5,0,6" />
+    </Style>
+    <Style x:Key="{dxret:RichEditRulerThemeKey ResourceKey=VerticalRulerContentStyle}" TargetType="{x:Type Canvas}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;126;6" /><Setter Property="Margin" Value="5,0,6,0" />
+    </Style>
+    <Style x:Key="{dxret:RichEditRulerThemeKey ResourceKey=HorizontalRulerShadowStyle}" TargetType="{x:Type Border}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;129;6" /><Setter Property="Background" Value="#00000000" cs:Name="Setter_0001" cs:id="Setter_0000" />
+        <Setter Property="BorderBrush" Value="#00000000" cs:Name="Setter_0002" cs:id="Setter_0001" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Height" Value="6" />
+    </Style>
+    <Style x:Key="{dxret:RichEditRulerThemeKey ResourceKey=VerticalRulerShadowStyle}" TargetType="{x:Type Border}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;135;6" /><Setter Property="Background" Value="#00000000" cs:Name="Setter_0003" cs:id="Setter_0000" />
+        <Setter Property="BorderBrush" Value="#00000000" cs:Name="Setter_0004" cs:id="Setter_0001" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Width" Value="6" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RulerActiveAreaControl}" TargetType="{x:Type dxrec:RulerActiveAreaControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;141;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=ActiveAreaControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.HorizontalRulerSpaceAreaControl}" TargetType="{x:Type dxrec:HorizontalRulerSpaceAreaControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;144;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=HorizontalSpaceAreaControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.VerticalRulerSpaceAreaControl}" TargetType="{x:Type dxrec:VerticalRulerSpaceAreaControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;147;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=VerticalSpaceAreaControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RulerTickMarkControl}" TargetType="{x:Type dxrec:RulerTickMarkControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;150;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=TickMarkControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RulerNumberTickMarkControl}" TargetType="{x:Type dxrec:RulerNumberTickMarkControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;153;6" /><Setter Property="Foreground" Value="#FF525252" cs:Name="Setter_0005" cs:id="Setter_0000" />
+        <Setter Property="FontSize" Value="12" />
+        <Setter Property="FontFamily" Value="Arial" />
+        <Setter Property="FontStyle" Value="Normal" />
+        <Setter Property="FontWeight" Value="Normal" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.DefaultTabControl}" TargetType="{x:Type dxrec:DefaultTabControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;160;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=DefaultTabControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.DisabledHotZoneControl}" TargetType="{x:Type dxrec:DisabledHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;163;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=DisabledHotZoneControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.LeftIndentHotZoneControl}" TargetType="{x:Type dxrec:LeftIndentHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;166;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=LeftIndentHotZoneControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RightIndentHotZoneControl}" TargetType="{x:Type dxrec:RightIndentHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;169;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=LeftIndentHotZoneControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.FirstLineIndentHotZoneControl}" TargetType="{x:Type dxrec:FirstLineIndentHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;172;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=FirstLineIndentHotZoneControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.LeftIndentBottomHotZoneControl}" TargetType="{x:Type dxrec:LeftIndentBottomHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;175;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=LeftIndentBottomHotZoneControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.RightTabHotZoneControl}" TargetType="{x:Type dxrec:RightTabHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;178;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=RightTabHotZoneControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.LeftTabHotZoneControl}" TargetType="{x:Type dxrec:LeftTabHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;181;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=LeftTabHotZoneControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.HorizontalTableHotZoneControl}" TargetType="{x:Type dxrec:HorizontalTableHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;184;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=HorizontalTableHotZoneControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.CenterTabHotZoneControl}" TargetType="{x:Type dxrec:CenterTabHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;187;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=CenterTabHotZoneControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.DecimalTabHotZoneControl}" TargetType="{x:Type dxrec:DecimalTabHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;190;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=DecimalTabHotZoneControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.TabTypeToggleBackgroundControl}" TargetType="{x:Type dxrec:TabTypeToggleBackgroundControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;193;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=TabTypeToggleBackgroundControlTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.RichEdit.Controls.Internal.TabTypeToggleHotZoneControl}" TargetType="{x:Type dxrec:TabTypeToggleHotZoneControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.RichEdit\Office2016White\Ruler.xaml;196;6" /><Setter Property="Template" Value="{DynamicResource {dxret:RichEditRulerThemeKey ResourceKey=TabTypeToggleHotZoneControlTemplate}}" />
+    </Style>
+</ResourceDictionary>

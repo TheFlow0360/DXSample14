@@ -1,0 +1,1338 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxdiag="http://schemas.devexpress.com/winfx/2008/xaml/diagram" xmlns:dxdiagn="http://schemas.devexpress.com/winfx/2008/xaml/diagram/internal" xmlns:dxdiagt="http://schemas.devexpress.com/winfx/2008/xaml/diagram/themekeys" xmlns:dxdiagcore="clr-namespace:DevExpress.Diagram.Core;assembly=DevExpress.Diagram.v17.2.Core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="RibbonItemsStyles.meta.designer.xaml" />
+        <dxdst:ResourceDictionaryEx Source="\DevExpress.Xpf.Diagram.v17.2;component\Themes\Generic\RibbonResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=SnapToGridButtonStyle}" TargetType="{x:Type dxb:BarEditItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;7;6" />
+            <Setter Property="EditValue" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SnapToGrid}" />
+            <Setter Property="EditHorizontalAlignment" Value="Left" />
+            <Setter Property="CustomizationGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Check.svg}" />
+            <Setter Property="CustomizationContent" Value="{Binding ConverterParameter=SnapToGrid, Converter={StaticResource DiagramStringIdConverter}}" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=SnapToGrid, DescriptionId=SnapToGrid_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="EditSettings">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxe:CheckEditSettings Content="{dxdiag:DiagramControlLocalizedString SnapToGrid}" />
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=SnapToItemsButtonStyle}" TargetType="{x:Type dxb:BarEditItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;27;6" />
+            <Setter Property="EditValue" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SnapToItems}" />
+            <Setter Property="EditHorizontalAlignment" Value="Left" />
+            <Setter Property="CustomizationContent" Value="{Binding ConverterParameter=SnapToItems, Converter={StaticResource DiagramStringIdConverter}}" />
+            <Setter Property="CustomizationGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Check.svg}" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=SnapToItems, DescriptionId=SnapToItems_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="EditSettings">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxe:CheckEditSettings Content="{dxdiag:DiagramControlLocalizedString SnapToItems}" />
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=SnapDistanceEditorStyle}" TargetType="{x:Type dxb:BarEditItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;47;6" />
+            <Setter Property="ToolTip" Value="{Binding ConverterParameter=Menu_SnapDistance_Editor, Converter={StaticResource DiagramStringIdConverter}}" />
+            <Setter Property="EditHorizontalAlignment" Value="Stretch" />
+            <Setter Property="EditValue" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SnapToItemsDistance, &#xD;&#xA;                Converter={dxdiagn:DoubleToDecimalConverter}}" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=FontFamilySelectorStyle}" TargetType="{x:Type dxb:BarEditItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;55;6" />
+            <Setter Property="EditWidth" Value="{DynamicResource {dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=FontFamilyEditorWidth}}" />
+            <Setter Property="CustomizationContent" Value="{Binding ConverterParameter=FontFamily, Converter={StaticResource DiagramStringIdConverter}}" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=FontFamily, DescriptionId=FontFamily_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="EditValue" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[FontFamily], Converter={dxdiagn:FontFamilyInfoToFontFamilyConverter}}" />
+            <Setter Property="EditTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <dxe:FontEdit>
+                            <dxe:FontEdit.Style>
+                                <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=http://schemas.devexpress.com/winfx/2008/xaml/editors.FontEdit}" TargetType="dxe:FontEdit">
+                                    <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;67;34" />
+                                        <Setter Property="Width" Value="{DynamicResource {dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=FontFamilyEditorWidth}}" />
+                                        <Setter Property="ScrollUnit" Value="Item" />
+                                    </Style.Setters>
+                                    <Style.Triggers>
+                                        <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                                            <Setter Property="Width" Value="150" />
+                                        </Trigger>
+                                        <Trigger Property="dx:ThemeManager.IsTouchlineTheme" Value="True">
+                                            <Setter Property="Width" Value="150" />
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </dxe:FontEdit.Style>
+                        </dxe:FontEdit>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="EditWidth" Value="150" />
+            </Trigger>
+            <Trigger Property="dx:ThemeManager.IsTouchlineTheme" Value="True">
+                <Setter Property="EditWidth" Value="150" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=FontSizeSelectorStyle}" TargetType="{x:Type dxb:BarEditItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;97;6" />
+            <Setter Property="EditWidth" Value="{DynamicResource {dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=FontSizeEditorWidth}}" />
+            <Setter Property="CustomizationContent" Value="{Binding ConverterParameter=FontSize, Converter={StaticResource DiagramStringIdConverter}}" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=FontSize, DescriptionId=FontSize_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="EditValue" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[FontSize]}" />
+            <Setter Property="EditSettings">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxe:ComboBoxEditSettings ItemsSource="{StaticResource DiagramFontSizes}" MaskType="Numeric" />
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="EditWidth" Value="100" />
+            </Trigger>
+            <Trigger Property="dx:ThemeManager.IsTouchlineTheme" Value="True">
+                <Setter Property="EditWidth" Value="100" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ToggleFontBoldCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ToggleFontBoldCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;124;6" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[IsFontBold], Mode=OneWay}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ToggleFontItalicCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ToggleFontItalicCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;129;6" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[IsFontItalic], Mode=OneWay}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ToggleFontUnderlineCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ToggleFontUnderlineCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;134;6" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[IsFontUnderline], Mode=OneWay}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ToggleFontStrikethroughCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ToggleFontStrikethroughCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;139;6" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[IsFontStrikethrough], Mode=OneWay}" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=PageSizeBarItemStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;145;6" />
+            <Setter Property="Content" Value="{Binding ConverterParameter=PageSize, Converter={StaticResource DiagramStringIdConverter}}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/PageSize.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/PageSize.svg}" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=PageSizeHeader, DescriptionId=PageSize_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=CanvasAutoSizeBarItemStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;154;6" />
+            <Setter Property="Content" Value="{Binding ConverterParameter=AutoSize, Converter={StaticResource DiagramStringIdConverter}}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/AutoSize_AutoSize.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/AutoSize_AutoSize.svg}" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=AutoSize, DescriptionId=AutoSize_Description2}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=PaperOrientationBarItemStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;163;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString PageOrientation}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/PageOrientation.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/PageOrientation.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=PageOrientationHeader, DescriptionId=PageOrientation_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ReLayoutStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;173;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ReLayout}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ReLayout.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ReLayout.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ReLayout, DescriptionId=ReLayout_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ReLayoutTreeStyle}" TargetType="{x:Type dxb:BarItemLinkMenuHeader}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;183;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ReLayoutTree}" />
+            <Setter Property="ItemsOrientation" Value="Horizontal" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ReLayoutTipOverTreeHeaderStyle}" TargetType="{x:Type dxb:BarItemLinkMenuHeader}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;189;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ReLayoutTipOverTreeHeader}" />
+            <Setter Property="ItemsOrientation" Value="Horizontal" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ReLayoutMindMapTreeHeaderStyle}" TargetType="{x:Type dxb:BarItemLinkMenuHeader}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;195;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ReLayoutMindMapTreeHeader}" />
+            <Setter Property="ItemsOrientation" Value="Horizontal" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ReLayoutSugiyamaStyle}" TargetType="{x:Type dxb:BarItemLinkMenuHeader}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;201;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ReLayoutSugiyama}" />
+            <Setter Property="ItemsOrientation" Value="Horizontal" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ReLayoutCircularHeaderStyle}" TargetType="{x:Type dxb:BarItemLinkMenuHeader}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;207;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ReLayoutCircularHeader}" />
+            <Setter Property="ItemsOrientation" Value="Horizontal" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ShapeBackgroundColorSplitButtonStyle}" TargetType="{x:Type dxb:BarSplitButtonItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;213;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString BackgroundColor}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/FillBackground.svg}" />
+            <Setter Property="GlyphTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Canvas Width="16" Height="16" DataContext="{Binding Path=Item, RelativeSource={RelativeSource AncestorType=dxb:BarItemLinkInfo}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;220;26">
+                            <Image Height="16" Width="16" Source="{dxdiag:DiagramSvgImage Path=Images/Svg/FillBackground.svg}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;221;30" />
+                            <dx:DXBorder Name="border" Width="16" Height="3" Canvas.Left="0" Canvas.Top="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;222;30">
+                                <dx:DXBorder.Background>
+                                    <SolidColorBrush Color="{Binding Path=(dxdiagn:BarColorEditBehavior.BarColor)}" />
+                                </dx:DXBorder.Background>
+                            </dx:DXBorder>
+                        </Canvas>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="RibbonStyle" Value="SmallWithText" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=BackgroundColor, DescriptionId=BackgroundColor_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;237;26">
+                            <dxdiagn:BarColorEditBehavior EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.BackgroundPropertyName}" Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSplitButtonItem}}}" ColorEditUnit="{Binding Path=PopupControl.Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSplitButtonItem}}}" />
+                        </ItemsControl>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="PopupControl">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:PopupControlContainer Tag="{Binding ElementName=backgroundColorEditBehavior, Path=EditorColor}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;247;30">
+                                <dxdiagn:ExtendedColorEdit AllowNullInput="True" ShowDefaultColorButton="False" ShowBorder="False" Palettes="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Theme, Converter={dxdiagn:DiagramThemeToColorEditPaletteConverter}}">
+                                    <dxmvvm:Interaction.Behaviors>
+                                        <dxdiagn:DiagramColorEditBehavior x:Name="backgroundColorEditBehavior" EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.BackgroundPropertyName}" Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxdiagn:ExtendedColorEdit}}}" DiagramColor="{Binding Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[BackgroundColor], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxdiagn:ExtendedColorEdit}}}" />
+                                    </dxmvvm:Interaction.Behaviors>
+                                </dxdiagn:ExtendedColorEdit>
+                            </dxb:PopupControlContainer>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ShapeForegroundColorSplitButtonStyle}" TargetType="{x:Type dxb:BarSplitButtonItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;260;6" />
+            <Setter Property="CustomizationContent" Value="{dxdiag:DiagramControlLocalizedString ForegroundColor}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/FillForeground.svg}" />
+            <Setter Property="GlyphTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Canvas Width="16" Height="16" DataContext="{Binding Path=Item, RelativeSource={RelativeSource AncestorType=dxb:BarItemLinkInfo}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;267;26">
+                            <Image Height="16" Width="16" Source="{dxdiag:DiagramSvgImage Path=Images/Svg/FillForeground.svg}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;268;30" />
+                            <dx:DXBorder Name="border" Width="16" Height="3" Canvas.Left="0" Canvas.Top="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;269;30">
+                                <dx:DXBorder.Background>
+                                    <SolidColorBrush Color="{Binding Path=(dxdiagn:BarColorEditBehavior.BarColor)}" />
+                                </dx:DXBorder.Background>
+                            </dx:DXBorder>
+                        </Canvas>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="GlyphSize" Value="Small" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ForegroundColor, DescriptionId=ForegroundColor_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;285;26">
+                            <dxdiagn:BarColorEditBehavior EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.ForegroundPropertyName}" Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSplitButtonItem}}}" ColorEditUnit="{Binding Path=PopupControl.Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSplitButtonItem}}}" />
+                        </ItemsControl>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="PopupControl">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:PopupControlContainer Tag="{Binding ElementName=foregroundColorEditBehavior, Path=EditorColor}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;295;30">
+                                <dxdiagn:ExtendedColorEdit AllowNullInput="True" ShowDefaultColorButton="False" ShowBorder="False" Palettes="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Theme, Converter={dxdiagn:DiagramThemeToColorEditPaletteConverter}}">
+                                    <dxmvvm:Interaction.Behaviors>
+                                        <dxdiagn:DiagramColorEditBehavior x:Name="foregroundColorEditBehavior" EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.ForegroundPropertyName}" Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxdiagn:ExtendedColorEdit}}}" DiagramColor="{Binding Path=Diagram.SelectionToolsModel[ForegroundColor], RelativeSource={RelativeSource Self}}" />
+                                    </dxmvvm:Interaction.Behaviors>
+                                </dxdiagn:ExtendedColorEdit>
+                            </dxb:PopupControlContainer>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ShapeStrokeColorSplitButtonStyle}" TargetType="{x:Type dxb:BarSplitButtonItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;308;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString StrokeColor}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/FillStroke.svg}" />
+            <Setter Property="GlyphTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <Canvas Width="16" Height="16" DataContext="{Binding Path=Item, RelativeSource={RelativeSource AncestorType=dxb:BarItemLinkInfo}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;315;26">
+                            <Image Height="16" Width="16" Source="{dxdiag:DiagramSvgImage Path=Images/Svg/FillStroke.svg}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;316;30" />
+                            <dx:DXBorder Name="border" Width="16" Height="3" Canvas.Left="0" Canvas.Top="16" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;317;30">
+                                <dx:DXBorder.Background>
+                                    <SolidColorBrush Color="{Binding Path=(dxdiagn:BarColorEditBehavior.BarColor)}" />
+                                </dx:DXBorder.Background>
+                            </dx:DXBorder>
+                        </Canvas>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="RibbonStyle" Value="SmallWithText" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=StrokeColor, DescriptionId=StrokeColor_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;332;26">
+                            <dxdiagn:BarColorEditBehavior EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.StrokePropertyName}" Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSplitButtonItem}}}" ColorEditUnit="{Binding Path=PopupControl.Tag, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSplitButtonItem}}}" />
+                        </ItemsControl>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="PopupControl">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:PopupControlContainer Tag="{Binding ElementName=strokeColorEditBehavior, Path=EditorColor}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;342;30">
+                                <dxdiagn:ExtendedColorEdit AllowNullInput="True" ShowDefaultColorButton="False" ShowBorder="False" Palettes="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Theme, Converter={dxdiagn:DiagramThemeToColorEditPaletteConverter}}">
+                                    <dxmvvm:Interaction.Behaviors>
+                                        <dxdiagn:DiagramColorEditBehavior x:Name="strokeColorEditBehavior" EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.StrokePropertyName}" Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxdiagn:ExtendedColorEdit}}}" DiagramColor="{Binding Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[StrokeColor], RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxdiagn:ExtendedColorEdit}}}" />
+                                    </dxmvvm:Interaction.Behaviors>
+                                </dxdiagn:ExtendedColorEdit>
+                            </dxb:PopupControlContainer>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=InsertContainerButtonStyle}" TargetType="{x:Type dxb:BarSplitButtonItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;355;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString InsertContainer}" />
+            <Setter Property="ActAsDropDown" Value="True" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/InsertContainer.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/InsertContainer.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=InsertContainer, DescriptionId=InsertContainer_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="PopupControl">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:PopupControlContainer CloseOnClick="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;368;30">
+                                <dxb:GalleryControl BorderThickness="0" BorderBrush="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;369;34">
+                                    <dxb:GalleryControl.Resources>
+                                        <Style TargetType="{x:Type dxb:Gallery}" x:Key="insertContainerGalleryStyle" BasedOn="{StaticResource containerGalleryStyleBase}">
+                                            <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;371;42" /><Setter Property="ColCount" Value="4" />
+                                            <Setter Property="ItemCheckMode" Value="Single" />
+                                        </Style>
+                                    </dxb:GalleryControl.Resources>
+                                    <dxb:GalleryControl.Gallery>
+                                        <dxb:Gallery Style="{StaticResource insertContainerGalleryStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;377;42">
+                                            <dxmvvm:Interaction.Behaviors>
+                                                <dxdiagn:SelectContainerToolsBehavior ToolsPageName="{x:Static dxdiagcore:DefaultBarItemNames.ContainerToolsRibbonPage}" />
+                                            </dxmvvm:Interaction.Behaviors>
+                                            <dxb:GalleryItemGroup ItemsSource="{x:Static dxdiagcore:DiagramContainerGalleryRegistrator.Shapes}" ItemTemplate="{StaticResource galleryControlItemTemplate}" />
+                                        </dxb:Gallery>
+                                    </dxb:GalleryControl.Gallery>
+                                </dxb:GalleryControl>
+                            </dxb:PopupControlContainer>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=SetPageSizeButtonStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetPageParameters_PageSizeCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;392;6" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/PageSize.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/PageSize.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ShowRulerItemStyle}" TargetType="{x:Type dxb:BarEditItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;399;6" />
+            <Setter Property="EditValue" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).ShowRulers}" />
+            <Setter Property="EditHorizontalAlignment" Value="Left" />
+            <Setter Property="CustomizationContent" Value="{dxdiag:DiagramControlLocalizedString ShowRulers}" />
+            <Setter Property="CustomizationGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Check.svg}" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ShowRulers, DescriptionId=ShowRulers_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="EditSettings">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxe:CheckEditSettings Content="{dxdiag:DiagramControlLocalizedString ShowRulers}" />
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ShowGridItemStyle}" TargetType="{x:Type dxb:BarEditItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;418;6" />
+            <Setter Property="EditValue" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).ShowGrid}" />
+            <Setter Property="EditHorizontalAlignment" Value="Left" />
+            <Setter Property="CustomizationContent" Value="{dxdiag:DiagramControlLocalizedString ShowGrid}" />
+            <Setter Property="CustomizationGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Check.svg}" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ShowGrid, DescriptionId=ShowGrid_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="EditSettings">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxe:CheckEditSettings Content="{dxdiag:DiagramControlLocalizedString ShowGrid}" />
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ShowPageBreaksItemStyle}" TargetType="{x:Type dxb:BarEditItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;437;6" />
+            <Setter Property="EditValue" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).ShowPageBreaks}" />
+            <Setter Property="EditHorizontalAlignment" Value="Left" />
+            <Setter Property="CustomizationContent" Value="{dxdiag:DiagramControlLocalizedString ShowPageBreaks}" />
+            <Setter Property="CustomizationGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Check.svg}" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ShowPageBreaks, DescriptionId=ShowPageBreaks_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="EditSettings">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxe:CheckEditSettings Content="{dxdiag:DiagramControlLocalizedString ShowPageBreaks}" />
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ImageToolsBringToFrontContainerStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=BringToFrontCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;456;6" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/BringToFront.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ImageToolsRotateStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;462;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ImageToolsRotate}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Rotate_Right90.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Rotate_Right90.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ImageToolsRotate, DescriptionId=ImageToolsRotate_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ImageToolsSendToBackContainerStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SendToBackCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;473;6" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/SendToBack.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ContainerPaddingBarItemStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;479;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ContainerPadding}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ContainerPadding.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ContainerPadding.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ContainerPadding, DescriptionId=ContainerPadding_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;490;26">
+                            <dxdiagn:SetPaddingBarSubItemBehavior Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSubItem}}}" />
+                        </ItemsControl>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ContainerHeaderPaddingBarItemStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;498;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ContainerHeaderPadding}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ContainerHeaderPadding.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ContainerHeaderPadding.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ContainerHeaderPadding, DescriptionId=ContainerHeaderPadding_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+            <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;509;26">
+                            <dxdiagn:SetHeaderPaddingBarSubItemBehavior Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSubItem}}}" />
+                        </ItemsControl>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=PanesStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;517;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString Panes}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Panes.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Panes.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=Panes, DescriptionId=Panes_Description}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ShapesPanelStyle}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;526;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ShapesPanel}" />
+            <Setter Property="Description" Value="{Binding ConverterParameter=ShapesPanel_Description, Converter={StaticResource DiagramStringIdConverter}}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).ToolboxVisibility, &#xD;&#xA;                Converter={dxdiagn:ToolboxVisibilityConverter}, Mode=TwoWay}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ShapesPanel.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ShapesPanel.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="RibbonStyle" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ShapesPanel, DescriptionId=ShapesPanel_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=PropertiesPanelStyle}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;539;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString PropertiesPanel}" />
+            <Setter Property="Description" Value="{Binding ConverterParameter=PropertiesPanel_Description, Converter={StaticResource DiagramStringIdConverter}}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).PropertiesPanelVisibility, &#xD;&#xA;                Converter={dxdiagn:PropertiesPanelVisibilityConverter}, Mode=TwoWay}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/PropertiesPanel.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/PropertiesPanel.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="RibbonStyle" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=PropertiesPanel, DescriptionId=PropertiesPanel_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SaveFileCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SaveFileCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;552;6" /></Style>
+
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=UndoCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=UndoCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;554;6" /></Style>
+
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=RedoCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=RedoCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;556;6" /></Style>
+
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=NewFileCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=NewFileCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;558;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=OpenFileCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=OpenFileCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;560;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SaveFileAsCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SaveFileAsCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;562;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=PasteCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=PasteCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;564;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=CutCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=CutCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;566;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=CopyCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=CopyCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;568;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=IncreaseFontSizeCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=IncreaseFontSizeCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;570;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=DecreaseFontSizeCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=DecreaseFontSizeCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;572;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=BringForwardCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=BringForwardCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;574;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=BringToFrontCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=BringToFrontCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;576;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SendBackwardCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SendBackwardCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;578;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SendToBackCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SendToBackCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;580;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=FitToPageCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=FitToPageCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;582;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=FitToWidthCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=FitToWidthCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;584;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetHorizontalAlignment_LeftCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetHorizontalAlignment_LeftCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;586;6" /><Setter Property="IsChecked" Value="{Binding &#xD;&#xA;            Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[TextAlignment],&#xD;&#xA;            RelativeSource={RelativeSource Self},&#xD;&#xA;            Converter={dxdiagn:ObjectEqualityConverter},&#xD;&#xA;            ConverterParameter={x:Static dxdiagcore:TextAlignmentKind.Left}}" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetHorizontalAlignment_CenterCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetHorizontalAlignment_CenterCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;589;6" /><Setter Property="IsChecked" Value="{Binding &#xD;&#xA;            Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[TextAlignment],&#xD;&#xA;            RelativeSource={RelativeSource Self},&#xD;&#xA;            Converter={dxdiagn:ObjectEqualityConverter},&#xD;&#xA;            ConverterParameter={x:Static dxdiagcore:TextAlignmentKind.Center}}" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetHorizontalAlignment_RightCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetHorizontalAlignment_RightCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;592;6" /><Setter Property="IsChecked" Value="{Binding &#xD;&#xA;            Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[TextAlignment],&#xD;&#xA;            RelativeSource={RelativeSource Self},&#xD;&#xA;            Converter={dxdiagn:ObjectEqualityConverter},&#xD;&#xA;            ConverterParameter={x:Static dxdiagcore:TextAlignmentKind.Right}}" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetHorizontalAlignment_JustifyCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetHorizontalAlignment_JustifyCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;595;6" /><Setter Property="IsChecked" Value="{Binding&#xD;&#xA;            Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[TextAlignment],&#xD;&#xA;            RelativeSource={RelativeSource Self},&#xD;&#xA;            Converter={dxdiagn:ObjectEqualityConverter},&#xD;&#xA;            ConverterParameter={x:Static dxdiagcore:TextAlignmentKind.Justify}}" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetVerticalAlignment_TopCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetVerticalAlignment_TopCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;598;6" /><Setter Property="IsChecked" Value="{Binding&#xD;&#xA;            Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[VerticalContentAlignment],&#xD;&#xA;            RelativeSource={RelativeSource Self},&#xD;&#xA;            Converter={dxdiagn:ObjectEqualityConverter},&#xD;&#xA;            ConverterParameter={x:Static dxdiagcore:VerticalAlignmentKind.Top}}" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetVerticalAlignment_CenterCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetVerticalAlignment_CenterCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;601;6" /><Setter Property="IsChecked" Value="{Binding&#xD;&#xA;            Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[VerticalContentAlignment],&#xD;&#xA;            RelativeSource={RelativeSource Self},&#xD;&#xA;            Converter={dxdiagn:ObjectEqualityConverter},&#xD;&#xA;            ConverterParameter={x:Static dxdiagcore:VerticalAlignmentKind.Center}}" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetVerticalAlignment_BottomCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetVerticalAlignment_BottomCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;604;6" /><Setter Property="IsChecked" Value="{Binding&#xD;&#xA;            RelativeSource={RelativeSource Self},&#xD;&#xA;            Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[VerticalContentAlignment],&#xD;&#xA;            Converter={dxdiagn:ObjectEqualityConverter},&#xD;&#xA;            ConverterParameter={x:Static dxdiagcore:VerticalAlignmentKind.Bottom}}" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayout_DownCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayout_DownCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;607;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayout_UpCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayout_UpCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;609;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayout_RightCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayout_RightCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;611;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayout_LeftCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayout_LeftCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;613;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TipOverTreeLayout_LeftToRightCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TipOverTreeLayout_LeftToRightCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;615;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TipOverTreeLayout_RightToLeftCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TipOverTreeLayout_RightToLeftCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;617;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=MindMapTreeLayout_HorizontalCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=MindMapTreeLayout_HorizontalCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;619;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=MindMapTreeLayout_VerticalCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=MindMapTreeLayout_VerticalCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;621;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SugiyamaLayout_DownCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SugiyamaLayout_DownCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;623;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SugiyamaLayout_UpCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SugiyamaLayout_UpCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;625;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SugiyamaLayout_RightCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SugiyamaLayout_RightCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;627;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SugiyamaLayout_LeftCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SugiyamaLayout_LeftCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;629;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=CircularLayoutCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=CircularLayoutCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;631;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ChangeConnectorTypeStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;633;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ChangeConnectorType}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ChangeConnectorType.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ChangeConnectorType.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ChangeConnectorType, DescriptionId=ChangeConnectorType_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ChangeConnectorType_RightAngleCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ChangeConnectorType_RightAngleCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;643;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ChangeConnectorType_CurvedCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ChangeConnectorType_CurvedCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;645;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ChangeConnectorType_StraightCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ChangeConnectorType_StraightCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;647;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ReLayoutPartsStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;649;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ReLayoutParts}" />
+            <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ReLayoutParts.svg}" />
+            <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ReLayoutParts.svg}" />
+            <Setter Property="GlyphSize" Value="Large" />
+            <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ReLayoutParts, DescriptionId=ReLayoutParts_Description}" />
+            <Setter Property="ShowScreenTip" Value="True" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ReLayoutPartsTreeHeaderStyle}" TargetType="{x:Type dxb:BarItemLinkMenuHeader}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;659;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ReLayoutPartsTreeHeader}" />
+            <Setter Property="ItemsOrientation" Value="Horizontal" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ReLayoutPartsTipOverTreeHeaderStyle}" TargetType="{x:Type dxb:BarItemLinkMenuHeader}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;665;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ReLayoutTipOverTreeHeader}" />
+            <Setter Property="ItemsOrientation" Value="Horizontal" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ReLayoutPartsMindMapTreeHeaderStyle}" TargetType="{x:Type dxb:BarItemLinkMenuHeader}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;671;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ReLayoutMindMapTreeHeader}" />
+            <Setter Property="ItemsOrientation" Value="Horizontal" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TipOverTreeLayoutForSubordinates_LeftToRightCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TipOverTreeLayoutForSubordinates_LeftToRightCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;677;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TipOverTreeLayoutForSubordinates_RightToLeftCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TipOverTreeLayoutForSubordinates_RightToLeftCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;679;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayoutForSubordinates_TopToBottomCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayoutForSubordinates_TopToBottomCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;681;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayoutForSubordinates_BottomToTopCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayoutForSubordinates_BottomToTopCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;683;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayoutForSubordinates_RightToLeftCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayoutForSubordinates_RightToLeftCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;685;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayoutForSubordinates_LeftToRightCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=TreeLayoutForSubordinates_LeftToRightCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;687;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=MindMapTreeLayoutForSubordinates_HorizontalCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=MindMapTreeLayoutForSubordinates_HorizontalCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;689;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=MindMapTreeLayoutForSubordinates_VerticalCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=MindMapTreeLayoutForSubordinates_VerticalCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;691;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_PointerToolCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_PointerToolCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;693;6" /><Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;697;22">
+                        <dxdiagn:BarItemToolBehavior Tool="{x:Static dxdiagcore:DiagramController.DefaultTool}" ActiveTool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).ActiveTool, Mode=TwoWay}" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_ConnectorToolCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_ConnectorToolCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;704;6" /><Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;708;22">
+                        <dxdiagn:BarItemToolBehavior Tool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).ConnectorTool}" ActiveTool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).ActiveTool, Mode=TwoWay }" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_RectangleToolCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_RectangleToolCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;715;6" /><Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;719;22">
+                        <dxdiagn:BarItemToolBehavior Tool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).RectangleTool}" ActiveTool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).ActiveTool, Mode=TwoWay}" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_EllipseToolCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_EllipseToolCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;726;6" /><Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;730;22">
+                        <dxdiagn:BarItemToolBehavior Tool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).EllipseTool}" ActiveTool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).ActiveTool, Mode=TwoWay}" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_RightTriangleToolCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_RightTriangleToolCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;737;6" /><Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;741;22">
+                        <dxdiagn:BarItemToolBehavior Tool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).RightTriangleTool}" ActiveTool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).ActiveTool, Mode=TwoWay}" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_HexagonToolCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_HexagonToolCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;748;6" /><Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;752;22">
+                        <dxdiagn:BarItemToolBehavior Tool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).HexagonTool}" ActiveTool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).ActiveTool, Mode=TwoWay}" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_PanToolCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_PanToolCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;760;6" /><Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;764;22">
+                        <dxdiagn:BarItemToolBehavior Tool="{x:Static dxdiagcore:DiagramController.PanTool}" ActiveTool="{Binding RelativeSource={RelativeSource AncestorType={x:Type dxb:BarCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).ActiveTool, Mode=TwoWay}" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=FitToDrawingCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=FitToDrawingCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;772;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=Rotate_Left90CommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=Rotate_Left90CommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;774;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=Rotate_Right90CommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=Rotate_Right90CommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;776;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=FlipImage_VerticalCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=FlipImage_VerticalCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;778;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=FlipImage_HorizontalCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=FlipImage_HorizontalCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;780;6" />
+    </Style>
+
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ExportAsStyle}" TargetType="{x:Type dxb:BarSplitButtonItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;783;6" /><Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ExportAs.svg}" />
+        <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ExportAs.svg}" />
+        <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString ExportAs}" />
+        <Setter Property="Description" Value="{Binding ConverterParameter=ExportAs_Description, Converter={StaticResource DiagramStringIdConverter}}" />
+        <Setter Property="GlyphSize" Value="Large" />
+        <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.ExportDiagram}" />
+        <Setter Property="CommandParameter" Value="PNG" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ExportDiagram_PNGCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ExportDiagram_PNGCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;792;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ExportDiagram_JPEGCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ExportDiagram_JPEGCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;794;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ExportDiagram_BMPCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ExportDiagram_BMPCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;796;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ExportDiagram_GIFCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ExportDiagram_GIFCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;798;6" />
+    </Style>
+    
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=PrintMenuStyle}" TargetType="{x:Type dxb:BarSplitButtonItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;804;6" /><Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Print.svg}" />
+        <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Print.svg}" />
+        <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString PrintMenu}" />
+        <Setter Property="Description" Value="{Binding ConverterParameter=PrintMenu_Description, Converter={StaticResource DiagramStringIdConverter}}" />
+        <Setter Property="GlyphSize" Value="Large" />
+        <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.Print}" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=PrintCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=PrintCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;812;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=QuickPrintCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=QuickPrintCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;814;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ShowPrintPreviewCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ShowPrintPreviewCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;816;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=AutoSize_AutoSizeItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=AutoSize_AutoSizeItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;818;6" />
+            <Setter Property="AllowUncheckInGroup" Value="False" />
+            <Setter Property="Content" Value="{x:Static dxdiagn:CanvasSizeModeInfo.AutoSize}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[CanvasSizeMode], Converter={dxdiagn:AutoSizeConverter}, ConverterParameter=AutoSize, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource AutoSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=AutoSize_FillItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=AutoSize_FillItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;826;6" />
+            <Setter Property="AllowUncheckInGroup" Value="False" />
+            <Setter Property="Content" Value="{x:Static dxdiagn:CanvasSizeModeInfo.Fill}" />
+            <Setter Property="IsChecked" Value="{Binding&#xD;&#xA;                Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[CanvasSizeMode],&#xD;&#xA;                RelativeSource={RelativeSource Self},&#xD;&#xA;                Converter={dxdiagn:AutoSizeConverter},&#xD;&#xA;                ConverterParameter=Fill,&#xD;&#xA;                Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource AutoSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=AutoSize_NoneItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=AutoSize_NoneItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;834;6" />
+            <Setter Property="AllowUncheckInGroup" Value="False" />
+            <Setter Property="Content" Value="{x:Static dxdiagn:CanvasSizeModeInfo.None}" />
+            <Setter Property="IsChecked" Value="{Binding&#xD;&#xA;                Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[CanvasSizeMode],&#xD;&#xA;                RelativeSource={RelativeSource Self},&#xD;&#xA;                Converter={dxdiagn:AutoSizeConverter},&#xD;&#xA;                ConverterParameter=None,&#xD;&#xA;                Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource AutoSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageOrientation_HorizontalItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageOrientation_HorizontalItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;843;6" />
+            <Setter Property="AllowUncheckInGroup" Value="False" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:PaperOrientationConverter}, ConverterParameter=Horizontal, Mode=TwoWay}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageOrientation_VerticalItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageOrientation_VerticalItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;849;6" />
+            <Setter Property="AllowUncheckInGroup" Value="False" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:PaperOrientationConverter}, ConverterParameter=Vertical, Mode=TwoWay}" />
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_A3ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_A3ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;856;6" />
+            <Setter Property="Content" Value="{dxdiagn:RibbonPageSizeContentProvider PaperKind=A3}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:SelectedPaperSizeConverter}, ConverterParameter=A3, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource PageSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_A4ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_A4ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;863;6" />
+            <Setter Property="Content" Value="{dxdiagn:RibbonPageSizeContentProvider PaperKind=A4}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:SelectedPaperSizeConverter}, ConverterParameter=A4, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource PageSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_A5ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_A5ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;870;6" />
+            <Setter Property="Content" Value="{dxdiagn:RibbonPageSizeContentProvider PaperKind=A5}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:SelectedPaperSizeConverter}, ConverterParameter=A5, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource PageSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_B4ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_B4ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;877;6" />
+            <Setter Property="Content" Value="{dxdiagn:RibbonPageSizeContentProvider PaperKind=B4}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:SelectedPaperSizeConverter}, ConverterParameter=B4, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource PageSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_B5ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_B5ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;884;6" />
+            <Setter Property="Content" Value="{dxdiagn:RibbonPageSizeContentProvider PaperKind=B5}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:SelectedPaperSizeConverter}, ConverterParameter=B5, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource PageSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_ExecutiveItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_ExecutiveItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;891;6" />
+            <Setter Property="Content" Value="{dxdiagn:RibbonPageSizeContentProvider PaperKind=Executive}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:SelectedPaperSizeConverter}, ConverterParameter=Executive, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource PageSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_LegalItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_LegalItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;898;6" />
+            <Setter Property="Content" Value="{dxdiagn:RibbonPageSizeContentProvider PaperKind=Legal}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:SelectedPaperSizeConverter}, ConverterParameter=Legal, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource PageSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_LetterItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_LetterItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;905;6" />
+            <Setter Property="Content" Value="{dxdiagn:RibbonPageSizeContentProvider PaperKind=Letter}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:SelectedPaperSizeConverter}, ConverterParameter=Letter, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource PageSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_StatementItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_StatementItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;912;6" />
+            <Setter Property="Content" Value="{dxdiagn:RibbonPageSizeContentProvider PaperKind=Statement}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:SelectedPaperSizeConverter}, ConverterParameter=Statement, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource PageSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_TabloidItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=PageSize_TabloidItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;919;6" />
+            <Setter Property="Content" Value="{dxdiagn:RibbonPageSizeContentProvider PaperKind=Tabloid}" />
+            <Setter Property="IsChecked" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[PageSize], &#xD;&#xA;                Converter={dxdiagn:SelectedPaperSizeConverter}, ConverterParameter=Tabloid, Mode=TwoWay}" />
+            <Setter Property="ContentTemplate" Value="{StaticResource PageSizeContentTemplate}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P0ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P0ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;926;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersPadding}" />
+            <Setter Property="CommandParameter" Value="0" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P4ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P4ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;933;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersPadding}" />
+            <Setter Property="CommandParameter" Value="4" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P8ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P8ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;940;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersPadding}" />
+            <Setter Property="CommandParameter" Value="8" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P12ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P12ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;947;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersPadding}" />
+            <Setter Property="CommandParameter" Value="12" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P16ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P16ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;954;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersPadding}" />
+            <Setter Property="CommandParameter" Value="16" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P24ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P24ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;961;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersPadding}" />
+            <Setter Property="CommandParameter" Value="24" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P32ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerPadding_P32ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;968;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersPadding}" />
+            <Setter Property="CommandParameter" Value="32" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P0ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P0ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;975;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersHeaderPadding}" />
+            <Setter Property="CommandParameter" Value="0" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P4ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P4ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;982;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersHeaderPadding}" />
+            <Setter Property="CommandParameter" Value="4" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P8ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P8ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;989;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersHeaderPadding}" />
+            <Setter Property="CommandParameter" Value="8" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P12ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P12ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;996;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersHeaderPadding}" />
+            <Setter Property="CommandParameter" Value="12" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P16ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P16ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1003;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersHeaderPadding}" />
+            <Setter Property="CommandParameter" Value="16" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P24ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P24ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1010;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersHeaderPadding}" />
+            <Setter Property="CommandParameter" Value="24" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P32ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ContainerHeaderPadding_P32ItemStyleBase}}" TargetType="{x:Type dxdiag:BarMouseCheckOnlyItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1017;6" />
+            <Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersHeaderPadding}" />
+            <Setter Property="CommandParameter" Value="32" />
+            <Setter Property="GlyphSize" Value="Small" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlPageCategoriesThemeKeys ResourceKey=ImageToolsPageCategoryStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlPageCategoriesThemeKeys ResourceKey=ImageToolsPageCategoryStyleBase}}" TargetType="{x:Type dxr:RibbonPageCategory}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1024;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlPageCategoriesThemeKeys ResourceKey=ContainerToolsPageCategoryStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlPageCategoriesThemeKeys ResourceKey=ContainerToolsPageCategoryStyleBase}}" TargetType="{x:Type dxr:RibbonPageCategory}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1026;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=InsertImageCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=InsertImageCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1028;6" />
+            <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1033;26">
+                            <dxdiagn:SelectImageToolsBehavior ToolsPageName="{x:Static dxdiagcore:DefaultBarItemNames.ImageToolsRibbonPage}" />
+                        </ItemsControl>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=LoadImageCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=LoadImageCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1042;6" /></Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ImageToolsStretchModeStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1043;6" /><Setter Property="Content" Value="{Binding ConverterParameter=ImageToolsStretchMode, Converter={StaticResource DiagramStringIdConverter}}" />
+        <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Image_StretchMode.svg}" />
+        <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/Image_StretchMode.svg}" />
+        <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ImageToolsStretchMode, DescriptionId=ImageToolsStretchMode_Description}" />
+        <Setter Property="ShowScreenTip" Value="True" />
+        <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1052;22">
+                        <dxdiagn:SetStretchModeBarSubItemBehavior Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSubItem}}}" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetSelectedImagesStretchMode_StretchCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetSelectedImagesStretchMode_StretchCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1059;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetSelectedImagesStretchMode_UniformCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetSelectedImagesStretchMode_UniformCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1061;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetSelectedImagesStretchMode_UniformToFillCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SetSelectedImagesStretchMode_UniformToFillCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1063;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ResetSelectedImagesCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ResetSelectedImagesCommandItemStyleBase}}" TargetType="{x:Type dxb:BarButtonItem}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1065;6" /></Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ImageToolsSetImageScaleItemStyle}" TargetType="{x:Type dxb:BarSubItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1066;6" /><Setter Property="Content" Value="{Binding ConverterParameter=ImageToolsSetImageScale, Converter={StaticResource DiagramStringIdConverter}}" />
+        <Setter Property="Glyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ImageToolsSetImageScale.svg}" />
+        <Setter Property="LargeGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/ImageToolsSetImageScale.svg}" />
+        <Setter Property="RibbonStyle" Value="Large" />
+        <Setter Property="SuperTip" Value="{dxdiag:DiagramItemToolTipProvider CaptionId=ImageToolsSetImageScale, DescriptionId=ImageToolsSetImageScale_Description}" />
+        <Setter Property="ShowScreenTip" Value="True" />
+        <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1076;22">
+                        <dxdiagn:SetImageScaleBarSubItemBehavior Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSubItem}}}" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_0_25ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_0_25ItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1083;6" /><Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedImagesScale}" />
+        <Setter Property="CommandParameter" Value="0.25" />
+        <Setter Property="GlyphSize" Value="Small" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_0_5ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_0_5ItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1088;6" /><Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedImagesScale}" />
+        <Setter Property="CommandParameter" Value="0.5" />
+        <Setter Property="GlyphSize" Value="Small" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_0_75ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_0_75ItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1093;6" /><Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedImagesScale}" />
+        <Setter Property="CommandParameter" Value="0.75" />
+        <Setter Property="GlyphSize" Value="Small" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_1ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_1ItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1098;6" /><Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedImagesScale}" />
+        <Setter Property="CommandParameter" Value="1" />
+        <Setter Property="GlyphSize" Value="Small" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_1_5ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_1_5ItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1103;6" /><Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedImagesScale}" />
+        <Setter Property="CommandParameter" Value="1.5" />
+        <Setter Property="GlyphSize" Value="Small" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_2ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_2ItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1108;6" /><Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedImagesScale}" />
+        <Setter Property="CommandParameter" Value="2" />
+        <Setter Property="GlyphSize" Value="Small" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_4ItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlSourceItemsThemeKeys ResourceKey=ImageToolsSetImageScale_4ItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1113;6" /><Setter Property="Command" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedImagesScale}" />
+        <Setter Property="CommandParameter" Value="4" />
+        <Setter Property="GlyphSize" Value="Small" />
+    </Style>
+    <Style x:Key="{dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ShowContainerHeaderCommandItemStyle}" BasedOn="{StaticResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=ShowContainerHeaderCommandItemStyleBase}}" TargetType="{x:Type dxb:BarCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1118;6" />
+            <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1123;26">
+                            <dxdiagn:SetShowHeaderStateBehavior Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarCheckItem}}}" />
+                        </ItemsControl>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ToolsContainerStyle}" TargetType="{x:Type dxb:BarSplitCheckItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1131;6" />
+            <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+                <Setter.Value>
+                    <DataTemplate>
+                        <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1136;26">
+                            <dxdiagn:BarToolsSelectorBehavior SelectedTool="{Binding  RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:BarSplitCheckItem}}, Path=(dxdiag:DiagramControl.Diagram).ActiveTool}" />
+                        </ItemsControl>
+                    </DataTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="PopupControl">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:PopupMenu dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1146;30">
+                                <dxb:PopupMenu.Items>
+                                    <dxb:BarCheckItem dxdiag:DiagramDesignerControl.BarItemName="{x:Static dxdiagcore:DefaultBarItemNames.RectangleTool}" Style="{DynamicResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_RectangleToolCommandItemStyle}}" />
+                                    <dxb:BarCheckItem dxdiag:DiagramDesignerControl.BarItemName="{x:Static dxdiagcore:DefaultBarItemNames.EllipseTool}" Style="{DynamicResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_EllipseToolCommandItemStyle}}" />
+                                    <dxb:BarCheckItem dxdiag:DiagramDesignerControl.BarItemName="{x:Static dxdiagcore:DefaultBarItemNames.RightTriangleTool}" Style="{DynamicResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_RightTriangleToolCommandItemStyle}}" />
+                                    <dxb:BarCheckItem dxdiag:DiagramDesignerControl.BarItemName="{x:Static dxdiagcore:DefaultBarItemNames.HexagonTool}" Style="{DynamicResource {dxdiagt:DesignerControlCommandsThemeKeys ResourceKey=SelectTool_HexagonToolCommandItemStyle}}" />
+                                </dxb:PopupMenu.Items>
+                            </dxb:PopupMenu>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="{x:Type dxb:Gallery}" x:Key="shapeGalleryStyleBase">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1161;6" /><Setter Property="ItemGlyphBorderTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <dxdiag:ShapeStylePresenter Theme="{Binding Path=(dxdiag:DiagramControl.Diagram).Theme}" StyleId="{Binding Caption}" ToolTip="{Binding Caption.Name}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemGlyphMargin" Value="6" />
+        <Setter Property="ItemGlyphVerticalAlignment" Value="Center" />
+        <Setter Property="ItemGlyphHorizontalAlignment" Value="Center" />
+        <Setter Property="ItemAutoHeight" Value="True" />
+        <Setter Property="ItemCaptionHorizontalAlignment" Value="Center" />
+        <Setter Property="AllowToolTips" Value="False" />
+        <Setter Property="IsItemDescriptionVisible" Value="False" />
+        <Setter Property="IsItemCaptionVisible" Value="False" />
+        <Setter Property="AllowFilter" Value="False" />
+        <Setter Property="MinColCount" Value="7" />
+        <Setter Property="AutoHideGallery" Value="False" />
+        <Setter Property="ItemCheckMode" Value="Single" />
+        <Setter Property="ItemClickCommand" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedItemsStyle}" />
+        <Setter Property="FirstCheckedItem" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SelectionToolsModel[StyleInfo], Mode=OneWay, Converter={dxdiagn:StyleInfoToStyleIdConverter}}" />
+    </Style>
+    <Style TargetType="{x:Type dxb:Gallery}" x:Key="shapeGalleryStyle" BasedOn="{StaticResource shapeGalleryStyleBase}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1184;6" /><Setter Property="ColCount" Value="7" />
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ShapeStylesStyle}" TargetType="{x:Type dxr:RibbonGalleryBarItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1187;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString RibbonPageGroup_ShapeStyles}" />
+            <Setter Property="Gallery">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:Gallery Style="{StaticResource shapeGalleryStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1194;30">
+                                <dxb:GalleryItemGroup ItemsSource="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).LastShapeStyles}" ItemTemplate="{StaticResource galleryControlItemTemplate}" />
+                            </dxb:Gallery>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="DropDownGallery">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:Gallery Style="{StaticResource shapeGalleryStyleBase}" GroupsSource="{Binding Path=(dxdiag:DiagramControl.Diagram).LastShapeStyles, RelativeSource={RelativeSource Self}, Converter={dxdiagn:LastShapeStylesToGalleryGroupConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1205;30">
+                                <dxb:Gallery.GroupTemplate>
+                                    <DataTemplate>
+                                        <ContentControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1208;42">
+                                            <dxb:GalleryItemGroup ItemsSource="{Binding Items}" Caption="{Binding Name}" ItemTemplate="{StaticResource galleryControlItemTemplate}" />
+                                        </ContentControl>
+                                    </DataTemplate>
+                                </dxb:Gallery.GroupTemplate>
+                            </dxb:Gallery>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SelectionModel}" Value="{x:Null}">
+                <Setter Property="IsEnabled" Value="False" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Theme.Id}" Value="NoTheme">
+                <Setter Property="IsEnabled" Value="False" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style TargetType="{x:Type dxb:Gallery}" x:Key="themeGalleryStyleBase">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1229;6" /><Setter Property="ItemGlyphBorderTemplate">
+            <Setter.Value>
+                <ControlTemplate>
+                    <dxdiag:ThemePresenter DataContext="{Binding Path=Item.Caption, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxb:GalleryItemControl}}}" DiagramTheme="{Binding}" ToolTip="{Binding Name}" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemGlyphVerticalAlignment" Value="Center" />
+        <Setter Property="ItemGlyphHorizontalAlignment" Value="Center" />
+        <Setter Property="ItemAutoHeight" Value="True" />
+        <Setter Property="AllowToolTips" Value="False" />
+        <Setter Property="IsItemDescriptionVisible" Value="False" />
+        <Setter Property="IsItemCaptionVisible" Value="False" />
+        <Setter Property="IsGroupCaptionVisible" Value="False" />
+        <Setter Property="AllowFilter" Value="False" />
+        <Setter Property="MinColCount" Value="8" />
+        <Setter Property="AutoHideGallery" Value="False" />
+        <Setter Property="ItemCheckMode" Value="Single" />
+        <Setter Property="SizeMode" Value="None" />
+        <Setter Property="FirstCheckedItem" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).RootToolsModel[Theme], Mode=TwoWay}" />
+    </Style>
+    <Style TargetType="{x:Type dxb:Gallery}" x:Key="themeGalleryStyle" BasedOn="{StaticResource themeGalleryStyleBase}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1251;6" /><Setter Property="ColCount" Value="8" />
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ThemesStyle}" TargetType="{x:Type dxr:RibbonGalleryBarItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1254;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString RibbonPageGroup_Themes}" />
+            <Setter Property="Gallery">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:Gallery Style="{StaticResource themeGalleryStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1261;30">
+                                <dxb:GalleryItemGroup ItemsSource="{x:Static dxdiagcore:ThemeRegistrator.Themes}" ItemTemplate="{StaticResource galleryControlItemTemplate}" />
+                            </dxb:Gallery>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="DropDownGallery">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:Gallery Style="{StaticResource themeGalleryStyleBase}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1272;30">
+                                <dxb:GalleryItemGroup ItemsSource="{x:Static dxdiagcore:ThemeRegistrator.Themes}" ItemTemplate="{StaticResource galleryControlItemTemplate}" />
+                            </dxb:Gallery>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style TargetType="{x:Type dxb:Gallery}" x:Key="formatContainerGalleryStyleBase" BasedOn="{StaticResource containerGalleryStyleBase}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1282;6" /><Setter Property="MinColCount" Value="8" />
+        <Setter Property="AutoHideGallery" Value="False" />
+        <Setter Property="ItemCheckMode" Value="Single" />
+        <Setter Property="SizeMode" Value="None" />
+        <Setter Property="ItemClickCommand" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).Commands.SetSelectedContainersShape}" />
+        <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1291;22">
+                        <dxdiagn:SetContainerShapeBehavior Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxb:Gallery}}}" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="{x:Type dxb:Gallery}" x:Key="formatContainerGalleryStyle" BasedOn="{StaticResource formatContainerGalleryStyleBase}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1298;6" /><Setter Property="ColCount" Value="8" />
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=ContainerStylesStyle}" TargetType="{x:Type dxr:RibbonGalleryBarItem}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1301;6" />
+            <Setter Property="Content" Value="{dxdiag:DiagramControlLocalizedString RibbonPageGroup_ContainerStyles}" />
+            <Setter Property="CustomizationGlyph" Value="{dxdiag:DiagramSvgImage Path=Images/Svg/InsertContainer.svg}" />
+            <Setter Property="Gallery">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:Gallery Style="{StaticResource formatContainerGalleryStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1309;30">
+                                <dxb:GalleryItemGroup ItemsSource="{x:Static dxdiagcore:DiagramContainerGalleryRegistrator.Shapes}" ItemTemplate="{StaticResource galleryControlItemTemplate}" />
+                            </dxb:Gallery>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="DropDownGallery">
+                <Setter.Value>
+                    <dxmvvm:ValueFactory>
+                        <DataTemplate>
+                            <dxb:Gallery Style="{StaticResource formatContainerGalleryStyleBase}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1320;30">
+                                <dxb:GalleryItemGroup ItemsSource="{x:Static dxdiagcore:DiagramContainerGalleryRegistrator.Shapes}" ItemTemplate="{StaticResource galleryControlItemTemplate}" />
+                            </dxb:Gallery>
+                        </DataTemplate>
+                    </dxmvvm:ValueFactory>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=SeparatorStyleBase}" TargetType="{x:Type dxb:BarItemSeparator}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1330;6" />
+            <Setter Property="CustomizationContent" Value="{dxdiag:DiagramControlLocalizedString SeparatorName}" />
+        </Style.Setters>
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=PageSizeSeparatorStyle}" TargetType="{x:Type dxb:BarItemSeparator}" BasedOn="{StaticResource {dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=SeparatorStyleBase}}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1335;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=MenuSeparatorStyle}" TargetType="{x:Type dxb:BarItemSeparator}" BasedOn="{StaticResource {dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=SeparatorStyleBase}}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1337;6" />
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=FontRibbonGroupSeparatorStyle}" TargetType="{x:Type dxb:BarItemSeparator}" BasedOn="{StaticResource {dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=SeparatorStyleBase}}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\RibbonItemsStyle.xaml;1339;6" />
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,398 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxgcore="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Grid/Generic/HeaderFooterItemsControlStyles.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Grid/SelectLineBase/Constants.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <ControlTemplate x:Key="{dxgt:TotalSummaryThemeKey ResourceKey=FootersContentTemplate}" TargetType="{x:Type ContentControl}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;9;10">
+            <dx:DXBorder Background="#FFFFFFFF" BorderBrush="#FFD6D6D6" cs:Name="Border_0002" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;10;14">
+                <dx:DXBorder.BorderThickness>
+                    <Binding Path="View.IsRootView">
+                        <Binding.Converter>
+                            <dxcore_unique_xmlns:BoolToObjectConverter TrueValue="0,1,0,0" FalseValue="0,0,0,1" />
+                        </Binding.Converter>
+                    </Binding>
+                </dx:DXBorder.BorderThickness>
+            </dx:DXBorder>
+            <ContentPresenter Margin="0,3,0,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;19;14" />
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=DataPresenterTemplate}" TargetType="{x:Type dxg:DataPresenter}">
+        <dx:DXBorder Background="#00000000" cs:Name="Border_0003" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;23;10">
+            <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;24;14" />
+        </dx:DXBorder>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=OuterBorderElementTemplate}" TargetType="{x:Type dxg:OuterBorderElement}" />
+    <Style x:Key="{dxgt:TableViewThemeKey ResourceKey=ColumnChooserDragTextStyle}" TargetType="TextBlock">
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" Value="44,12,12,12" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;28;6" /><Setter Property="Foreground" Value="#FF3C3C3C" cs:Name="Setter_0001" cs:id="Setter_0000" />
+        <Setter Property="Margin" Value="35,4" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+    <Style x:Key="{dxgt:TableViewThemeKey ResourceKey=GroupPanelDragTextStyle}" TargetType="TextBlock">
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" Value="12" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;41;6" /><Setter Property="Foreground" Value="#FF3C3C3C" cs:Name="Setter_0002" cs:id="Setter_0000" />
+        <Setter Property="FontSize">
+            <Setter.Value>
+                <Binding Path="FontSize" RelativeSource="{RelativeSource TemplatedParent}">
+                    <Binding.Converter>
+                        <dxcore_unique_xmlns:AddDoubleConverter Value="-1" />
+                    </Binding.Converter>
+                </Binding>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="0,5,0,5" />
+        <Setter Property="MinHeight" Value="15" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+    </Style>
+    <Thickness x:Key="{dxgt:TableViewThemeKey ResourceKey=GroupPanelBorderThickness}">0,0,0,1</Thickness>
+    <Thickness x:Key="{dxgt:TableViewThemeKey ResourceKey=GroupPanelMargin}">8</Thickness>
+    <Thickness x:Key="{dxgt:TableViewThemeKey ResourceKey=GroupPanelSeparatorMargin}">0,-23,0,0</Thickness>
+    <SolidColorBrush x:Key="{dxgt:TableViewThemeKey ResourceKey=GroupPanelBorderBrush}" Color="#FFD6D6D6" cs:Name="SolidColorBrush_0001" />
+    <DataTemplate x:Key="{dxgt:TotalSummaryThemeKey ResourceKey=TotalSummaryItemTemplate}">
+        <TextBlock x:Name="textBlock" dxg:InlineTextService.InlineInfo="{Binding Column.TotalSummaryTextInfo}" Style="{StaticResource {dxgt:TotalSummaryThemeKey ResourceKey=TotalSummaryTextControlStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;68;10" />
+        <DataTemplate.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="textBlock" Value="12" />
+            </Trigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+    
+    <dxg:DefaultStyle x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupValueContentStyle}" TargetType="{x:Type Border}" />
+    
+    <dxg:DefaultStyle x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupRowStyle}" TargetType="{x:Type ContentControl}">
+        <Setter Property="Control.Foreground" Value="#E8333333" cs:Name="Setter_0003" cs:id="Setter_0000" />
+        <Setter Property="Control.Background" Value="#FFFFFFFF" cs:Name="Setter_0004" cs:id="Setter_0001" />
+        <Setter Property="Control.FontWeight" Value="Bold" />
+    </dxg:DefaultStyle>
+    <ControlTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupRowContentTemplate}" TargetType="{x:Type ContentControl}">
+        <Grid Background="#00000000" MinHeight="{DynamicResource {dxgt:GroupRowThemeKey ResourceKey=GroupRowMinHeight}}" cs:Name="Grid_0001" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;84;10">
+            <dx:DXBorder x:Name="groupRowBorder" Background="{TemplateBinding Background}" BorderBrush="#FFD6D6D6" BorderThickness="0,0,0,1" Padding="{TemplateBinding Padding}" SnapsToDevicePixels="True" cs:Name="Border_0004" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;85;14">
+                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;86;18">
+                    <dx:DXBorder x:Name="groupRowBorderSelected" Background="#FFCDE6F7" cs:Name="Border_0005" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;87;22">
+                        <dx:DXBorder.Visibility>
+                            <Binding Path="SelectionState">
+                                <Binding.Converter>
+                                    <dxg:SelectionStateToVisibilityConverter Value="Selected" />
+                                </Binding.Converter>
+                            </Binding>
+                        </dx:DXBorder.Visibility>
+                    </dx:DXBorder>
+                    <dx:DXBorder x:Name="groupRowBorderFocused" Background="#FFCDE6F7" cs:Name="Border_0006" cs:id="Border_0002" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;96;22">
+                        <dx:DXBorder.Visibility>
+                            <Binding Path="SelectionState">
+                                <Binding.Converter>
+                                    <dxg:SelectionStateToVisibilityConverter Value="Focused" />
+                                </Binding.Converter>
+                            </Binding>
+                        </dx:DXBorder.Visibility>
+                    </dx:DXBorder>
+                    <dx:DXBorder Visibility="Collapsed" Background="{StaticResource UnfocusedRowBrush}" dxg:FadeSelectionHelper.IsKeyboardFocusWithinView="{Binding Path=(dxg:GridControl.ActiveView).IsKeyboardFocusWithin, RelativeSource={RelativeSource Mode=Self}}" dxg:FadeSelectionHelper.FadeSelectionOnLostFocus="{Binding Path=View.ActualFadeSelectionOnLostFocus}" dxg:FadeSelectionHelper.Opacity="1" dxg:FadeSelectionHelper.IsSelected="{Binding SelectionState, Converter={dxg:SelectionStateToBooleanConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;105;22" />
+                    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;106;22">
+                        <ContentPresenter.Margin>
+                            <Binding Path="GroupLevel">
+                                <Binding.Converter>
+                                    <dxg:GroupLevelToMarginConverter />
+                                </Binding.Converter>
+                                <Binding.ConverterParameter>
+                                    <Thickness>28,0,0,0</Thickness>
+                                </Binding.ConverterParameter>
+                            </Binding>
+                        </ContentPresenter.Margin>
+                    </ContentPresenter>
+                </Grid>
+            </dx:DXBorder>
+        </Grid>
+    </ControlTemplate>
+    <dxg:DefaultDataTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupValueTemplate}">
+        <dx:DXBorder Style="{Binding Path=View.GroupValueContentStyle}" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;123;10">
+            <StackPanel Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;124;14">
+                <TextBlock Text="{Binding Path=GroupColumnHeaderText}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;125;18" />
+                <TextBlock Tag="PART_GroupValue" Text="{Binding Path=Value}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;126;18" />
+            </StackPanel>
+        </dx:DXBorder>
+    </dxg:DefaultDataTemplate>
+    <Thickness x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupColumnSummaryPadding}">4,8,4,7</Thickness>
+    <Thickness x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupBandSummaryPadding}">4,2,4,7</Thickness>
+    <SolidColorBrush x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupBandSummaryNormalBorderBrush}" Color="#FFD6D6D6" cs:Name="SolidColorBrush_0006" />
+    <SolidColorBrush x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupBandSummaryFocusedBorderBrush}" Color="#7F999999" cs:Name="SolidColorBrush_0007" />
+    <SolidColorBrush x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupBandSummaryNormalBackground}" Color="Transparent" cs:Name="SolidColorBrush_0008" />
+    <SolidColorBrush x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupBandSummaryFocusedBackground}" Color="Transparent" cs:Name="SolidColorBrush_0009" />
+    <ControlTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupBandSummaryTemplate}">
+        <dx:DXBorder Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="1" MinHeight="22" cs:Name="Border_0022" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;137;10">
+            <dx:DXBorder.Margin>
+                <Binding Path="HasTopElement" RelativeSource="{RelativeSource TemplatedParent}">
+                    <Binding.Converter>
+                        <dxcore_unique_xmlns:BoolToObjectConverter TrueValue="0,0,2,3" FalseValue="0,2,2,3" />
+                    </Binding.Converter>
+                </Binding>
+            </dx:DXBorder.Margin>
+            <ContentPresenter x:Name="PART_Content" Margin="4,1,4,1" Content="{Binding}" ContentTemplate="{Binding View.GroupColumnSummaryItemTemplate}" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;145;14" />
+        </dx:DXBorder>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="PART_Content" Value="12" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <sys:Double x:Key="{dxgt:GroupRowThemeKey ResourceKey=BandedViewGroupSummaryMinHeight}">31</sys:Double>
+    <Thickness x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupDefaultSummaryPadding}">0,5,0,4</Thickness>
+    <Thickness x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupRowDefaultSummaryPadding}">0,5,0,5</Thickness>
+    <Thickness x:Key="{dxgt:GroupRowThemeKey ResourceKey=ExpandButtonMargin}">15,5,0,4</Thickness>
+    <Thickness x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupRowExpandButtonMargin}">15,5,0,5</Thickness>
+    <Thickness x:Key="{dxgt:GroupRowThemeKey ResourceKey=CheckBoxSelectorMargin}">4,4,0,5</Thickness>
+    <Thickness x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupValuePresenterMargin}">4,4,0,5</Thickness>
+    <Thickness x:Key="{dxgt:GroupRowThemeKey ResourceKey=BandedGroupValuePresenterMargin}">0,0,28,0</Thickness>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Grid.GroupSummaryContentPresenter}" TargetType="{x:Type dxg:GroupSummaryContentPresenter}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;161;6" /><Setter Property="Margin" Value="0,0,4,0" />
+    </Style>
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=FilterRowTemplate}" TargetType="{x:Type ContentControl}">
+        <dx:DXBorder Background="#FFFFFFFF" BorderBrush="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" BorderThickness="0,0,0,1" cs:Name="Border_0014" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;165;10">
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;166;14">
+                <dx:DXBorder x:Name="borderFocused" Background="#FFCDE6F7" SnapsToDevicePixels="True" cs:Name="Border_0007" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;167;18">
+                    <dx:DXBorder.Visibility>
+                        <Binding Path="SelectionState">
+                            <Binding.Converter>
+                                <dxg:SelectionStateToVisibilityConverter Value="Focused" />
+                            </Binding.Converter>
+                        </Binding>
+                    </dx:DXBorder.Visibility>
+                </dx:DXBorder>
+                <ContentControl HorizontalContentAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;176;18">
+                    <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;177;22" />
+                </ContentControl>
+            </Grid>
+        </dx:DXBorder>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=RowNewItemTextControlTemplate}" TargetType="dxg:RowNewItemTextControl">
+        <dx:DXBorder x:Name="backgroundBorder" IsHitTestVisible="False" Background="#FFFFFFFF" cs:Name="Border_0009" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;183;10">
+            <TextBlock Foreground="#FF3C3C3C" Margin="0,1,0,2" HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="PART_GridNewRowText" cs:Name="TextBlock_0001" cs:id="TextBlock_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;184;14">
+                <TextBlock.Text>
+                    <Binding Path="View.LocalizationDescriptor" ConverterParameter="GridNewRowText">
+                        <Binding.Converter>
+                            <dxg:DynamicLocalizationStringValueConvertor />
+                        </Binding.Converter>
+                    </Binding>
+                </TextBlock.Text>
+            </TextBlock>
+        </dx:DXBorder>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="PART_GridNewRowText" Value="12" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=NewItemRowTemplate}" TargetType="{x:Type ContentControl}">
+        <Grid x:Name="Root" Margin="0,0,0,1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;201;10">
+            <dx:DXBorder x:Name="borderFocused" Background="#FFCDE6F7" cs:Name="Border_0008" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;202;14">
+                <dx:DXBorder.Visibility>
+                    <Binding Path="SelectionState">
+                        <Binding.Converter>
+                            <dxg:SelectionStateToVisibilityConverter Value="Focused" />
+                        </Binding.Converter>
+                    </Binding>
+                </dx:DXBorder.Visibility>
+            </dx:DXBorder>
+            <ContentControl HorizontalContentAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;211;14">
+                <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;212;18" />
+            </ContentControl>
+            <dxg:RowNewItemTextControl Visibility="{Binding Path=IsFocused, Converter={StaticResource BooleanToVisibilityConverterInverted}}" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=SelectionState}" Value="Focused">
+                <Setter Property="Foreground" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=TextFocusedBrush}}" />
+            </DataTrigger>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="MinHeight" TargetName="Root" Value="44" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Color x:Key="WhiteRowCellForeground" cs:Name="Color_0001">#FF3C3C3C</Color>
+    <Color x:Key="BlackRowCellForeground" cs:Name="Color_0002">#FF3C3C3C</Color>
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=FilterCellContentPresenterTemplate}" TargetType="{x:Type dxg:FilterCellContentPresenter}">
+        <dx:DXBorder x:Name="ContentBorder" Padding="{TemplateBinding Padding}" BorderThickness="{TemplateBinding BorderState}" BorderBrush="{TemplateBinding BorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;228;10">
+            
+            <dx:DXBorder.Background>
+                <Binding Path="Background" RelativeSource="{RelativeSource TemplatedParent}" />
+            </dx:DXBorder.Background>
+            
+            
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;253;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <dxg:FilterCriteriaControl />
+                <dxg:FilterRowCellEditor Grid.Column="1" x:Name="PART_CellEditor" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;259;18" />
+            </Grid>
+        </dx:DXBorder>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxg:TableView.IsFocusedRow" Value="False">
+                <Setter Property="Foreground" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=TextUnfocusedBrush}}" />
+            </Trigger>
+            <Trigger Property="dxg:TableView.IsFocusedRow" Value="True">
+                <Setter Property="Foreground" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=TextRowSelectedBrush}}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <SolidColorBrush x:Key="{dxgt:TableViewThemeKey ResourceKey=ColumnChooserBackgroundBrush}" Color="#FFFFFFFF" cs:Name="SolidColorBrush_0003" />
+    <SolidColorBrush x:Key="{dxgt:TableViewThemeKey ResourceKey=ColumnChooserBorderBrush}" Color="#FFACACAC" cs:Name="SolidColorBrush_0004" />
+    <DataTemplate x:Key="{dxgt:GridColumnHeaderThemeKey ResourceKey=FixedColumnsDelimiterTemplate}">
+        <dx:DXBorder Background="#FFFFFFFF" BorderBrush="#FFD6D6D6" BorderThickness="1,0,1,1" cs:Name="Border_0010" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;274;10" />
+    </DataTemplate>
+    <Color x:Key="CellEditorForeColor" cs:Name="Color_0003">#FF3C3C3C</Color>
+    <Color x:Key="CellEditorBorderColor" cs:Name="Color_0004">#FFD6D6D6</Color>
+    <Color x:Key="RowSelectedInnerBorderBackgroundTo" cs:Name="Color_0005">#FFFC9F0C</Color>
+    <Color x:Key="RowFocusedInnerBorderBackgroundTo" cs:Name="Color_0006">#FFF0F0F0</Color>
+    <Color x:Key="RowFocusedAndSelectedInnerBorderBackgroundTo" cs:Name="Color_0007">#FFCDE6F7</Color>
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=CellContentPresenterTemplate}" TargetType="{x:Type dxg:CellContentPresenter}">
+        <dx:DXBorder x:Name="ContentBorder" Padding="{TemplateBinding Padding}" BorderThickness="{Binding Path=BorderState, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;282;10">
+            
+            
+            <dx:DXBorder.Background>
+                <Binding Path="Background" RelativeSource="{RelativeSource TemplatedParent}" />
+            </dx:DXBorder.Background>
+            <dx:DXBorder.BorderBrush>
+                <Binding Path="BorderBrush" RelativeSource="{RelativeSource TemplatedParent}" />
+            </dx:DXBorder.BorderBrush>
+            
+            
+            <dxg:CellEditor x:Name="PART_CellEditor" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;329;14">
+                
+            </dxg:CellEditor>
+        </dx:DXBorder>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=FitColumnContentTemplate}">
+        <dx:DXBorder Name="fitColumnVerticalLine" Background="#00000000" BorderThickness="1,0,0,0" BorderBrush="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" cs:Name="Border_0011" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;344;10">
+            <dx:DXBorder.Opacity>
+                <Binding Path="View.ShowVerticalLines">
+                    <Binding.Converter>
+                        <dxcore_unique_xmlns:BoolToObjectConverter FalseValue="0" TrueValue="1" />
+                    </Binding.Converter>
+                </Binding>
+            </dx:DXBorder.Opacity>
+        </dx:DXBorder>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=FitColumnLeftContentTemplate}">
+        <dx:DXBorder Name="fitColumnVerticalLine" Background="#00000000" BorderThickness="0,0,1,0" BorderBrush="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" cs:Name="Border_0012" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;355;10">
+            <dx:DXBorder.Opacity>
+                <Binding Path="View.ShowVerticalLines">
+                    <Binding.Converter>
+                        <dxcore_unique_xmlns:BoolToObjectConverter FalseValue="0" TrueValue="1" />
+                    </Binding.Converter>
+                </Binding>
+            </dx:DXBorder.Opacity>
+        </dx:DXBorder>
+    </ControlTemplate>
+    <DataTemplate x:Key="{dxgt:GridRowThemeKey ResourceKey=FixedColumnsDelimiterTemplate}">
+        <dx:DXBorder x:Name="Border" BorderBrush="#FFD6D6D6" BorderThickness="1,0,1,0" cs:Name="Border_0013" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;366;10">
+            <dx:DXBorder.Visibility>
+                <Binding Path="View.ShowVerticalLines">
+                    <Binding.Converter>
+                        <dxcore_unique_xmlns:BoolToVisibilityConverter />
+                    </Binding.Converter>
+                </Binding>
+            </dx:DXBorder.Visibility>
+        </dx:DXBorder>
+    </DataTemplate>
+    <ControlTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupFooterRowContentTemplate}" TargetType="{x:Type ContentControl}">
+        <dx:DXBorder Name="border" BorderBrush="#FFD5D5D5" Background="{TemplateBinding Background}" MinHeight="32" cs:Name="Border_0017" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;377;10">
+            <dx:DXBorder.BorderThickness>
+                <Binding Path="FooterPosition">
+                    <Binding.Converter>
+                        <dxcore_unique_xmlns:EnumToObjectConverter>
+                            <dxcore_unique_xmlns:EnumToObjectConverter.Values>
+                                <dxcore_unique_xmlns:EnumObjectProvider x:Key="Top" Value="0,0,0,1" />
+                                <dxcore_unique_xmlns:EnumObjectProvider x:Key="Bottom" Value="0,0,0,1" />
+                                <dxcore_unique_xmlns:EnumObjectProvider x:Key="Middle" Value="0,0,0,1" />
+                                <dxcore_unique_xmlns:EnumObjectProvider x:Key="Single" Value="0,0,0,1" />
+                            </dxcore_unique_xmlns:EnumToObjectConverter.Values>
+                        </dxcore_unique_xmlns:EnumToObjectConverter>
+                    </Binding.Converter>
+                </Binding>
+            </dx:DXBorder.BorderThickness>
+            <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;392;14">
+                <ContentPresenter.Margin>
+                    <Binding Path="ContentOffset">
+                        <Binding.Converter>
+                            <dxg:ContentOffsetToMarginConverter />
+                        </Binding.Converter>
+                    </Binding>
+                </ContentPresenter.Margin>
+            </ContentPresenter>
+        </dx:DXBorder>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=View.ShowHorizontalLines}" Value="false">
+                <Setter Property="BorderThickness" Value="0" TargetName="border" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupFooterSummaryControlTemplate}">
+        <dx:DXBorder Name="border" Background="Transparent" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" cs:Name="Border_0018" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;409;10">
+            <Grid Margin="{TemplateBinding Padding}" Name="rootGrid" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;410;14">
+                
+                <Grid.Visibility>
+                    <Binding Path="HasSummary">
+                        <Binding.Converter>
+                            <dxcore_unique_xmlns:BoolToObjectConverter TrueValue="Visible" FalseValue="Hidden" />
+                        </Binding.Converter>
+                    </Binding>
+                </Grid.Visibility>
+                
+                
+                <dx:DXBorder x:Name="Border1" Background="#FFFFFFFF" BorderBrush="#FFD6D6D6" BorderThickness="1" MinHeight="22" Margin="1,1,2,1" cs:Name="Border_0020" cs:id="Border_0002" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;429;18">
+                    <dxcore_unique_xmlns:DataContentPresenter Style="{Binding Path=Column.View.FooterSummaryContentStyle}" Content="{Binding}" ContentTemplateSelector="{Binding Path=Column.View.ActualGroupFooterSummaryItemTemplateSelector}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;430;22" />
+                </dx:DXBorder>
+            </Grid>
+        </dx:DXBorder>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="MinHeight" TargetName="Border1" Value="44" />
+            </Trigger>
+            <DataTrigger Binding="{Binding ShowVerticalSeparator}" Value="true">
+                <Setter Property="BorderThickness" TargetName="border" Value="0,0,1,0" />
+                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}}" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <Style x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupFooterSummaryContentStyle}" TargetType="{x:Type dx:DataContentPresenter}">
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" Value="12" />
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;444;6" /><Setter Property="HorizontalAlignment" Value="{Binding Path=Column.ActualHorizontalContentAlignment}" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="4,1,4,1" />
+    </Style>
+    <Style x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupBandSummaryContentStyle}" TargetType="{x:Type dxg:GroupBandSummaryControl}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;454;6" /></Style>
+    <DataTemplate x:Key="{dxgt:GroupRowThemeKey ResourceKey=GroupFooterSummaryItemTemplate}">
+        <TextBlock dxg:InlineTextService.InlineInfo="{Binding SummaryTextInfo}" Style="{StaticResource {dxgt:TotalSummaryThemeKey ResourceKey=TotalSummaryTextControlStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;456;10" />
+    </DataTemplate>
+    <SolidColorBrush x:Key="{dxgt:TableViewThemeKey ResourceKey=EditFormBackground}" Color="#FFFFFFFF" cs:Name="SolidColorBrush_0005" />
+    <DataTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=CompactPanelDownGlyph}">
+        <Grid x:Name="grid" FlowDirection="LeftToRight" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;460;10">
+            <Path Stretch="Fill" Fill="{TemplateBinding TextBlock.Foreground}" Data="F1 M 209,15.9999L 201,15.9999L 205,20L 209,15.9999 Z" HorizontalAlignment="Center" VerticalAlignment="Center" Width="8" Height="4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;461;14" />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxgt:TableViewThemeKey ResourceKey=CompactPanelSortGlyph}">
+        <Grid x:Name="grid" Width="Auto" Height="Auto" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;465;10">
+            <Path Stretch="Fill" Fill="{TemplateBinding TextBlock.Foreground}" Data="F1 M 0,6L 1,5L 3,7L 3,0L 5,0L 5,7L 7,5L 8,6L 4,10L 0,6 Z " Width="8" Height="10" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Office2016White\GridView.xaml;466;14" />
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

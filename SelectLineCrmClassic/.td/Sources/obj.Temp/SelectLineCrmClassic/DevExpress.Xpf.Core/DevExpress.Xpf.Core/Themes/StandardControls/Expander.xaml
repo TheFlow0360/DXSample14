@@ -1,0 +1,232 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/Brushes.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/SharedResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <SolidColorBrush x:Key="GlyphBrush" Color="#FF666666" cs:Name="SolidColorBrush_0001" />
+    <Style x:Key="ExpanderHeaderFocusVisual">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;7;6" /><Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <dx:DXBorder dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;11;22">
+                        <Rectangle Stroke="#FF000000" StrokeThickness="1" StrokeDashArray="1 2" SnapsToDevicePixels="true" cs:Name="Rectangle_0001" cs:id="Rectangle_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;12;26" />
+                    </dx:DXBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ExpanderUpHeaderStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;18;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <dx:DXBorder Padding="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;22;22">
+                        <Grid Background="#00000000" SnapsToDevicePixels="False" cs:Name="Grid_0001" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;23;26">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="ColumnDefinition1" Width="15" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Path x:Name="GlyphClose" Stretch="Fill" Fill="{StaticResource GlyphBrush}" Data="{StaticResource UpArrowGeometry}" Width="7" Height="6" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;28;30" />
+                            <Path x:Name="GlyphOpen" Stretch="Fill" Fill="{StaticResource GlyphBrush}" Data="{StaticResource DownArrowGeometry}" Width="7" Height="6" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;29;30" />
+                            <ContentPresenter x:Name="ContentPresenter1" Margin="4,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="1" RecognizesAccessKey="True" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;30;30" />
+                        </Grid>
+                    </dx:DXBorder>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Visibility" TargetName="GlyphOpen" Value="Visible" />
+                            <Setter Property="Visibility" TargetName="GlyphClose" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="GlyphClose" Value="#FFAA1948" cs:Name="Setter_0001" cs:id="Setter_0000" />
+                            <Setter Property="Fill" TargetName="GlyphOpen" Value="#FFAA1948" cs:Name="Setter_0002" cs:id="Setter_0001" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="GlyphClose" Value="#FFAA1948" cs:Name="Setter_0003" cs:id="Setter_0002" />
+                            <Setter Property="Fill" TargetName="GlyphOpen" Value="#FFAA1948" cs:Name="Setter_0004" cs:id="Setter_0003" />
+                        </Trigger>
+                        <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                            <Setter Property="Width" TargetName="ColumnDefinition1" Value="44" />
+                            <Setter Property="Margin" TargetName="ContentPresenter1" Value="12,0,0,0" />
+                            <Setter Property="Width" TargetName="GlyphClose" Value="14" />
+                            <Setter Property="Height" TargetName="GlyphClose" Value="12" />
+                            <Setter Property="Width" TargetName="GlyphOpen" Value="14" />
+                            <Setter Property="Height" TargetName="GlyphOpen" Value="12" />
+                            <Setter Property="Data" TargetName="GlyphOpen" Value="F1 M 0,2.86102e-006L 3.06162e-016,5L 7,12L 14,5L 14,2.86102e-006L 7,7L 0,2.86102e-006 Z " />
+                            <Setter Property="Data" TargetName="GlyphClose" Value="F1 M 0,12L 3.06162e-016,7L 7,9.53674e-007L 14,7L 14,12L 7,5L 0,12 Z " />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ExpanderDownHeaderStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;61;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <dx:DXBorder Padding="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;65;22">
+                        <Grid Background="#00000000" SnapsToDevicePixels="False" cs:Name="Grid_0002" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;66;26">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition x:Name="ColumnDefinition1" Width="15" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Path x:Name="GlyphClose" Stretch="Fill" Fill="{StaticResource GlyphBrush}" Data="{StaticResource DownArrowGeometry}" Width="7" Height="6" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;71;30" />
+                            <Path x:Name="GlyphOpen" Stretch="Fill" Fill="{StaticResource GlyphBrush}" Data="{StaticResource UpArrowGeometry}" Width="7" Height="6" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;72;30" />
+                            <ContentPresenter x:Name="ContentPresenter1" Grid.Column="1" HorizontalAlignment="Left" Margin="4,0,0,0" RecognizesAccessKey="True" SnapsToDevicePixels="True" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;73;30" />
+                        </Grid>
+                    </dx:DXBorder>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Visibility" TargetName="GlyphOpen" Value="Visible" />
+                            <Setter Property="Visibility" TargetName="GlyphClose" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="GlyphClose" Value="#FFAA1948" cs:Name="Setter_0005" cs:id="Setter_0000" />
+                            <Setter Property="Fill" TargetName="GlyphOpen" Value="#FFAA1948" cs:Name="Setter_0006" cs:id="Setter_0001" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="GlyphClose" Value="#FFAA1948" cs:Name="Setter_0007" cs:id="Setter_0002" />
+                            <Setter Property="Fill" TargetName="GlyphOpen" Value="#FFAA1948" cs:Name="Setter_0008" cs:id="Setter_0003" />
+                        </Trigger>
+                        <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                            <Setter Property="Width" TargetName="ColumnDefinition1" Value="44" />
+                            <Setter Property="Margin" TargetName="ContentPresenter1" Value="12,0,0,0" />
+                            <Setter Property="Width" TargetName="GlyphClose" Value="14" />
+                            <Setter Property="Height" TargetName="GlyphClose" Value="12" />
+                            <Setter Property="Height" TargetName="GlyphOpen" Value="12" />
+                            <Setter Property="Width" TargetName="GlyphOpen" Value="14" />
+                            <Setter Property="Data" TargetName="GlyphClose" Value="F1 M 0,2.86102e-006L 3.06162e-016,5L 7,12L 14,5L 14,2.86102e-006L 7,7L 0,2.86102e-006 Z " />
+                            <Setter Property="Data" TargetName="GlyphOpen" Value="F1 M 0,12L 3.06162e-016,7L 7,9.53674e-007L 14,7L 14,12L 7,5L 0,12 Z " />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ExpanderRightHeaderStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;104;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <dx:DXBorder Padding="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;108;22">
+                        <Grid Background="#00000000" SnapsToDevicePixels="False" cs:Name="Grid_0003" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;109;26">
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="RowDefinition1" Height="15" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Path x:Name="GlyphClose" Stretch="Fill" Fill="{StaticResource GlyphBrush}" Data="{StaticResource RightArrowGeometry}" Width="6" Height="7" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;114;30" />
+                            <Path x:Name="GlyphOpen" Stretch="Fill" Fill="{StaticResource GlyphBrush}" Data="{StaticResource LeftArrowGeometry}" Width="6" Height="7" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;115;30" />
+                            <ContentPresenter x:Name="ContentPresenter1" Margin="0,4,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Grid.Row="1" RecognizesAccessKey="True" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;116;30" />
+                        </Grid>
+                    </dx:DXBorder>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Visibility" TargetName="GlyphOpen" Value="Visible" />
+                            <Setter Property="Visibility" TargetName="GlyphClose" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="GlyphClose" Value="#FFAA1948" cs:Name="Setter_0009" cs:id="Setter_0000" />
+                            <Setter Property="Fill" TargetName="GlyphOpen" Value="#FFAA1948" cs:Name="Setter_0010" cs:id="Setter_0001" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="GlyphClose" Value="#FFAA1948" cs:Name="Setter_0011" cs:id="Setter_0002" />
+                            <Setter Property="Fill" TargetName="GlyphOpen" Value="#FFAA1948" cs:Name="Setter_0012" cs:id="Setter_0003" />
+                        </Trigger>
+                        <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                            <Setter Property="Height" TargetName="RowDefinition1" Value="44" />
+                            <Setter Property="Margin" TargetName="ContentPresenter1" Value="0,12,0,0" />
+                            <Setter Property="Width" TargetName="GlyphClose" Value="12" />
+                            <Setter Property="Height" TargetName="GlyphClose" Value="14" />
+                            <Setter Property="Height" TargetName="GlyphOpen" Value="14" />
+                            <Setter Property="Width" TargetName="GlyphOpen" Value="12" />
+                            <Setter Property="Data" TargetName="GlyphOpen" Value="F1 M 12,9.53674e-007L 7,9.53674e-007L 1.43051e-006,7L 7,14L 12,14L 5,7L 12,9.53674e-007 Z " />
+                            <Setter Property="Data" TargetName="GlyphClose" Value="F1 M 0.0018425,2.86102e-006L 5.00184,2.86102e-006L 12.0018,7L 5.00184,14L 0.0018425,14L 7.00184,7L 0.0018425,2.86102e-006 Z " />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="ExpanderLeftHeaderStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;147;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <dx:DXBorder Padding="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;151;22">
+                        <Grid Background="#00000000" SnapsToDevicePixels="False" cs:Name="Grid_0004" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;152;26">
+                            <Grid.RowDefinitions>
+                                <RowDefinition x:Name="RowDefinition1" Height="19" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Path x:Name="GlyphClose" Stretch="Fill" Fill="{StaticResource GlyphBrush}" Data="{StaticResource LeftArrowGeometry}" Width="6" Height="7" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;157;30" />
+                            <Path x:Name="GlyphOpen" Stretch="Fill" Fill="{StaticResource GlyphBrush}" Data="{StaticResource RightArrowGeometry}" Width="6" Height="7" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;158;30" />
+                            <ContentPresenter x:Name="ContentPresenter1" HorizontalAlignment="Center" Margin="0,4,0,0" Grid.Row="1" RecognizesAccessKey="True" SnapsToDevicePixels="True" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;159;30" />
+                        </Grid>
+                    </dx:DXBorder>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="true">
+                            <Setter Property="Visibility" TargetName="GlyphOpen" Value="Visible" />
+                            <Setter Property="Visibility" TargetName="GlyphClose" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Fill" TargetName="GlyphClose" Value="#FFAA1948" cs:Name="Setter_0013" cs:id="Setter_0000" />
+                            <Setter Property="Fill" TargetName="GlyphOpen" Value="#FFAA1948" cs:Name="Setter_0014" cs:id="Setter_0001" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="Fill" TargetName="GlyphClose" Value="#FFAA1948" cs:Name="Setter_0015" cs:id="Setter_0002" />
+                            <Setter Property="Fill" TargetName="GlyphOpen" Value="#FFAA1948" cs:Name="Setter_0016" cs:id="Setter_0003" />
+                        </Trigger>
+                        <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                            <Setter Property="Height" TargetName="RowDefinition1" Value="44" />
+                            <Setter Property="Margin" TargetName="ContentPresenter1" Value="0,12,0,0" />
+                            <Setter Property="Width" TargetName="GlyphClose" Value="12" />
+                            <Setter Property="Height" TargetName="GlyphClose" Value="14" />
+                            <Setter Property="Height" TargetName="GlyphOpen" Value="14" />
+                            <Setter Property="Width" TargetName="GlyphOpen" Value="12" />
+                            <Setter Property="Data" TargetName="GlyphClose" Value="F1 M 12,9.53674e-007L 7,9.53674e-007L 1.43051e-006,7L 7,14L 12,14L 5,7L 12,9.53674e-007 Z " />
+                            <Setter Property="Data" TargetName="GlyphOpen" Value="F1 M 0.0018425,2.86102e-006L 5.00184,2.86102e-006L 12.0018,7L 5.00184,14L 0.0018425,14L 7.00184,7L 0.0018425,2.86102e-006 Z " />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=System.Windows.Controls.Expander}" TargetType="{x:Type Expander}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;190;6" /><Setter Property="Background" Value="#00000000" cs:Name="Setter_0017" cs:id="Setter_0000" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="BorderBrush" Value="#00000000" cs:Name="Setter_0018" cs:id="Setter_0001" />
+        <Setter Property="BorderThickness" Value="1" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Expander}">
+                    <dx:DXBorder BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" CornerRadius="3" SnapsToDevicePixels="true" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;199;22">
+                        <DockPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;200;26">
+                            <ToggleButton x:Name="HeaderSite" ContentTemplate="{TemplateBinding HeaderTemplate}" ContentTemplateSelector="{TemplateBinding HeaderTemplateSelector}" Content="{TemplateBinding Header}" DockPanel.Dock="Top" Foreground="{TemplateBinding Foreground}" FontWeight="{TemplateBinding FontWeight}" FocusVisualStyle="{StaticResource ExpanderHeaderFocusVisual}" FontStyle="{TemplateBinding FontStyle}" FontStretch="{TemplateBinding FontStretch}" FontSize="{TemplateBinding FontSize}" FontFamily="{TemplateBinding FontFamily}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" IsChecked="{Binding IsExpanded, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" Margin="1" MinWidth="0" MinHeight="0" Padding="{TemplateBinding Padding}" Style="{StaticResource ExpanderDownHeaderStyle}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;201;30" />
+                            <ContentPresenter x:Name="ExpandSite" DockPanel.Dock="Bottom" Focusable="false" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" Visibility="Collapsed" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\Expander.xaml;202;30" />
+                        </DockPanel>
+                    </dx:DXBorder>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsExpanded" Value="true">
+                            <Setter Property="Visibility" TargetName="ExpandSite" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="ExpandDirection" Value="Right">
+                            <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Right" />
+                            <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Left" />
+                            <Setter Property="Style" TargetName="HeaderSite" Value="{StaticResource ExpanderRightHeaderStyle}" />
+                        </Trigger>
+                        <Trigger Property="ExpandDirection" Value="Up">
+                            <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Top" />
+                            <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Bottom" />
+                            <Setter Property="Style" TargetName="HeaderSite" Value="{StaticResource ExpanderUpHeaderStyle}" />
+                        </Trigger>
+                        <Trigger Property="ExpandDirection" Value="Left">
+                            <Setter Property="DockPanel.Dock" TargetName="ExpandSite" Value="Left" />
+                            <Setter Property="DockPanel.Dock" TargetName="HeaderSite" Value="Right" />
+                            <Setter Property="Style" TargetName="HeaderSite" Value="{StaticResource ExpanderLeftHeaderStyle}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.GrayTextBrushKey}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

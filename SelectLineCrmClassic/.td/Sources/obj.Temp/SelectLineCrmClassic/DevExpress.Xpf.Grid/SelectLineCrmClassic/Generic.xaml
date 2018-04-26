@@ -1,0 +1,23 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/WaitIndicators.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/ScrollBars.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/ExpandButtons.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/ColumnHeaderDragIndicator.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/GridControl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/CardTemplates.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/CardView.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/GridView.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/Rows.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/LightweightStyles.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/GridCard.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/ColumnHeader.xaml" />
+		<dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/ExcelColumnFilter.xaml" />
+		<dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/ExtendedColumnChooser.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/TotalSummary.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/RowIndicator.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/TreeListIndentItems.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/LookUpEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Grid/SelectLineCrmClassic/GridControlElements.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

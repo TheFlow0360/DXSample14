@@ -1,0 +1,43 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:themes="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:editors="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:core="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:themes1="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{core:EditorsResource Themes/Generic/TextEditBase.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+    <ControlTemplate x:Key="{themes:HyperLinkEditThemeKey ResourceKey=Template}" TargetType="{x:Type editors:HyperlinkEdit}">
+        <editors:EditorControl x:Name="PART_Content" Template="{TemplateBinding ActualEditorControlTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\HyperLinkEdit.xaml;7;10" />
+    </ControlTemplate>
+    <SolidColorBrush x:Key="{themes:HyperLinkEditThemeKey ResourceKey=Foreground}">Blue</SolidColorBrush>
+	<SolidColorBrush x:Key="{themes:HyperLinkEditThemeKey ResourceKey=InplaceForeground}">Blue</SolidColorBrush>
+
+    <Style x:Key="{themes:HyperLinkEditThemeKey ResourceKey=TextBlockStyle}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyleBase}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\HyperLinkEdit.xaml;12;6" /><Setter Property="Margin" Value="2,3,2,3" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="TextDecorations" Value="Underline" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{themes:HyperLinkEditThemeKey ResourceKey=TextBlockInplaceStyle}" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockInplaceStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\HyperLinkEdit.xaml;23;6" /><Setter Property="Margin" Value="2" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="TextTrimming" Value="CharacterEllipsis" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Cursor" Value="Hand" />
+                <Setter Property="TextDecorations" Value="Underline" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <ControlTemplate x:Key="{themes:HyperLinkEditThemeKey ResourceKey=DisplayTemplate}">
+        <TextBlock x:Name="PART_Editor" Style="{DynamicResource {themes:HyperLinkEditThemeKey ResourceKey=TextBlockInplaceStyle}}" dxcore_unique_xmlns:FocusHelper2.Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\HyperLinkEdit.xaml;36;10">
+        </TextBlock>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{themes:HyperLinkEditThemeKey ResourceKey=EditTemplate}">
+        <TextBlock x:Name="PART_Editor" Style="{DynamicResource {themes:HyperLinkEditThemeKey ResourceKey=TextBlockStyle}}" dxcore_unique_xmlns:FocusHelper2.Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\HyperLinkEdit.xaml;40;10">
+        </TextBlock>
+    </ControlTemplate>
+</ResourceDictionary>

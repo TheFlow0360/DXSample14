@@ -1,0 +1,148 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxtEx="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxer="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <dxcore_unique_xmlns:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    <dxcore_unique_xmlns:BoolToVisibilityInverseConverter x:Key="BoolToVisibilityInverseConverter" />
+    <dxei:BoolToOpacityConverter x:Key="BoolToOpacityConverter" />
+    <dxei:BoolToGridLengthConverter x:Key="BoolToGridLengthConverter" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.RangeControl.CalendarGroupItem}" TargetType="{x:Type dxer:CalendarGroupItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;8;6" /><Setter Property="Margin" Value="1,1,1,0" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template" Value="{DynamicResource {dxt:CalendarClientThemeKey ResourceKey=CalendarGroupItemTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Editors.RangeControl.CalendarItem}" TargetType="{x:Type dxer:CalendarItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;14;6" /><Setter Property="Margin" Value="1,0,1,1" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template" Value="{DynamicResource {dxt:CalendarClientThemeKey ResourceKey=CalendarItemTemplate}}" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxt:CalendarClientThemeKey ResourceKey=CalendarClientTemplate}" TargetType="{x:Type dxer:CalendarClient}">
+        <Grid Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;21;10">
+            <dxei:CalendarClientPanel />
+        </Grid>
+    </ControlTemplate>
+        
+    <Style x:Key="{dxt:RangeControlThemeKey ResourceKey=SelectionThumbBaseStyle}" TargetType="{x:Type Thumb}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;26;6" /><Setter Property="Width" Value="30" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+    </Style>
+
+    <Style x:Key="{dxt:RangeControlThemeKey ResourceKey=LeftSelectionThumbStyle}" TargetType="{x:Type Thumb}" BasedOn="{StaticResource {dxt:RangeControlThemeKey ResourceKey=SelectionThumbBaseStyle}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;31;6" /><Setter Property="Template" Value="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=LeftSelectionThumbTemplate}}" />
+    </Style>
+    <Style x:Key="{dxt:RangeControlThemeKey ResourceKey=RightSelectionThumbStyle}" TargetType="{x:Type Thumb}" BasedOn="{StaticResource {dxt:RangeControlThemeKey ResourceKey=SelectionThumbBaseStyle}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;34;6" /><Setter Property="Template" Value="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RightSelectionThumbTemplate}}" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxt:RangeControlThemeKey ResourceKey=RangeBarTemplate}" TargetType="{x:Type dxei:RangeBar}">
+        <ContentControl x:Name="PART_RangeBarContainer" Template="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarRootBorderTemplate}}" Background="{TemplateBinding Background}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;39;10">
+            <Grid x:Name="PART_ThumbContainer" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;40;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition />
+                </Grid.ColumnDefinitions>
+                <dx:DXBorder Grid.ColumnSpan="7" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarBottomBorderStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;50;18" />
+                <Grid Grid.ColumnSpan="7" x:Name="PART_MiddleLayerContainer" IsHitTestVisible="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;51;18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <dx:DXBorder Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarOutOfSelectionBorderStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;57;22" />
+                    <dx:DXBorder x:Name="PART_SelectionSide" Grid.Column="1" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarSelectionBorderStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;58;22" />
+                    <dx:DXBorder Grid.Column="2" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarOutOfSelectionBorderStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;59;22" />
+                </Grid>
+                <Grid Grid.ColumnSpan="7" x:Name="PART_TopLayerContainer" Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;61;18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+                    <dx:DXBorder x:Name="PART_LeftSide" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarOutOfRangeBorderStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;67;22" />
+                    <Thumb Grid.Column="1" x:Name="PART_Slider" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;68;22" />
+                    <dx:DXBorder Grid.Column="2" x:Name="PART_RightSide" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarOutOfRangeBorderStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;69;22" />
+                </Grid>
+                <Thumb x:Name="PART_LeftResizeThumb" Grid.Column="1" UseLayoutRounding="True" Template="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarLeftResizeThumbTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;71;18" />
+                <Thumb x:Name="PART_RightResizeThumb" Grid.Column="5" UseLayoutRounding="True" Template="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarRightResizeThumbTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;72;18" />
+            </Grid>
+        </ContentControl>
+    </ControlTemplate>
+
+    <Style x:Key="{dxt:RangeControlThemeKey ResourceKey=RangeBarStyle}" TargetType="{x:Type dxei:RangeBar}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;77;6" /><Setter Property="IsTabStop" Value="False" />
+        <Setter Property="UseLayoutRounding" Value="False" />
+        <Setter Property="VerticalAlignment" Value="Bottom" />
+        <Setter Property="Visibility" Value="{Binding Path=(dxer:RangeControl.OwnerRangeControl).ShowRangeBar, Converter={StaticResource BoolToVisibilityConverter}, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+        <Setter Property="Template" Value="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxt:RangeControlThemeKey ResourceKey=LabelStyle}" TargetType="{x:Type ContentPresenter}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;85;6" /><Setter Property="ContentTemplate" Value="{Binding Path=(dxer:RangeControl.OwnerRangeControl).LabelTemplate, RelativeSource={RelativeSource Self}, Mode=OneWay}" />
+    </Style>
+
+    <Style x:Key="{dxt:RangeControlThemeKey ResourceKey=LeftNavigationButtonStyle}" TargetType="{x:Type Button}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;89;6" /><Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Visibility" Value="Collapsed" />
+        <Setter Property="Template" Value="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=LeftNavigationButtonTemplate}}" />
+    </Style>
+
+    <Style x:Key="{dxt:RangeControlThemeKey ResourceKey=RightNavigationButtonStyle}" TargetType="{x:Type Button}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;95;6" /><Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Visibility" Value="Collapsed" />
+        <Setter Property="Template" Value="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RightNavigationButtonTemplate}}" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxt:RangeControlThemeKey ResourceKey=RangeControlTemplate}" TargetType="{x:Type dxer:RangeControl}">
+        <ContentControl x:Name="PART_Border" Template="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=BorderTemplate}}" IsTabStop="False" Background="{TemplateBinding Background}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;102;10">
+            <Grid x:Name="PART_RootContainer" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;103;14">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="{Binding Path=ShowRangeBar, Converter={StaticResource BoolToGridLengthConverter}, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay, ConverterParameter=Auto}" />
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0" x:Name="PART_ClientPanelArea" Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;108;18">
+                    <ScrollViewer x:Name="PART_ScrollViewer" dxcore_unique_xmlns:ScrollBarExtensions.AllowMouseScrolling="False" UseLayoutRounding="False" HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" PanningMode="None" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;109;22">
+                        <Canvas x:Name="PART_ClientPanel" Background="Transparent" IsManipulationEnabled="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;110;26">
+                            <ContentPresenter x:Name="PART_Content" Content="{TemplateBinding Client}" Canvas.ZIndex="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;111;30" />
+                            <Canvas Canvas.Left="0" x:Name="PART_InteractionArea" IsHitTestVisible="False" Background="Transparent" Canvas.ZIndex="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;112;30" />
+                        </Canvas>
+                    </ScrollViewer>
+                    <Canvas x:Name="PART_LayoutPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;115;22">
+                        <dx:DXBorder Canvas.Left="0" x:Name="PART_LeftSideBorder" IsHitTestVisible="False" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=OutOfRangeAreaBorderStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;116;26" />
+                        <dx:DXBorder Canvas.Left="0" x:Name="PART_RightSideBorder" IsHitTestVisible="False" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=OutOfRangeAreaBorderStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;117;26" />
+                        <Thumb Canvas.Left="0" x:Name="PART_SelectionLeftThumb" IsHitTestVisible="False" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=LeftSelectionThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;118;26" />
+                        <Thumb Canvas.Left="0" x:Name="PART_SelectionRightThumb" IsHitTestVisible="False" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RightSelectionThumbStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;119;26" />
+                        <Grid Canvas.Left="0" x:Name="PART_NavigationButtonsContainer" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;120;26">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Button x:Name="PART_LeftNavigationButton" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=LeftNavigationButtonStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;126;30" />
+                            <Button x:Name="PART_RightNavigationButton" Grid.Column="2" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RightNavigationButtonStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;127;30" />
+                        </Grid>
+                        <ContentPresenter Canvas.Left="0" x:Name="PART_LeftLabel" IsHitTestVisible="False" Margin="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=LeftLabelMargin}}" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=LabelStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;129;26" />
+                        <ContentPresenter Canvas.Left="0" x:Name="PART_RightLabel" IsHitTestVisible="False" Margin="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RightLabelMargin}}" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=LabelStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;130;26" />
+                    </Canvas>
+                    <Canvas dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;132;22">
+                        <dx:DXBorder x:Name="PART_SelectionRectangle" Visibility="Collapsed" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=SelectionRectangleStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\RangeControl.xaml;133;26" />
+                    </Canvas>
+                </Grid>
+                <dxei:RangeBar Grid.Row="1" x:Name="PART_RangeBar" Style="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RangeBarStyle}}" />
+            </Grid>
+        </ContentControl>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=(dxer:RangeControl.PropertyProvider).InvertLeftThumb, RelativeSource={RelativeSource Self}}" Value="True">
+                <Setter TargetName="PART_SelectionLeftThumb" Property="Style" Value="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=RightSelectionThumbStyle}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=(dxer:RangeControl.PropertyProvider).InvertRightThumb, RelativeSource={RelativeSource Self}}" Value="True">
+                <Setter TargetName="PART_SelectionRightThumb" Property="Style" Value="{DynamicResource {dxt:RangeControlThemeKey ResourceKey=LeftSelectionThumbStyle}}" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

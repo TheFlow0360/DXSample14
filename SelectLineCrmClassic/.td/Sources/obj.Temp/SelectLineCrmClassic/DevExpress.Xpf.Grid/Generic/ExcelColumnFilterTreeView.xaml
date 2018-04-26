@@ -1,0 +1,224 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxgcore="clr-namespace:DevExpress.Xpf.Grid;assembly=DevExpress.Xpf.Grid.v17.2.Core" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxe1="clr-namespace:DevExpress.Xpf.Editors.Filtering;assembly=DevExpress.Xpf.Core.v17.2" xmlns:dxe_helpers="clr-namespace:DevExpress.Xpf.Editors.Helpers;assembly=DevExpress.Xpf.Core.v17.2" xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:dxgt="http://schemas.devexpress.com/winfx/2008/xaml/grid/themekeys" xmlns:dxgh="clr-namespace:DevExpress.Xpf.Grid.Hierarchy;assembly=DevExpress.Xpf.Grid.v17.2.Core" xmlns:dxght="http://schemas.devexpress.com/winfx/2008/xaml/grid/internal" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxgtl="http://schemas.devexpress.com/winfx/2008/xaml/grid" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxep="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+    <DataTemplate x:Key="{dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=TreeListBehaviorTemplate}">
+        <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;6;10">
+            <dxgtl:ExcelColumnFilterListBehavior />
+            <dxgtl:ExcelColumnFilterMouseClickBehavior />
+        </ItemsControl>
+    </DataTemplate>
+
+    <Style x:Key="{dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=TreeListStyle}" TargetType="{x:Type dxg:TreeListView}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;12;6" /><Setter Property="dxmvvm:Interaction.BehaviorsTemplate" Value="{DynamicResource {dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=TreeListBehaviorTemplate}}" />
+        <Setter Property="NavigationStyle" Value="Row" />
+        <Setter Property="ShowCheckboxes" Value="True" />
+        <Setter Property="ShowVerticalLines" Value="False" />
+        <Setter Property="ShowHorizontalLines" Value="False" />
+        <Setter Property="ShowColumnHeaders" Value="False" />
+        <Setter Property="ShowIndicator" Value="False" />
+        <Setter Property="TreeLineStyle" Value="None" />
+        <Setter Property="ShowSearchPanelMode" Value="Never" />
+        <Setter Property="AllowEditing" Value="False" />
+        <Setter Property="CheckBoxFieldName" Value="IsChecked" />
+        <Setter Property="ShowNodeImages" Value="False" />
+        <Setter Property="ShowExpandButtons" Value="{Binding IsHierarchicalView}" />
+        <Setter Property="ShowRootIndent" Value="{Binding IsHierarchicalView}" />
+        <Setter Property="SearchPanelHighlightResults" Value="False" />
+        <Setter Property="ImmediateUpdateCheckBoxState" Value="True" />
+        <Setter Property="ChildNodesPath" Value="{Binding ChildPropertyName}" />
+        <Setter Property="TreeDerivationMode" Value="ChildNodesSelector" />
+        <Setter Property="EnableDynamicLoading" Value="False" />
+        <Setter Property="SearchString" Value="{Binding Path=ActualSearchText, UpdateSourceTrigger=PropertyChanged, Mode=OneWay}" />
+        <Setter Property="Template" Value="{DynamicResource {dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=TreeViewTemplate}}" />
+    </Style>
+
+    <ControlTemplate x:Key="{dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=TreeViewTemplate}">
+        <ScrollViewer x:Name="scr" VerticalScrollBarVisibility="{Binding VerticalScrollbarVisibility, RelativeSource={RelativeSource TemplatedParent}}" HorizontalScrollBarVisibility="{Binding HorizontalScrollbarVisibility, RelativeSource={RelativeSource TemplatedParent}}" Focusable="False" dxgtl:GridControl.CurrentView="{Binding RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=TreeViewScrollViewerTemplate}}" dxcore_unique_xmlns:ScrollBarExtensions.ScrollBehavior="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;37;10">
+            
+            <ScrollViewer.CanContentScroll>True</ScrollViewer.CanContentScroll>
+            <dxcore_unique_xmlns:ScrollBarExtensions.AllowMouseScrolling>
+                <Binding Path="(dxg:GridControl.CurrentView).UseExtendedMouseScrolling" RelativeSource="{RelativeSource Self}" />
+            </dxcore_unique_xmlns:ScrollBarExtensions.AllowMouseScrolling>
+            
+            
+        </ScrollViewer>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=TreeViewScrollViewerTemplate}">
+        <Grid ClipToBounds="True" SnapsToDevicePixels="true" dxgtl:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;49;10">
+            <dxcore_unique_xmlns:ScrollBarExtensions.ScrollBehavior>
+                <Binding Path="(dxg:GridControl.CurrentView).UseExtendedMouseScrolling" RelativeSource="{RelativeSource Self}">
+                    <Binding.Converter>
+                        <dxcore_unique_xmlns:BoolToObjectConverter FalseValue="{dx:NativeScrollBehavior}" TrueValue="{dxgcore:DataPresenterScrollBehavior}" />
+                    </Binding.Converter>
+                </Binding>
+            </dxcore_unique_xmlns:ScrollBarExtensions.ScrollBehavior>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <dxcore_unique_xmlns:BestFitDecorator x:Name="PART_BestFitControlDecorator" Width="0" Height="0" dxgtl:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;63;14">
+                <dxgtl:GridControl.CurrentViewChangedListener>
+                    <dxgtl:BestFitControlDecoratorInitializer />
+                </dxgtl:GridControl.CurrentViewChangedListener>
+            </dxcore_unique_xmlns:BestFitDecorator>
+            <Grid dxgtl:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" Margin="{DynamicResource {dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=RowPresenterGridMargin}}" Grid.Row="1" x:Name="rowPresenterGrid" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;68;14">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;81;18">
+                    <Grid.ColumnSpan>
+                        <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource TemplatedParent}">
+                            <Binding.Converter>
+                                <dxmvvm:ObjectToObjectConverter DefaultSource="Default" DefaultTarget="1">
+                                    <dxmvvm:MapItem Source="TouchOverlap" Target="2" />
+                                </dxmvvm:ObjectToObjectConverter>
+                            </Binding.Converter>
+                        </Binding>
+                    </Grid.ColumnSpan>
+                    <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" dxgtl:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" MinWidth="{Binding Path=(dxg:GridControl.CurrentView).ScrollableAreaMinWidth, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" dxgcore:FocusRectPresenter.IsVerticalScrollHost="True" ScrollViewer.CanContentScroll="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;91;22">
+                        <dxgtl:GridControl.CurrentViewChangedListener>
+                            <dxgtl:ScrollContentPresenterInitializer />
+                        </dxgtl:GridControl.CurrentViewChangedListener>
+
+                        <ScrollContentPresenter.Content>
+                            <dxgtl:DataPresenter x:Name="dataPresenter" dxgtl:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" Template="{DynamicResource {dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=DataPresenterTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;97;30" />
+                        </ScrollContentPresenter.Content>
+                        <dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                            <dxght:DataAreaTableViewHitTestAcceptor />
+                        </dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                    </ScrollContentPresenter>
+                    <ContentControl HorizontalContentAlignment="Center" VerticalContentAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;103;22">
+                        <ContentControl.Template>
+                            <ControlTemplate TargetType="{x:Type ContentControl}">
+                                <ContentPresenter HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Content="{Binding Content, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;106;34" />
+                            </ControlTemplate>
+                        </ContentControl.Template>
+                        <ContentControl.Visibility>
+                            <Binding Path="(dxg:GridControl.CurrentView).WaitIndicatorType" RelativeSource="{RelativeSource TemplatedParent}">
+                                <Binding.Converter>
+                                    <dxcore_unique_xmlns:EnumToObjectConverter DefaultValue="Collapsed">
+                                        <dxcore_unique_xmlns:EnumToObjectConverter.Values>
+                                            <dxcore_unique_xmlns:EnumObjectProvider x:Key="Panel" Value="Visible" />
+                                        </dxcore_unique_xmlns:EnumToObjectConverter.Values>
+                                    </dxcore_unique_xmlns:EnumToObjectConverter>
+                                </Binding.Converter>
+                            </Binding>
+                        </ContentControl.Visibility>
+                        <dxcore_unique_xmlns:WaitIndicator DeferedVisibility="{Binding Path=(dxg:GridControl.CurrentView).IsWaitIndicatorVisible, RelativeSource={RelativeSource TemplatedParent}}" Style="{Binding Path=(dxg:GridControl.CurrentView).WaitIndicatorStyle, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;120;26" />
+                    </ContentControl>
+                </Grid>
+                <Grid Grid.Column="1" HorizontalAlignment="Right" Visibility="{Binding ComputedVerticalScrollBarVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;123;18">
+                    <Grid.RowSpan>
+                        <MultiBinding>
+                            <MultiBinding.Bindings>
+                                <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="(dxg:GridControl.CurrentView).ShowTotalSummary" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding.Bindings>
+                            <MultiBinding.Converter>
+                                <dxgtl:VerticalScrollBarRowSpanConverter />
+                            </MultiBinding.Converter>
+                        </MultiBinding>
+                    </Grid.RowSpan>
+
+                    <ScrollBar x:Name="PART_VerticalScrollBar" HorizontalAlignment="Right" Value="{Binding VerticalOffset, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Maximum="{Binding ScrollableHeight, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" ViewportSize="{Binding ViewportHeight, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" dxgtl:GridControl.CurrentView="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;136;22">
+                        <dxgtl:GridControl.CurrentViewChangedListener>
+                            <dxgtl:VerticalScrollBarBlendCustomizationExtension />
+                        </dxgtl:GridControl.CurrentViewChangedListener>
+                        <dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                            <dxght:VerticalScrollBarTableViewHitTestAcceptor />
+                        </dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                    </ScrollBar>
+                </Grid>
+                <Grid x:Name="gridScroll" VerticalAlignment="Bottom" Margin="{DynamicResource ResourceKey={dxgt:ExcelColumnFilterPopupThemeKey ResourceKey=HorizontalScrollbarMargin}}" Visibility="{Binding Path=(dxg:GridControl.CurrentView).ShowDataNavigator, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;145;18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.Row>
+                        <MultiBinding>
+                            <MultiBinding.Bindings>
+                                <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="(dxg:GridControl.CurrentView).ShowTotalSummary" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding.Bindings>
+                            <MultiBinding.Converter>
+                                <dxgtl:HorizontalScrollBarRowConverter />
+                            </MultiBinding.Converter>
+                        </MultiBinding>
+                    </Grid.Row>
+                    <Grid.RowSpan>
+                        <MultiBinding>
+                            <MultiBinding.Bindings>
+                                <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="(dxg:GridControl.CurrentView).ShowTotalSummary" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding.Bindings>
+                            <MultiBinding.Converter>
+                                <dxgtl:HorizontalScrollBarRowSpanConverter />
+                            </MultiBinding.Converter>
+                        </MultiBinding>
+                    </Grid.RowSpan>
+                    <Grid.ColumnSpan>
+                        <MultiBinding>
+                            <MultiBinding.Bindings>
+                                <Binding Path="(dxg:GridControl.CurrentView).ShowTotalSummary" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="(dxg:GridControl.CurrentView).FixedRightContentWidth" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="(dxg:GridControl.CurrentView).ExtendScrollBarToFixedColumns" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding.Bindings>
+                            <MultiBinding.Converter>
+                                <dxgtl:HorizontalScrollBarGridColumnSpanConverter />
+                            </MultiBinding.Converter>
+                        </MultiBinding>
+                    </Grid.ColumnSpan>
+
+                    <ScrollBar x:Name="PART_HorizontalScrollBar" Orientation="Horizontal" Value="{Binding HorizontalOffset, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" Maximum="{Binding ScrollableWidth, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" ViewportSize="{Binding ViewportWidth, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;186;22">
+                        <dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                            <dxght:HorizontalScrollBarTableViewHitTestAcceptor />
+                        </dxgtl:GridViewHitInfoBase.HitTestAcceptor>
+                    </ScrollBar>
+                </Grid>
+
+                <dxgtl:FitContentContainer Grid.Row="3" Grid.Column="1">
+                    <dxgtl:FitContentContainer.Visibility>
+                        <MultiBinding>
+                            <MultiBinding.Bindings>
+                                <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="(dxg:GridControl.CurrentView).ShowTotalSummary" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="(dxg:GridControl.CurrentView).FixedRightContentWidth" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="(dxg:GridControl.CurrentView).ExtendScrollBarToFixedColumns" RelativeSource="{RelativeSource TemplatedParent}" />
+                                <Binding Path="ComputedVerticalScrollBarVisibility" RelativeSource="{RelativeSource TemplatedParent}" />
+                            </MultiBinding.Bindings>
+                            <MultiBinding.Converter>
+                                <dxgtl:FitContentContainerConverter />
+                            </MultiBinding.Converter>
+                        </MultiBinding>
+                    </dxgtl:FitContentContainer.Visibility>
+                    <dx:DXBorder x:Name="PART_HorizontalScrollCorner" dxgtl:GridBorderHelper.ShowBorder="{Binding Path=(dxg:GridControl.CurrentView).ShowTotalSummary, RelativeSource={RelativeSource TemplatedParent}}" dxgtl:GridScrollBarHelper.ExtendScrollBarToFixedColumns="{Binding Path=(dxg:GridControl.CurrentView).ExtendScrollBarToFixedColumns, RelativeSource={RelativeSource TemplatedParent}}" Style="{DynamicResource {dxgt:ScrollBarThemeKey ResourceKey=ScrollingCornerStyle}}" dxgtl:GridScrollBarHelper.HasFixedRightColumns="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;208;22">
+                    </dx:DXBorder>
+                </dxgtl:FitContentContainer>
+            </Grid>
+            <dxgtl:OuterBorderElement Grid.Row="0" Grid.RowSpan="2" x:Name="outerBorder" ShowColumnHeaders="{Binding Path=(dxg:GridControl.CurrentView).ShowColumnHeaders, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Grid\Generic\ExcelColumnFilterTreeView.xaml;212;14" />
+            <dxgcore:FocusRectPresenter x:Name="PART_FocusRectPresenter" Grid.RowSpan="4" View="{Binding Path=(dxg:GridControl.CurrentView), RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Left" VerticalAlignment="Top" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=(dx:ScrollBarExtensions.ScrollBarMode), RelativeSource={RelativeSource TemplatedParent}}" Value="TouchOverlap">
+                <Setter TargetName="gridScroll" Property="Grid.Visibility" Value="{Binding ComputedHorizontalScrollBarVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=(dxg:GridControl.CurrentView).ShowDataNavigator, RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="gridScroll" Property="Grid.Visibility" Value="{Binding ComputedHorizontalScrollBarVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

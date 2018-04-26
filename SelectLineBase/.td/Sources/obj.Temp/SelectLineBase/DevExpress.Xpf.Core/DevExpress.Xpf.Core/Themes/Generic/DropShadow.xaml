@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <Style x:Key="{x:Type dxcn:GlowControl}" TargetType="{x:Type dxcn:GlowControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\DropShadow.xaml;3;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxcn:GlowControl}">
+                    <dxcn:DropShadowGrid x:Name="Root">
+                        <dx:DXBorder Background="{TemplateBinding Background}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\DropShadow.xaml;8;26" />
+                        <dx:DXBorder x:Name="ShadowBorder" Background="{TemplateBinding Background}" Opacity="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Generic\DropShadow.xaml;9;26">
+                            <dx:DXBorder.Effect>
+                                <BlurEffect Radius="8" />
+                            </dx:DXBorder.Effect>
+                        </dx:DXBorder>
+                    </dxcn:DropShadowGrid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="Dock" Value="Right">
+                            <Setter TargetName="Root" Property="HorizontalAlignment" Value="Left" />
+                            <Setter TargetName="Root" Property="Width" Value="1" />
+                            <Setter TargetName="Root" Property="Margin" Value="0,8" />
+                            <Setter TargetName="ShadowBorder" Property="Margin" Value="-2,0" />
+                        </Trigger>
+                        <Trigger Property="Dock" Value="Left">
+                            <Setter TargetName="Root" Property="HorizontalAlignment" Value="Right" />
+                            <Setter TargetName="Root" Property="Width" Value="1" />
+                            <Setter TargetName="Root" Property="Margin" Value="0,8" />
+                            <Setter TargetName="ShadowBorder" Property="Margin" Value="-2,0" />
+                        </Trigger>
+                        <Trigger Property="Dock" Value="Top">
+                            <Setter TargetName="Root" Property="VerticalAlignment" Value="Bottom" />
+                            <Setter TargetName="Root" Property="Height" Value="1" />
+                            <Setter TargetName="Root" Property="Margin" Value="7,0" />
+                            <Setter TargetName="ShadowBorder" Property="Margin" Value="0,-2" />
+                        </Trigger>
+                        <Trigger Property="Dock" Value="Bottom">
+                            <Setter TargetName="Root" Property="VerticalAlignment" Value="Top" />
+                            <Setter TargetName="Root" Property="Height" Value="1" />
+                            <Setter TargetName="Root" Property="Margin" Value="7,0" />
+                            <Setter TargetName="ShadowBorder" Property="Margin" Value="0,-2" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

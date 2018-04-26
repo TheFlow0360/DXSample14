@@ -1,0 +1,212 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxtEx="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:system="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <dxei:ColorConverter x:Key="ColorConverter" />
+    <dxei:ColorPickerColorModeTemplateSelector x:Key="ColorModeTemplateSelector" />
+    <dxcore_unique_xmlns:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter" />
+    <dxei:ShowDefaultColorToGridLengthConverter x:Key="ShowDefaultColorToColumnWidthConverter" />
+    <dxcore_unique_xmlns:EmbeddedResourceImageConverter x:Key="EmbeddedResourceImageConverter" />
+    <dxei:DecimalToIntConverter x:Key="DecimalToIntConverter" />
+    <dxei:HColorToZColorConverter x:Key="HColorToZColorConverter" />
+    <DataTemplate x:Key="{dxet:ColorPickerThemeKey ResourceKey=RGBDataTemplate}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;10;10">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" Text="R:" Margin="0,4,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;21;14" />
+            <dxe:SpinEdit Grid.Row="0" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="255" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=R, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;22;14" />
+            <TextBlock VerticalAlignment="Center" Text="G:" Margin="0,4,0,0" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;23;14" />
+            <dxe:SpinEdit Grid.Row="1" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="255" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=G, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;24;14" />
+            <TextBlock VerticalAlignment="Center" Text="B:" Margin="0,4,0,0" Grid.Row="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;25;14" />
+            <dxe:SpinEdit Grid.Row="2" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="255" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=B, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;26;14" />
+            <TextBlock VerticalAlignment="Center" Text="A:" Margin="0,4,0,0" Grid.Row="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;27;14" />
+            <dxe:SpinEdit Grid.Row="3" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="255" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=A, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;28;14" />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxet:ColorPickerThemeKey ResourceKey=CMYKDataTemplate}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;32;10">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" Text="C:" Margin="0,4,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;44;14" />
+            <dxe:SpinEdit Grid.Row="0" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="100" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=C, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;45;14" />
+            <TextBlock VerticalAlignment="Center" Text="M:" Margin="0,4,0,0" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;46;14" />
+            <dxe:SpinEdit Grid.Row="1" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="100" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=M, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;47;14" />
+            <TextBlock VerticalAlignment="Center" Text="Y:" Margin="0,4,0,0" Grid.Row="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;48;14" />
+            <dxe:SpinEdit Grid.Row="2" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="100" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=Y, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;49;14" />
+            <TextBlock VerticalAlignment="Center" Text="K:" Margin="0,4,0,0" Grid.Row="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;50;14" />
+            <dxe:SpinEdit Grid.Row="3" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="255" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=K, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;51;14" />
+            <TextBlock VerticalAlignment="Center" Text="A:" Margin="0,4,0,0" Grid.Row="4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;52;14" />
+            <dxe:SpinEdit Grid.Row="4" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="255" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=A, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;53;14" />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxet:ColorPickerThemeKey ResourceKey=HLSDataTemplate}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;57;10">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" Text="H:" Margin="0,4,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;68;14" />
+            <dxe:SpinEdit Grid.Row="0" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="360" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=H, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;69;14" />
+            <TextBlock VerticalAlignment="Center" Text="L:" Margin="0,4,0,0" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;70;14" />
+            <dxe:SpinEdit Grid.Row="1" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="100" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=L, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;71;14" />
+            <TextBlock VerticalAlignment="Center" Text="S:" Margin="0,4,0,0" Grid.Row="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;72;14" />
+            <dxe:SpinEdit Grid.Row="2" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="100" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=S, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;73;14" />
+            <TextBlock VerticalAlignment="Center" Text="A:" Margin="0,4,0,0" Grid.Row="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;74;14" />
+            <dxe:SpinEdit Grid.Row="3" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="255" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=A, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;75;14" />
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxet:ColorPickerThemeKey ResourceKey=HSBDataTemplate}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;79;10">
+            <Grid.RowDefinitions>
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <TextBlock VerticalAlignment="Center" Text="H:" Margin="0,4,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;90;14" />
+            <dxe:SpinEdit Grid.Row="0" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="360" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=H, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;91;14" />
+            <TextBlock VerticalAlignment="Center" Text="S:" Margin="0,4,0,0" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;92;14" />
+            <dxe:SpinEdit Grid.Row="1" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="100" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=S, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;93;14" />
+            <TextBlock VerticalAlignment="Center" Text="B:" Margin="0,4,0,0" Grid.Row="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;94;14" />
+            <dxe:SpinEdit Grid.Row="2" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="100" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=B, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;95;14" />
+            <TextBlock VerticalAlignment="Center" Text="A:" Margin="0,4,0,0" Grid.Row="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;96;14" />
+            <dxe:SpinEdit Grid.Row="3" Grid.Column="1" Margin="0,4,0,0" EditMode="{Binding Path=EditMode}" AllowDefaultButton="False" AllowNullInput="True" IsFloatValue="False" MinValue="0" MaxValue="255" AllowRoundOutOfRangeValue="True" HorizontalAlignment="Stretch" EditValue="{Binding Path=A, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, Converter={StaticResource DecimalToIntConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;97;14" />
+        </Grid>
+    </DataTemplate>
+    <ControlTemplate x:Key="{dxet:ColorPickerThemeKey ResourceKey=Template}" TargetType="{x:Type dxei:ColorPicker}">
+        <Grid Margin="{Binding Path=Padding, RelativeSource={RelativeSource TemplatedParent}}" Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;101;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+
+            <dx:DXBorder BorderBrush="#7F3C3C3C" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;112;14">
+                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;113;18">
+                    <Rectangle dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;114;22">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="1,0.5" StartPoint="0,0.5">
+                                <GradientStop Color="{Binding Path=HSBColor.H, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource HColorToZColorConverter}}" Offset="1" />
+                                <GradientStop Color="#FFFFFFFF" Offset="0" />
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Rectangle dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;122;22">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop Color="Transparent" Offset="0" />
+                                <GradientStop Color="Black" Offset="1" />
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Canvas x:Name="PART_ColorArea" Background="Transparent" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" dxcore_unique_xmlns:FrameworkElementHelper.IsClipped="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;130;22">
+                        <Canvas x:Name="ColorCanvas" Width="22" Height="22" Canvas.Left="{Binding Path=ActualXYThumbXOffset, RelativeSource={RelativeSource TemplatedParent}}" Canvas.Top="{Binding Path=ActualXYThumbYOffset, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;131;26">
+                            <Rectangle x:Name="RectangleColorCanvas" Fill="Transparent" Width="22" Height="22" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;132;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,9 L8,9" Width="9" Height="1" Canvas.Left="0" Canvas.Top="9" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;133;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M0,10 L8,10" Width="9" Height="1" Canvas.Left="0" Canvas.Top="10" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;134;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,11 L8,11" Width="9" Height="1" Canvas.Left="0" Canvas.Top="11" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;135;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,9 L8,9" Width="9" Height="1" Canvas.Left="12" Canvas.Top="9" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;136;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M0,10 L8,10" Width="9" Height="1" Canvas.Left="12" Canvas.Top="10" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;137;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M0,11 L8,11" Width="9" Height="1" Canvas.Left="12" Canvas.Top="11" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;138;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M9,0 L9,8" Width="1" Height="9" Canvas.Left="9" Canvas.Top="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;139;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M10,0 L10,8" Width="1" Height="9" Canvas.Left="10" Canvas.Top="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;140;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M11,0 L11,8" Width="1" Height="9" Canvas.Left="11" Canvas.Top="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;141;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M9,0 L9,8" Width="1" Height="9" Canvas.Left="9" Canvas.Top="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;142;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FF000000" Data="M10,0 L10,8" Width="1" Height="9" Canvas.Left="10" Canvas.Top="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;143;30" />
+                            <Path Stretch="Fill" Fill="#FF000000" Stroke="#FFFFFFFF" Data="M11,0 L11,8" Width="1" Height="9" Canvas.Left="11" Canvas.Top="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;144;30" />
+                        </Canvas>
+                    </Canvas>
+                </Grid>
+            </dx:DXBorder>
+
+            <dx:DXBorder x:Name="BorderRoot" BorderBrush="#7F3C3C3C" BorderThickness="1" Grid.Row="1" Margin="0,3,0,0" Height="22" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;150;14">
+                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;151;18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="{Binding Path=ShowDefaultColor, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ShowDefaultColorToColumnWidthConverter}}" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <dxei:TransparentBrushRectangle HorizontalAlignment="Stretch" dxcore_unique_xmlns:FocusHelper2.Focusable="False" Grid.ColumnSpan="2" BlockWidth="4" BlockHeight="4" VerticalAlignment="Stretch" />
+                    <Button Command="{Binding Path=SetDefaultColorCommand, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Visibility="{Binding Path=ShowDefaultColor, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" x:Name="PART_DefaultColorButton" BorderThickness="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;157;22">
+                        <Button.Background>
+                            <SolidColorBrush Color="#FFE20000" />
+                        </Button.Background>
+                    </Button>
+                    <Rectangle HorizontalAlignment="Stretch" x:Name="PART_ColorRect" IsHitTestVisible="False" Grid.Column="1" VerticalAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;162;22">
+                        <Rectangle.Fill>
+                            <SolidColorBrush Color="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Rectangle.Fill>
+                    </Rectangle>
+                </Grid>
+            </dx:DXBorder>
+            <dx:DXBorder BorderBrush="#7F3C3C3C" BorderThickness="1" x:Name="Y" Margin="4,0,0,0" VerticalAlignment="Stretch" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;169;14">
+                <Grid x:Name="YRoot" Width="22" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;170;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition />
+                        <RowDefinition Height="3" />
+                    </Grid.RowDefinitions>
+                    <Rectangle x:Name="PART_ZColorAreaRect" StrokeThickness="0" Grid.RowSpan="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;175;22">
+                        <Rectangle.Fill>
+                            <LinearGradientBrush x:Name="zColor" EndPoint="0.5,1" StartPoint="0.5,0">
+                                <GradientStop x:Name="zColor1" Color="#FFFF0000" Offset="0" />
+                                <GradientStop x:Name="zColor2" Color="#FFFFFF00" Offset="0.166666" />
+                                <GradientStop x:Name="zColor3" Color="#FF00FF00" Offset="0.333333" />
+                                <GradientStop x:Name="zColor4" Color="#FF00FFFF" Offset="0.5" />
+                                <GradientStop x:Name="zColor5" Color="#FF0000FF" Offset="0.666666" />
+                                <GradientStop x:Name="zColor6" Color="#FFFF00FF" Offset="0.833333" />
+                                <GradientStop x:Name="zColor7" Color="#FFFF0000" Offset="1" />
+                            </LinearGradientBrush>
+                        </Rectangle.Fill>
+                    </Rectangle>
+                    <Canvas x:Name="PART_ZColorArea" Background="Transparent" Grid.RowSpan="2" dxcore_unique_xmlns:FrameworkElementHelper.IsClipped="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;188;22">
+                        <Path x:Name="PART_ZThumbLeft" Data="M0,0 L5,5 0,10 z" Fill="#FF000000" Width="5" Height="10" Canvas.Top="{Binding Path=ActualZThumbOffset, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;189;26" />
+                        <Path x:Name="PART_ZThumbRight" Data="M 5,0 L0,5 5,10 z" Fill="#FF000000" Width="5" Height="10" Canvas.Left="17" Canvas.Top="{Binding Path=ActualZThumbOffset, RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;190;26" />
+                    </Canvas>
+                </Grid>
+            </dx:DXBorder>
+            
+            <Button Margin="4,4,0,1" Template="{DynamicResource ResourceKey={dxet:ColorPickerThemeKey ResourceKey=PipetButtonTemplate}}" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" Command="{Binding Path=EnablePippetModeCommand, RelativeSource={RelativeSource TemplatedParent}}" VerticalAlignment="Stretch" Focusable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;195;14" />
+            
+            <StackPanel Grid.Column="2" Visibility="{Binding Path=ActualShowEditors, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" Orientation="Vertical" Margin="5,0,0,0" Width="85" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;197;14">
+                <dxe:ComboBoxEdit ItemsSource="{dxei:ColorModeList}" EditValue="{Binding Path=ColorMode, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" HorizontalAlignment="Stretch" IsTextEditable="False" x:Name="PART_ColorModeComboBoxEdit" ValueMember="Value" DisplayMember="Text" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;198;18" />
+                <dxei:ColorPickerDataContentPresenter x:Name="PART_EditorsContentPresenter" Content="{Binding Path=ColorViewModel, RelativeSource={RelativeSource TemplatedParent}}" HorizontalAlignment="Stretch" ContentTemplateSelector="{StaticResource ColorModeTemplateSelector}" />
+            </StackPanel>
+            <dxe:TextEdit Grid.Column="2" Visibility="{Binding Path=ActualShowEditors, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BoolToVisibilityConverter}}" VerticalAlignment="Bottom" Grid.Row="1" x:Name="PART_ResultColor" Width="85" ShowError="False" Margin="5,5,0,0" EditValue="{Binding Path=Color, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource ColorConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ValidateOnTextInput="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ColorPicker.xaml;201;14" />
+        </Grid>
+		<ControlTemplate.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter TargetName="ColorCanvas" Property="Width" Value="44" />
+				<Setter TargetName="ColorCanvas" Property="Height" Value="44" />
+				<Setter TargetName="BorderRoot" Property="Height" Value="44" />
+				<Setter TargetName="YRoot" Property="Width" Value="44" />
+            </Trigger>
+		</ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

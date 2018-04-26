@@ -1,0 +1,126 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/Brushes.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/SharedResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=System.Windows.Controls.ScrollViewer}" TargetType="{x:Type ScrollViewer}">
+        
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollViewer.xaml;6;6" /><Setter Property="dx:ScrollBarExtensions.AllowMouseScrolling" Value="True" />
+        <Setter Property="dx:ScrollBarExtensions.ScrollBehavior" Value="{dx:ScrollViewerScrollBehavior}" />
+        <Setter Property="dx:ScrollViewerTouchBehavior.IsEnabled" Value="True" />
+        
+        <Setter Property="BorderBrush" Value="{StaticResource ScrollViewer.BorderBrush}" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ScrollViewer}">
+                    <dx:DXBorder Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollViewer.xaml;17;22">
+                        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollViewer.xaml;18;26">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <dx:DXBorder x:Name="Corner" Background="{StaticResource ScrollViewer.Corner.Background}" Grid.Column="1" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollViewer.xaml;27;30">
+                                
+                                <dx:DXBorder.Visibility>
+                                    <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource TemplatedParent}">
+                                        <Binding.Converter>
+                                            <dxcore_unique_xmlns:EnumToObjectConverter DefaultValue="Visible">
+                                                <dxcore_unique_xmlns:EnumToObjectConverter.Values>
+                                                    <dxcore_unique_xmlns:EnumObjectProvider x:Key="TouchOverlap" Value="Collapsed" />
+                                                </dxcore_unique_xmlns:EnumToObjectConverter.Values>
+                                            </dxcore_unique_xmlns:EnumToObjectConverter>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </dx:DXBorder.Visibility>
+                                
+                                <dx:DXBorder Background="{StaticResource ScrollBar.BorderBrush}" Width="1" Height="1" HorizontalAlignment="Left" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollViewer.xaml;41;34" />
+                            </dx:DXBorder>
+                            <ScrollContentPresenter x:Name="PART_ScrollContentPresenter" Content="{TemplateBinding Content}" Margin="{TemplateBinding Padding}" CanContentScroll="{TemplateBinding CanContentScroll}" CanHorizontallyScroll="False" CanVerticallyScroll="False" ContentTemplate="{TemplateBinding ContentTemplate}" Grid.Column="0" Grid.Row="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollViewer.xaml;43;30">
+                                
+                                <Grid.RowSpan>
+                                    <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource TemplatedParent}">
+                                        <Binding.Converter>
+                                            <dxcore_unique_xmlns:EnumToObjectConverter DefaultValue="1">
+                                                <dxcore_unique_xmlns:EnumToObjectConverter.Values>
+                                                    <dxcore_unique_xmlns:EnumObjectProvider x:Key="TouchOverlap" Value="2" />
+                                                </dxcore_unique_xmlns:EnumToObjectConverter.Values>
+                                            </dxcore_unique_xmlns:EnumToObjectConverter>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </Grid.RowSpan>
+                                <Grid.ColumnSpan>
+                                    <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource TemplatedParent}">
+                                        <Binding.Converter>
+                                            <dxcore_unique_xmlns:EnumToObjectConverter DefaultValue="1">
+                                                <dxcore_unique_xmlns:EnumToObjectConverter.Values>
+                                                    <dxcore_unique_xmlns:EnumObjectProvider x:Key="TouchOverlap" Value="2" />
+                                                </dxcore_unique_xmlns:EnumToObjectConverter.Values>
+                                            </dxcore_unique_xmlns:EnumToObjectConverter>
+                                        </Binding.Converter>
+                                    </Binding>
+                                </Grid.ColumnSpan>
+                                
+                            </ScrollContentPresenter>
+                            <ScrollBar x:Name="PART_VerticalScrollBar" Value="{Binding VerticalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="1" Grid.Row="0" Maximum="{TemplateBinding ScrollableHeight}" Minimum="0" AutomationProperties.AutomationId="VerticalScrollBar" Cursor="Arrow" ViewportSize="{TemplateBinding ViewportHeight}" Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollViewer.xaml;69;30">
+                                
+                                <Grid.RowSpan>
+                                    <MultiBinding>
+                                        <MultiBinding.Bindings>
+                                            <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource Self}" />
+                                            <Binding Path="(dx:ScrollBarExtensions.ScrollViewerOrientation)" RelativeSource="{RelativeSource TemplatedParent}" />
+                                        </MultiBinding.Bindings>
+                                        <MultiBinding.Converter>
+                                            <dxcore_unique_xmlns:VerticalScrollBarRowSpanConverter />
+                                        </MultiBinding.Converter>
+                                    </MultiBinding>
+                                </Grid.RowSpan>
+                                
+                            </ScrollBar>
+                            <ScrollBar x:Name="PART_HorizontalScrollBar" Orientation="Horizontal" Value="{Binding HorizontalOffset, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}}" Grid.Column="0" Grid.Row="1" Maximum="{TemplateBinding ScrollableWidth}" Minimum="0" AutomationProperties.AutomationId="HorizontalScrollBar" Cursor="Arrow" ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\StandardControls\ScrollViewer.xaml;84;30">
+                                
+                                <Grid.ColumnSpan>
+                                    <MultiBinding>
+                                        <MultiBinding.Bindings>
+                                            <Binding Path="(dx:ScrollBarExtensions.ScrollBarMode)" RelativeSource="{RelativeSource Self}" />
+                                            <Binding Path="(dx:ScrollBarExtensions.ScrollViewerOrientation)" RelativeSource="{RelativeSource TemplatedParent}" />
+                                        </MultiBinding.Bindings>
+                                        <MultiBinding.Converter>
+                                            <dxcore_unique_xmlns:HorizontalScrollBarRowSpanConverter />
+                                        </MultiBinding.Converter>
+                                    </MultiBinding>
+                                </Grid.ColumnSpan>
+                                
+                            </ScrollBar>
+                        </Grid>
+                    </dx:DXBorder>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="HorizontalScrollBarVisibility" Value="Hidden">
+                            <Setter Property="Visibility" TargetName="Corner" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="HorizontalScrollBarVisibility" Value="Disabled">
+                            <Setter Property="Visibility" TargetName="Corner" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="VerticalScrollBarVisibility" Value="Hidden">
+                            <Setter Property="Visibility" TargetName="Corner" Value="Collapsed" />
+                        </Trigger>
+                        <Trigger Property="VerticalScrollBarVisibility" Value="Disabled">
+                            <Setter Property="Visibility" TargetName="Corner" Value="Collapsed" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="ComputedVerticalScrollBarVisibility" Value="Collapsed" />
+                                <Condition Property="ComputedHorizontalScrollBarVisibility" Value="Collapsed" />
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="Corner" Value="Collapsed" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

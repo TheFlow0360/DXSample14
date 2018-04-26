@@ -1,0 +1,244 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxdiag="http://schemas.devexpress.com/winfx/2008/xaml/diagram" xmlns:dxdiagt="http://schemas.devexpress.com/winfx/2008/xaml/diagram/themekeys" xmlns:dxdiagn="http://schemas.devexpress.com/winfx/2008/xaml/diagram/internal" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxmvvminternal="clr-namespace:DevExpress.Mvvm.UI.Interactivity.Internal;assembly=DevExpress.Xpf.Core.v17.2" xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:dxdockt="http://schemas.devexpress.com/winfx/2008/xaml/docking/themekeys" xmlns:dxdockve="http://schemas.devexpress.com/winfx/2008/xaml/docking/visualelements" xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxdiagcore="clr-namespace:DevExpress.Diagram.Core;assembly=DevExpress.Diagram.v17.2.Core" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    
+    <dxmvvm:ObjectToObjectConverter x:Key="HideButtonTransformConverter" DefaultTarget="1">
+        <dxmvvm:MapItem Source="True" Target="-1" />
+    </dxmvvm:ObjectToObjectConverter>
+
+    <Style x:Key="HideButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Grid Margin="0,0,0,0" Width="23" Height="23" Background="#00000000">
+                        <Path Fill="{TemplateBinding Foreground}" Stretch="Fill" x:Name="glyph" Width="9" Height="10" RenderTransformOrigin="0.5,0.5" Data="F1 M 1395,798L 1400,793L 1400,795L 1397,798L 1400,801L 1400,803L 1395,798 Z M 1399,798L 1404,793L 1404,795L 1401,798L 1404,801L 1404,803L 1399,798 Z " HorizontalAlignment="Center" VerticalAlignment="Center">
+                            <Path.RenderTransform>
+                                <ScaleTransform ScaleX="{Binding IsChecked, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource HideButtonTransformConverter}}" />
+                            </Path.RenderTransform>
+                        </Path>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Foreground" Value="{DynamicResource {dxdockt:DockPaneElementsThemeKey ResourceKey=CaptionNormalForeground}}" />
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" Value="0,0,10,0" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.DiagramControl}" TargetType="{x:Type dxdiag:DiagramControl}">
+        <Setter Property="Background" Value="{DynamicResource {dxdiagt:DiagramControlThemeKeys ResourceKey=DiagramControlBackground}}" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="dx:ScrollBarExtensions.ScrollBarMode" Value="TouchOverlap" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:DiagramControl}">
+                    <ScrollViewer Background="{TemplateBinding Background}" CanContentScroll="True" Name="ScrollViewer" dx:ScrollBarExtensions.AllowMouseScrolling="True" dx:ScrollBarExtensions.AllowShiftKeyMode="True" dx:ScrollBarExtensions.ScrollBehavior="{dx:ScrollViewerScrollBehavior}">
+                        <dxdiagn:LayersHost x:Name="LayersHost" Focusable="True" FocusVisualStyle="{x:Null}" Background="{TemplateBinding Background}" />
+                    </ScrollViewer>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.ThemePresenter}" TargetType="{x:Type dxdiag:ThemePresenter}">
+        <Setter Property="Text" Value="Aa" />
+        <Setter Property="Width" Value="62" />
+        <Setter Property="Height" Value="48" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:ThemePresenter}">
+                    <Canvas Height="{TemplateBinding Height}" Width="{TemplateBinding Width}">
+                        <Rectangle x:Name="PART_RectangleVariant1" Fill="LightGray" Stroke="Black" Canvas.Left="5" Canvas.Top="4" Height="34" Width="34" />
+                        <Rectangle x:Name="PART_RectangleVariant4" Fill="LightGray" Stroke="Black" Canvas.Left="41" Canvas.Top="18" Height="16" Width="16" />
+                        <Rectangle x:Name="PART_RectangleVariant2" Fill="LightGray" Stroke="Black" Canvas.Left="36" Canvas.Top="13" Height="16" Width="16" />
+                        <Rectangle x:Name="PART_RectangleVariant3" Fill="LightGray" Stroke="Black" Canvas.Left="31" Canvas.Top="8" Height="16" Width="16" />
+                        <Polyline x:Name="PART_Line1Variant1" Stroke="Black" Points="22,38 22,43 49,43 49,33" />
+                        <Line x:Name="PART_Line2Variant1" Stroke="Black" X1="0" Y1="0" X2="2" Y2="4" Canvas.Left="49" Canvas.Top="34" />
+                        <Line x:Name="PART_Line3Variant1" Stroke="Black" X1="0" Y1="0" X2="-2" Y2="4" Canvas.Left="49" Canvas.Top="34" />
+                        <TextBlock x:Name="PART_TextVariant1" Text="Aa" Canvas.Left="8" Canvas.Top="18" FontSize="12" />
+                    </Canvas>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="DiagramLayoutPanelStyle" TargetType="{x:Type dxdo:LayoutPanel}">
+        <Setter Property="AllowMaximize" Value="False" />
+        <Setter Property="AllowMinimize" Value="False" />
+        <Setter Property="AllowClose" Value="False" />
+        <Setter Property="AllowHide" Value="False" />
+        <Setter Property="AllowDock" Value="True" />
+        <Setter Property="AllowFloat" Value="False" />
+        <Setter Property="AllowContextMenu" Value="False" />
+        <Setter Property="AllowDockToDocumentGroup" Value="False" />
+    </Style>
+    <Style x:Key="ZoomTrackBarEditStyle" TargetType="{x:Type dxe:TrackBarEdit}">
+        <Setter Property="Minimum" Value="-3600" />
+        <Setter Property="Maximum" Value="3600" />
+        <Setter Property="SmallStep" Value="120" />
+        <Setter Property="LargeStep" Value="240" />
+        <Setter Property="TickFrequency" Value="3600" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.DiagramDesignerControl}" TargetType="{x:Type dxdiag:DiagramDesignerControl}">
+        <Setter Property="dx:ScrollBarExtensions.ScrollBarMode" Value="TouchOverlap" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:DiagramDesignerControl}">
+                        <DockPanel>
+                            <dxdiag:DiagramRibbonControl x:Name="PART_RibbonControl" RibbonStyle="Office2010" DockPanel.Dock="Top" dxdiag:DiagramDesignerControl.BarItemName="{x:Static dxdiagcore:DefaultBarItemNames.Ribbon}" />
+                            <dxr:RibbonStatusBarControl DockPanel.Dock="Bottom" dxdiag:DiagramDesignerControl.BarItemName="{x:Static dxdiagcore:DefaultBarItemNames.StatusBar}">
+                                <dxr:RibbonStatusBarControl.RightItems>
+                                    <dxb:BarEditItem Content="{TemplateBinding ZoomFactor, Converter={dxmvvm:FormatStringConverter FormatString=P0}}" dxdiag:DiagramDesignerControl.BarItemName="{x:Static dxdiagcore:DefaultBarItemNames.StatusBarZoomEditor}" CustomizationContent="{dxdiag:DiagramControlLocalizedString StatusBarZoomEditor}" EditStyle="{StaticResource ZoomTrackBarEditStyle}" EditValue="{Binding ZoomFactor, RelativeSource={RelativeSource TemplatedParent}, Converter={dxdiagn:NonlinearZoomConverter}, Mode=TwoWay}" EditWidth="100">
+                                        <dxb:BarEditItem.EditSettings>
+                                            <dxe:TrackBarEditSettings />
+                                        </dxb:BarEditItem.EditSettings>
+                                    </dxb:BarEditItem>
+                                </dxr:RibbonStatusBarControl.RightItems>
+                                <dxr:RibbonStatusBarControl.LeftItems>
+                                    <dxb:BarStaticItem ShowBorder="{Binding Path=Content, RelativeSource={RelativeSource Self}, Converter={dxmvvm:StringToBooleanConverter}}" RibbonStyle="SmallWithText" dxdiag:DiagramDesignerControl.BarItemName="{x:Static dxdiagcore:DefaultBarItemNames.StatusBarShapeInfo}" CustomizationContent="{dxdiag:DiagramControlLocalizedString StatusBarShapeInfo}">
+                                        <dxb:BarStaticItem.Content>
+                                            <MultiBinding Converter="{dxdiagn:ItemPropertiesToStringConverter}">
+                                                <Binding Path="SelectionToolsModel[Width]" RelativeSource="{RelativeSource TemplatedParent}" />
+                                                <Binding Path="SelectionToolsModel[Height]" RelativeSource="{RelativeSource TemplatedParent}" />
+                                                <Binding Path="SelectionToolsModel[Angle]" RelativeSource="{RelativeSource TemplatedParent}" />
+                                            </MultiBinding>
+                                        </dxb:BarStaticItem.Content>
+                                    </dxb:BarStaticItem>
+                                </dxr:RibbonStatusBarControl.LeftItems>
+                            </dxr:RibbonStatusBarControl>
+                            <dxdo:DockLayoutManager DockPanel.Dock="Left" x:Name="PART_DockLayoutManager" Style="{DynamicResource {dxdiagt:DiagramControlThemeKeys ResourceKey=DockLayoutManagerStyle}}">
+                                <dxdo:DockLayoutManager.Resources>
+                                    <ControlTemplate x:Key="{dxdockt:DockElementsThemeKey ResourceKey=SplitterTemplate}" TargetType="dxdockve:Splitter">
+                                        <Border x:Name="PART_SplitThumb" Background="{DynamicResource {dxdockt:DockPaneElementsThemeKey ResourceKey=BorderBrush}}" />
+                                    </ControlTemplate>
+                                </dxdo:DockLayoutManager.Resources>
+                                <dxdo:LayoutGroup Orientation="Horizontal" DockItemInterval="1" Margin="0">
+                                    <dxdo:LayoutPanel x:Name="PART_ToolboxPane" ItemWidth="243" MaxWidth="470" Style="{StaticResource DiagramLayoutPanelStyle}" AllowDock="True" AllowFloat="False" AllowContextMenu="False" AllowDockToDocumentGroup="False" ShowBorder="False">
+                                        <dxdo:LayoutPanel.CaptionTemplate>
+                                            <DataTemplate>
+                                                <TextBlock Text="{dxdiag:DiagramControlLocalizedString Panel_Shapes_Name}" Visibility="{Binding ElementName=CollapsedBehavior, Path=IsCompact, Converter={dxmvvm:BooleanToVisibilityConverter Inverse=True}}" />
+                                            </DataTemplate>
+                                        </dxdo:LayoutPanel.CaptionTemplate>
+                                        <dxdo:LayoutPanel.ControlBoxContent>
+                                            <ToggleButton Style="{StaticResource HideButtonStyle}" x:Name="CollapseButton" />
+                                        </dxdo:LayoutPanel.ControlBoxContent>
+                                        <dxmvvm:Interaction.Behaviors>
+                                            <dxdiagn:PanelCollapsedBehavior x:Name="CollapsedBehavior" LayoutError="{Binding ElementName=Toolbox, Path=LayoutError}" ToolboxVisibility="{Binding ToolboxVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" ButtonChecked="{Binding ElementName=CollapseButton, Path=IsChecked, Mode=TwoWay}" InitialCompactWidth="68" />
+                                        </dxmvvm:Interaction.Behaviors>
+                                        <dxdiag:DiagramToolboxControl x:Name="Toolbox" DiagramControl="{Binding RelativeSource={RelativeSource TemplatedParent}}" IsCompact="{Binding ElementName=CollapsedBehavior, Path=IsCompact}" CompactWidth="{Binding ElementName=CollapsedBehavior, Path=InitialCompactWidth, Mode=OneWay}" />
+                                    </dxdo:LayoutPanel>
+                                    <dxdo:DocumentPanel>
+                                        <ScrollViewer Background="{DynamicResource {dxdiagt:DiagramControlThemeKeys ResourceKey=DiagramControlBackground}}" CanContentScroll="True" dx:ScrollBarExtensions.AllowMouseScrolling="True" dx:ScrollBarExtensions.AllowShiftKeyMode="True" dx:ScrollBarExtensions.ScrollBehavior="{dx:ScrollViewerScrollBehavior}" Name="ScrollViewer" Margin="{DynamicResource {dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=DiagramControlMargin}}">
+                                            <dxdiagn:LayersHost x:Name="LayersHost" Focusable="True" FocusVisualStyle="{x:Null}" />
+                                        </ScrollViewer>
+                                    </dxdo:DocumentPanel>
+                                    <dxdo:LayoutPanel x:Name="PART_PropertiesPane" AllowClose="True" Style="{StaticResource DiagramLayoutPanelStyle}" AllowHide="True" MinWidth="200" MaxWidth="500" ItemWidth="300" Caption="{dxdiag:DiagramControlLocalizedString Panel_Properties_Name}" ContentTemplate="{DynamicResource {dxdiagt:DiagramControlThemeKeys ResourceKey=PropertiesPanelContentTemplate}}">
+                                        <dxmvvm:Interaction.Behaviors>
+                                            <dxdiagn:PropertiesPanelVisibilityBehavior PropertiesPanelVisibility="{Binding PropertiesPanelVisibility, RelativeSource={RelativeSource TemplatedParent}, Mode=TwoWay}" />
+                                        </dxmvvm:Interaction.Behaviors>
+                                    </dxdo:LayoutPanel>
+                                </dxdo:LayoutGroup>
+                            </dxdo:DockLayoutManager>
+                        </DockPanel>
+                    <ControlTemplate.Triggers>
+                        <Trigger SourceName="PART_ToolboxPane" Property="IsActive" Value="True">
+                            <Setter TargetName="CollapseButton" Property="Foreground" Value="{DynamicResource {dxdockt:DockPaneElementsThemeKey ResourceKey=CaptionActiveForeground}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <DataTemplate x:Key="{dxdiagt:DiagramControlThemeKeys ResourceKey=PropertiesPanelContentTemplate}">
+        <dxpg:PropertyGridControl Style="{DynamicResource {dxdiagt:DiagramControlThemeKeys ResourceKey=PropertyGridStyle}}" />
+    </DataTemplate>
+    <Style x:Key="{dxdiagt:DiagramControlThemeKeys ResourceKey=PropertyGridStyle}" TargetType="dxpg:PropertyGridControl">
+        <Setter Property="SelectedObject" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dxdiag:DiagramControl.Diagram).SelectionModel}" />
+        <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto" />
+        <Setter Property="dx:ScrollBarExtensions.ScrollBarMode" Value="Standard" />
+        <Setter Property="ShowCategories" Value="Visible" />
+        <Setter Property="ExpandCategoriesWhenSelectedObjectChanged" Value="True" />
+        <Setter Property="SortMode" Value="Ascending" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style x:Key="{dxdiagt:DiagramControlThemeKeys ResourceKey=DockLayoutManagerStyle}" TargetType="dxdo:DockLayoutManager">
+        <Setter Property="AutoHideExpandMode" Value="MouseDown" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {dxdockt:DockPaneElementsThemeKey ResourceKey=BorderBrush}}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource {dxdiagt:DiagramDesignerControlThemeKeys ResourceKey=DockLayoutManagerBorderThickness}}" />
+    </Style>
+    <DataTemplate x:Key="{dxdiagt:DiagramControlThemeKeys ResourceKey=PageSetupTemplate}">
+        <dxdiag:PageSetupControl />
+    </DataTemplate>
+    <Style x:Key="{dxdiagt:DiagramControlThemeKeys ResourceKey=PageSetupWindowStyle}" TargetType="dx:DXDialogWindow">
+        <Setter Property="WindowStyle" Value="ToolWindow" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="SizeToContent" Value="WidthAndHeight" />
+    </Style>
+    <DataTemplate x:Key="{dxdiagn:BindingEditorThemeKeysExtension ResourceKey=EditorTemplate}">
+        <Grid>
+            <dxlc:LayoutControl Width="430" Height="130" Padding="50, 0, 30, 0" ItemSpace="15" Orientation="Vertical" dxmvvminternal:InteractionHelper.EnableBehaviorsInDesignTime="True">
+                <dxlc:LayoutItem VerticalAlignment="Center" HorizontalAlignment="Stretch" Label="{Binding ContentPropertyName}" LabelPosition="Top">
+                    <dxlc:LayoutItem.LabelTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <TextBlock.Inlines>
+                                    <Run Text="Bind " />
+                                    <Run FontWeight="Bold" Text="{Binding Mode=OneWay}" />
+                                    <Run Text=" property to:" />
+                                </TextBlock.Inlines>
+                            </TextBlock>
+                        </DataTemplate>
+                    </dxlc:LayoutItem.LabelTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="20" />
+                        </Grid.ColumnDefinitions>
+                        <dxe:TextEdit x:Name="PART_ExpressionEditor" Height="25" EditValue="{Binding BindingExpression, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" NullText="Enter field name..." ShowNullText="True">
+                            <dxmvvm:Interaction.Behaviors>
+                                <dxmvvm:FocusBehavior />
+                            </dxmvvm:Interaction.Behaviors>
+                        </dxe:TextEdit>
+                        <Button Grid.Column="1" IsTabStop="False" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ToolTip="Go to related article" Margin="5,0" Command="{Binding HelpCommand}">
+                            <Button.Template>
+                                <ControlTemplate>
+                                        <Image RenderOptions.BitmapScalingMode="NearestNeighbor" Width="16" Height="16" Source="{dxdiag:DiagramSvgImage Size='16,16', Path=Images/Svg/BindingEditorHelpIcon.svg}" />
+                                </ControlTemplate>
+                            </Button.Template>
+                        </Button>
+                        <dxe:ErrorControl Grid.Column="2" IsTabStop="False" Visibility="{Binding HasValidationError, Converter={dxmvvm:BooleanToVisibilityConverter}}" ToolTip="{Binding ValidationErrorMessage}" />
+                    </Grid>
+                </dxlc:LayoutItem>
+                <dxe:CheckEdit Content="Save changes to the source" VerticalAlignment="Center" HorizontalAlignment="Left" IsEnabled="{Binding CanEnableTwoWayBinding }" IsChecked="{Binding EnableTwoWayBinding, Mode=TwoWay}" />
+            </dxlc:LayoutControl>
+            <dx:DialogFooter>
+                <Grid>
+                    <StackPanel Orientation="Horizontal">
+                        <dx:DialogButton DialogUICommandTag="ClearBinding" Command="{Binding ClearBindingCommand}" Padding="10, 0" />
+                    </StackPanel>
+                    <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                        <dx:DialogButton DialogResult="OK" IsEnabled="{Binding HasValidationError, Converter={dxmvvm:BooleanNegationConverter}}" />
+                        <dx:DialogButton DialogResult="Cancel" />
+                    </StackPanel>
+                </Grid>
+            </dx:DialogFooter>
+        </Grid>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:BindingEditorThemeKeysExtension ResourceKey=DialogServiceTemplate}">
+        <ContentControl>
+            <dx:DialogService DialogWindowStartupLocation="CenterScreen" ViewTemplate="{DynamicResource {dxdiagn:BindingEditorThemeKeysExtension ResourceKey=EditorTemplate}}" DialogStyle="{DynamicResource {dxdiagn:BindingEditorThemeKeysExtension ResourceKey=DialogWindowStyle}}" />
+        </ContentControl>
+    </DataTemplate>
+    <Style x:Key="{dxdiagn:BindingEditorThemeKeysExtension ResourceKey=DialogWindowStyle}" TargetType="dx:DXDialogWindow">
+        <Setter Property="WindowStyle" Value="ToolWindow" />
+        <Setter Property="ResizeMode" Value="NoResize" />
+        <Setter Property="SizeToContent" Value="WidthAndHeight" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+    </Style>
+</ResourceDictionary>

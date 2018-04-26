@@ -1,0 +1,100 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ControlTemplate x:Key="{dxbt:BarItemSeparatorThemeKey ResourceKey=InMenuTemplate}" TargetType="{x:Type dxb:BarItemLinkSeparatorControl}">
+        <Grid SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;3;10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <dx:DXBorder Width="{Binding Path=InMenuContentOffset, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;8;14" />
+            <dx:DXBorder x:Name="border" Background="#FFDDDDDD" Height="1" VerticalAlignment="Center" Margin="0,0,2,1" Grid.Column="1" SnapsToDevicePixels="True" cs:Name="Border_0001" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;9;14" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="border" Value="12,0,5,0" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxbt:BarItemSeparatorThemeKey ResourceKey=Template}" TargetType="{x:Type dxb:BarItemLinkSeparatorControl}">
+        <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;18;10">
+            <dx:DXBorder x:Name="border" Background="#FFDDDDDD" Width="1" Margin="1,5,2,5" cs:Name="Border_0002" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;19;14" />
+        </dxcore_unique_xmlns:PixelSnapper>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="border" Value="4,12,5,12" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonStatusBarRightPartTemplate}" TargetType="{x:Type dxb:BarItemLinkSeparatorControl}">
+        <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;28;10">
+            <dx:DXBorder x:Name="border" Background="#FF2A8DD4" Width="1" Margin="1,2,2,3" cs:Name="Border_0003" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;29;14" />
+        </dxcore_unique_xmlns:PixelSnapper>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="border" Value="4" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonStatusBarLeftPartTemplate}" TargetType="{x:Type dxb:BarItemLinkSeparatorControl}">
+        <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;38;10">
+            <dx:DXBorder x:Name="border" Background="#FF2A8DD4" Width="1" Margin="1,2,2,3" cs:Name="Border_0004" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;39;14" />
+        </dxcore_unique_xmlns:PixelSnapper>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="border" Value="4,4,5,4" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxbt:BarItemSeparatorThemeKey ResourceKey=InStatusBarTemplate}" TargetType="{x:Type dxb:BarItemLinkSeparatorControl}">
+        <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;48;10">
+            <dx:DXBorder x:Name="border" Background="#FF2A8DD4" Width="1" Margin="1,2,2,3" cs:Name="Border_0005" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;49;14" />
+        </dxcore_unique_xmlns:PixelSnapper>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="border" Value="4,4,5,4" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonPageGroupTemplate}" TargetType="{x:Type dxb:BarItemLinkSeparatorControl}">
+        <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;58;10">
+            <dx:DXBorder x:Name="border" Background="#FFDDDDDD" Width="1" Margin="2,5,3,6" cs:Name="Border_0006" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;59;14" />
+        </dxcore_unique_xmlns:PixelSnapper>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="border" Value="4,12,5,12" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonPageHeaderTemplate}" TargetType="{x:Type dxb:BarItemLinkSeparatorControl}">
+        <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;68;10">
+            <dx:DXBorder x:Name="border" Background="#FFDDDDDD" Width="1" Margin="2,5,3,6" cs:Name="Border_0007" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;69;14" />
+        </dxcore_unique_xmlns:PixelSnapper>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="border" Value="4,12,5,12" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonQuickAccessToolbarCommonTemplate}" TargetType="{x:Type Control}">
+        <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;78;10">
+            <dx:DXBorder x:Name="border" Background="#FFDDDDDD" Width="1" Margin="2,5,3,6" cs:Name="Border_0008" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;79;14" />
+        </dxcore_unique_xmlns:PixelSnapper>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="border" Value="4,12,5,12" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonQuickAccessToolbarTemplate}" TargetType="{x:Type dxb:BarItemLinkSeparatorControl}">
+        <ContentControl dxcore_unique_xmlns:FocusHelper2.Focusable="False" Template="{StaticResource {dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonQuickAccessToolbarCommonTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;88;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxbt:BarItemSeparatorThemeKey ResourceKey=InRibbonQuickAccessToolbarFooterTemplate}" TargetType="{x:Type dxb:BarItemLinkSeparatorControl}">
+        <dxcore_unique_xmlns:PixelSnapper dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;91;10">
+            <dx:DXBorder x:Name="border" Background="#FFFFFFFF" Width="1" Margin="2,5,3,6" cs:Name="Border_0009" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Bars\Themes\Office2016White\BarItemSeparator.xaml;92;14" />
+        </dxcore_unique_xmlns:PixelSnapper>
+        <ControlTemplate.Triggers>
+            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" TargetName="border" Value="4,12,5,12" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

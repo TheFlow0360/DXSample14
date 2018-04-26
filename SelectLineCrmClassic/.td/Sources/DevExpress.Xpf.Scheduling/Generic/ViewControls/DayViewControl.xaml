@@ -1,0 +1,400 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxschc="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxschp="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxschv="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource Generic/ViewControls/Common.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UICore.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="TimeRulerHeadersPanel.Style" TargetType="dxschp:TimeRulerHeadersPanel">
+        <Setter Property="ItemsSource" Value="{Binding VisualData.TimeRulers, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="AutoSize" Value="False" />
+        <Setter Property="ItemMinSize" Value="{Binding View.TimeRulerSize, RelativeSource={RelativeSource TemplatedParent}}" />
+    </Style>
+    <Style x:Key="TimeRulerGroupPanel.Style" TargetType="dxschp:TimeRulerGroupPanel">
+        <Setter Property="CellsCount" Value="{Binding VisualData.CellsCount, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="TimeRulers" Value="{Binding VisualData.TimeRulers, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="TimeMarkerPosition" Value="{Binding VisualData.CurrentTimePosition, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="TimeMarkerVisibility" Value="{Binding VisualData.TimeMarkerVisibility, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="TimeRulerSize" Value="{Binding View.TimeRulerSize, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="View" Value="{Binding View, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="TimeMarkerStyle" Value="{Binding TimeMarkerStyle, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Margin" Value="{StaticResource DayView.ScrollArea.Margin}" />
+    </Style>
+
+    <Style x:Key="DateHeadersContainer.Style" TargetType="DockPanel">
+        <Setter Property="dxschv:HeaderControl.ShowTopBorder" Value="False" />
+        <Setter Property="dxschv:HeaderControl.ShowBottomBorder" Value="True" />
+        <Setter Property="dxschv:HeaderControl.ShowLeftBorder" Value="True" />
+        <Setter Property="dxschv:HeaderControl.ShowRightBorder" Value="False" />
+    </Style>
+    <Style x:Key="DateHeadersContainerPanel.StyleBase" TargetType="dxschp:DateHeadersContainerPanel">
+        <Setter Property="ItemsSource" Value="{Binding VisualData.DateHeaders, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="ItemMinSize" Value="0" />
+        <Setter Property="AutoSize" Value="True" />
+        <Setter Property="ItemStyle" Value="{Binding View.DateHeaderStyle, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ItemContentTemplate" Value="{Binding View.DateHeaderContentTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ItemContentTemplateSelector" Value="{Binding View.DateHeaderContentTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ShowGroupSeparators" Value="True" />
+        <Setter Property="GroupSeparatorSize" Value="{Binding View.GroupSeparatorSize, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="GroupSeparatorTemplate" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DateHeaderSeparatorTemplate_Horizontal}}" />
+    </Style>
+    <Style x:Key="DateHeadersContainerPanel.GroupByResource.Style" TargetType="dxschp:DateHeadersContainerPanel" BasedOn="{StaticResource DateHeadersContainerPanel.StyleBase}">
+        <Setter Property="ItemsCountInGroup" Value="{Binding VisualData.DaysInOneResource, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="AutoSizeMaxViewport" Value="{DXBinding '@p.View.ResourcesPerPage * @p.VisualData.DaysInOneResource'}" />
+    </Style>
+    <Style x:Key="DateHeadersContainerPanel.GroupByDate.Style" TargetType="dxschp:DateHeadersContainerPanel" BasedOn="{StaticResource DateHeadersContainerPanel.StyleBase}">
+    </Style>
+
+    <Style x:Key="ResourceHeadersContainer.Style" TargetType="DockPanel">
+        <Setter Property="dxschv:HeaderControl.ShowTopBorder" Value="False" />
+        <Setter Property="dxschv:HeaderControl.ShowBottomBorder" Value="True" />
+        <Setter Property="dxschv:HeaderControl.ShowLeftBorder" Value="True" />
+        <Setter Property="dxschv:HeaderControl.ShowRightBorder" Value="False" />
+    </Style>
+    <Style x:Key="ResourceHeadersContainerPanel.GroupByResource.Style" TargetType="dxschp:ResourceHeadersContainerPanel">
+        <Setter Property="AutoSizeMaxViewport" Value="{Binding View.ResourcesPerPage, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ItemsSource" Value="{Binding VisualData.ResourceHeaders, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="ItemMinSize" Value="0" />
+        <Setter Property="AutoSize" Value="True" />
+        <Setter Property="ItemStyle" Value="{Binding View.ResourceHeaderStyle, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ItemContentTemplate" Value="{Binding View.ResourceHeaderContentTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ItemContentTemplateSelector" Value="{Binding View.ResourceHeaderContentTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ShowGroupSeparators" Value="True" />
+        <Setter Property="GroupSeparatorSize" Value="{Binding View.GroupSeparatorSize, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="GroupSeparatorTemplate" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=ResourceHeaderSeparatorTemplate_Horizontal}}" />
+    </Style>
+    <Style x:Key="ResourceHeadersContainersPanel.GroupByDate.Style" TargetType="dxschp:ResourceHeadersContainersPanel">
+        <Setter Property="ItemContainerAutoSizeMaxViewport" Value="{Binding View.ResourcesPerPage, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ItemsSource" Value="{Binding VisualData.DayGroups, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="ItemMinSize" Value="0" />
+        <Setter Property="AutoSize" Value="True" />
+        <Setter Property="ItemContainerOrientation" Value="Horizontal" />
+        <Setter Property="ItemContainerItemMinSize" Value="0" />
+        <Setter Property="ItemContainerAutoSize" Value="True" />
+        <Setter Property="ShowGroupSeparators" Value="True" />
+        <Setter Property="GroupSeparatorSize" Value="{Binding View.GroupSeparatorSize, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="GroupSeparatorTemplate" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=ResourceHeaderSeparatorTemplate_Horizontal}}" />
+        <Setter Property="ItemContainerItemStyle" Value="{Binding View.ResourceHeaderStyle, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ItemContainerItemContentTemplate" Value="{Binding View.ResourceHeaderContentTemplate, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ItemContainerItemContentTemplateSelector" Value="{Binding View.ResourceHeaderContentTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" />
+    </Style>
+
+    <Style x:Key="AllDayGroupPanel.GroupByResource.Style" TargetType="dxschp:AllDayGroupPanel">
+        <Setter Property="CellContainersPerPage" Value="{Binding View.ResourcesPerPage, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="CellContainers" Value="{Binding VisualData.AllDayCellContainers, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="CellsCount" Value="{Binding VisualData.DaysInOneResource, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="IsAppointmentsOpacityAnimationEnabled" Value="{Binding View.IsAppointmentsOpacityAnimationEnabled, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="AppointmentsOpacityAnimation" Value="{Binding View.AppointmentsOpacityAnimation, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="View" Value="{Binding View, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="AppointmentsContainerStyle" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DayView_AllDayAppointmentsContainerStyle}}" />
+        <Setter Property="DragAppointmentsContainerStyle" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DayView_AllDayDragAppointmentsContainerStyle}}" />
+        <Setter Property="SeparatorTemplate" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=GroupSeparatorTemplate_Vertical}}" />
+    </Style>
+    <Style x:Key="AllDayGroupsPanel.GroupByDate.Style" TargetType="dxschp:AllDayGroupsPanel">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="ItemMinSize" Value="0" />
+        <Setter Property="AutoSize" Value="True" />
+        <Setter Property="ItemsSource" Value="{Binding VisualData.DayGroups, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ShowGroupSeparators" Value="True" />
+        <Setter Property="GroupSeparatorSize" Value="{Binding View.GroupSeparatorSize, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupShowSeparators" Value="False" />
+        <Setter Property="DayGroupCellsCount" Value="1" />
+        <Setter Property="DayGroupCellContainersPerPage" Value="{Binding View.ResourcesPerPage, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupAppointmentsOpacityAnimation" Value="{Binding View.AppointmentsOpacityAnimation, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupIsAppointmentsOpacityAnimationEnabled" Value="{Binding View.IsAppointmentsOpacityAnimationEnabled, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="View" Value="{Binding View, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupAppointmentsContainerStyle" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DayView_AllDayAppointmentsContainerStyle}}" />
+        <Setter Property="DayGroupDragAppointmentsContainerStyle" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DayView_AllDayDragAppointmentsContainerStyle}}" />
+        <Setter Property="GroupSeparatorTemplate" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=GroupSeparatorTemplate_Vertical}}" />
+    </Style>
+    <Style x:Key="AllDaySeparator.Style" TargetType="ContentPresenter">
+        <Setter Property="Height" Value="{Binding View.AllDaySeparatorSize, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=AllDayAreaSeparatorTemplate}}" />
+    </Style>
+
+    <Style x:Key="DayGroupPanel.GroupByResource.Style" TargetType="dxschp:DayGroupPanel">
+        <Setter Property="CellContainersPerPage" Value="{DXBinding '@p.View.ResourcesPerPage * @p.VisualData.DaysInOneResource'}" />
+        <Setter Property="CellContainersPerGroup" Value="{Binding VisualData.DaysInOneResource, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="CellsCount" Value="{Binding VisualData.CellsCount, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="CellContainers" Value="{Binding VisualData.CellContainers, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="AppointmentsDeferredRendering" Value="{Binding View.AppointmentsDeferredRendering, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="AppointmentsDeferredRenderingRange" Value="{Binding View.AppointmentsDeferredRenderingRange, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="IsAppointmentsOpacityAnimationEnabled" Value="{Binding View.IsAppointmentsOpacityAnimationEnabled, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="AppointmentsOpacityAnimation" Value="{Binding View.AppointmentsOpacityAnimation, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ShowTimeIndicator" Value="True" />
+        <Setter Property="ShowTimeIndicatorOverAppointment" Value="{Binding View.ShowTimeIndicatorOverAppointment, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="TimeIndicatorPosition" Value="{Binding VisualData.CurrentTimePosition, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="View" Value="{Binding View, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="AppointmentsContainerStyle" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DayView_AppointmentsContainerStyle}}" />
+        <Setter Property="DragAppointmentsContainerStyle" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DayView_DragAppointmentsContainerStyle}}" />
+        <Setter Property="SeparatorTemplate" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=GroupSeparatorTemplate_Vertical}}" />
+
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding View.TimeIndicatorVisibility, RelativeSource={RelativeSource TemplatedParent}}" Value="Never">
+                <Setter Property="ShowTimeIndicator" Value="False" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding View.TimeIndicatorVisibility, RelativeSource={RelativeSource TemplatedParent}}" Value="Always">
+                <Setter Property="ShowTimeIndicator" Value="True" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="DayGroupsPanel.GroupByDate.Style" TargetType="dxschp:DayGroupsPanel">
+        <Setter Property="Orientation" Value="Horizontal" />
+        <Setter Property="ItemMinSize" Value="0" />
+        <Setter Property="AutoSize" Value="True" />
+        <Setter Property="ItemsSource" Value="{Binding VisualData.DayGroups, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="ShowGroupSeparators" Value="True" />
+        <Setter Property="DayGroupShowSeparators" Value="False" />
+        <Setter Property="DayGroupCellsCount" Value="{Binding VisualData.CellsCount, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupCellContainersPerPage" Value="{DXBinding '@p.View.ResourcesPerPage'}" />
+        <Setter Property="GroupSeparatorSize" Value="{Binding View.GroupSeparatorSize, RelativeSource={RelativeSource TemplatedParent}}" />
+
+        <Setter Property="DayGroupAppointmentsDeferredRendering" Value="{Binding View.AppointmentsDeferredRendering, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupAppointmentsDeferredRenderingRange" Value="{Binding View.AppointmentsDeferredRenderingRange, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupIsAppointmentsOpacityAnimationEnabled" Value="{Binding View.IsAppointmentsOpacityAnimationEnabled, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupAppointmentsOpacityAnimation" Value="{Binding View.AppointmentsOpacityAnimation, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupShowTimeIndicatorOverAppointment" Value="{Binding View.ShowTimeIndicatorOverAppointment, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupTimeIndicatorPosition" Value="{Binding VisualData.CurrentTimePosition, RelativeSource={RelativeSource TemplatedParent}}" />
+
+        <Setter Property="View" Value="{Binding View, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DayGroupAppointmentsContainerStyle" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DayView_AppointmentsContainerStyle}}" />
+        <Setter Property="DayGroupDragAppointmentsContainerStyle" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DayView_DragAppointmentsContainerStyle}}" />
+        <Setter Property="GroupSeparatorTemplate" Value="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=GroupSeparatorTemplate_Vertical}}" />
+        
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding View.TimeIndicatorVisibility, RelativeSource={RelativeSource TemplatedParent}}" Value="Never">
+                <Setter Property="DayGroupShowTimeIndicator" Value="False" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding View.TimeIndicatorVisibility, RelativeSource={RelativeSource TemplatedParent}}" Value="Always">
+                <Setter Property="DayGroupShowTimeIndicator" Value="True" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <ControlTemplate x:Key="DayViewGroupByResourceControl.DefaultTemplate" TargetType="dxschv:DayViewGroupByResourceControl">
+        <DockPanel>
+            <DockPanel x:Name="timeRulersContainer" DockPanel.Dock="Left" Margin="1,0,0,0">
+                <Decorator x:Name="timeRulersBottomOffset" DockPanel.Dock="Bottom" Height="{DXBinding '@e(scrollViewer).HorizontalScrollBarActualHeight'}" />
+                <dxschv:TimeRulerHeadersPanel x:Name="timerRulerHeadersPanel" Style="{StaticResource TimeRulerHeadersPanel.Style}" DockPanel.Dock="Top" Height="{DXBinding '@e(headersContainer).ActualHeight + @e(allDayScrollViewer).ActualHeight + @e(allDaySeparator).ActualHeight'}" />
+                <Grid>
+                    <ContentPresenter ContentTemplate="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=TimeRulerHeaderSeparatorTemplate}}" VerticalAlignment="Top" />
+                    <dxschv:TimeRulerGroupPanel x:Name="timeRulerPanel" Style="{StaticResource TimeRulerGroupPanel.Style}" ScrollOffset="{DXBinding '@e(scrollPresenter).VAnimatedOffset'}" />
+                </Grid>
+            </DockPanel>
+            <Grid>
+                <DockPanel>
+                    <DockPanel x:Name="headersContainer" DockPanel.Dock="Top">
+                        <DockPanel x:Name="resourceHeadersContainer" Style="{StaticResource ResourceHeadersContainer.Style}" DockPanel.Dock="Top">
+                            <dxschv:ResourceHeaderControl x:Name="resourceHeadersOffset" DockPanel.Dock="Right" Width="{DXBinding '@e(scrollContainer).Tag'}" IsHitTestVisible="False" Visibility="Collapsed" />
+                            <dxschv:ResourceHeadersContainerPanel x:Name="resourceHeadersPanel" Style="{StaticResource ResourceHeadersContainerPanel.GroupByResource.Style}" ScrollOffset="{DXBinding '@e(scrollPresenter).HAnimatedOffset / @p.VisualData.DaysInOneResource'}" />
+                        </DockPanel>
+                        <DockPanel x:Name="dateHeadersContainer" Style="{StaticResource DateHeadersContainer.Style}" DockPanel.Dock="Top">
+                            <dxschv:DateHeaderControl x:Name="dateHeadersOffset" DockPanel.Dock="Right" Width="{DXBinding '@e(scrollContainer).Tag'}" IsHitTestVisible="False" Visibility="Collapsed" />
+                            <dxschv:DateHeadersContainerPanel x:Name="dateHeadersPanel" Style="{StaticResource DateHeadersContainerPanel.GroupByResource.Style}" ScrollOffset="{DXBinding '@e(scrollPresenter).HAnimatedOffset'}" />
+                        </DockPanel>
+                    </DockPanel>
+                    <DockPanel x:Name="scrollContainer">
+                        <DockPanel.Tag>
+                            <MultiBinding Converter="{dxschc:MathConverter Type=Max}" FallbackValue="0.0">
+                                <Binding ElementName="scrollViewer" Path="VerticalScrollBarActualWidth" />
+                                <Binding ElementName="allDayScrollViewer" Path="VerticalScrollBarActualWidth" />
+                            </MultiBinding>
+                        </DockPanel.Tag>
+                        <DockPanel x:Name="allDayContainer" DockPanel.Dock="Top">
+                            <dxschv:DayCellControl x:Name="allDayOffset" DockPanel.Dock="Right" IsHitTestVisible="False" Width="{DXBinding '@e(scrollContainer).Tag'}" Visibility="Collapsed" />
+                            <dxschv:SchedulerScrollViewer x:Name="allDayScrollViewer" HorizontalScrollBarVisibility="Hidden" MinHeight="{StaticResource DayView.AllDayScrollViewer.MinHeight}" MaxHeight="{DXBinding '@e(scrollContainer).ActualHeight / 2'}" SetHorizontalOffset="{DXBinding '@e(scrollViewer).HorizontalOffset  / @p.VisualData.DaysInOneResource'}">
+                                <dxschv:ScrollPanelPresenter>
+                                    <dxschv:AllDayGroupPanel Style="{StaticResource AllDayGroupPanel.GroupByResource.Style}" />
+                                </dxschv:ScrollPanelPresenter>
+                            </dxschv:SchedulerScrollViewer>
+                        </DockPanel>
+                        <ContentPresenter x:Name="allDaySeparator" Style="{StaticResource AllDaySeparator.Style}" DockPanel.Dock="Top" />
+                        <DockPanel>
+                            <dxschv:DayCellControl x:Name="offset" DockPanel.Dock="Right" IsHitTestVisible="False" Width="{DXBinding '@e(scrollContainer).Tag'}" Visibility="Collapsed" />
+                            <dxschv:SchedulerScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Visible" SetHorizontalOffset="{TemplateBinding HorizontalScrollOffset}" SetVerticalOffset="{TemplateBinding VerticalScrollOffset}">
+                                <dxschv:ScrollPanelPresenter x:Name="scrollPresenter" Margin="{StaticResource DayView.ScrollArea.Margin}" HSmallScrollStep="{Binding VisualData.DaysInOneResource, RelativeSource={RelativeSource TemplatedParent}}">
+                                    <dxschv:DayGroupPanel Style="{StaticResource DayGroupPanel.GroupByResource.Style}" />
+                                </dxschv:ScrollPanelPresenter>
+                                <dxschv:SchedulerScrollViewer.HorizontalScrollBarControlBox>
+                                    <dxschv:ResourceNavigator x:Name="resourceNavigator" FirstCommand="{DXBinding '@e(scrollViewer).Commands.LeftmostCommand'}" PrevPageCommand="{DXBinding '@e(scrollViewer).Commands.PageLeftCommand'}" PrevCommand="{DXBinding '@e(scrollViewer).Commands.LeftCommand'}" NextCommand="{DXBinding '@e(scrollViewer).Commands.RightCommand'}" NextPageCommand="{DXBinding '@e(scrollViewer).Commands.PageRightCommand'}" LastCommand="{DXBinding '@e(scrollViewer).Commands.RightmostCommand'}" PlusCommand="{DXBinding '@p.Commands.MoreResourcesPerPageCommand'}" MinusCommand="{DXBinding '@p.Commands.LessResourcesPerPageCommand'}" />
+                                </dxschv:SchedulerScrollViewer.HorizontalScrollBarControlBox>
+                            </dxschv:SchedulerScrollViewer>
+                        </DockPanel>
+                    </DockPanel>
+                </DockPanel>
+                <ContentPresenter ContentTemplate="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DayView_BorderTemplate}}" />
+            </Grid>
+        </DockPanel>
+        <ControlTemplate.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition SourceName="scrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Collapsed" />
+                    <Condition SourceName="allDayScrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Visible" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="offset" Property="Visibility" Value="Visible" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition SourceName="scrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Visible" />
+                    <Condition SourceName="allDayScrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Collapsed" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="allDayOffset" Property="Visibility" Value="Visible" />
+            </MultiTrigger>
+            <Trigger SourceName="allDayScrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Visible">
+                <Setter TargetName="resourceHeadersOffset" Property="Visibility" Value="Visible" />
+                <Setter TargetName="dateHeadersOffset" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger SourceName="scrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Visible">
+                <Setter TargetName="resourceHeadersOffset" Property="Visibility" Value="Visible" />
+                <Setter TargetName="dateHeadersOffset" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger SourceName="scrollViewer" Property="ComputedHorizontalScrollBarVisibility" Value="Collapsed">
+                <Setter TargetName="timeRulersBottomOffset" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <DataTrigger Binding="{Binding View.ShowAllDayArea, RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="allDayContainer" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="allDaySeparator" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="timerRulerHeadersPanel" Property="Height" Value="{DXBinding '@e(headersContainer).ActualHeight'}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding View.ShowResourceHeaders, RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="resourceHeadersContainer" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding View.ShowDayHeaders, RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="dateHeadersContainer" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding View.ShowResourceNavigator, RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="resourceNavigator" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding View.Scheduler.ActualGroupType, RelativeSource={RelativeSource Self}}" Value="None">
+                <Setter TargetName="resourceHeadersContainer" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="resourceNavigator" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="scrollViewer" Property="HorizontalScrollBarVisibility" Value="Hidden" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="DayViewGroupByDateControl.DefaultTemplate" TargetType="dxschv:DayViewGroupByDateControl">
+        <DockPanel>
+            <DockPanel x:Name="timeRulersContainer" DockPanel.Dock="Left" Margin="1,0,0,0">
+                <Decorator x:Name="timeRulersBottomOffset" DockPanel.Dock="Bottom" Height="{DXBinding '@e(scrollViewer).HorizontalScrollBarActualHeight'}" />
+                <dxschv:TimeRulerHeadersPanel x:Name="timerRulerHeadersPanel" Style="{StaticResource TimeRulerHeadersPanel.Style}" DockPanel.Dock="Top" Height="{DXBinding '@e(headersContainer).ActualHeight + @e(allDayContainer).ActualHeight + @e(allDaySeparator).ActualHeight'}" />
+                <Grid DockPanel.Dock="Top">
+                    <ContentPresenter ContentTemplate="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=TimeRulerHeaderSeparatorTemplate}}" VerticalAlignment="Top" />
+                    <dxschv:TimeRulerGroupPanel x:Name="timeRulerPanel" Style="{StaticResource TimeRulerGroupPanel.Style}" ScrollOffset="{DXBinding '@e(scrollPresenter).VAnimatedOffset'}" />
+                </Grid>
+            </DockPanel>
+            <Grid>
+                <DockPanel>
+                    <DockPanel x:Name="headersContainer" DockPanel.Dock="Top">
+                        <DockPanel x:Name="dateHeadersContainer" Style="{StaticResource DateHeadersContainer.Style}" DockPanel.Dock="Top">
+                            <dxschv:DateHeaderControl x:Name="dateHeadersOffset" DockPanel.Dock="Right" Width="{DXBinding '@e(scrollContainer).Tag'}" IsHitTestVisible="False" Visibility="Collapsed" />
+                            <dxschv:DateHeadersContainerPanel x:Name="dateHeadersPanel" Style="{StaticResource DateHeadersContainerPanel.GroupByDate.Style}" />
+                        </DockPanel>
+                        <DockPanel x:Name="resourceHeadersContainer" Style="{StaticResource ResourceHeadersContainer.Style}" DockPanel.Dock="Top">
+                            <dxschv:ResourceHeaderControl x:Name="resourceHeadersOffset" DockPanel.Dock="Right" Width="{DXBinding '@e(scrollContainer).Tag'}" IsHitTestVisible="False" Visibility="Collapsed" />
+                            <dxschv:ResourceHeadersContainersPanel x:Name="resourceHeadersPanel" Style="{StaticResource ResourceHeadersContainersPanel.GroupByDate.Style}" ItemContainerScrollOffset="{DXBinding '@e(scrollPresenter).HAnimatedOffset'}" />
+                        </DockPanel>
+                    </DockPanel>
+                    <DockPanel x:Name="scrollContainer">
+                        <DockPanel.Tag>
+                            <MultiBinding Converter="{dxschc:MathConverter Type=Max}" FallbackValue="0.0">
+                                <Binding ElementName="scrollViewer" Path="VerticalScrollBarActualWidth" />
+                                <Binding ElementName="allDayScrollViewer" Path="VerticalScrollBarActualWidth" />
+                            </MultiBinding>
+                        </DockPanel.Tag>
+                        <DockPanel x:Name="allDayContainer" DockPanel.Dock="Top">
+                            <dxschv:DayCellControl x:Name="allDayOffset" DockPanel.Dock="Right" IsHitTestVisible="False" Width="{DXBinding '@e(scrollContainer).Tag'}" Visibility="Collapsed" />
+                            <dxschv:SchedulerScrollViewer x:Name="allDayScrollViewer" HorizontalScrollBarVisibility="Hidden" MinHeight="{StaticResource DayView.AllDayScrollViewer.MinHeight}" MaxHeight="{DXBinding '@e(scrollContainer).ActualHeight / 2'}" SetHorizontalOffset="{DXBinding '@e(scrollViewer).HorizontalOffset'}">
+                                <dxschv:ScrollPanelPresenter>
+                                    <dxschv:AllDayGroupsPanel Style="{StaticResource AllDayGroupsPanel.GroupByDate.Style}" />
+                                </dxschv:ScrollPanelPresenter>
+                            </dxschv:SchedulerScrollViewer>
+                        </DockPanel>
+                        <ContentPresenter x:Name="allDaySeparator" Style="{StaticResource AllDaySeparator.Style}" DockPanel.Dock="Top" />
+                        <DockPanel>
+                            <dxschv:DayCellControl x:Name="offset" DockPanel.Dock="Right" IsHitTestVisible="False" Width="{DXBinding '@e(scrollContainer).Tag'}" Visibility="Collapsed" />
+                            <dxschv:SchedulerScrollViewer x:Name="scrollViewer" HorizontalScrollBarVisibility="Visible" HScrollSnapping="True" SetHorizontalOffset="{TemplateBinding HorizontalScrollOffset}" SetVerticalOffset="{TemplateBinding VerticalScrollOffset}">
+                                <dxschv:ScrollPanelPresenter x:Name="scrollPresenter" AllowHScrollAnimation="True" Margin="{StaticResource DayView.ScrollArea.Margin}">
+                                    <dxschv:ScrollPanelPresenter.HScrollAnimation>
+                                        <DoubleAnimation Duration="{StaticResource Scheduler.HScrollAnimation.Duration}">
+                                            <DoubleAnimation.EasingFunction>
+                                                <ExponentialEase EasingMode="EaseIn" Exponent="10" />
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </dxschv:ScrollPanelPresenter.HScrollAnimation>
+                                    <dxschv:DayGroupsPanel Style="{StaticResource DayGroupsPanel.GroupByDate.Style}" />
+                                </dxschv:ScrollPanelPresenter>
+                                <dxschv:SchedulerScrollViewer.HorizontalScrollBarControlBox>
+                                    <dxschv:ResourceNavigator x:Name="resourceNavigator" FirstCommand="{DXBinding '@e(scrollViewer).Commands.LeftmostCommand'}" PrevPageCommand="{DXBinding '@e(scrollViewer).Commands.PageLeftCommand'}" PrevCommand="{DXBinding '@e(scrollViewer).Commands.LeftCommand'}" NextCommand="{DXBinding '@e(scrollViewer).Commands.RightCommand'}" NextPageCommand="{DXBinding '@e(scrollViewer).Commands.PageRightCommand'}" LastCommand="{DXBinding '@e(scrollViewer).Commands.RightmostCommand'}" PlusCommand="{DXBinding '@p.Commands.MoreResourcesPerPageCommand'}" MinusCommand="{DXBinding '@p.Commands.LessResourcesPerPageCommand'}" />
+                                </dxschv:SchedulerScrollViewer.HorizontalScrollBarControlBox>
+                            </dxschv:SchedulerScrollViewer>
+                        </DockPanel>
+                    </DockPanel>
+                </DockPanel>
+                <ContentPresenter ContentTemplate="{DynamicResource {dxscht:SchedulerControlThemeKey ResourceKey=DayView_BorderTemplate}}" />
+            </Grid>
+        </DockPanel>
+        <ControlTemplate.Triggers>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition SourceName="scrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Collapsed" />
+                    <Condition SourceName="allDayScrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Visible" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="offset" Property="Visibility" Value="Visible" />
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition SourceName="scrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Visible" />
+                    <Condition SourceName="allDayScrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Collapsed" />
+                </MultiTrigger.Conditions>
+                <Setter TargetName="allDayOffset" Property="Visibility" Value="Visible" />
+            </MultiTrigger>
+            <Trigger SourceName="allDayScrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Visible">
+                <Setter TargetName="resourceHeadersOffset" Property="Visibility" Value="Visible" />
+                <Setter TargetName="dateHeadersOffset" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger SourceName="scrollViewer" Property="ComputedVerticalScrollBarVisibility" Value="Visible">
+                <Setter TargetName="resourceHeadersOffset" Property="Visibility" Value="Visible" />
+                <Setter TargetName="dateHeadersOffset" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger SourceName="scrollViewer" Property="ComputedHorizontalScrollBarVisibility" Value="Collapsed">
+                <Setter TargetName="timeRulersBottomOffset" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <DataTrigger Binding="{Binding View.ShowAllDayArea, RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="allDayContainer" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="allDaySeparator" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="timerRulerHeadersPanel" Property="Height" Value="{DXBinding '@e(headersContainer).ActualHeight'}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding View.ShowResourceHeaders, RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="resourceHeadersContainer" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding View.ShowDayHeaders, RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="dateHeadersContainer" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding View.ShowResourceNavigator, RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="resourceNavigator" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="DayViewControlBase.DefaultStyle" TargetType="dxschv:DayViewControlBase">
+        <Setter Property="Margin" Value="{StaticResource DayView.Margin}" />
+        <Setter Property="AllowDrop" Value="True" />
+        <Style.Triggers>
+            <Trigger Property="dxsch:SchedulerControl.ShowBorder" Value="False">
+                <Setter Property="Margin" Value="{StaticResource DayView.InvisibleBorderMargin}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="DayViewGroupByResourceControl.DefaultStyle" TargetType="dxschv:DayViewGroupByResourceControl" BasedOn="{StaticResource DayViewControlBase.DefaultStyle}">
+        <Setter Property="Template" Value="{StaticResource DayViewGroupByResourceControl.DefaultTemplate}" />
+    </Style>
+    <Style x:Key="DayViewGroupByDateControl.DefaultStyle" TargetType="dxschv:DayViewGroupByDateControl" BasedOn="{StaticResource DayViewControlBase.DefaultStyle}">
+        <Setter Property="Template" Value="{StaticResource DayViewGroupByDateControl.DefaultTemplate}" />
+    </Style>
+
+</ResourceDictionary>

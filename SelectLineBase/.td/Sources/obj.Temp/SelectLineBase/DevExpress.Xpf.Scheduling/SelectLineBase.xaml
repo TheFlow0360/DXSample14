@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxt:ResourceDictionaryEx Source="{dx:SchedulingResource UICore.xaml}" />
+        <dxt:ResourceDictionaryEx Source="{dx:SchedulingResource UICustom.xaml}" />
+        <dxt:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.xaml}" />
+
+        <dxt:ResourceDictionaryEx Source="{dx:SchedulingResource Generic/DefaultStyles.xaml}" />
+        <dxt:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.Generic/Overrides/Buttons.Office2007.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

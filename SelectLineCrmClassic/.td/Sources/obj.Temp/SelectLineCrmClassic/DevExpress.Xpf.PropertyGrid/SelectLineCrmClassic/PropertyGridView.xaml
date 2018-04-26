@@ -1,0 +1,14 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxprg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid" xmlns:dxprgt="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <sys:Double x:Key="{dxprgt:PropertyGridViewThemeKey ResourceKey=RowMinHeight}">21</sys:Double>
+    <Thickness x:Key="{dxprgt:PropertyGridViewThemeKey ResourceKey=CategoryHeaderMargin}">2,0,0,0</Thickness>
+    <Thickness x:Key="{dxprgt:PropertyGridViewThemeKey ResourceKey=CategoryHeaderPadding}">2</Thickness>
+    <ControlTemplate x:Key="{dxprgt:PropertyGridViewThemeKey ResourceKey=CategoryHeaderNormalTemplate}">
+        <dx:DXBorder Background="Transparent" MinWidth="22" MinHeight="22" cs:Name="Border_0001" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PropertyGrid\Office2016White\PropertyGridView.xaml;6;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxprgt:PropertyGridViewThemeKey ResourceKey=CategoryHeaderMouseOverTemplate}">
+        <dx:DXBorder x:Name="HoverState" Background="#FFCDE6F7" MinWidth="22" MinHeight="22" cs:Name="Border_0002" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PropertyGrid\Office2016White\PropertyGridView.xaml;9;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxprgt:PropertyGridViewThemeKey ResourceKey=CategoryHeaderSelectedTemplate}">
+        <dx:DXBorder x:Name="PressedState" Background="#FF92C0E0" MinWidth="22" MinHeight="22" cs:Name="Border_0003" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PropertyGrid\Office2016White\PropertyGridView.xaml;12;10" />
+    </ControlTemplate>
+</ResourceDictionary>

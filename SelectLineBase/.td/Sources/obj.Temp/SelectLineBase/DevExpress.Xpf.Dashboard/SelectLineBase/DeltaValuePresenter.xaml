@@ -1,0 +1,10 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdasht="http://schemas.devexpress.com/winfx/2008/xaml/dashboard/themekeys" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <dxt:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Dashboard/Generic/DeltaValuePresenter.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <SolidColorBrush x:Key="{dxdasht:DeltaValuePresenterThemeKey ResourceKey=GoodForeground}">Green</SolidColorBrush>
+    <SolidColorBrush x:Key="{dxdasht:DeltaValuePresenterThemeKey ResourceKey=BadForeground}">Red</SolidColorBrush>
+    <SolidColorBrush x:Key="{dxdasht:DeltaValuePresenterThemeKey ResourceKey=WarningForeground}">Orange</SolidColorBrush>
+    <SolidColorBrush x:Key="{dxdasht:DeltaValuePresenterThemeKey ResourceKey=NeutralForeground}">DarkGray</SolidColorBrush>
+</ResourceDictionary>

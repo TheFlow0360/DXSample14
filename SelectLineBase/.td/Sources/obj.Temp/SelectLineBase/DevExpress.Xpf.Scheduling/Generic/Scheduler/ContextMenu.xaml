@@ -1,0 +1,62 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/themekeys" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <DataTemplate x:Key="{dxscht:SchedulerThemeKey ResourceKey=ContextMenu_Appointment}">
+        <dxb:PopupMenu dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\ContextMenu.xaml;4;10">
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Appointment_Actions_Open}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Appointment_Actions_Open}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Appointment_Actions_EditSeries}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Appointment_Actions_EditSeries}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Appointment_Actions_RestoreOccurrence}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Appointment_Actions_RestoreOccurrence}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarSubItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Appointment_Options_ShowTimeAs}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Appointment_Options_ShowTimeAs}}" />
+            <dxb:BarSubItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Appointment_Options_LabelAs}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Appointment_Options_LabelAs}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Appointment_Actions_Delete}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Appointment_Actions_Delete}}" />
+        </dxb:PopupMenu>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerThemeKey ResourceKey=ContextMenu_Cell}">
+        <dxb:PopupMenu dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\ContextMenu.xaml;18;10">
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Cell_Actions_NewAppointment}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_Appointment_NewAppointment}}" />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Cell_Actions_NewAllDayEvent}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_Appointment_NewAllDayEvent}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Cell_Actions_NewRecurringAppointment}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_Appointment_NewRecurringAppointment}}" />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Cell_Actions_NewRecurringEvent}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_Appointment_NewRecurringEvent}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Cell_Actions_GotoToday}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_Navigate_GotoToday}}" />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Cell_Actions_GotoDate}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_Navigate_GotoDate}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarSubItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Cell_Actions_TimeScales}" Style="{DynamicResource {dxscht:SchedulerCommandBarThemeKey ResourceKey=CellContextMenu_SwitchTimeScale}}" />
+            <dxb:BarSubItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Cell_Actions_TimeScaleCaptions}" Style="{DynamicResource {dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_TimeScale_ShowTimeScaleCaptions}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarSubItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_Cell_Actions_SwitchView}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=SwitchView}}" />
+        </dxb:PopupMenu>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerThemeKey ResourceKey=ContextMenu_TimeRuler}">
+        <dxb:PopupMenu dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\ContextMenu.xaml;35;10">
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_TimeRuler_Actions_NewAppointment}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_Appointment_NewAppointment}}" />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_TimeRuler_Actions_NewAllDayEvent}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_Appointment_NewAllDayEvent}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_TimeRuler_Actions_NewRecurringAppointment}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_Appointment_NewRecurringAppointment}}" />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_TimeRuler_Actions_NewRecurringEvent}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=Items_Home_Appointment_NewRecurringEvent}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarSubItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_TimeRuler_Actions_SwitchView}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=SwitchView}}" />
+            <dxb:BarItemLinkSeparator />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_TimeRuler_Actions_CustomizeTimeRuler}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=CustomizeTimeRuler}}" />
+            <dxb:BarLinkContainerItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_TimeRuler_Actions_SwitchTimeScale}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=SwitchTimeScale}}" />
+        </dxb:PopupMenu>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerThemeKey ResourceKey=ContextMenu_AppointmentDrop}">
+        <dxb:PopupMenu dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\ContextMenu.xaml;49;10">
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_AppointmentDrop_Actions_MoveAppointmentsOnDrop}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=MoveAppointmentsOnDrop}}" />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_AppointmentDrop_Actions_CopyAppointmentsOnDrop}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=CopyAppointmentsOnDrop}}" />
+            <dxb:BarButtonItem dxcore_unique_xmlns:XamlHelper.Name="{x:Static dxsch:DefaultBarItemNames.ContextMenu_Items_AppointmentDrop_Actions_CancelDropAppointments}" Style="{DynamicResource ResourceKey={dxscht:SchedulerCommandBarThemeKey ResourceKey=CancelDropAppointments}}" />
+        </dxb:PopupMenu>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxscht:SchedulerThemeKey ResourceKey=ContextMenu_DefaultOptions}">
+        <ContentControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\ContextMenu.xaml;57;10">
+            <dxsch:OptionsContextMenu AppointmentContextMenu="{dxmvvm:ValueFactory ValueTemplate={StaticResource {dxscht:SchedulerThemeKey ResourceKey=ContextMenu_Appointment}}}" CellContextMenu="{dxmvvm:ValueFactory ValueTemplate={StaticResource {dxscht:SchedulerThemeKey ResourceKey=ContextMenu_Cell}}}" TimeRulerContextMenu="{dxmvvm:ValueFactory ValueTemplate={StaticResource {dxscht:SchedulerThemeKey ResourceKey=ContextMenu_TimeRuler}}}" AppointmentDropContextMenu="{dxmvvm:ValueFactory ValueTemplate={StaticResource {dxscht:SchedulerThemeKey ResourceKey=ContextMenu_AppointmentDrop}}}">
+            </dxsch:OptionsContextMenu>
+        </ContentControl>
+    </DataTemplate>
+</ResourceDictionary>

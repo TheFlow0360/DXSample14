@@ -1,0 +1,205 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/map/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/map" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <local:TextToVisibilityConverter x:Key="textToVisibilityConverter" />
+    <local:TickMarkVisibilityConverter x:Key="tickMarkVisibilityConverter" />
+    <local:MarkerTypeToModelConverter x:Key="MarkerTypeToModelConverter" />
+    <local:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+
+    <DataTemplate x:Key="DefaultLegendItemLabelTemplate">
+        <TextBlock Text="{Binding ActualText}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;8;10" />
+    </DataTemplate>
+    <DataTemplate x:Key="ColorListLegendItemTemplate">
+        <StackPanel Margin="3" Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;11;10">
+            <Rectangle Fill="{Binding Fill}" Stroke="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" StrokeThickness="1" Width="32" Height="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;12;14" />
+            <ContentControl ContentTemplate="{Binding LabelTemplate}" Content="{Binding}" Margin="8,0,0,0" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;13;14" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="ColorScaleLegendItemTemplate">
+        <StackPanel Orientation="Vertical" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;17;10">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;18;14">
+                <dx:DXBorder Height="18" Width="1" Background="#FF808080" Margin="0,0,4,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;19;18" />
+                <ContentControl ContentTemplate="{Binding LabelTemplate}" Content="{Binding}" VerticalAlignment="Center" HorizontalAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;20;18" />
+            </StackPanel>
+            <Rectangle Fill="{Binding Fill}" Height="12" HorizontalAlignment="Stretch" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;22;14" />
+        </StackPanel>
+    </DataTemplate>
+    <Style TargetType="Shape" x:Key="legendShapeStyle">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;25;6" /><Setter Property="Fill" Value="{Binding Fill}" />
+        <Setter Property="Stroke" Value="{Binding Stroke}" />
+    </Style>
+    
+    <Style TargetType="local:MapLegendBase" x:Key="legendStyleBase">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;30;6" /><Setter Property="Alignment" Value="TopRight" />
+        <Setter Property="ItemLabelTemplate" Value="{StaticResource DefaultLegendItemLabelTemplate}" />
+    </Style>
+
+    <Style TargetType="Border" x:Key="TickMarkStyle">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;35;6" /><Setter Property="Background" Value="{Binding Stroke}" />
+        <Setter Property="Height" Value="1" />
+        <Setter Property="Visibility" Value="{Binding ActualTickMarkVisibility, Converter={StaticResource tickMarkVisibilityConverter}}" />
+        <Setter Property="RenderOptions.EdgeMode" Value="Aliased" />
+    </Style>
+    
+    <Style TargetType="ContentControl" x:Key="LegendLabelStyle">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;42;6" /><Setter Property="Visibility" Value="{Binding ShowLabel, Converter={StaticResource tickMarkVisibilityConverter}}" />
+    </Style>
+
+    <DataTemplate x:Key="InlineSizeLegendItemTemplate">
+        <StackPanel Margin="0,6,0,0" Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;47;10">
+            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;48;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="{Binding MaxItemSize}" />
+                    <ColumnDefinition Width="20" />
+                </Grid.ColumnDefinitions>
+                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;53;18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="{Binding MarkerSize}" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ContentPresenter Content="{Binding Path=MarkerType, Converter={StaticResource MarkerTypeToModelConverter}, ConverterParameter={StaticResource legendShapeStyle}}" Grid.Column="1" Height="{Binding MarkerSize}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;59;22" />
+                    <dx:DXBorder Style="{StaticResource TickMarkStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="2" Margin="3, 0, -3, 0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;60;22" />
+                </Grid>
+                <dx:DXBorder Style="{StaticResource TickMarkStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Center" Grid.Column="1" Margin="3, 0, 0, 0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;62;18" />
+            </Grid>
+            <ContentControl ContentTemplate="{Binding LabelTemplate}" Content="{Binding}" Style="{StaticResource LegendLabelStyle}" Margin="6,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Left" MinWidth="20" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;64;14" />
+        </StackPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="NestedSizeLegendItemTemplate">
+        <local:NestedItemPresentationControl VerticalAlignment="Bottom" />
+    </DataTemplate>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.NestedItemPresentationControl}" TargetType="local:NestedItemPresentationControl">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;71;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:NestedItemPresentationControl">
+                    <Grid Margin="0,6,0,0" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;75;22">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <ContentControl x:Name="PART_Text" ContentTemplate="{Binding LabelTemplate}" Content="{Binding}" Style="{StaticResource LegendLabelStyle}" Margin="6,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" MinWidth="20" Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;85;26" />
+                        <Grid Grid.Row="1" Grid.RowSpan="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;86;26">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="{Binding MaxItemSize}" />
+                                <ColumnDefinition Width="20" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;92;30">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <dx:DXBorder Style="{StaticResource TickMarkStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;97;34" />
+                                <ContentPresenter Content="{Binding Path=MarkerType, Converter={StaticResource MarkerTypeToModelConverter}, ConverterParameter={StaticResource legendShapeStyle}}" Grid.ColumnSpan="2" Width="{Binding MarkerSize}" Height="{Binding MarkerSize}" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;98;34" />
+                            </Grid>
+                            <dx:DXBorder Style="{StaticResource TickMarkStyle}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;100;30" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style TargetType="ItemsControl" x:Key="sizeLegendItemsControlStyle"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;108;6" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=Type, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="Inline">
+                <Setter Property="ItemTemplate" Value="{StaticResource InlineSizeLegendItemTemplate}" />
+                <Setter Property="ItemsPanel">
+                    <Setter.Value>
+                        <ItemsPanelTemplate>
+                            <StackPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;115;30" />
+                        </ItemsPanelTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=Type, RelativeSource={RelativeSource Mode=TemplatedParent}}" Value="Nested">
+                <Setter Property="ItemTemplate" Value="{StaticResource NestedSizeLegendItemTemplate}" />
+                <Setter Property="ItemsPanel">
+                    <Setter.Value>
+                        <ItemsPanelTemplate>
+                            <local:NestedSizeLegendPanel />
+                        </ItemsPanelTemplate>
+                    </Setter.Value>
+                </Setter>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.ColorListLegend}" TargetType="local:ColorListLegend" BasedOn="{StaticResource legendStyleBase}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;132;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ColorListLegend">
+                    <dx:DXBorder Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Visibility="{Binding Path=ActualVisibility, RelativeSource={RelativeSource TemplatedParent}}" CornerRadius="{DynamicResource {dxt:MapThemeKey ResourceKey=OverlayRadius}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;136;22">
+                        <StackPanel Orientation="Vertical" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;137;26">
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource TemplatedParent}}" FontSize="24" Visibility="{Binding Text, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource textToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;138;30" />
+                            <TextBlock Text="{Binding Path=Description, RelativeSource={RelativeSource TemplatedParent}}" FontSize="12" Padding="0,0,0,15" TextWrapping="Wrap" HorizontalAlignment="Left" Visibility="{Binding Text, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource textToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;139;30" />
+                            <local:LabeledItemsControl x:Name="PART_ItemsControl" ItemTemplate="{TemplateBinding ItemTemplate}" ItemLabelTemplate="{TemplateBinding ItemLabelTemplate}" />
+                        </StackPanel>
+                    </dx:DXBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate" Value="{StaticResource ColorListLegendItemTemplate}" />
+        <Setter Property="Margin" Value="16" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Background" Value="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayBackground}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" />
+    </Style>
+
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.SizeLegend}" TargetType="local:SizeLegend" BasedOn="{StaticResource legendStyleBase}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;154;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:SizeLegend">
+                    <dx:DXBorder Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Visibility="{Binding Path=ActualVisibility, RelativeSource={RelativeSource TemplatedParent}}" CornerRadius="{DynamicResource {dxt:MapThemeKey ResourceKey=OverlayRadius}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;158;22">
+                        <StackPanel Orientation="Vertical" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;159;26">
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource TemplatedParent}}" FontSize="24" Padding="0,0,0,15" Visibility="{Binding Text, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource textToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;160;30" />
+                            <TextBlock Text="{Binding Path=Description, RelativeSource={RelativeSource TemplatedParent}}" FontSize="12" Padding="0,0,0,15" TextWrapping="Wrap" HorizontalAlignment="Left" Visibility="{Binding Text, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource textToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;161;30" />
+                            <local:LabeledItemsControl Style="{StaticResource sizeLegendItemsControlStyle}" ItemLabelTemplate="{TemplateBinding ItemLabelTemplate}" x:Name="PART_ItemsControl">
+                            </local:LabeledItemsControl>
+                        </StackPanel>
+                    </dx:DXBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Margin" Value="16" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Background" Value="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayBackground}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" />
+        <Setter Property="ItemFill" Value="Transparent" />
+        <Setter Property="ItemStroke" Value="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.ColorScaleLegend}" TargetType="local:ColorScaleLegend" BasedOn="{StaticResource legendStyleBase}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;177;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:ColorScaleLegend">
+                    <dx:DXBorder Background="{Binding Background, RelativeSource={RelativeSource TemplatedParent}}" Padding="{Binding Padding, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=ActualVisibility, RelativeSource={RelativeSource TemplatedParent}}" CornerRadius="{DynamicResource {dxt:MapThemeKey ResourceKey=OverlayRadius}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;181;22">
+                        <StackPanel Orientation="Vertical" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;182;26">
+                            <TextBlock Text="{Binding Path=Header, RelativeSource={RelativeSource TemplatedParent}}" FontSize="24" Visibility="{Binding Text, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource textToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;183;30" />
+                            <TextBlock Text="{Binding Path=Description, RelativeSource={RelativeSource TemplatedParent}}" FontSize="12" Padding="0,0,0,15" TextWrapping="Wrap" HorizontalAlignment="Left" Visibility="{Binding Text, RelativeSource={RelativeSource Mode=Self}, Converter={StaticResource textToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\ColorLegend.xaml;184;30" />
+
+                            <local:LabeledItemsControl HorizontalAlignment="Stretch" VerticalAlignment="Stretch" ItemTemplate="{TemplateBinding ItemTemplate}" ItemLabelTemplate="{TemplateBinding ItemLabelTemplate}" x:Name="PART_ItemsControl">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <local:ColorScalePanel HorizontalAlignment="Stretch" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </local:LabeledItemsControl>
+                        </StackPanel>
+                    </dx:DXBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate" Value="{StaticResource ColorScaleLegendItemTemplate}" />
+        <Setter Property="MinWidth" Value="300" />
+        <Setter Property="Margin" Value="16" />
+        <Setter Property="Padding" Value="16" />
+        <Setter Property="Background" Value="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayBackground}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" />
+    </Style>
+</ResourceDictionary>

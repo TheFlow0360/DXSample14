@@ -1,0 +1,46 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/map" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <local:StrokeDashArrayConverter x:Key="StrokeDashArrayConverter" />
+    
+    <Style TargetType="Shape" x:Key="pieShapeStyle">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\Charts\PieModels.xaml;4;6" /><Setter Property="Stroke" Value="{Binding PieInfo.Stroke}" />
+        <Setter Property="StrokeThickness" Value="{Binding PieInfo.StrokeThickness}" />
+        <Setter Property="StrokeDashArray" Value="{Binding PieInfo.StrokeDashArray, Converter={StaticResource StrokeDashArrayConverter}}" />
+        <Setter Property="StrokeDashCap" Value="{Binding PieInfo.StrokeDashCap}" />
+        <Setter Property="StrokeDashOffset" Value="{Binding PieInfo.StrokeDashOffset}" />
+        <Setter Property="StrokeEndLineCap" Value="{Binding PieInfo.StrokeEndLineCap}" />
+        <Setter Property="StrokeStartLineCap" Value="{Binding PieInfo.StrokeStartLineCap}" />
+        <Setter Property="StrokeLineJoin" Value="{Binding PieInfo.StrokeLineJoin}" />
+        <Setter Property="StrokeMiterLimit" Value="{Binding PieInfo.StrokeMiterLimit}" />
+        <Setter Property="Effect" Value="{Binding PieInfo.Effect}" />
+        <Setter Property="Visibility" Value="{Binding PieInfo.ContentVisibility}" />
+    </Style>
+    
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.PieSegmentPresentationControl}" TargetType="local:PieSegmentPresentationControl">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\Charts\PieModels.xaml;18;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:PieSegmentPresentationControl">
+                    <Ellipse Fill="{Binding Fill}" UseLayoutRounding="False" Style="{StaticResource pieShapeStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Charts\PieModels.xaml;22;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.MapPieControl}" TargetType="local:MapPieControl">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\Charts\PieModels.xaml;30;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:MapPieControl">
+                    <local:MapPieItemsControl ItemsSource="{Binding MapItem.Segments}">
+                        <local:MapPieItemsControl.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Charts\PieModels.xaml;37;34" />
+                                
+                            </ItemsPanelTemplate>
+                        </local:MapPieItemsControl.ItemsPanel>
+                    </local:MapPieItemsControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,103 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/map/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/map" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <local:VisibilityToBoolConverter x:Key="visibilityToBoolConverter" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.MapControl}" TargetType="local:MapControl">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\MapControl.xaml;5;6" /><Setter Property="ToolTipTemplate">
+            <Setter.Value>
+                <DataTemplate x:Name="ToolTipTemplate">
+                    <Grid x:Name="Tooltip" HorizontalAlignment="Center" VerticalAlignment="Center" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;9;22">
+                        <Grid x:Name="Shadow" Margin="0,4,0,-4" Opacity="0.1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;10;26">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="12" />
+                            </Grid.RowDefinitions>
+                            <Path x:Name="Arrow" Stretch="Fill" Fill="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=ToolTipBackground}}" Opacity="0.7" Data="F1 M 461,303L 474,316L 487,303L 461,303 Z " HorizontalAlignment="Center" Height="13" Grid.Row="1" Width="26" Margin="0,-1,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;15;30" />
+                            <dx:DXBorder x:Name="ContentBack" Background="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=ToolTipBackground}}" Opacity="0.7" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;16;30" />
+                        </Grid>
+                        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;18;26">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="12" />
+                            </Grid.RowDefinitions>
+                            <Path x:Name="Arrow1" Stretch="Fill" Fill="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=ToolTipBackground}}" Data="F1 M 461,303L 474,316L 487,303L 461,303 Z " HorizontalAlignment="Center" Height="13" Grid.Row="1" Width="26" Margin="0,-1,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;23;30" />
+                            <dx:DXBorder x:Name="ContentBack1" Background="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=ToolTipBackground}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;24;30" />
+                            <ContentPresenter Content="{Binding}" ContentTemplate="{Binding ContentTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;25;30" />
+                        </Grid>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ZoomRegionTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <dx:DXBorder x:Name="zoomRegionBorder" BorderThickness="2" Background="#204ACBFC" BorderBrush="#FF4ACBFC" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;34;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:MapControl">
+                    <Grid FlowDirection="LeftToRight" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;41;22">
+                        <Rectangle x:Name="PART_DraggingElement" Fill="Transparent" Stretch="Fill" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;42;26" />
+                        <dx:DXBorder Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;43;26">
+                            <ItemsControl x:Name="PART_LayersContainer" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;44;30">
+                                <ItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;47;42" />
+                                    </ItemsPanelTemplate>
+                                </ItemsControl.ItemsPanel>
+                            </ItemsControl>
+                        </dx:DXBorder>
+                        <Canvas x:Name="PART_ContainerOfRectangleToZoomIn" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;52;26">
+                            <ContentPresenter x:Name="PART_RectangleToZoomIn" Visibility="Collapsed" ContentTemplate="{Binding Path=ZoomRegionTemplate, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;53;30" />
+                        </Canvas>
+                        <local:OverlayItemsControl x:Name="PART_OverlaysContainer">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <local:MapOverlaysPanel />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                        </local:OverlayItemsControl>
+                        <local:ToolTipPanel x:Name="PART_ToolTipPanel" Visibility="{Binding Path=ToolTipInfo.Visibility, RelativeSource={RelativeSource TemplatedParent}}" Clip="{Binding Path=ToolTipInfo.Clip, RelativeSource={RelativeSource TemplatedParent}}" Position="{Binding Path=ToolTipInfo.ToolTipPosition, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;62;26">
+                            <Popup x:Name="PART_Popup" AllowsTransparency="True" Placement="Center" IsOpen="{Binding Visibility, Mode=OneWay, Converter={StaticResource ResourceKey=visibilityToBoolConverter}}" DataContext="{Binding Path=ToolTipInfo, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;63;30">
+                                <ContentPresenter Content="{Binding Path=ToolTipInfo, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding Path=ToolTipTemplate, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;64;34">
+                                </ContentPresenter>
+                            </Popup>
+                        </local:ToolTipPanel>
+                        <Grid x:Name="PART_InvalidKeyPanel" Visibility="Collapsed" Margin="2,2,0,0" MinHeight="29" HorizontalAlignment="Center" VerticalAlignment="Center" Width="400" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;68;26">
+                            <dx:DXBorder Background="#FFDD0000" Opacity="0.75" CornerRadius="5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;69;30" />
+                            <TextBlock TextWrapping="Wrap" Text="{Binding}" Foreground="White" FontSize="14.667" Margin="32" TextAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;70;30" />
+                        </Grid>
+                        <local:MapSearchPanel x:Name="PART_SearchPanel" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="20" />
+                    </Grid>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=MapBackground}}" />
+        <Setter Property="ZoomToRegionBehavior">
+            <Setter.Value>
+                <local:ZoomToRegionBehavior />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="SelectItemsByRegionBehavior">
+            <Setter.Value>
+                <local:SelectItemsByRegionBehavior />
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.MultiScaleImageBase}" TargetType="{x:Type local:MultiScaleImageBase}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\MapControl.xaml;91;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:MultiScaleImageBase}">
+                    <dx:DXBorder BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;95;22">
+                        <Canvas x:Name="PART_Canvas" SnapsToDevicePixels="True" UseLayoutRounding="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\MapControl.xaml;96;26" />
+                    </dx:DXBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

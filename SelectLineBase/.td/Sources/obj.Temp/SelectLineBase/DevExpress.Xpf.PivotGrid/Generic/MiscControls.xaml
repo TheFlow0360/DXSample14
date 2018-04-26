@@ -1,0 +1,163 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxcn="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v17.2" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid" xmlns:dxpgi="http://schemas.devexpress.com/winfx/2008/xaml/pivotgrid/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    <dxcore_unique_xmlns:BoolToVisibilityInverseConverter x:Key="inverseBoolToVisibilityConverter" />
+
+    <Style x:Key="{dxpgi:PivotGridThemeKey ResourceKey=ErrorPanelStyle}" TargetType="dxe:FlyoutControl">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;5;6" /><Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Settings">
+            <Setter.Value>
+                <dxe:FlyInSettings />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid Width="247" Margin="5,5,5,18" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;16;22">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Image x:Name="icon" Stretch="None" VerticalAlignment="Top" HorizontalAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;21;26">
+                            <Image.Source>
+                                <Binding Source="DevExpress.Xpf.Core.Core.Images.ErrorIcon.png" Converter="{dx:EmbeddedResourceImageConverter}" />
+                            </Image.Source>
+                        </Image>
+                        <TextBlock Padding="9,3,0,0" Text="{Binding}" Grid.Column="1" TextWrapping="Wrap" TextAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;26;26" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <dxcore_unique_xmlns:BoolToObjectConverter x:Key="isOthersToFontWeightConverter">
+        <dxcore_unique_xmlns:BoolToObjectConverter.TrueValue>
+            <FontWeight>Bold</FontWeight>
+        </dxcore_unique_xmlns:BoolToObjectConverter.TrueValue>
+        <dxcore_unique_xmlns:BoolToObjectConverter.FalseValue>
+            <FontWeight>Normal</FontWeight>
+        </dxcore_unique_xmlns:BoolToObjectConverter.FalseValue>
+    </dxcore_unique_xmlns:BoolToObjectConverter>
+
+    <Style x:Key="ResizerStyle" TargetType="{x:Type dx:DXThumb}">
+        
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;41;6" /><Setter Property="MinWidth" Value="{StaticResource {x:Static SystemParameters.ResizeFrameVerticalBorderWidthKey}}" />
+        
+        
+        <Setter Property="MinHeight" Value="4" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dx:DXThumb}">
+                    <Grid Background="Transparent" dxcore_unique_xmlns:DragManager.IsStartDragPlace="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;52;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.FieldValueElement}" TargetType="{x:Type dxpg:FieldValueElement}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;58;6" /><Setter Property="Background" Value="{Binding Background}" />
+        <Setter Property="TextBlock.Foreground" Value="{Binding Foreground}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {dxpgi:AppearanceThemeKey ResourceKey=FieldValueBorderBrush}}" />
+        <Setter Property="BorderThickness" Value="{Binding BorderThickness, Mode=OneWay}" />
+        <Setter Property="FontWeight" Value="{Binding Path=IsOthersRow, Converter={StaticResource isOthersToFontWeightConverter}}" />
+        <Setter Property="dxpg:PivotGridPopupMenu.GridMenuType" Value="FieldValue" />
+        <Setter Property="dxb:BarManager.DXContextMenu" Value="{Binding Path=ValueItem.PivotGrid.GridMenu, Mode=OneTime, RelativeSource={RelativeSource Self}}" />
+                <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxpg:FieldValueElement">
+                    <dxcore_unique_xmlns:SimplePanel x:Name="panel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;69;22">
+                        <dx:DXBorder Name="border0" Padding="{Binding Padding}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;70;26">
+                            
+                        
+                            <dxcore_unique_xmlns:XPFContentControl x:Name="grid" Template="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(dxpgi:ScrollableAreaPresenter.ItemTemplate), Mode=OneWay}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;73;30" />
+                            
+                                
+                                    
+                        </dx:DXBorder>
+                        <dxcore_unique_xmlns:DXThumb Name="PART_VerticalGripper" HorizontalAlignment="Stretch" VerticalAlignment="Bottom" Style="{StaticResource ResizerStyle}" Cursor="SizeNS" Visibility="{TemplateBinding GripperYVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;83;26" />
+                        <dxcore_unique_xmlns:DXThumb Name="PART_HorizontalGripper" HorizontalAlignment="Right" VerticalAlignment="Stretch" Style="{StaticResource ResizerStyle}" Cursor="SizeWE" Visibility="{TemplateBinding GripperXVisibility}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;84;26" />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup Name="IsTotal">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Total">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="VerticalAlignment" Storyboard.TargetName="grid">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <VerticalAlignment>Center</VerticalAlignment>
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </dxcore_unique_xmlns:SimplePanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Internal.FieldValueExpandButton}" TargetType="{x:Type dxpgi:FieldValueExpandButton}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;107;6" /><Setter Property="Visibility" Value="{Binding Path=ExpandButtonVisibility, Mode=OneWay}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxpgi:FieldValueExpandButton}">
+                    <dxcore_unique_xmlns:ToggleStateButton ClickMode="Press" IsChecked="{Binding Path=IsExpanded, Mode=OneWay}" Command="{Binding Path=ChangeFieldValueExpanded, Mode=OneTime}" CommandParameter="{Binding Mode=OneWay}" Style="{DynamicResource {dxpgi:ScrollableAreaThemeKey ResourceKey=ExpandButtonStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;112;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.PivotGrid.Internal.GroupCollapseButton}" TargetType="{x:Type dxpgi:GroupCollapseButton}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;118;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxpgi:GroupCollapseButton}">
+                    <dxcore_unique_xmlns:SimplePanel Background="Transparent" IsHitTestVisible="True" Name="panel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;122;22">
+                        <Path x:Name="collapseItem" Visibility="Visible" Style="{DynamicResource {dxpgi:FieldHeaderThemeKey ResourceKey=GroupButtonCollapseItemStyle}}" Data="F1 M 645,375L 641,379L 645,383L 645,375 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;123;26" />
+                        <Path x:Name="expandItem" Visibility="Collapsed" Style="{DynamicResource {dxpgi:FieldHeaderThemeKey ResourceKey=GroupButtonExpandItemStyle}}" Data="F1 M 653,383L 657,379L 653,375L 653,383 Z " dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;124;26" />
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="Buttons">
+                                <VisualState x:Name="CollapseButton" />
+                                <VisualState x:Name="ExpandButton">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="collapseItem" Storyboard.TargetProperty="(UIElement.Visibility)" dxcn:ValueSetter.Visibility="Collapsed" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="expandItem" Storyboard.TargetProperty="(UIElement.Visibility)" dxcn:ValueSetter.Visibility="Visible" />
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="panel" Storyboard.TargetProperty="Margin" dxcn:ValueSetter.Thickness="2,0,-1,0" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                    </dxcore_unique_xmlns:SimplePanel>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="MinWidth" Value="8" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Margin" Value="-1,0,1,0" />
+    </Style>
+
+    <DataTemplate x:Key="{dxpgi:PivotGridThemeKey ResourceKey=FilterCheckedTreeViewItemHeaderTemplate}">
+        <dxe:CheckEdit Focusable="False" Content="{Binding Text, Mode=OneTime}" IsChecked="{Binding IsChecked, Mode=TwoWay, RelativeSource={RelativeSource AncestorType=dxpgi:FilterCheckedTreeViewItem}}" IsThreeState="{Binding Path=IsThreeState, RelativeSource={RelativeSource AncestorType=dxpgi:FilterCheckedTreeViewItem}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;147;10">
+        </dxe:CheckEdit>
+    </DataTemplate>
+
+    <ControlTemplate x:Key="{dxpgi:PivotGridThemeKey ResourceKey=FilterCheckedTreeViewPopupTemplate}" TargetType="{x:Type Control}">
+        <Grid Width="Auto" Height="Auto" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;152;10">
+            <dxpgi:FilterCheckedTreeView x:Name="tree" BorderThickness="0" ItemsHeaderTemplate="{DynamicResource {dxpgi:PivotGridThemeKey ResourceKey=FilterCheckedTreeViewItemHeaderTemplate}}" IsEnabled="{Binding IsItemsLoaded, RelativeSource={RelativeSource Self}}" VirtualizingStackPanel.VirtualizationMode="Recycling" dxpg:PivotGridPopupMenu.GridMenuType="FilterPopup" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;153;14">
+                
+                <VirtualizingStackPanel.IsVirtualizing>True</VirtualizingStackPanel.IsVirtualizing>
+                
+            </dxpgi:FilterCheckedTreeView>
+            <dxcore_unique_xmlns:ColumnWaitIndicator Visibility="{Binding Path=IsItemsLoaded, ElementName=tree, Converter={StaticResource inverseBoolToVisibilityConverter}}" /> 
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxpgi:PivotGridThemeKey ResourceKey=FilterWaitIndicatorTemplate}" TargetType="{x:Type Control}">
+        <Grid Width="Auto" Height="{Binding ActualHeight, RelativeSource={RelativeSource AncestorType=ItemsPresenter}}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.PivotGrid\Generic\MiscControls.xaml;163;10">
+            <dxcore_unique_xmlns:ColumnWaitIndicator VerticalAlignment="Center" HorizontalAlignment="Center" />
+        </Grid>
+    </ControlTemplate>
+
+    
+
+</ResourceDictionary>

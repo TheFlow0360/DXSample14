@@ -1,0 +1,51 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxtEx="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <sys:Double x:Key="{dxet:ToggleSwitchEditThemeKey ResourceKey=InplaceToggleSwitchHeight}">18</sys:Double>
+    <Thickness x:Key="{dxet:ToggleSwitchEditThemeKey ResourceKey=InplaceMargin}">1</Thickness>
+    
+    <Style x:Key="ToggleSwitchStyle" TargetType="{x:Type dxe:ToggleSwitch}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ToggleSwitchEdit.xaml;6;6" /><Setter Property="IsTabStop" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsTabStop}" />
+        <Setter Property="Focusable" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Focusable}" />
+        <Setter Property="Cursor" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Cursor}" />
+        <Setter Property="IsThreeState" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).IsThreeState}" />
+        <Setter Property="CheckedStateContentTemplate" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).CheckedStateContentTemplate}" />
+        <Setter Property="UncheckedStateContentTemplate" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UncheckedStateContentTemplate}" />
+        <Setter Property="ToggleSwitchWidth" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).ToggleSwitchWidth}" />
+        <Setter Property="ToggleSwitchHeight" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).ToggleSwitchHeight}" />
+        <Setter Property="ContentPlacement" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).ContentPlacement}" />
+        <Setter Property="CheckedStateContent" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).CheckedStateContent}" />
+        <Setter Property="UncheckedStateContent" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).UncheckedStateContent}" />
+        <Setter Property="EnableAnimation" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).EnableAnimation}" />
+        <Setter Property="Command" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Command}" />
+        <Setter Property="CommandParameter" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).CommandParameter}" />
+        <Setter Property="CommandTarget" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).CommandTarget}" />
+        <Setter Property="ClickMode" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).ClickMode}" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Foreground" Value="{Binding Path=(dxe:BaseEdit.OwnerEdit).Foreground}" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).EditMode}" Value="InplaceInactive">
+                <Setter Property="Margin" Value="{DynamicResource {dxet:ToggleSwitchEditThemeKey ResourceKey=InplaceMargin}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=(dxe:BaseEdit.OwnerEdit).EditMode}" Value="InplaceActive">
+                <Setter Property="Margin" Value="{DynamicResource {dxet:ToggleSwitchEditThemeKey ResourceKey=InplaceMargin}}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    
+    <ControlTemplate x:Key="{dxet:ToggleSwitchEditThemeKey ResourceKey=Template}" TargetType="dxe:ToggleSwitchEdit">
+        <dxe:EditorControl x:Name="PART_Content" Template="{TemplateBinding ActualEditorControlTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ToggleSwitchEdit.xaml;36;10" />
+    </ControlTemplate>
+    
+    <ControlTemplate x:Key="{dxet:ToggleSwitchEditThemeKey ResourceKey=EditTemplate}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ToggleSwitchEdit.xaml;40;10">
+            <dxe:ToggleSwitch x:Name="PART_Editor" Style="{StaticResource ToggleSwitchStyle}" />
+        </Grid>
+    </ControlTemplate>
+
+    <ControlTemplate x:Key="{dxet:ToggleSwitchEditThemeKey ResourceKey=DisplayTemplate}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Editors\Themes\Generic\ToggleSwitchEdit.xaml;46;10">
+            <dxe:ToggleSwitch x:Name="PART_Editor" IsReadOnly="True" Style="{StaticResource ToggleSwitchStyle}" />
+        </Grid>
+    </ControlTemplate>
+    
+</ResourceDictionary>

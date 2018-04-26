@@ -1,0 +1,152 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduler" xmlns:dxschd="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/internal" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduler/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <dxschd:ElementPositionVerticalWeekHeaderConverter x:Key="elementPositionVerticalWeekHeaderConverter" />
+    <dxschd:ColorResourcesConverter x:Key="colorResourcesConverter" />
+    <ControlTemplate x:Key="{dxscht:SchedulerViewThemeKey ResourceKey=VerticalHeaderNormalTemplate}" TargetType="{x:Type dxschd:VerticalHeaderControl}">
+        <dxschd:SchedulerOfficeColorConvertControl x:Name="clrConvCtrl" Visibility="Visible" BaseColors="{DynamicResource {dxscht:Office2007ThemeKey ResourceKey=HeaderBaseColors}}" ControlBrush="{TemplateBinding ResourceColor}" DisableResourceColor="{TemplateBinding DisableResourceColor}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;10;10">
+            <ContentControl x:Name="HeaderContent" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" SnapsToDevicePixels="True" UseLayoutRounding="True" dxschd:SchedulerItemsControl.ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;11;14">
+                <ContentControl.Resources>
+                    <LinearGradientBrush x:Key="NormalGradient" StartPoint="0,0.5" EndPoint="1,0.5" cs:Name="LinearGradientBrush_0088" cs:id="LinearGradientBrush_0000">
+                        <GradientStop Offset="0" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_NormalGradientStop1}" />
+                        <GradientStop Offset="1" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_NormalGradientStop2}" />
+                        <GradientStop Offset="0.5" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_NormalGradientStop3}" />
+                        <GradientStop Offset="0.5" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_NormalGradientStop4}" />
+                    </LinearGradientBrush>
+                    <SolidColorBrush x:Key="NormalBorder" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_HeaderBaseBorderColor}" />
+                </ContentControl.Resources>
+                <ContentControl.Template>
+                    <ControlTemplate TargetType="{x:Type ContentControl}">
+                        <dxschd:HeaderBorder Background="{DynamicResource NormalGradient}" BorderBrush="{DynamicResource NormalBorder}" MinHeight="24" DefaultBorderThickness="1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;23;26">
+                            <ContentPresenter Margin="4" HorizontalAlignment="Stretch" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;24;30" />
+                        </dxschd:HeaderBorder>
+                    </ControlTemplate>
+                </ContentControl.Template>
+            </ContentControl>
+        </dxschd:SchedulerOfficeColorConvertControl>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxscht:SchedulerViewThemeKey ResourceKey=HeaderNormalTemplate}" TargetType="{x:Type dxschd:HeaderControl}">
+        <dxschd:SchedulerOfficeColorConvertControl x:Name="clrConvCtrl" Visibility="Visible" BaseColors="{DynamicResource {dxscht:Office2007ThemeKey ResourceKey=HeaderBaseColors}}" ControlBrush="{TemplateBinding ResourceColor}" DisableResourceColor="{TemplateBinding DisableResourceColor}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;32;10">
+            <ContentControl x:Name="HeaderContent" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" SnapsToDevicePixels="True" UseLayoutRounding="True" dxschd:SchedulerItemsControl.ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;33;14">
+                <ContentControl.Resources>
+                    <LinearGradientBrush x:Key="NormalGradient" StartPoint="0.5,0" EndPoint="0.5,1" cs:Name="LinearGradientBrush_0089" cs:id="LinearGradientBrush_0000">
+                        <GradientStop Offset="0" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_NormalGradientStop1}" />
+                        <GradientStop Offset="1" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_NormalGradientStop2}" />
+                        <GradientStop Offset="0.5" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_NormalGradientStop3}" />
+                        <GradientStop Offset="0.5" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_NormalGradientStop4}" />
+                    </LinearGradientBrush>
+                    <SolidColorBrush x:Key="NormalBorder" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_HeaderBaseBorderColor}" />
+                </ContentControl.Resources>
+                <ContentControl.Template>
+                    <ControlTemplate TargetType="{x:Type ContentControl}">
+                        <dxschd:HeaderBorder Background="{DynamicResource NormalGradient}" BorderBrush="{DynamicResource NormalBorder}" MinHeight="24" DefaultBorderThickness="1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;45;26">
+                            <ContentPresenter Margin="4" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;46;30" />
+                        </dxschd:HeaderBorder>
+                    </ControlTemplate>
+                </ContentControl.Template>
+            </ContentControl>
+            
+        </dxschd:SchedulerOfficeColorConvertControl>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxscht:SchedulerViewThemeKey ResourceKey=HeaderAlternateTemplate}" TargetType="{x:Type dxschd:HeaderControl}">
+        <dxschd:SchedulerOfficeColorConvertControl x:Name="clrConvCtrl" Visibility="Visible" BaseColors="{DynamicResource {dxscht:Office2007ThemeKey ResourceKey=HeaderBaseColors}}" ControlBrush="{TemplateBinding ResourceColor}" DisableResourceColor="True" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;70;10">
+            <ContentControl x:Name="HeaderContent" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" SnapsToDevicePixels="True" UseLayoutRounding="True" dxschd:SchedulerItemsControl.ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;71;14">
+                <ContentControl.Resources>
+                    <LinearGradientBrush x:Key="NormalGradient" StartPoint="0.5,0" EndPoint="0.5,1" cs:Name="LinearGradientBrush_0090" cs:id="LinearGradientBrush_0000">
+                        <GradientStop Offset="0" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_AltNormalGradientStop1}" />
+                        <GradientStop Offset="1" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_AltNormalGradientStop2}" />
+                        <GradientStop Offset="0.5" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_AltNormalGradientStop3}" />
+                        <GradientStop Offset="0.5" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_AltNormalGradientStop4}" />
+                    </LinearGradientBrush>
+                    <SolidColorBrush x:Key="NormalBorder" Color="{Binding ElementName=clrConvCtrl, Path=Container, Converter={StaticResource colorResourcesConverter}, ConverterParameter=ColorDefinition_HeaderBaseBorderColor}" />
+                </ContentControl.Resources>
+                <ContentControl.Template>
+                    <ControlTemplate TargetType="{x:Type ContentControl}">
+                        <dxschd:HeaderBorder Background="{DynamicResource NormalGradient}" BorderBrush="{DynamicResource NormalBorder}" MinHeight="24" DefaultBorderThickness="1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;83;26">
+                            <ContentPresenter Margin="4" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;84;30" />
+                        </dxschd:HeaderBorder>
+                    </ControlTemplate>
+                </ContentControl.Template>
+            </ContentControl>
+        </dxschd:SchedulerOfficeColorConvertControl>
+    </ControlTemplate>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.Drawing.HeaderControl}" TargetType="{x:Type dxschd:HeaderControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;91;6" /><Setter Property="AlternateTemplate" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=HeaderAlternateTemplate}}" />
+        <Setter Property="NormalTemplate" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=HeaderNormalTemplate}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Scheduler.Drawing.VerticalHeaderControl}" TargetType="{x:Type dxschd:VerticalHeaderControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;95;6" /><Setter Property="AlternateTemplate" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=VerticalHeaderNormalTemplate}}" />
+        <Setter Property="NormalTemplate" Value="{DynamicResource {dxscht:SchedulerViewThemeKey ResourceKey=VerticalHeaderNormalTemplate}}" />
+    </Style>
+    <ControlTemplate x:Key="{dxscht:WeekViewThemeKey ResourceKey=CellHeaderNormalTemplate}" TargetType="{x:Type Control}">
+        <Grid Background="#00000000" cs:Name="Grid_0001" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;100;10">
+            <dxschd:MonthViewDayHeaderControl x:Name="MonthViewDayHeaderControl" Margin="5,0,5,0" Date="{Binding IntervalStart}" DateFormats="{Binding DateFormats}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;101;14">
+                <TextBlock Foreground="#BF3C3C3C" HorizontalAlignment="Right" Opacity="0.5" SnapsToDevicePixels="True" cs:Name="TextBlock_0001" cs:id="TextBlock_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;102;18" />
+            </dxschd:MonthViewDayHeaderControl>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxscht:WeekViewThemeKey ResourceKey=CellHeaderAlternateTemplate}" TargetType="{x:Type Control}">
+        <Grid Background="#FFD6D6D6" cs:Name="Grid_0002" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;107;10">
+            <dxschd:MonthViewDayHeaderControl x:Name="MonthViewDayHeaderControl" Margin="5,0,5,0" Date="{Binding IntervalStart}" DateFormats="{Binding DateFormats}" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;108;14">
+                <TextBlock Foreground="#BF3C3C3C" HorizontalAlignment="Right" Opacity="0.5" SnapsToDevicePixels="True" cs:Name="TextBlock_0002" cs:id="TextBlock_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;109;18" />
+            </dxschd:MonthViewDayHeaderControl>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxscht:WeekViewThemeKey ResourceKey=WeekCellNormalTemplate}" TargetType="{x:Type dxschd:VisualDateCell}">
+        <Grid SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;114;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <dxschd:MultiColorBorder Background="{TemplateBinding Background}" Grid.Row="0" Grid.RowSpan="2" DefaultBorderThickness="1,0,1,1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" InnerBorderBrush="{TemplateBinding BorderBrush}" OuterBorderBrush="{StaticResource DefaultBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;119;14" />
+            <dxschd:CellContent x:Name="PART_CONTENT" Background="#00000000" Grid.Row="1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="True" cs:Name="CellContent_0001" dxsch:SchedulerControl.HitTestType="Cell" cs:id="CellContent_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;120;14" />
+            <dxschd:VisualDateCellHeader Style="{Binding Path=Content.View.HorizontalWeekDateHeaderStyle, RelativeSource={RelativeSource TemplatedParent}}" Content="{TemplateBinding Content}" IsAlternate="{Binding Content.IsAlternate, RelativeSource={RelativeSource TemplatedParent}}" dxsch:SchedulerControl.HitTestType="DayHeader" dxschd:SchedulerItemsControl.ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;121;14" />
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxscht:WeekViewThemeKey ResourceKey=WeekCellAlternateTemplate}" TargetType="{x:Type dxschd:VisualDateCell}">
+        <Grid SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;125;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <dxschd:MultiColorBorder Background="{TemplateBinding Background}" Grid.Row="0" Grid.RowSpan="2" DefaultBorderThickness="1,0,1,1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" InnerBorderBrush="{TemplateBinding BorderBrush}" OuterBorderBrush="{StaticResource DefaultBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;130;14" />
+            <dxschd:CellContent x:Name="PART_CONTENT" Background="#FFD6D6D6" Grid.Row="1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="True" cs:Name="CellContent_0002" dxsch:SchedulerControl.HitTestType="Cell" cs:id="CellContent_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;131;14" />
+            <dxschd:VisualDateCellHeader Style="{Binding Path=Content.View.HorizontalWeekDateHeaderStyle, RelativeSource={RelativeSource TemplatedParent}}" Content="{TemplateBinding Content}" IsAlternate="{Binding Content.IsAlternate, RelativeSource={RelativeSource TemplatedParent}}" dxsch:SchedulerControl.HitTestType="DayHeader" dxschd:SchedulerItemsControl.ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;132;14" />
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxscht:WeekViewThemeKey ResourceKey=VerticalWeekCellNormalTemplate}" TargetType="{x:Type dxschd:VisualDateCell}">
+        <Grid SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;136;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <dxschd:MultiColorBorder Background="{TemplateBinding Background}" Grid.Row="0" Grid.RowSpan="2" DefaultBorderThickness="1,0,1,1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" InnerBorderBrush="{TemplateBinding BorderBrush}" OuterBorderBrush="{StaticResource DefaultBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;141;14" />
+            <dxschd:CellContent x:Name="PART_CONTENT" Background="#00000000" Grid.Row="1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="True" cs:Name="CellContent_0003" dxsch:SchedulerControl.HitTestType="Cell" cs:id="CellContent_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;142;14" />
+            <dxschd:VisualDateCellHeader Style="{Binding Path=Content.View.VerticalWeekDateHeaderStyle, RelativeSource={RelativeSource TemplatedParent}}" Content="{TemplateBinding Content}" IsAlternate="{Binding Content.IsAlternate, RelativeSource={RelativeSource TemplatedParent}}" dxsch:SchedulerControl.HitTestType="DayHeader" dxschd:SchedulerItemsControl.ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;143;14" />
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxscht:WeekViewThemeKey ResourceKey=VerticalWeekCellAlternateTemplate}" TargetType="{x:Type dxschd:VisualDateCell}">
+        <Grid SnapsToDevicePixels="True" UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;147;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <dxschd:MultiColorBorder Background="{TemplateBinding Background}" Grid.Row="0" Grid.RowSpan="2" DefaultBorderThickness="1,0,1,1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" InnerBorderBrush="{TemplateBinding BorderBrush}" OuterBorderBrush="{StaticResource DefaultBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;152;14" />
+            <dxschd:CellContent x:Name="PART_CONTENT" Background="#00000000" Grid.Row="1" ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" IsHitTestVisible="True" cs:Name="CellContent_0004" dxsch:SchedulerControl.HitTestType="Cell" cs:id="CellContent_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;153;14" />
+            <dxschd:VisualDateCellHeader Style="{Binding Path=Content.View.VerticalWeekDateHeaderStyle, RelativeSource={RelativeSource TemplatedParent}}" Content="{TemplateBinding Content}" IsAlternate="{Binding Content.IsAlternate, RelativeSource={RelativeSource TemplatedParent}}" dxsch:SchedulerControl.HitTestType="DayHeader" dxschd:SchedulerItemsControl.ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;154;14" />
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxscht:WeekViewThemeKey ResourceKey=VerticalCellHeaderNormalTemplate}" TargetType="{x:Type dxschd:VisualDateCellHeader}">
+        <Grid Background="#00000000" cs:Name="Grid_0003" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;158;10">
+            <dxschd:HeaderControl HorizontalContentAlignment="Right" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" IsAlternate="{Binding IsAlternate}" ResourceColor="{Binding Content.Brushes.ResourceHeader, RelativeSource={RelativeSource TemplatedParent}}" dxschd:SchedulerItemsControl.ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource elementPositionVerticalWeekHeaderConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;159;14" />
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxscht:WeekViewThemeKey ResourceKey=VerticalCellHeaderAlternateTemplate}" TargetType="{x:Type dxschd:VisualDateCellHeader}">
+        <Grid Background="#00000000" cs:Name="Grid_0004" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;163;10">
+            <dxschd:HeaderControl HorizontalContentAlignment="Right" Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" IsAlternate="{Binding IsAlternate}" ResourceColor="{Binding Content.Brushes.ResourceHeader, RelativeSource={RelativeSource TemplatedParent}}" dxschd:SchedulerItemsControl.ElementPosition="{Binding Path=(dxschd:SchedulerItemsControl.ElementPosition), RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource elementPositionVerticalWeekHeaderConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduler\Office2016White\BaseView\Header.xaml;164;14" />
+        </Grid>
+    </ControlTemplate>
+</ResourceDictionary>

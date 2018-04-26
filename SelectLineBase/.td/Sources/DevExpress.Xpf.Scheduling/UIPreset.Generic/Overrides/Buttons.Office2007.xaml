@@ -1,0 +1,52 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxschv="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/themekeys" xmlns:dxschc="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UICore.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource Generic/Controls/Buttons.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="NavigationButton.Backward.ContentTemplate">
+        <dxschv:NavigationButtonPanel>
+            <Path x:Name="PART_Arrow" Stretch="Fill" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" Data="F1 M 97,227L 98,227L 98,237L 97,237L 97,227 Z M 99,232L 103,228L 103,230L 101,232L 103,234L 103,236L 99,232 Z " Width="6" Height="10" Margin="8,16,11,16" HorizontalAlignment="Center" VerticalAlignment="Center" />
+            <TextBlock x:Name="PART_Text" Text="{dxschc:SchedulerLocalizer StringId=Caption_PrevAppointment}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Margin="0, -16, 0, 23" Width="148" Visibility="Visible">
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="-90" />
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+        </dxschv:NavigationButtonPanel>
+    </DataTemplate>
+    <DataTemplate x:Key="NavigationButton.Forward.ContentTemplate">
+        <dxschv:NavigationButtonPanel>
+            <Path x:Name="PART_Arrow" Stretch="Fill" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" Data="F1 M 97,227L 98,227L 98,237L 97,237L 97,227 Z M 99,232L 103,228L 103,230L 101,232L 103,234L 103,236L 99,232 Z " Height="10" Width="6" Margin="8,16,11,16" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Path.LayoutTransform>
+                    <RotateTransform Angle="180" />
+                </Path.LayoutTransform>
+            </Path>
+            <TextBlock x:Name="PART_Text" Text="{dxschc:SchedulerLocalizer StringId=Caption_NextAppointment}" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" Margin="0, -16, 0, 23" Width="148" Visibility="Visible">
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="-90" />
+                </TextBlock.LayoutTransform>
+            </TextBlock>
+        </dxschv:NavigationButtonPanel>
+    </DataTemplate>
+
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=NavigationButton_BackwardStyle}" TargetType="Button" BasedOn="{StaticResource NavigationButton.BaseStyle}">
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="MinWidth" Value="25" />
+        <Setter Property="MinHeight" Value="42" />
+        <Setter Property="Template" Value="{StaticResource NavigationButton.Backward.DefaultTemplate}" />
+        <Setter Property="Margin" Value="{StaticResource NavigationButton.Backward.Margin}" />
+        <Setter Property="ContentTemplate" Value="{StaticResource NavigationButton.Backward.ContentTemplate}" />
+    </Style>
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=NavigationButton_ForwardStyle}" TargetType="Button" BasedOn="{StaticResource NavigationButton.BaseStyle}">
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="MinWidth" Value="25" />
+        <Setter Property="MinHeight" Value="42" />
+        <Setter Property="Template" Value="{StaticResource NavigationButton.Forward.DefaultTemplate}" />
+        <Setter Property="Margin" Value="{StaticResource NavigationButton.Forward.Margin}" />
+        <Setter Property="ContentTemplate" Value="{StaticResource NavigationButton.Forward.ContentTemplate}" />
+    </Style>
+</ResourceDictionary>

@@ -1,0 +1,112 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxbt="http://schemas.devexpress.com/winfx/2008/xaml/bars/themekeys" xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxrt="http://schemas.devexpress.com/winfx/2008/xaml/ribbon/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <dxcore_unique_xmlns:BooleanToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    <dxcore_unique_xmlns:BoolToVisibilityInverseConverter x:Key="boolToVisibilityInverseConverter" />
+    <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryTemplate}" TargetType="{x:Type dxb:GalleryControl}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;5;10">
+            <ContentControl x:Name="PART_StandaloneBarManagerContainer" HorizontalAlignment="Left" VerticalAlignment="Top" Width="0" Height="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;6;14" />
+            <ContentControl Template="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryBackgroundTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;7;14">
+                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;8;18">
+                    <ToggleButton x:Name="PART_Caption" Visibility="Collapsed" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;9;22" />
+                    <ContentControl Template="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryGroupsBackgroundTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;10;22">
+                        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;11;26">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="Auto" />
+                            </Grid.ColumnDefinitions>
+                            <dxb:GalleryGroupsViewer Name="PART_ScrollHost" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;16;30">
+                                <dxb:GalleryItemGroupsControl Name="PART_Groups" ItemsSource="{Binding Path=Gallery.Groups, RelativeSource = {RelativeSource Mode=TemplatedParent}}" ItemBorderTemplate="{TemplateBinding ActualItemBorderTemplate}" ItemGlyphBorderTemplate="{TemplateBinding ActualItemGlyphBorderTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;17;34" />
+                            </dxb:GalleryGroupsViewer>
+                            <ScrollBar x:Name="PART_VerticalScrollBar" Grid.Column="1" Visibility="Collapsed" Orientation="Vertical" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;19;30" />
+                        </Grid>
+                    </ContentControl>
+                </Grid>
+            </ContentControl>
+        </Grid>
+    </ControlTemplate>
+
+    <Style TargetType="{x:Type dxb:GalleryControl}" x:Key="InRibbonGalleryStyle">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;27;6" /><Setter Property="dxb:GalleryHelper.IsInRibbonControl" Value="True" />
+        <Setter Property="Grid.Column" Value="0" />
+        <Setter Property="PlacementTarget" Value="Ribbon" />
+        <Setter Property="Gallery" Value="{Binding ActualGallery, RelativeSource={RelativeSource TemplatedParent}}" />
+        <Setter Property="DefaultItemBorderTemplate" Value="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryItemBorderTemplate}}" />
+        <Setter Property="DefaultItemGlyphBorderTemplate" Value="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryItemGlyphBorderTemplate}}" />
+        <Setter Property="Template" Value="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=GalleryTemplate}}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="DefaultIsGroupCaptionVisible" Value="False" />
+        <Setter Property="DesiredColCount" Value="{Binding Path=ActualGallery.ColCount, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+        <Setter Property="Width" Value="{Binding Path=ActualGallery.Width, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+        <Setter Property="MinWidth" Value="{Binding Path=ActualGallery.MinWidth, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+        <Setter Property="MaxWidth" Value="{Binding Path=ActualGallery.MaxWidth, RelativeSource={RelativeSource Mode=TemplatedParent}}" />
+    </Style>
+    <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=Template}" TargetType="{x:Type dxr:RibbonGalleryBarItemLinkControl}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;43;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <dxb:BarItemLayoutPanel x:Name="PART_LayoutPanel" />
+            <Grid Grid.Row="1" Grid.ColumnSpan="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;49;14">
+                <dxcore_unique_xmlns:DXBorder x:Name="PART_PopupPlacementTarget" Opacity="0" EnableDPICorrection="False" IsHitTestVisible="False" Focusable="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                <ContentControl Name="GalleryPart" Template="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=BorderTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;51;18">
+                    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;52;22">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <dxb:GalleryControl Name="PART_GalleryControl" Style="{StaticResource InRibbonGalleryStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;57;26" />
+                        <Grid Grid.Column="1" Name="buttons" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;58;26">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Name="dropDownRow" Height="*" />
+                            </Grid.RowDefinitions>
+                            <Button Name="PART_Up" Grid.Row="0" MinWidth="0" Template="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=UpButtonTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;64;30" />
+                            <Button Name="PART_Down" Grid.Row="1" MinWidth="0" Template="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=DownButtonTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;65;30" />
+                            <dxr:RibbonCheckedBorderControl x:Name="PART_DropDown" Grid.Row="2" UseAppFocusValue="True" Template="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=DropDownButtonTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;66;30" />
+                        </Grid>
+                    </Grid>
+                </ContentControl>
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsGalleryVisible" Value="True">
+                <Setter TargetName="PART_LayoutPanel" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="IsGalleryVisible" Value="False">
+                <Setter TargetName="GalleryPart" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <Trigger Property="ActualDropDownGalleryEnabled" Value="False">
+                <Setter TargetName="PART_DropDown" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="dropDownRow" Property="Height" Value="0" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxrt:InRibbonGalleryThemeKey ResourceKey=TemplateTouch}" TargetType="{x:Type dxr:RibbonGalleryBarItemLinkControl}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;86;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition />
+            </Grid.RowDefinitions>
+            <dxb:BarItemLayoutPanel x:Name="PART_LayoutPanel" ArrowTemplate="{DynamicResource {dxbt:BarSplitButtonItemThemeKey ResourceKey=ArrowTemplate}}" Visibility="{Binding Path=IsGalleryVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityInverseConverter}}" />
+            <Grid Grid.Row="1" Visibility="{Binding Path=IsGalleryVisible, RelativeSource={RelativeSource Mode=TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;92;14">
+                <dxcore_unique_xmlns:DXBorder x:Name="PART_PopupPlacementTarget" EnableDPICorrection="False" Opacity="0" IsHitTestVisible="False" Focusable="False" HorizontalAlignment="Stretch" VerticalAlignment="Top" />
+                <ContentControl Template="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=BorderTemplate}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;94;18">
+                    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;95;22">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="Auto" />
+                        </Grid.ColumnDefinitions>
+                        <dxb:GalleryControl Name="PART_GalleryControl" Style="{StaticResource InRibbonGalleryStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;100;26" />
+                        <dxr:RibbonCheckedBorderControl x:Name="PART_DropDown" Grid.Column="1" UseAppFocusValue="True" Template="{DynamicResource {dxrt:InRibbonGalleryThemeKey ResourceKey=DropDownButtonTemplateTouch}}" IsTabStop="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Ribbon\Generic\InRibbonGallery.xaml;101;26" />
+                    </Grid>
+                </ContentControl>
+            </Grid>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ActualDropDownGalleryEnabled" Value="False">
+                <Setter TargetName="PART_DropDown" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

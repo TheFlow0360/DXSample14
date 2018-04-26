@@ -1,0 +1,105 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxco="http://schemas.devexpress.com/winfx/2008/xaml/controls" xmlns:dxcot="http://schemas.devexpress.com/winfx/2008/xaml/controls/themekeys" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcop="clr-namespace:DevExpress.Xpf.Controls.Primitives;assembly=DevExpress.Xpf.Controls.v17.2" xmlns:dxwuii="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/internal" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dxcot:DynamicStandardControlResource Separator.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+    
+    <dxco:WizardStringIdConverter x:Key="WizardStringIdConverter" />
+    <dxmvvm:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+
+    <DataTemplate x:Key="{dxcot:WizardThemeKey ResourceKey=FooterTemplate}">
+        <dxco:WizardDialogFooter>
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;12;14">
+                <dxco:WizardButton dxco:Wizard.IsButtonBack="True" Content="{Binding ConverterParameter=BackButtonText, Converter={StaticResource WizardStringIdConverter}, RelativeSource={RelativeSource Self}}" />
+                <dxco:WizardButton dxco:Wizard.IsButtonNext="True" Content="{Binding ConverterParameter=NextButtonText, Converter={StaticResource WizardStringIdConverter}, RelativeSource={RelativeSource Self}}" />
+                <dxco:WizardButton dxco:Wizard.IsButtonFinish="True" Content="{Binding ConverterParameter=FinishButtonText, Converter={StaticResource WizardStringIdConverter}, RelativeSource={RelativeSource Self}}" />                
+                <dxco:WizardButton dxco:Wizard.IsButtonCancel="True" Margin="19,0,0,0" Content="{Binding ConverterParameter=CancelButtonText, Converter={StaticResource WizardStringIdConverter}, RelativeSource={RelativeSource Self}}" />
+            </StackPanel>
+        </dxco:WizardDialogFooter>
+    </DataTemplate>
+
+    <Style TargetType="{x:Type ContentControl}" x:Key="ButtonsContainerStyle">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;21;6" /><Setter Property="Focusable" Value="False" />
+        <Style.Triggers>
+            <Trigger Property="dx:DXDialogWindow.ActualDialogWindow" Value="{x:Null}">
+                <Setter Property="Margin" Value="6,12,12,12" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Controls.Wizard}" TargetType="{x:Type dxco:Wizard}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;30;6" /><Setter Property="Focusable" Value="False" />
+        <Setter Property="FooterTemplate" Value="{DynamicResource {dxcot:WizardThemeKey ResourceKey=FooterTemplate}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxco:Wizard">
+                    <dx:DXBorder Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;36;22">
+                        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;37;26">
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <dxwuii:ViewPresenter x:Name="PART_ViewPresenter" AnimationSelector="{TemplateBinding AnimationSelector}" AnimationType="{TemplateBinding AnimationType}" />
+                            <Grid Grid.Row="1" Visibility="{Binding IsFooterVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;43;30">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+                                <dxco:WizardFooterSeparator />
+                                <dxcop:NonLogicalContentControl Style="{StaticResource ButtonsContainerStyle}" ContentTemplate="{TemplateBinding FooterTemplate}" Content="{Binding}" Grid.Row="1" />
+                            </Grid>
+                        </Grid>
+                    </dx:DXBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="BorderBrush" Value="{DynamicResource {dxcot:WizardThemeKey ResourceKey=BorderBrush}}" />
+    </Style>
+
+    <Style TargetType="{x:Type dxco:WizardPage}" x:Key="WizardPageBase">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;59;6" /><Setter Property="Focusable" Value="False" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxco:WizardPage">
+                    <dx:DXBorder Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;64;22">
+                        <DockPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;65;26">
+                            <ContentPresenter ContentSource="SideContent" DockPanel.Dock="Left" Visibility="{Binding ShowSideContent, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;66;30" />
+                            <dx:DXBorder DockPanel.Dock="Top" Background="{TemplateBinding HeaderBackground}" Visibility="{Binding IsHeaderVisible, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource BooleanToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;67;30">
+                                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;68;34">
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto" />
+                                        <RowDefinition />
+                                        <RowDefinition Height="Auto" />
+                                    </Grid.RowDefinitions>
+                                    <StackPanel Margin="16,8,4,4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;74;38">
+                                        <TextBlock Text="{TemplateBinding Title}" FontWeight="Bold" FontFamily="Segoe UI" FontSize="16" TextWrapping="Wrap" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;75;42" />
+                                        <ContentPresenter ContentSource="Header" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;76;42" />
+                                    </StackPanel>
+                                    <dxco:WizardHeaderSeparator Grid.Row="1" />
+                                </Grid>
+                            </dx:DXBorder>
+                            <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;81;30" />
+                        </DockPanel>
+                    </dx:DXBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Controls.WizardPage}" TargetType="{x:Type dxco:WizardPage}" BasedOn="{StaticResource WizardPageBase}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;89;6" /><Setter Property="ShowSideContent" Value="False" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Controls.WelcomeWizardPage}" TargetType="{x:Type dxco:WelcomeWizardPage}" BasedOn="{StaticResource WizardPageBase}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;92;6" /></Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Controls.CompletionWizardPage}" TargetType="{x:Type dxco:CompletionWizardPage}" BasedOn="{StaticResource WizardPageBase}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;93;6" /></Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Controls.WizardFooterSeparator}" TargetType="dxco:WizardFooterSeparator" BasedOn="{StaticResource {dxt:DefaultStyleThemeKey FullName=System.Windows.Controls.Separator}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;95;6" /><Setter Property="Margin" Value="0,0,0,2" />
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" Value="0,0,0,14" />
+            </Trigger>
+        </Style.Triggers>        
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Controls.WizardHeaderSeparator}" TargetType="dxco:WizardHeaderSeparator" BasedOn="{StaticResource {dxt:DefaultStyleThemeKey FullName=System.Windows.Controls.Separator}}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Controls\Wizard\Generic\WizardControl.xaml;103;6" /></Style>
+
+</ResourceDictionary>

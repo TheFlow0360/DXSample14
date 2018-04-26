@@ -1,0 +1,354 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxdash="http://schemas.devexpress.com/winfx/2008/xaml/dashboard" xmlns:dxdasht="http://schemas.devexpress.com/winfx/2008/xaml/dashboard/themekeys" xmlns:dxdashi="http://schemas.devexpress.com/winfx/2008/xaml/dashboard/internal" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <dxdash:MouseButtonEventArgsConverter x:Key="mouseButtonEventArgsConverter" />
+    <dxdash:AxisLabelContentConverter x:Key="axisLabelContentConverter" />
+    <Style TargetType="{x:Type dxc:XYSeries2D}" x:Key="{dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;4;6" /><Setter Property="ArgumentDataMember" Value="{Binding ArgumentDataMember}" />
+        <Setter Property="ValueDataMember" Value="{Binding ValueDataMember}" />
+        <Setter Property="ColorDataMember" Value="{Binding ColorDataMember}" />
+        <Setter Property="LabelsVisibility" Value="{Binding LabelsVisibility}" />
+        <Setter Property="DataSource" Value="{Binding SeriesData}" />
+        <Setter Property="ShowInLegend" Value="{Binding ShowInLegend}" />
+        <Setter Property="Brush" Value="{Binding Color}" />
+        <Setter Property="Pane" Value="{Binding Pane}" />
+        <Setter Property="AxisY" Value="{Binding AxisY}" />
+    </Style>
+    <dxdash:SeriesTemplateSelector x:Key="seriesTemplateSelectorKey">
+        <dxdash:SeriesTemplateSelector.BarSeriesTemplate>
+            <DataTemplate>
+                <dxc:BarSideBySideSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;18;18">
+                    <dxc:BarSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxc:BarSeries2D.ShowZeroValueLabels="{Binding BarShowForZeroValues}" dxc:BarSideBySideSeries2D.LabelPosition="{Binding BarLabelPosition}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;20;26" />
+                    </dxc:BarSeries2D.Label>
+                    <dxc:BarSeries2D.Model>
+                        <dxc:SimpleBar2DModel />
+                    </dxc:BarSeries2D.Model>
+                </dxc:BarSideBySideSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.BarSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.StackedBarSeriesTemplate>
+            <DataTemplate>
+                <dxc:BarSideBySideStackedSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;30;18">
+                    <dxc:BarSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxc:BarSeries2D.ShowZeroValueLabels="{Binding BarShowForZeroValues}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;32;26" />
+                    </dxc:BarSeries2D.Label>
+                    <dxc:BarSeries2D.Model>
+                        <dxc:SimpleBar2DModel />
+                    </dxc:BarSeries2D.Model>
+                </dxc:BarSideBySideStackedSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.StackedBarSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.FullStackedBarSeriesTemplate>
+            <DataTemplate>
+                <dxc:BarSideBySideFullStackedSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;42;18">
+                    <dxc:BarSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxc:BarSeries2D.ShowZeroValueLabels="{Binding BarShowForZeroValues}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;44;26" />
+                    </dxc:BarSeries2D.Label>
+                    <dxc:BarSeries2D.Model>
+                        <dxc:SimpleBar2DModel />
+                    </dxc:BarSeries2D.Model>
+                </dxc:BarSideBySideFullStackedSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.FullStackedBarSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.PointSeriesTemplate>
+            <DataTemplate>
+                <dxc:PointSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;54;18">
+                    <dxc:PointSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;56;26" />
+                    </dxc:PointSeries2D.Label>
+                </dxc:PointSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.PointSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.LineSeriesTemplate>
+            <DataTemplate>
+                <dxc:LineSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" MarkerVisible="{Binding MarkerVisible}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;63;18">
+                    <dxc:LineSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;65;26" />
+                    </dxc:LineSeries2D.Label>
+                </dxc:LineSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.LineSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.StackedLineSeriesTemplate>
+            <DataTemplate>
+                <dxc:LineStackedSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" MarkerVisible="{Binding MarkerVisible}">
+                    <dxc:LineSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;74;26" />
+                    </dxc:LineSeries2D.Label>
+                </dxc:LineStackedSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.StackedLineSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.FullStackedLineSeriesTemplate>
+            <DataTemplate>
+                <dxc:LineFullStackedSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" MarkerVisible="{Binding MarkerVisible}">
+                    <dxc:LineSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;83;26" />
+                    </dxc:LineSeries2D.Label>
+                </dxc:LineFullStackedSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.FullStackedLineSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.StepLineSeriesTemplate>
+            <DataTemplate>
+                <dxc:LineStepSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" MarkerVisible="{Binding MarkerVisible}">
+                    <dxc:LineSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;92;26" />
+                    </dxc:LineSeries2D.Label>
+                </dxc:LineStepSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.StepLineSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.SplineSeriesTemplate>
+            <DataTemplate>
+                <dxc:SplineSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" MarkerVisible="{Binding MarkerVisible}">
+                    <dxc:LineSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;101;26" />
+                    </dxc:LineSeries2D.Label>
+                </dxc:SplineSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.SplineSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.AreaSeriesTemplate>
+            <DataTemplate>
+                <dxc:AreaSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" MarkerVisible="{Binding MarkerVisible}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;108;18">
+                    <dxc:AreaSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;110;26" />
+                    </dxc:AreaSeries2D.Label>
+                </dxc:AreaSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.AreaSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.StackedAreaSeriesTemplate>
+            <DataTemplate>
+                <dxc:AreaStackedSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;117;18">
+                    <dxc:AreaStackedSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;119;26" />
+                    </dxc:AreaStackedSeries2D.Label>
+                </dxc:AreaStackedSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.StackedAreaSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.FullStackedAreaSeriesTemplate>
+            <DataTemplate>
+                <dxc:AreaFullStackedSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;126;18">
+                    <dxc:AreaFullStackedSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;128;26" />
+                    </dxc:AreaFullStackedSeries2D.Label>
+                </dxc:AreaFullStackedSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.FullStackedAreaSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.StepAreaSeriesTemplate>
+            <DataTemplate>
+                <dxc:AreaStepSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" MarkerVisible="{Binding MarkerVisible}">
+                    <dxc:AreaStepSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;137;26" />
+                    </dxc:AreaStepSeries2D.Label>
+                </dxc:AreaStepSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.StepAreaSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.SplineAreaSeriesTemplate>
+            <DataTemplate>
+                <dxc:SplineAreaSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" MarkerVisible="{Binding MarkerVisible}">
+                    <dxc:SplineAreaSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;146;26" />
+                    </dxc:SplineAreaSeries2D.Label>
+                </dxc:SplineAreaSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.SplineAreaSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.StackedSplineAreaSeriesTemplate>
+            <DataTemplate>
+                <dxc:SplineAreaStackedSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}">
+                    <dxc:SplineAreaStackedSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;155;26" />
+                    </dxc:SplineAreaStackedSeries2D.Label>
+                </dxc:SplineAreaStackedSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.StackedSplineAreaSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.FullStackedSplineAreaSeriesTemplate>
+            <DataTemplate>
+                <dxc:SplineAreaFullStackedSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}">
+                    <dxc:SplineAreaFullStackedSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;164;26" />
+                    </dxc:SplineAreaFullStackedSeries2D.Label>
+                </dxc:SplineAreaFullStackedSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.FullStackedSplineAreaSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.RangeAreaSeriesTemplate>
+            <DataTemplate>
+                <dxc:RangeAreaSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" Value2DataMember="{Binding Value2DataMember}" Marker1Visible="{Binding MarkerVisible}" Marker2Visible="{Binding MarkerVisible}">
+                    <dxc:RangeAreaSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;173;26" />
+                    </dxc:RangeAreaSeries2D.Label>
+                </dxc:RangeAreaSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.RangeAreaSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.RangeBarSeriesTemplate>
+            <DataTemplate>
+                <dxc:RangeBarSideBySideSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" Value2DataMember="{Binding Value2DataMember}">
+                    <dxc:RangeBarSideBySideSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;182;26" />
+                    </dxc:RangeBarSideBySideSeries2D.Label>
+                    <dxc:RangeBarSideBySideSeries2D.Model>
+                        <dxc:SimpleRangeBar2DModel />
+                    </dxc:RangeBarSideBySideSeries2D.Model>
+                </dxc:RangeBarSideBySideSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.RangeBarSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.BubbleSeriesTemplate>
+            <DataTemplate>
+                <dxc:BubbleSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" WeightDataMember="{Binding Value2DataMember}" Transparency="0.529" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;192;18">
+                    <dxc:BubbleSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxc:BubbleSeries2D.LabelPosition="{Binding BubbleLabelPosition}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;194;26" />
+                    </dxc:BubbleSeries2D.Label>
+                </dxc:BubbleSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.BubbleSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.StockSeriesTemplate>
+            <DataTemplate>
+                <dxc:StockSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" OpenValueDataMember="{Binding OpenValueDataMember}" HighValueDataMember="{Binding HighValueDataMember}" LowValueDataMember="{Binding LowValueDataMember}" CloseValueDataMember="{Binding CloseValueDataMember}" ShowOpenClose="{Binding ShowOpenClose}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;201;18">
+                    <dxc:StockSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;203;26" />
+                    </dxc:StockSeries2D.Label>
+                </dxc:StockSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.StockSeriesTemplate>
+        <dxdash:SeriesTemplateSelector.CandleStickTemplate>
+            <DataTemplate>
+                <dxc:CandleStickSeries2D Style="{StaticResource {dxdasht:ChartItemThemeKey ResourceKey=SeriesStyle}}" OpenValueDataMember="{Binding OpenValueDataMember}" HighValueDataMember="{Binding HighValueDataMember}" LowValueDataMember="{Binding LowValueDataMember}" CloseValueDataMember="{Binding CloseValueDataMember}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;210;18">
+                    <dxc:CandleStickSeries2D.Label>
+                        <dxc:SeriesLabel ResolveOverlappingMode="{Binding LabelsResolveOverlappingMode}" TextOrientation="{Binding TextOrientation}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;212;26" />
+                    </dxc:CandleStickSeries2D.Label>
+                </dxc:CandleStickSeries2D>
+            </DataTemplate>
+        </dxdash:SeriesTemplateSelector.CandleStickTemplate>
+    </dxdash:SeriesTemplateSelector>
+
+    <DataTemplate x:Key="visibilityInPaneItemTemplateKey">
+        <ContentControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;220;10">
+            <dxc:VisibilityInPane Pane="{Binding Pane}" Visible="{Binding Visible}" />
+        </ContentControl>
+    </DataTemplate>
+    
+    <Style x:Key="{dxdasht:ChartItemThemeKey ResourceKey=AxisXStyle}" TargetType="{x:Type dxc:AxisX2D}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;225;6" /><Setter Property="Reverse" Value="{Binding ViewModel.AxisX.Reverse}" />
+        <Setter Property="GridLinesVisible" Value="{Binding  ViewModel.AxisX.ShowGridLines}" />
+        <Setter Property="Logarithmic" Value="{Binding ViewModel.AxisX.Logarithmic}" />
+        <Setter Property="LogarithmicBase" Value="{Binding AxisXLogarithmicBase}" />
+        <Setter Property="Visible" Value="{Binding AxisXVisible}" />
+        <Setter Property="DateTimeScaleOptions" Value="{Binding ScaleOptions}" />
+        <Setter Property="Tag" Value="{Binding AxisXFormatter}" />
+        <Setter Property="VisibilityInPaneItemsSource" Value="{Binding PanesVisibility}" />
+        <Setter Property="VisibilityInPaneItemTemplate" Value="{StaticResource visibilityInPaneItemTemplateKey}" />
+    </Style>
+
+
+    <DataTemplate x:Key="AxisXVisualRangeKey">
+        <ContentControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;239;10">
+            <dxc:Range MaxValue="{Binding AxisXVisualRangeMaxValue}" />
+        </ContentControl>
+    </DataTemplate>
+    <DataTemplate x:Key="AxisXTitleKey">
+        <dxc:AxisTitle Visible="{Binding AxisXTitleVisible}" Content="{Binding AxisXTitle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;244;10" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="AxisLabelElementTemplateKey">
+        <ContentPresenter Content="{Binding Converter={StaticResource axisLabelContentConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;248;10" />
+    </DataTemplate>
+    <DataTemplate x:Key="AxisXLabelKey">
+        <dxc:AxisLabel ElementTemplate="{StaticResource AxisLabelElementTemplateKey}" dxc:Axis2D.ResolveOverlappingOptions="{Binding AxisXLabelResolveOverlappingOptions}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;251;10" />
+    </DataTemplate>
+    
+    <DataTemplate x:Key="{dxdasht:ChartItemThemeKey ResourceKey=AxisXTemplate}">
+        <dxc:AxisX2D dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;255;10" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxdasht:ChartItemThemeKey ResourceKey=SecondaryAxisYTemplate}">
+        <dxc:SecondaryAxisY2D Alignment="{Binding Alignment}" Visible="{Binding ViewModel.Visible}" Reverse="{Binding ViewModel.Reverse}" GridLinesVisible="{Binding ViewModel.ShowGridLines}" Logarithmic="{Binding ViewModel.Logarithmic}" LogarithmicBase="{Binding LogarithmicBase}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;259;10">
+            <dxc:SecondaryAxisY2D.WholeRange>
+                <dxc:Range dxc:AxisY2D.AlwaysShowZeroLevel="{Binding ViewModel.ShowZeroLevel}" />
+            </dxc:SecondaryAxisY2D.WholeRange>
+            <dxc:SecondaryAxisY2D.Label>
+                <dxc:AxisLabel ElementTemplate="{StaticResource AxisLabelElementTemplateKey}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;264;18">
+                    <dxc:Axis2D.ResolveOverlappingOptions>
+                        <dxc:AxisLabelResolveOverlappingOptions AllowStagger="False" AllowRotate="False" />
+                    </dxc:Axis2D.ResolveOverlappingOptions>
+                </dxc:AxisLabel>
+            </dxc:SecondaryAxisY2D.Label>
+            <dxc:SecondaryAxisY2D.Title>
+                <dxc:AxisTitle Visible="{Binding TitleVisible}" Content="{Binding Title}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;271;18" />
+            </dxc:SecondaryAxisY2D.Title>
+        </dxc:SecondaryAxisY2D>
+    </DataTemplate>
+
+    <DataTemplate x:Key="paneItemTemplateKey">
+        <dxc:Pane Focusable="False">
+            <dxc:Pane.AxisXScrollBarOptions>
+                <dxc:ScrollBarOptions Alignment="Near" />
+            </dxc:Pane.AxisXScrollBarOptions>
+        </dxc:Pane>
+    </DataTemplate>
+
+    <Style x:Key="{dxdasht:ChartItemThemeKey ResourceKey=DiagramStyle}" TargetType="{x:Type dxc:XYDiagram2D}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;284;6" /><Setter Property="SeriesItemTemplateSelector" Value="{StaticResource seriesTemplateSelectorKey}" />
+        <Setter Property="Rotated" Value="{Binding ViewModel.Rotated}" />
+        <Setter Property="PaneOrientation" Value="{Binding PaneLayoutDirection}" />
+        <Setter Property="EnableAxisXNavigation" Value="{Binding EnableAxisXNavigation}" />
+        <Setter Property="SeriesItemsSource" Value="{Binding Series}" />
+        <Setter Property="SecondaryAxisYItemsSource" Value="{Binding AxesY}" />
+        <Setter Property="PaneItemsSource" Value="{Binding Panes}" />
+        <Setter Property="PaneItemTemplate" Value="{StaticResource paneItemTemplateKey}" />
+        <Setter Property="SecondaryAxisYItemTemplate" Value="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=SecondaryAxisYTemplate}}" />
+    </Style>
+    
+    <DataTemplate x:Key="DefaultPaneTemplateKey">
+        <dxc:Pane Visibility="Collapsed" />
+    </DataTemplate>
+    <DataTemplate x:Key="AxisYTemplateKey">
+        <dxc:AxisY2D Visible="False" GridLinesVisible="False" Interlaced="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;300;10" />
+    </DataTemplate>
+    
+    <DataTemplate x:Key="{dxdasht:ChartItemThemeKey ResourceKey=DiagramTemplate}">
+        <dxc:XYDiagram2D Style="{Binding Path=(dxdash:ChartDashboardLayoutItem.DiagramStyle), RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;304;10" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="customItemTemplateKey">
+        <dxc:CustomLegendItem Text="{Binding Text}" MarkerBrush="{Binding Color}" />
+    </DataTemplate>
+
+    <Style x:Key="{dxdasht:ChartItemThemeKey ResourceKey=LegendStyle}" TargetType="{x:Type dxc:Legend}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;311;6" /><Setter Property="Visible" Value="{Binding LegendViewModel.Visible}" />
+        <Setter Property="HorizontalPosition" Value="{Binding LegendViewModel.HorizontalPosition}" />
+        <Setter Property="CustomItemsSource" Value="{Binding LegendItems}" />
+        <Setter Property="VerticalPosition" Value="{Binding LegendViewModel.VerticalPosition}" />
+        <Setter Property="Orientation" Value="{Binding LegendViewModel.Orientation}" />
+        <Setter Property="DockTarget" Value="{Binding DefaultPane}" />
+        <Setter Property="CustomItemTemplate" Value="{StaticResource customItemTemplateKey}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <DataTemplate x:Key="{dxdasht:ChartItemThemeKey ResourceKey=LegendTemplate}">
+        <dxc:Legend Style="{Binding Path=(dxdash:ChartDashboardLayoutItem.LegendStyle), RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;323;10" />
+    </DataTemplate>
+
+    <DataTemplate x:Key="{dxdasht:ChartItemThemeKey ResourceKey=Template}">
+        <dxc:ChartControl Style="{Binding Path=(dxdash:DashboardLayoutItem.ViewStyle), RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;327;10">
+        </dxc:ChartControl>
+    </DataTemplate>
+
+    <Style x:Key="{dxdasht:ChartItemThemeKey ResourceKey=ViewStyle}" TargetType="{x:Type dxc:ChartControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;331;6" /><Setter Property="Focusable" Value="False" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="SelectionMode" Value="None" />
+        <Setter Property="SelectedItems" Value="{Binding SelectedItems}" />
+        <Setter Property="SeriesSelectionMode" Value="Argument" />
+        <Setter Property="CrosshairOptions" Value="{Binding CrosshairOptions}" />
+        <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\ChartItem.xaml;341;22">
+                        <dxdash:ChartItemBehavior DiagramTemplate="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=DiagramTemplate}}" DiagramDefaultPaneTemplate="{StaticResource DefaultPaneTemplateKey}" DiagramAxisYTemplate="{StaticResource AxisYTemplateKey}" AxisXTemplate="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=AxisXTemplate}}" AxisXStyle="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=AxisXStyle}}" AxisXVisualRangeTemplate="{StaticResource AxisXVisualRangeKey}" AxisXTitleTemplate="{StaticResource AxisXTitleKey}" AxisXLabelTemplate="{StaticResource AxisXLabelKey}" LegendTemplate="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=LegendTemplate}}" />
+                        <dxmvvm:EventToCommand EventName="CustomDrawSeriesPoint" Command="{Binding CustomDrawSeriesPointCommand}" PassEventArgsToCommand="True" />
+                        <dxmvvm:EventToCommand EventName="CustomDrawCrosshair" Command="{Binding CustomDrawCrosshairCommand}" PassEventArgsToCommand="True" />
+                        <dxmvvm:EventToCommand EventName="MouseUp" Command="{Binding MouseUpCommand}" EventArgsConverter="{StaticResource mouseButtonEventArgsConverter}" PassEventArgsToCommand="True" />
+                        <dxmvvm:EventToCommand EventName="MouseDoubleClick" Command="{Binding MouseDoubleClickCommand}" EventArgsConverter="{StaticResource mouseButtonEventArgsConverter}" PassEventArgsToCommand="True" />
+                        <dxmvvm:EventToCommand EventName="KeyDown" Command="{Binding KeyDownCommand}" PassEventArgsToCommand="True" />
+                        <dxmvvm:EventToCommand EventName="KeyUp" Command="{Binding KeyUpCommand}" PassEventArgsToCommand="True" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

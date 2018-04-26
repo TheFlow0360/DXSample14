@@ -1,0 +1,49 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdasht="http://schemas.devexpress.com/winfx/2008/xaml/dashboard/themekeys" xmlns:dxdashi="http://schemas.devexpress.com/winfx/2008/xaml/dashboard/internal" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <DataTemplate x:Key="UpArrowKey">
+        <Path Fill="{Binding Path=(TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Stretch="Uniform" Data="F1 M 209,6.00006L 201,6.00006L 205,2L 209,6.00006 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\DeltaValuePresenter.xaml;4;10" />
+    </DataTemplate>
+    <DataTemplate x:Key="DownArrowKey">
+        <Path Fill="{Binding Path=(TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Stretch="Uniform" Data="F1 M 209,15.9999L 201,15.9999L 205,20L 209,15.9999 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\DeltaValuePresenter.xaml;7;10" />
+    </DataTemplate>
+    <DataTemplate x:Key="WarningKey">
+        <Path Fill="{Binding Path=(TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Stretch="Uniform" Data="F1 M 1216,828C 1216.55,828 1217,828.448 1217,829C 1217,829.552 1216.55,830 1216,830C 1215.45,830 1215,829.552 1215,829C 1215,828.448 1215.45,828 1216,828 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\DeltaValuePresenter.xaml;10;10" />
+    </DataTemplate>
+
+    <dxcore_unique_xmlns:EnumToObjectConverter x:Key="IndicatorTypeToTemplateConverter" DefaultValue="{x:Null}">
+        <dxcore_unique_xmlns:EnumToObjectConverter.Values>
+            <dxcore_unique_xmlns:EnumObjectProvider x:Key="UpArrow" Value="{StaticResource UpArrowKey}" />
+            <dxcore_unique_xmlns:EnumObjectProvider x:Key="DownArrow" Value="{StaticResource DownArrowKey}" />
+            <dxcore_unique_xmlns:EnumObjectProvider x:Key="Warning" Value="{StaticResource WarningKey}" />
+        </dxcore_unique_xmlns:EnumToObjectConverter.Values>
+    </dxcore_unique_xmlns:EnumToObjectConverter>
+
+    <ControlTemplate x:Key="{dxdasht:DeltaValuePresenterThemeKey ResourceKey=Template}" TargetType="dxdashi:DeltaValuePresenter">
+        <Grid TextElement.Foreground="{TemplateBinding ActualForeground}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\DeltaValuePresenter.xaml;22;10">
+            <ContentPresenter x:Name="OnlyDelta" ContentTemplate="{Binding IndicatorType, RelativeSource={RelativeSource TemplatedParent},&#xD;&#xA;                                Converter={StaticResource IndicatorTypeToTemplateConverter}}" Content="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\DeltaValuePresenter.xaml;23;14" />
+            <StackPanel x:Name="DeltaValue" Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\DeltaValuePresenter.xaml;24;14">
+                <ContentPresenter Width="10" Height="8" ContentTemplate="{Binding IndicatorType, RelativeSource={RelativeSource TemplatedParent},&#xD;&#xA;                                Converter={StaticResource IndicatorTypeToTemplateConverter}}" Content="{x:Null}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\DeltaValuePresenter.xaml;25;18" />
+                <ContentPresenter Content="{TemplateBinding Value}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Dashboard\Generic\DeltaValuePresenter.xaml;26;18" />
+            </StackPanel>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ShowValue" Value="True">
+                <Setter Property="Visibility" TargetName="OnlyDelta" Value="Collapsed" />
+                <Setter Property="Visibility" TargetName="DeltaValue" Value="Visible" />
+            </Trigger>
+            <Trigger Property="ShowValue" Value="False">
+                <Setter Property="Visibility" TargetName="OnlyDelta" Value="Visible" />
+                <Setter Property="Visibility" TargetName="DeltaValue" Value="Collapsed" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.Internal.DeltaValuePresenter}" TargetType="dxdashi:DeltaValuePresenter">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Dashboard\Generic\DeltaValuePresenter.xaml;41;6" /><Setter Property="Focusable" Value="False" />
+        <Setter Property="Template" Value="{DynamicResource {dxdasht:DeltaValuePresenterThemeKey ResourceKey=Template}}" />
+        <Setter Property="GoodForeground" Value="{DynamicResource {dxdasht:DeltaValuePresenterThemeKey ResourceKey=GoodForeground}}" />
+        <Setter Property="BadForeground" Value="{DynamicResource {dxdasht:DeltaValuePresenterThemeKey ResourceKey=BadForeground}}" />
+        <Setter Property="WarningForeground" Value="{DynamicResource {dxdasht:DeltaValuePresenterThemeKey ResourceKey=WarningForeground}}" />
+        <Setter Property="NeutralForeground" Value="{DynamicResource {dxdasht:DeltaValuePresenterThemeKey ResourceKey=NeutralForeground}}" />
+    </Style>
+</ResourceDictionary>

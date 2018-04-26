@@ -1,0 +1,48 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControlStyles.xaml" />
+        
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/ButtonEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/SpinEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/SparklineEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/CheckEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/ComboBoxEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/MemoEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/ColorChooser.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/ColorChooser.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/ErrorPresenter.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/BrushEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/PopupBaseEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/PopupListBox.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/TextEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/InplaceBaseEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/DateEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/ListBoxEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/FilterControl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/FPanelCtrlBase.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/ExprEdCtrl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/TrackBarEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/ProgressBarEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/RatingEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/HyperLinkEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/PasswordBoxEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/ColorEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/CalcEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/ImageEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/DateNavigator.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/DataPager.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/RangeControl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/DateTimePicker.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/ColorPicker.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/FontEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/GradientMultiSlider.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/Flyout.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/BarItemTemplates.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/FontComboBoxEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/FontSizeComboBoxEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/AutoCompleteBox.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineCrmClassic/BarCodeEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/ToggleSwitch.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/ToggleSwitchEdit.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

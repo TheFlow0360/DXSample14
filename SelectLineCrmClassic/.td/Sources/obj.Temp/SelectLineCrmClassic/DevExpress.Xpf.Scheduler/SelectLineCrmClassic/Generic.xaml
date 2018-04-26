@@ -1,0 +1,26 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/Colors.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/SchedulerScrollBar.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/NavigationButton.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/BaseView/MoreButtonToolTip.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/ResourceNavigator.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/CurrentTimeIndicator.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/SchedulerControl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/Appointments/VerticalAppointment.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/Appointments/HorizontalAppointment.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/Appointments/HorizontalAppointmentSameDay.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/Appointments/HAppointmentLongerThanADay.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/Appointments/DragDropHoverTimeCells.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/Containers.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/Selection.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/BaseView/Header.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/DayView/TimeRuler.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/DayView/MoreButton.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/DayView/HorizontalTimeMarker.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/TimelineView/VerticalTimeMarker.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/RangeControl/Header.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/RangeControl/Thumbnail.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Scheduler/SelectLineCrmClassic/RangeControl/RulerCell.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,19 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdasht="http://schemas.devexpress.com/winfx/2008/xaml/dashboard/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxt:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Dashboard/SelectLineCrmClassic/UICustom.xaml" />
+        <dxt:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2;component/DevExpress.Xpf.Dashboard/SelectLineCrmClassic/UIPreset.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    
+    <SolidColorBrush x:Key="{dxdasht:DashboardLayoutItemThemeKey ResourceKey=Background}" Color="Transparent" />
+    <SolidColorBrush x:Key="{dxdasht:DashboardLayoutItemThemeKey ResourceKey=BorderBrush}" Color="#FFD6D6D6" />
+    <SolidColorBrush x:Key="{dxdasht:DashboardLayoutItemThemeKey ResourceKey=CaptionBackground}" Color="Transparent" />
+    <SolidColorBrush x:Key="{dxdasht:DashboardLayoutItemThemeKey ResourceKey=WaitIndicatorForeground}" Color="#FF3C3C3C" />
+    
+    
+	<Color x:Key="{dxdasht:DashboardControlThemeKey ResourceKey=MasterFilterIconColor}">#FF3C3C3C</Color>
+    <SolidColorBrush x:Key="{dxdasht:DashboardControlThemeKey ResourceKey=Background}" Color="#FFFFFFFF" />
+    <sys:Boolean x:Key="{dxdasht:DashboardControlThemeKey ResourceKey=IsDarkTheme}">False</sys:Boolean>
+    <SolidColorBrush x:Key="{dxdasht:DashboardControlThemeKey ResourceKey=FormatConditionBarDrawAxisBrush}" Color="Black" />
+</ResourceDictionary>

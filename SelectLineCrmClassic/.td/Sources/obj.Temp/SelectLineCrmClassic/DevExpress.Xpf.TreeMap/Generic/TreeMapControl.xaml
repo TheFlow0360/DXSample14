@@ -1,0 +1,109 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/treemap/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/treemap" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <local:BoolToVisibilityConverter x:Key="boolToVisibilityConverter" />
+    <local:VerticalBeakAlignmentToVisibilityConverter x:Key="beakVPositionConverter" />
+    <local:HorizontalBeakAlignmentToVisibilityConverter x:Key="beakHPositionConverter" />
+
+    <Style x:Key="arrowStyle" TargetType="Path">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;6;6" /><Setter Property="Stretch" Value="Fill" />
+        <Setter Property="Fill" Value="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=ToolTipBackground}}" />
+    </Style>
+
+    <Style x:Key="leftArrowStyle" BasedOn="{StaticResource arrowStyle}" TargetType="Path">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;11;6" /><Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Width" Value="13" />
+        <Setter Property="Visibility" Value="{Binding HorizontalBeakAlignment, Converter={StaticResource beakHPositionConverter}, ConverterParameter=Left, Mode=OneWay}" />
+    </Style>
+
+    <Style x:Key="rightArrowStyle" BasedOn="{StaticResource arrowStyle}" TargetType="Path">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;17;6" /><Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="Width" Value="13" />
+        <Setter Property="Visibility" Value="{Binding HorizontalBeakAlignment, Converter={StaticResource beakHPositionConverter}, ConverterParameter=Right, Mode=OneWay}" />
+    </Style>
+
+    <Style x:Key="centerArrowStyle" BasedOn="{StaticResource arrowStyle}" TargetType="Path">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;23;6" /><Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="Width" Value="26" />
+        <Setter Property="Visibility" Value="{Binding HorizontalBeakAlignment, Converter={StaticResource beakHPositionConverter}, ConverterParameter=Center, Mode=OneWay}" />
+    </Style>
+
+    <DataTemplate x:Key="defaultToolTipContentTemplate">
+        <TextBlock TextWrapping="Wrap" Text="{Binding ToolTipText}" Margin="20,15,20,18" Foreground="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=ToolTipForeground}}" FontSize="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=ToolTipFontSize}}" FontWeight="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=ToolTipFontWeight}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;30;10" />
+    </DataTemplate>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.TreeMap.TreeMapControl}" TargetType="{x:Type local:TreeMapControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;33;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:TreeMapControl}">
+                    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;37;22">
+                        <dx:DXBorder Background="{TemplateBinding Background}" BorderBrush="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=ControlBorderBrush}}" BorderThickness="{TemplateBinding BorderThickness}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;38;26">
+                            <local:TreeMapItemsControl x:Name="PART_ItemsContainer" />
+                        </dx:DXBorder>
+                        <local:ToolTipPanel x:Name="PART_ToolTipPanel" Position="{Binding Path=ToolTipInfo.ToolTipPosition, RelativeSource={RelativeSource TemplatedParent}}" Visibility="{Binding Path=ToolTipInfo.Visible, Mode=OneWay, RelativeSource={RelativeSource TemplatedParent}, Converter={StaticResource boolToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;41;26">
+                            <Popup IsOpen="{Binding Path=ToolTipInfo.Visible, RelativeSource={RelativeSource TemplatedParent}, Mode=OneWay}" AllowsTransparency="True" Placement="Absolute" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;42;30">
+                                <ContentPresenter Content="{Binding Path=ToolTipInfo, RelativeSource={RelativeSource TemplatedParent}}" ContentTemplate="{Binding Path=ToolTipTemplate, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;43;34">
+                                </ContentPresenter>
+                            </Popup>
+                        </local:ToolTipPanel>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTipTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid x:Name="Tooltip" HorizontalAlignment="Center" VerticalAlignment="Center" UseLayoutRounding="True" Background="Transparent" local:ToolTipPanel.ShadowPadding="0, 0, 0, 8" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;54;22">
+                        <Grid.Effect>
+                            <DropShadowEffect Direction="-90" Opacity="0.4" ShadowDepth="4" />
+                        </Grid.Effect>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+                        <Grid x:Name="TopArrowsContainer" Height="13" Margin="0,0,0,-1" Visibility="{Binding VerticalBeakAlignment, Converter={StaticResource beakVPositionConverter}, ConverterParameter=Top, Mode=OneWay}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;63;26">
+                            <Path x:Name="CenterTopArrow" Style="{StaticResource centerArrowStyle}" Data="F1 M 461,316L 474,303L 487,316L 461,316 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;64;30" />
+                            <Path x:Name="LeftTopArrow" Style="{StaticResource leftArrowStyle}" Data="F1 M 461,316L 474,316L 461,303L 461,316 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;65;30" />
+                            <Path x:Name="RightTopArrow" Style="{StaticResource rightArrowStyle}" Data="F1 M 461,316L 474,316L 474,303L 461,316 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;66;30" />
+                        </Grid>
+                        <dx:DXBorder x:Name="ContentBack" Background="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=ToolTipBackground}}" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;68;26" />
+                        <ContentPresenter Content="{Binding}" ContentTemplate="{Binding ContentTemplate}" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;69;26" />
+                        <StackPanel Orientation="Vertical" Grid.Row="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;70;26">
+                            <Grid x:Name="BottomArrowsContainer" Margin="0,-1,0,0" Height="13" Visibility="{Binding VerticalBeakAlignment, Converter={StaticResource beakVPositionConverter}, ConverterParameter=Bottom, Mode=OneWay}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;71;30">
+                                <Path x:Name="CenterBottomArrow" Style="{StaticResource centerArrowStyle}" Data="F1 M 461,303L 474,316L 487,303L 461,303 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;72;34" />
+                                <Path x:Name="LeftBottomArrow" Style="{StaticResource leftArrowStyle}" Data="F1 M 461,303L 474,303L 461,316L 461,303 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;73;34" />
+                                <Path x:Name="RightBottomArrow" Style="{StaticResource rightArrowStyle}" Data="F1 M 461,303L 474,303L 474,316L 461,303 Z" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;74;34" />
+                            </Grid>
+                            <dx:DXBorder x:Name="BottomShadowContainer" Height="8" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;76;30" />
+                        </StackPanel>
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ToolTipContentTemplate" Value="{StaticResource defaultToolTipContentTemplate}" />
+        <Setter Property="ToolTipGroupContentTemplate" Value="{StaticResource defaultToolTipContentTemplate}" />
+        <Setter Property="GroupHeaderContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Label}" Foreground="{Binding ActualForeground}" FontWeight="{Binding FontWeight}" FontSize="{Binding FontSize}" TextTrimming="WordEllipsis" Margin="4" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;87;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="LeafContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <dx:DXBorder BorderThickness="1" BorderBrush="#40000000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;94;22">
+                        <local:TreeMapTextPanel>
+                            <TextBlock Text="{Binding Label}" Foreground="{Binding ActualForeground}" Margin="4" TextWrapping="WrapWithOverflow" TextTrimming="WordEllipsis" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.TreeMap\Generic\TreeMapControl.xaml;96;30" />
+                        </local:TreeMapTextPanel>
+                    </dx:DXBorder>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="TreeMapStyle">
+            <Setter.Value>
+                <local:TreeMapStyle GroupBackground="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=GroupBackground}}" SubGroupBackground="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=SubGroupBackground}}" GroupForeground="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=GroupForeground}}" SubGroupForeground="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=SubGroupForeground}}" GroupBorderBrush="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=GroupBorderBrush}}" GroupFontSize="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=GroupFontSize}}" SubGroupFontSize="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=SubGroupFontSize}}" GroupFontWeight="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=GroupFontWeight}}" SubGroupFontWeight="{DynamicResource {dxt:TreeMapBrushesThemeKey ResourceKey=SubGroupFontWeight}}" />
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

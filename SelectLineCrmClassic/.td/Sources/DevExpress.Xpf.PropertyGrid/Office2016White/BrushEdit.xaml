@@ -1,0 +1,39 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:cs="colorscheme_ignorable_uri" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcn="clr-namespace:DevExpress.Xpf.Core.Native;assembly=DevExpress.Xpf.Core.v17.2" xmlns:dxprgt="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid/themekeys" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" mc:Ignorable="cs">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.PropertyGrid/Generic/BrushEdit.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <SolidColorBrush x:Key="DefaultState.BorderBrush" Color="#FFACACAC" cs:Name="SolidColorBrush_0001" />
+    <LinearGradientBrush x:Key="DefaultState.Background" StartPoint="0.5,0" EndPoint="0.5,1" cs:Name="LinearGradientBrush_6452">
+        <GradientStop Offset="0" Color="#FFF0F0F0" cs:Name="GradientStop_0001" cs:id="GradientStop_0000" />
+        <GradientStop Offset="1" Color="#FFE5E5E5" cs:Name="GradientStop_0002" cs:id="GradientStop_0001" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="HoverState.BorderBrush" Color="#FF7EB4EA" cs:Name="SolidColorBrush_0002" />
+    <LinearGradientBrush x:Key="HoverState.Background" StartPoint="0.5,0" EndPoint="0.5,1" cs:Name="LinearGradientBrush_6453">
+        <GradientStop Offset="0" Color="#FFECF4FC" cs:Name="GradientStop_0003" cs:id="GradientStop_0000" />
+        <GradientStop Offset="1" Color="#FFDCECFC" cs:Name="GradientStop_0004" cs:id="GradientStop_0001" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="PressedState.BorderBrush" Color="#FFACACAC" cs:Name="SolidColorBrush_0003" />
+    <SolidColorBrush x:Key="PressedState.Background" Color="#FFFFFFFF" cs:Name="SolidColorBrush_0004" />
+    <ControlTemplate x:Key="{dxprgt:PopupBrushEditThemeKey ResourceKey=BrushTypeButtonTemplate}" TargetType="{x:Type ToggleButton}">
+        <Grid x:Name="Root" Margin="0,0,-1,-1">
+            <Border x:Name="DefaultState" Background="{StaticResource DefaultState.Background}" BorderBrush="{StaticResource DefaultState.BorderBrush}" BorderThickness="1,1,1,0" Margin="0,0,0,1" />
+            <Border x:Name="HoverState" Background="{StaticResource HoverState.Background}" BorderBrush="{StaticResource HoverState.BorderBrush}" BorderThickness="1,1,1,0" Margin="0,0,0,1" Opacity="0" />
+            <Border x:Name="PressedState" Background="{StaticResource PressedState.Background}" BorderBrush="{StaticResource PressedState.BorderBrush}" BorderThickness="1,1,1,0" Opacity="0" />
+            <ContentPresenter Margin="3" HorizontalAlignment="Center" VerticalAlignment="Center" />
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="HoverState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="ToggleButton.IsChecked" Value="True">
+                <Setter TargetName="PressedState" Property="Opacity" Value="1" />
+            </Trigger>
+            <Trigger Property="IsEnabled" Value="False">
+                <Setter TargetName="Root" Property="Opacity" Value="0.38" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+</ResourceDictionary>

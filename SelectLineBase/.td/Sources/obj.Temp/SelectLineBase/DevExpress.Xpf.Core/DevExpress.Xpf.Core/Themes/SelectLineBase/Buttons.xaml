@@ -1,0 +1,119 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:cs="colorscheme_ignorable_uri" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <dxt:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/Brushes.xaml" />
+        <dxt:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControls/SharedResources.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <s:Double x:Key="{dxt:DropDownButtonThemeKey ResourceKey=ButtonOpacity}">0.5</s:Double>
+    <Visibility x:Key="Visible">Visible</Visibility>
+    <Visibility x:Key="Collapsed">Collapsed</Visibility>
+    <SolidColorBrush x:Key="{dxt:DropDownButtonThemeKey ResourceKey=Foreground}" Color="#FF000000" cs:Name="SolidColorBrush_0001" />
+    <SolidColorBrush x:Key="{dxt:DropDownButtonThemeKey ResourceKey=ArrowForeground}" Color="#FF000000" cs:Name="SolidColorBrush_0002" />
+    <SolidColorBrush x:Key="{dxt:DropDownButtonThemeKey ResourceKey=PressedForeground}" Color="#FF000000" cs:Name="SolidColorBrush_0003" />
+    <SolidColorBrush x:Key="{dxt:DropDownButtonThemeKey ResourceKey=CheckedForeground}" Color="#FF3C3C3C" cs:Name="SolidColorBrush_0007" />
+    <SolidColorBrush x:Key="{dxt:DropDownButtonThemeKey ResourceKey=ArrowPressedForeground}" Color="#FF000000" cs:Name="SolidColorBrush_0004" />
+    <SolidColorBrush x:Key="{dxt:DropDownButtonThemeKey ResourceKey=MouseOverForeground}" Color="#FF000000" cs:Name="SolidColorBrush_0005" />
+    <SolidColorBrush x:Key="{dxt:DropDownButtonThemeKey ResourceKey=ArrowMouseOverForeground}" Color="#FF000000" cs:Name="SolidColorBrush_0006" />
+    <dxcn:RenderTemplate x:Key="{dxt:DropDownButtonThemeKey ResourceKey=BorderTemplate}">
+        <dxcn:RenderPanel ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Office2016White\Buttons.xaml;17;10">
+            <dxcn:RenderBorder Name="Outer" Background="{StaticResource Button.DefaultState.Border2}" BorderBrush="{StaticResource Button.DefaultState.Border1}" BorderThickness="1" ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Office2016White\Buttons.xaml;18;14" />
+            <dxcn:RenderBorder Name="Focused" BorderBrush="#FF0072C6" BorderThickness="1" Visibility="Collapsed" cs:Name="RenderBorder_0001" cs:id="RenderBorder_0000" ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Office2016White\Buttons.xaml;19;14" />
+        </dxcn:RenderPanel>
+        <dxcn:RenderTemplate.Triggers>
+            <dxcn:RenderTrigger Value="True" DependencyProperty="{x:Static dx:ThemeManager.IsTouchEnabledProperty}" ValueSource="TemplatedParent">
+                <dxcn:RenderSetter TargetName="Outer" Property="MinHeight" Value="44" />
+            </dxcn:RenderTrigger>
+            <dxcn:RenderStateGroup Name="FocusStates">
+                <dxcn:RenderStateTrigger Name="Unfocused">
+                    <dxcn:RenderSetter TargetName="Focused" Property="Visibility" Value="{StaticResource Collapsed}" />
+                </dxcn:RenderStateTrigger>
+                <dxcn:RenderStateTrigger Name="Focused">
+                    <dxcn:RenderSetter TargetName="Focused" Property="Visibility" Value="{StaticResource Visible}" />
+                </dxcn:RenderStateTrigger>
+            </dxcn:RenderStateGroup>
+            <dxcn:RenderStateGroup Name="VisualStates">
+                <dxcn:RenderStateTrigger Name="Normal" />
+                <dxcn:RenderStateTrigger Name="MouseOver">
+                    <dxcn:RenderSetter TargetName="Outer" Property="BorderBrush" Value="{StaticResource Button.HoverState.Border1}" />
+                    <dxcn:RenderSetter TargetName="Outer" Property="Background" Value="{StaticResource Button.HoverState.Border2}" />
+                </dxcn:RenderStateTrigger>
+                <dxcn:RenderStateTrigger Name="Pressed">
+                    <dxcn:RenderSetter TargetName="Outer" Property="BorderBrush" Value="{StaticResource Button.PressedState.Border1}" />
+                    <dxcn:RenderSetter TargetName="Outer" Property="Background" Value="{StaticResource Button.PressedState.Border2}" />
+                </dxcn:RenderStateTrigger>
+                <dxcn:RenderStateTrigger Name="Checked">
+                    <dxcn:RenderSetter TargetName="Outer" Property="BorderBrush" Value="{StaticResource Button.CheckedState.Border1}" />
+                    <dxcn:RenderSetter TargetName="Outer" Property="Background" Value="{StaticResource Button.CheckedState.Border2}" />
+                </dxcn:RenderStateTrigger>
+            </dxcn:RenderStateGroup>
+            <dxcn:RenderStateGroup Name="PlacementStates">
+                <dxcn:RenderStateTrigger Name="Default" />
+                <dxcn:RenderStateTrigger Name="Left">
+                    <dxcn:RenderSetter TargetName="Outer" Property="BorderThickness" Value="1,1,0,1" />
+                    <dxcn:RenderSetter TargetName="Focused" Property="BorderThickness" Value="1,1,0,1" />
+                </dxcn:RenderStateTrigger>
+                <dxcn:RenderStateTrigger Name="Right">
+                    <dxcn:RenderSetter TargetName="Focused" Property="BorderThickness" Value="0,1,1,1" />
+                </dxcn:RenderStateTrigger>
+                <dxcn:RenderStateTrigger Name="Top">
+                    <dxcn:RenderSetter TargetName="Outer" Property="BorderThickness" Value="1,1,1,0" />
+                    <dxcn:RenderSetter TargetName="Focused" Property="BorderThickness" Value="1,1,1,0" />
+                </dxcn:RenderStateTrigger>
+                <dxcn:RenderStateTrigger Name="Bottom">
+                    <dxcn:RenderSetter TargetName="Focused" Property="BorderThickness" Value="1,0,1,1" />
+                </dxcn:RenderStateTrigger>
+            </dxcn:RenderStateGroup>
+        </dxcn:RenderTemplate.Triggers>
+    </dxcn:RenderTemplate>
+    <dxcore_unique_xmlns:WpfSvgPalette x:Key="{dxt:BrushesThemeKey ResourceKey=ContrastSvgPalette}">
+        <SolidColorBrush x:Key="BlackColor" Color="#FF808080" cs:id="SolidColorBrush_0000" />
+        <SolidColorBrush x:Key="WhiteColor" Color="#FFFFFFFF" cs:id="SolidColorBrush_0001" />
+        <SolidColorBrush x:Key="RedColor" Color="#FFD86344" cs:id="SolidColorBrush_0002" />
+        <SolidColorBrush x:Key="YellowColor" Color="#FFEDC87E" cs:id="SolidColorBrush_0003" />
+        <SolidColorBrush x:Key="GreenColor" Color="#FF68A490" cs:id="SolidColorBrush_0004" />
+        <SolidColorBrush x:Key="BlueColor" Color="#FF4D82B8" cs:id="SolidColorBrush_0005" />
+        <dxcore_unique_xmlns:WpfSvgPalette.States>
+            <dxcore_unique_xmlns:WpfSvgPalette x:Key="Hover">
+                <SolidColorBrush x:Key="BlackColor" Color="#FF808080" cs:id="SolidColorBrush_0006" />
+                <SolidColorBrush x:Key="WhiteColor" Color="#FFFFFFFF" cs:id="SolidColorBrush_0007" />
+                <SolidColorBrush x:Key="RedColor" Color="#FFD86344" cs:id="SolidColorBrush_0008" />
+                <SolidColorBrush x:Key="YellowColor" Color="#FFEDC87E" cs:id="SolidColorBrush_0009" />
+                <SolidColorBrush x:Key="GreenColor" Color="#FF68A490" cs:id="SolidColorBrush_0010" />
+                <SolidColorBrush x:Key="BlueColor" Color="#FF4D82B8" cs:id="SolidColorBrush_0011" />
+            </dxcore_unique_xmlns:WpfSvgPalette>
+            <dxcore_unique_xmlns:WpfSvgPalette x:Key="Pressed">
+                <SolidColorBrush x:Key="BlackColor" Color="#FF808080" cs:id="SolidColorBrush_0012" />
+                <SolidColorBrush x:Key="WhiteColor" Color="#FFFFFFFF" cs:id="SolidColorBrush_0013" />
+                <SolidColorBrush x:Key="RedColor" Color="#FFD86344" cs:id="SolidColorBrush_0014" />
+                <SolidColorBrush x:Key="YellowColor" Color="#FFEDC87E" cs:id="SolidColorBrush_0015" />
+                <SolidColorBrush x:Key="GreenColor" Color="#FF68A490" cs:id="SolidColorBrush_0016" />
+                <SolidColorBrush x:Key="BlueColor" Color="#FF4D82B8" cs:id="SolidColorBrush_0017" />
+            </dxcore_unique_xmlns:WpfSvgPalette>
+        </dxcore_unique_xmlns:WpfSvgPalette.States>
+    </dxcore_unique_xmlns:WpfSvgPalette>
+    <dxcore_unique_xmlns:WpfSvgPalette x:Key="{dxt:BrushesThemeKey ResourceKey=SvgPalette}">
+        <SolidColorBrush x:Key="BlackColor" Color="#FF808080" cs:id="SolidColorBrush_0000" />
+        <SolidColorBrush x:Key="WhiteColor" Color="#FFFFFFFF" cs:id="SolidColorBrush_0001" />
+        <SolidColorBrush x:Key="RedColor" Color="#FFD86344" cs:id="SolidColorBrush_0002" />
+        <SolidColorBrush x:Key="YellowColor" Color="#FFEDC87E" cs:id="SolidColorBrush_0003" />
+        <SolidColorBrush x:Key="GreenColor" Color="#FF68A490" cs:id="SolidColorBrush_0004" />
+        <SolidColorBrush x:Key="BlueColor" Color="#FF4D82B8" cs:id="SolidColorBrush_0005" />
+        <dxcore_unique_xmlns:WpfSvgPalette.States>
+            <dxcore_unique_xmlns:WpfSvgPalette x:Key="Hover">
+                <SolidColorBrush x:Key="BlackColor" Color="#FF808080" cs:id="SolidColorBrush_0006" />
+                <SolidColorBrush x:Key="WhiteColor" Color="#FFFFFFFF" cs:id="SolidColorBrush_0007" />
+                <SolidColorBrush x:Key="RedColor" Color="#FFD86344" cs:id="SolidColorBrush_0008" />
+                <SolidColorBrush x:Key="YellowColor" Color="#FFEDC87E" cs:id="SolidColorBrush_0009" />
+                <SolidColorBrush x:Key="GreenColor" Color="#FF68A490" cs:id="SolidColorBrush_0010" />
+                <SolidColorBrush x:Key="BlueColor" Color="#FF4D82B8" cs:id="SolidColorBrush_0011" />
+            </dxcore_unique_xmlns:WpfSvgPalette>
+            <dxcore_unique_xmlns:WpfSvgPalette x:Key="Pressed">
+                <SolidColorBrush x:Key="BlackColor" Color="#FF808080" cs:id="SolidColorBrush_0012" />
+                <SolidColorBrush x:Key="WhiteColor" Color="#FFFFFFFF" cs:id="SolidColorBrush_0013" />
+                <SolidColorBrush x:Key="RedColor" Color="#FFD86344" cs:id="SolidColorBrush_0014" />
+                <SolidColorBrush x:Key="YellowColor" Color="#FFEDC87E" cs:id="SolidColorBrush_0015" />
+                <SolidColorBrush x:Key="GreenColor" Color="#FF68A490" cs:id="SolidColorBrush_0016" />
+                <SolidColorBrush x:Key="BlueColor" Color="#FF4D82B8" cs:id="SolidColorBrush_0017" />
+            </dxcore_unique_xmlns:WpfSvgPalette>
+        </dxcore_unique_xmlns:WpfSvgPalette.States>
+    </dxcore_unique_xmlns:WpfSvgPalette>
+</ResourceDictionary>

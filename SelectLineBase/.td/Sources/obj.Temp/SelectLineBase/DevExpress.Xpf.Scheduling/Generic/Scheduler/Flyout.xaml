@@ -1,0 +1,39 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxi="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxschc="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxsche="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxschp="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxschv="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/themekeys" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UICore.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="FlyoutControl.DefaultContentTemplate">
+        <dxlc:LayoutControl Style="{DynamicResource {dxscht:SchedulerFlyoutThemeKey ResourceKey=LayoutControl}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;9;10">
+            <dxschv:DayAppointmentControl Content="{Binding}" Style="{DynamicResource {dxscht:SchedulerFlyoutThemeKey ResourceKey=Appointment}}" VerticalAlignment="Top" />
+            <dxlc:LayoutControl Orientation="Vertical" Padding="0" VerticalAlignment="Top" Margin="0,5,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;11;14">
+                <dxlc:LayoutItem Style="{DynamicResource {dxscht:SchedulerFlyoutThemeKey ResourceKey=LayoutItem_Start}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;12;18" />
+                <dxlc:LayoutItem Style="{DynamicResource {dxscht:SchedulerFlyoutThemeKey ResourceKey=LayoutItem_End}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;13;18" />
+            </dxlc:LayoutControl>
+            <dxlc:LayoutControl Orientation="Vertical" Padding="0" VerticalAlignment="Top" Margin="0,5,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;15;14">
+                <dxlc:LayoutItem Style="{DynamicResource {dxscht:SchedulerFlyoutThemeKey ResourceKey=LayoutItem_Location}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;16;18" />
+                <dxlc:LayoutItem Style="{DynamicResource {dxscht:SchedulerFlyoutThemeKey ResourceKey=LayoutItem_Reminder}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;17;18" />
+                <dxlc:LayoutItem Style="{DynamicResource {dxscht:SchedulerFlyoutThemeKey ResourceKey=LayoutItem_Resources}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;18;18" />
+                <dxlc:LayoutItem Style="{DynamicResource {dxscht:SchedulerFlyoutThemeKey ResourceKey=LayoutItem_Description}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;19;18" />
+            </dxlc:LayoutControl>
+            <dxlc:LayoutItem Style="{DynamicResource {dxscht:SchedulerFlyoutThemeKey ResourceKey=LayoutItem_Images}}" VerticalAlignment="Bottom" HorizontalAlignment="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;21;14" />
+        </dxlc:LayoutControl>
+    </DataTemplate>
+
+    <Style x:Key="FlyoutControl.DefaultStyle" TargetType="dxe:FlyoutControl">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Scheduler\Flyout.xaml;25;6" /><Setter Property="IsOpen" Value="False" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Settings">
+            <Setter.Value>
+                <dxe:FlyoutSettings Placement="Right" ShowIndicator="True" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content" Value="{Binding Path=PlacementTarget.DataContext, RelativeSource={RelativeSource Self}}" />
+        <Setter Property="ContentTemplate" Value="{StaticResource FlyoutControl.DefaultContentTemplate}" />
+        <Setter Property="IsHitTestVisible" Value="False" />
+        <Setter Property="Padding" Value="0" />
+    </Style>
+
+</ResourceDictionary>

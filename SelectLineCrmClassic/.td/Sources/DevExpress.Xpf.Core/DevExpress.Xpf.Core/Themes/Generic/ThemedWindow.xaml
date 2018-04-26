@@ -1,0 +1,286 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:DynamicThemeResource PseudoWindow.xaml, ResourcePath=Themes, ResourcePathInTheme='DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes', TypeInTargetAssembly={x:Type dxcn:RenderTemplate}}" />
+        
+    </ResourceDictionary.MergedDictionaries>
+
+    <!--BackButtonTemplate-->
+    <ControlTemplate x:Key="{dxt:ThemedWindowThemeKey ResourceKey=BackButtonTemplate}" TargetType="{x:Type dx:ThemedWindowBackButton}">
+        <Grid>
+            <Control Name="PART_Background" Focusable="False" Template="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=BackButtonBackgroundNormalState}}" />
+            <Border Name="MarginBorder" Background="Transparent" Margin="4,0">
+                <ContentPresenter x:Name="PART_ContentPresenter" ContentTemplate="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=BackButtonBackgroundGlyph}}" Focusable="False" HorizontalAlignment="Center" VerticalAlignment="Center" RecognizesAccessKey="True" />
+            </Border>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter TargetName="PART_Background" Property="Template" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=BackButtonBackgroundMouseoverState}}" />
+                <Setter Property="Foreground" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=BackButtonForegroundMouseoverState}}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter TargetName="PART_Background" Property="Template" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=BackButtonBackgroundPressedState}}" />
+                <Setter Property="Foreground" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=BackButtonForegroundPressedState}}" />
+            </Trigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsMouseOver" Value="False" />
+                    <Condition Property="IsPressed" Value="False" />
+                </MultiTrigger.Conditions>
+                <Setter Property="Foreground" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=BackButtonForegroundNormalState}}" />
+            </MultiTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--ThemedWindowTitleTemplate-->
+    <ControlTemplate x:Key="ThemedWindowTitleTemplate" TargetType="{x:Type dx:ThemedWindowTitle}">
+        <TextBlock x:Name="PART_TitleText" Text="{TemplateBinding Content}" HorizontalAlignment="Left" Foreground="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowTitleForeground}}" FontSize="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowTitleFontSize}}" FontWeight="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowTitleFontWeight}}" Margin="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowTitleControlMargin}}" TextTrimming="WordEllipsis" />
+    </ControlTemplate>
+    <!--ThemedWindowIconTemplate-->
+    <ControlTemplate x:Key="ThemedWindowIconTemplate" TargetType="{x:Type dx:ThemedWindowIcon}">
+        <dx:DXImage x:Name="PART_Image" Source="{Binding Path=Icon,RelativeSource={RelativeSource AncestorType={x:Type dx:ThemedWindow}}, Converter={dx:WindowIconConverter}}" />
+    </ControlTemplate>
+    <!--ThemedWindowControlBoxTemplate-->
+    <ControlTemplate x:Key="ThemedWindowControlBoxTempalte" TargetType="{x:Type dx:ThemedWindowControlBoxBorder}">
+        <Border x:Name="PART_ControlBoxRootBorder" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" dxcn:WindowChrome.IsHitTestVisibleInChrome="True">
+            <DockPanel x:Name="PART_ControlBoxDock">
+                <dx:HeaderItemControl x:Name="PART_CloseButton" TemplateProvider="{Binding Path=(dx:HeaderItemControl.CloseTemplateProvider), RelativeSource={RelativeSource Self}}" Style="{Binding Path=TemplateProvider.HeaderItemControlStyle, RelativeSource={RelativeSource Self} }" DockPanel.Dock="Right" Command="{x:Static dxcn:WindowSystemCommands.CloseWindowCommand}" />
+                <dx:HeaderItemControl x:Name="PART_Maximize" TemplateProvider="{Binding Path=(dx:HeaderItemControl.CommonTemplateProvider), RelativeSource={RelativeSource Self}}" Style="{Binding Path=TemplateProvider.HeaderItemControlStyle, RelativeSource={RelativeSource Self} }" DockPanel.Dock="Right" Command="{x:Static dxcn:WindowSystemCommands.MaximizeWindowCommand}" />
+                <dx:HeaderItemControl x:Name="PART_Restore" TemplateProvider="{Binding Path=(dx:HeaderItemControl.CommonTemplateProvider), RelativeSource={RelativeSource Self}}" Style="{Binding Path=TemplateProvider.HeaderItemControlStyle, RelativeSource={RelativeSource Self} }" DockPanel.Dock="Right" Visibility="Collapsed" Command="{x:Static dxcn:WindowSystemCommands.RestoreWindowCommand}" />
+                <dx:HeaderItemControl x:Name="PART_Minimize" TemplateProvider="{Binding Path=(dx:HeaderItemControl.CommonTemplateProvider), RelativeSource={RelativeSource Self}}" Style="{Binding Path=TemplateProvider.HeaderItemControlStyle, RelativeSource={RelativeSource Self} }" DockPanel.Dock="Right" Command="{x:Static dxcn:WindowSystemCommands.MinimizeWindowCommand}" />
+                <dx:ThemedWindowHeaderItemsControl x:Name="PART_HeaderItems" DockPanel.Dock="Right" Focusable="False" IsTabStop="False">
+                    <dx:ThemedWindowHeaderItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <StackPanel x:Name="PART_HeaderItemsPanel" Orientation="Horizontal" VerticalAlignment="Center" />
+                        </ItemsPanelTemplate>
+                    </dx:ThemedWindowHeaderItemsControl.ItemsPanel>
+                </dx:ThemedWindowHeaderItemsControl>
+            </DockPanel>
+        </Border>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=WindowState, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="Maximized">
+                <Setter TargetName="PART_Restore" Property="Visibility" Value="Visible" />
+                <Setter TargetName="PART_Maximize" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=WindowStyle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="ToolWindow">
+                <Setter TargetName="PART_Restore" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="PART_Maximize" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="PART_Minimize" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=ResizeMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="NoResize">
+                <Setter TargetName="PART_Restore" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="PART_Maximize" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="PART_Minimize" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=ResizeMode, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="CanMinimize">
+                <Setter TargetName="PART_Restore" Property="Visibility" Value="Collapsed" />
+                <Setter TargetName="PART_Maximize" Property="IsEnabled" Value="False" />
+            </DataTrigger>
+
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--ThemedWindowHeaderTemplate-->
+    <ControlTemplate x:Key="ThemedWindowHeaderTemplate" TargetType="{x:Type dx:ThemedWindowHeader}">
+        <Border x:Name="PART_HeaderRoot" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Opacity="{TemplateBinding Opacity}">
+            <DockPanel x:Name="PART_HeaderDock" LastChildFill="True">
+                <dx:ThemedWindowIcon x:Name="PART_WindowIcon" Style="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowIconStyle}}" DockPanel.Dock="Left" />
+                <dx:ThemedWindowBackButton x:Name="PART_WindowBackButton" Style="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=BackButtonStyle}}" UseLayoutRounding="True" DockPanel.Dock="Left" />
+                <dx:ThemedWindowControlBoxBorder x:Name="PART_HeaderItemsAndButtons" UseLayoutRounding="True" DockPanel.Dock="Right" />
+                <dx:ThemedWindowTitle x:Name="PART_WindowTitle" TitleAlignment="{Binding Path=TitleAlignment, RelativeSource={RelativeSource AncestorType={x:Type dx:ThemedWindow}}}" Content="{Binding Path=Title, RelativeSource={RelativeSource AncestorType={x:Type dx:ThemedWindow}}}" VerticalAlignment="Center" />
+            </DockPanel>
+        </Border>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=ShowIcon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="False">
+                <Setter TargetName="PART_WindowIcon" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=ShowBackButton, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="True">
+                <Setter TargetName="PART_WindowBackButton" Property="Visibility" Value="Visible" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=ShowTitle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="False">
+                <Setter TargetName="PART_WindowTitle" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <MultiDataTrigger>
+                <MultiDataTrigger.Conditions>
+                    <Condition Binding="{Binding Path=ActualWindowKind, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="Ribbon" />
+                    <Condition Binding="{Binding Path=(dxcn:ThemedWindowsHelper.RibbonHeaderVisibility), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="Visible" />
+                    <Condition Binding="{Binding Path=(dxcn:ThemedWindowsHelper.RibbonControlVisibility), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="Visible" />
+                </MultiDataTrigger.Conditions>
+                <Setter TargetName="PART_WindowTitle" Property="Visibility" Value="Collapsed" />
+            </MultiDataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--ThemedWindowHeaderTabbedTemplate-->
+    <ControlTemplate x:Key="ThemedWindowHeaderTabbedTemplate" TargetType="{x:Type dx:ThemedWindowHeader}">
+        <Border x:Name="PART_HeaderRoot" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" Opacity="{TemplateBinding Opacity}">
+            <DockPanel x:Name="PART_HeaderDock" LastChildFill="True">
+                <dx:ThemedWindowIcon x:Name="PART_WindowIcon" Style="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowIconStyle}}" DockPanel.Dock="Left" />
+                <dx:ThemedWindowControlBoxBorder x:Name="PART_HeaderItemsAndButtons" DockPanel.Dock="Right" />
+                <dx:ThemedWindowTitle x:Name="PART_WindowTitle" TitleAlignment="{Binding Path=TitleAlignment, RelativeSource={RelativeSource AncestorType={x:Type dx:ThemedWindow}}}" Content="{Binding Path=Title, RelativeSource={RelativeSource AncestorType={x:Type dx:ThemedWindow}}}" VerticalAlignment="Center" />
+                <dx:ThemedWindowHiddenBorder x:Name="PART_TabControlHeaderHiddenBorder" DockPanel.Dock="Right" />
+            </DockPanel>
+        </Border>
+        <ControlTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path=ShowIcon, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="False">
+                <Setter TargetName="PART_WindowIcon" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=ShowTitle, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="False">
+                <Setter TargetName="PART_WindowTitle" Property="Visibility" Value="Collapsed" />
+            </DataTrigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <!--ThemedWindowTemplate-->
+    <ControlTemplate x:Key="ThemedWindowTemplate" TargetType="{x:Type dx:ThemedWindow}">
+        <dx:ThemedWindowRoot x:Name="PART_WindowRoot">
+            <AdornerDecorator x:Name="PART_WindowAdornerDecorator">
+                <dx:ThemedWindowBorder x:Name="PART_WindowBorder" Background="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowActiveBackground}}" BorderBrush="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowActiveBorderBrush}}" BorderThickness="{Binding Path=BorderThickness, RelativeSource={RelativeSource TemplatedParent}}">
+                    <DockPanel x:Name="PART_WindowHeaderContentAndStatusPanel" LastChildFill="True">
+                        <Border x:Name="PART_StatusPanel" Visibility="Collapsed" DockPanel.Dock="Bottom" Height="16" Background="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowActiveBackground}}" />
+                        <DockPanel x:Name="PART_WindowHeaderAndContent" DockPanel.Dock="Top" LastChildFill="True">
+                            <dx:ThemedWindowHeader x:Name="PART_HeaderBorder" Height="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=(dxcn:WindowChrome.CaptionHeight)}" DockPanel.Dock="Top" />
+                            <Border x:Name="PART_ContentBackgroundBorder" Background="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowActiveContentBackground}}" BorderBrush="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowActiveContentBorderBrush}}" BorderThickness="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowContentBorderThickness}}" Margin="{Binding Path=Padding, RelativeSource={RelativeSource TemplatedParent}}">
+                                <ContentPresenter x:Name="PART_WindowContentPresenter" DockPanel.Dock="Bottom" />
+                            </Border>
+                        </DockPanel>
+                    </DockPanel>
+                </dx:ThemedWindowBorder>
+            </AdornerDecorator>
+            <Thumb x:Name="PART_SizeGrip" Cursor="SizeNWSE" Width="16" Height="16" Template="{DynamicResource {dxt:FloatingContainerThemeKey IsVisibleInBlend=True, ResourceKey=FloatingContainerSizeGripTemplate}}" VerticalAlignment="Bottom" HorizontalAlignment="Right" Visibility="Collapsed" Margin="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=SizeGripMargin}}" />
+        </dx:ThemedWindowRoot>
+        <ControlTemplate.Triggers>
+            <Trigger Property="ShowStatusPanel" Value="True">
+                <Setter TargetName="PART_StatusPanel" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="ResizeMode" Value="CanResizeWithGrip">
+                <Setter TargetName="PART_SizeGrip" Property="Visibility" Value="Visible" />
+            </Trigger>
+            <Trigger Property="WindowState" Value="Maximized">
+                <Setter TargetName="PART_WindowRoot" Property="Margin" Value="{Binding Path=BorderThickness, RelativeSource={RelativeSource TemplatedParent}, Converter={dx:WindowBorderThicknessConverter}}" />
+                <Setter TargetName="PART_SizeGrip" Property="Visibility" Value="Collapsed" />
+            </Trigger>
+            <!--<Trigger Property="IsActive" Value="False">
+                <Setter TargetName="PART_WindowBorder" Property="Background" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveBackground}}"/>
+                <Setter TargetName="PART_WindowBorder" Property="BorderBrush" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveBorderBrush}}"/>
+                <Setter TargetName="PART_ContentBackgroundBorder" Property="Background" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveContentBackground}}"/>
+                <Setter TargetName="PART_ContentBackgroundBorder" Property="BorderBrush" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveContentBorderBrush}}"/>
+                <Setter TargetName="PART_HeaderBorder" Property="Background" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveHeaderBackground}}"/>
+                <Setter TargetName="PART_HeaderBorder" Property="Opacity" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveHeaderOpacity}}"/>
+            </Trigger>-->
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsActive" Value="False" />
+                    <Condition Property="dxcn:WindowButtonHelper.IsActiveAppearance" Value="False" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter TargetName="PART_WindowBorder" Property="Background" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveBackground}}" />
+                    <Setter TargetName="PART_WindowBorder" Property="BorderBrush" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveBorderBrush}}" />
+                    <Setter TargetName="PART_ContentBackgroundBorder" Property="Background" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveContentBackground}}" />
+                    <Setter TargetName="PART_ContentBackgroundBorder" Property="BorderBrush" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveContentBorderBrush}}" />
+                    <Setter TargetName="PART_HeaderBorder" Property="Background" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveHeaderBackground}}" />
+                    <Setter TargetName="PART_HeaderBorder" Property="Opacity" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveHeaderOpacity}}" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <MultiTrigger>
+                <MultiTrigger.Conditions>
+                    <Condition Property="IsActive" Value="False" />
+                    <Condition Property="dxcn:WindowButtonHelper.IsActiveAppearance" Value="False" />
+                    <Condition Property="ActualWindowKind" Value="Ribbon" />
+                </MultiTrigger.Conditions>
+                <MultiTrigger.Setters>
+                    <Setter TargetName="PART_HeaderBorder" Property="Background" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowRibbonInactiveHeaderBackground}}" />
+                    <Setter TargetName="PART_HeaderBorder" Property="Opacity" Value="1" />
+                </MultiTrigger.Setters>
+            </MultiTrigger>
+            <Trigger Property="ActualWindowKind" Value="Tabbed">
+                <Setter TargetName="PART_ContentBackgroundBorder" Property="Background" Value="Transparent" />
+                <Setter TargetName="PART_ContentBackgroundBorder" Property="BorderBrush" Value="Transparent" />
+                <Setter TargetName="PART_ContentBackgroundBorder" Property="BorderThickness" Value="0" />
+            </Trigger>
+            <Trigger Property="ActualWindowKind" Value="Ribbon">
+                <Setter TargetName="PART_ContentBackgroundBorder" Property="BorderThickness" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowRibbonContentBorderThickness}}" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+
+    <!--ThemedWindowIconStyle-->
+    <Style x:Key="{dxt:ThemedWindowThemeKey ResourceKey=WindowIconStyle}" TargetType="{x:Type dx:ThemedWindowIcon}">
+        <Setter Property="Visibility" Value="Visible" />
+        <Setter Property="Width" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowIconWidth}}" />
+        <Setter Property="Height" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowIconHeight}}" />
+        <Setter Property="Margin" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowIconMargin}}" />
+        <Setter Property="IsTabStop" Value="False" />
+        <Setter Property="Template" Value="{StaticResource ThemedWindowIconTemplate}" />
+        <Setter Property="dxcn:WindowChrome.IsHitTestVisibleInChrome" Value="True" />
+    </Style>
+    <!--ThemedWindowStyle-->
+    <Style x:Key="{dxt:ThemedWindowThemeKey ResourceKey=WindowStyle}" TargetType="{x:Type dx:ThemedWindow}">
+        <Setter Property="Template" Value="{StaticResource ThemedWindowTemplate}" />
+        <Setter Property="Padding" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowNormalPadding}}" />
+        <Setter Property="Foreground" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowContentForeground}}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowBorderThickness}}" />
+        <Setter Property="dxcn:WindowChrome.CaptionHeight" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowHeaderHeight}}" />                
+        <Setter Property="dxcn:WindowChrome.ResizeBorderThickness" Value="{Binding RelativeSource={RelativeSource Self}, Path=ResizeBorderThickness}" />
+        <Setter Property="dxcn:WindowChrome.IsTouchMode" Value="{Binding RelativeSource={RelativeSource Self}, Path=(dx:ThemeManager.IsTouchEnabled)}" />
+        <Setter Property="dxcn:WindowChrome.WindowChrome">
+            <Setter.Value>
+                <dxcn:WindowChrome />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="dx:HeaderItemControl.CommonTemplateProvider" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=HeaderItemControlCommonTemplateProvider}}" />
+        <Setter Property="dx:HeaderItemControl.CloseTemplateProvider" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=HeaderItemControlCloseTemplateProvider}}" />
+        <!--<Setter Property="dx:DropShadowChrome.DropShadowChrome">
+            <Setter.Value>
+                <dx:DropShadowChrome ShadowActiveBrush="#FFED2207" ShadowInactiveBrush="#FF0780EB"/>
+            </Setter.Value>
+        </Setter>-->
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=ActualWindowKind, RelativeSource={RelativeSource Self}}" Value="Ribbon">
+                <Setter Property="Padding" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowRibbonPadding}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=WindowStyle, RelativeSource={RelativeSource Self}}" Value="ToolWindow">
+                <Setter Property="ShowIcon" Value="False" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    <!--ThemedWindowControlBoxBorderStyle-->
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.ThemedWindowControlBoxBorder}" TargetType="{x:Type dx:ThemedWindowControlBoxBorder}">
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Template" Value="{StaticResource ThemedWindowControlBoxTempalte}" />
+        <Setter Property="Background" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=HeaderControlBoxBackground}}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=HeaderControlBoxBorderThickness}}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=HeaderControlBoxBorderBrush}}" />
+        <Setter Property="VerticalAlignment" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=HeaderControlBoxVerticalAnigment}}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
+    </Style>
+    <!--ThemedWindowTitleStyle-->
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.ThemedWindowTitle}" TargetType="{x:Type dx:ThemedWindowTitle}">
+        <Setter Property="Template" Value="{StaticResource ThemedWindowTitleTemplate}" />
+        <Setter Property="TitleAlignment" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowTitleAlignment}}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="IsTabStop" Value="False" />
+    </Style>
+    <!--ThemedWindowHeaderStyle-->
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Core.ThemedWindowHeader}" TargetType="{x:Type dx:ThemedWindowHeader}">
+        <Setter Property="Background" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowActiveHeaderBackground}}" />
+        <Setter Property="Padding" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=HeaderNormalPadding}}" />
+        <Setter Property="Template" Value="{StaticResource ThemedWindowHeaderTemplate}" />
+        <Setter Property="Focusable" Value="False" />
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding Path=ActualWindowKind, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="Tabbed">
+                <Setter Property="Template" Value="{StaticResource ThemedWindowHeaderTabbedTemplate}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=ActualWindowKind, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="Ribbon">
+                <Setter Property="Padding" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=HeaderRibbonPadding}}" />
+            </DataTrigger>
+            <DataTrigger Binding="{Binding Path=ActualWindowKind, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dx:ThemedWindow}}}" Value="Ribbon">
+                <Setter Property="Background" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowRibbonActiveHeaderBackground}}" />
+                <Setter Property="Foreground" Value="{DynamicResource {dxt:ThemedWindowThemeKey ResourceKey=WindowTitleForeground}}" />
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+    
+    <!--CommonTemplateProvider-->
+    <dx:CommonHeaderItemControlTemplateProvider x:Key="{dxt:ThemedWindowThemeKey ResourceKey=HeaderItemControlCommonTemplateProvider}" HeaderItemControlStyle="{StaticResource ResourceKey={dxt:ThemedWindowHeaderItemsThemeKey ResourceKey=HeaderButtonStyle}}" NormalBackgroundTemplate="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonBackgroundNormalState}}" MouseOverBackgroundTemplate="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonBackgroundMouseOverState}}" PressedBackgroundTemplate="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonBackgroundPressedState}}" MinimizeGlyphTemplate="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMinimizeButtonGlyph}}" MaximizeGlyphTemplate="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerMaximizeButtonGlyph}}" RestoreGlyphTemplate="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerRestoreButtonGlyph}}" NormalForeground="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonForegroundNormalState}}" MouseOverForeground="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonForegroundMouseOverState}}" PressedForeground="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonForegroundPressedState}}" />
+
+    <!--CloseTemplateProvider-->
+    <dx:CloseHeaderItemControlTemplateProvider x:Key="{dxt:ThemedWindowThemeKey ResourceKey=HeaderItemControlCloseTemplateProvider}" HeaderItemControlStyle="{StaticResource ResourceKey={dxt:ThemedWindowHeaderItemsThemeKey ResourceKey=HeaderCloseButtonStyle}}" CloseGlyphTemplate="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonGlyph}}" NormalBackgroundTemplate="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonBackgroundNormalState}}" MouseOverBackgroundTemplate="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonBackgroundMouseOverState}}" PressedBackgroundTemplate="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonBackgroundPressedState}}" NormalForeground="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonForegroundNormalState}}" MouseOverForeground="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonForegroundMouseOverState}}" PressedForeground="{StaticResource ResourceKey={dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonForegroundPressedState}}" />
+</ResourceDictionary>

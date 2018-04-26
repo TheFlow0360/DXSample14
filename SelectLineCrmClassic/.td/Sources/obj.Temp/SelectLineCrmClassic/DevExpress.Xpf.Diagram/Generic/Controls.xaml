@@ -1,0 +1,313 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdiag="http://schemas.devexpress.com/winfx/2008/xaml/diagram" xmlns:dxdiagn="http://schemas.devexpress.com/winfx/2008/xaml/diagram/internal" xmlns:dxdiagt="http://schemas.devexpress.com/winfx/2008/xaml/diagram/themekeys" xmlns:dxdiagcore="clr-namespace:DevExpress.Diagram.Core;assembly=DevExpress.Diagram.v17.2.Core" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <Size x:Key="{dxdiagt:ControlsThemeKeys ResourceKey=DiagramConnectorArrowSize}">7,7</Size>
+
+    <sys:Double x:Key="{dxdiagt:ControlsThemeKeys ResourceKey=DragPreviewOpacity}">0.4</sys:Double>
+
+    <sys:Double x:Key="{dxdiagt:RulerThemeKey ResourceKey=ScaleFontSize}">10</sys:Double>
+
+    <Thickness x:Key="{dxdiagt:DiagramToolboxControlThemeKey ResourceKey=StencilGroupMargin}">3,3,2,2</Thickness>
+    <sys:Double x:Key="{dxdiagt:DiagramToolboxControlThemeKey ResourceKey=ShapePresenterSize}">46</sys:Double>
+    <sys:Double x:Key="{dxdiagt:DiagramToolboxControlThemeKey ResourceKey=ShapeDescriptionWidth}">73</sys:Double>
+
+    <SolidColorBrush x:Key="{dxdiagt:DiagramControlThemeKeys ResourceKey=PageBackground}" Color="White" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.Native.LayersHost}" TargetType="{x:Type dxdiagn:LayersHost}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;15;6" /><Setter Property="Background" Value="Transparent" />
+        <Setter Property="dx:WpfSvgPalette.Palette">
+            <Setter.Value>
+                <dxcore_unique_xmlns:WpfSvgPalette OverridesThemeColors="True" />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiagn:LayersHost}">
+                    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;25;22">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        <ContentControl Grid.Column="1" Grid.Row="1" Template="{DynamicResource {dxdiagt:DiagramControlThemeKeys ResourceKey=BackgroundTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;34;26">
+                            <Canvas x:Name="DiagramArea" Background="Transparent" ClipToBounds="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;35;30" />
+                        </ContentControl>
+                        <dx:DXBorder Name="Background" BorderThickness="0,0,0,0" BorderBrush="{DynamicResource {dxdiagt:RulerThemeKey ResourceKey=BorderBrush}}" Background="{DynamicResource {dxdiagt:RulerThemeKey ResourceKey=HorizontalBackground}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;37;26" />
+                        <dx:DXBorder Name="HorizontalRulerArea" Grid.Column="1" Padding="0,4,0,0" Background="{DynamicResource {dxdiagt:RulerThemeKey ResourceKey=HorizontalBackground}}" BorderThickness="0,0,0,1" BorderBrush="{DynamicResource {dxdiagt:RulerThemeKey ResourceKey=BorderBrush}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;38;26" />
+                        <dx:DXBorder Name="VerticalRulerArea" Grid.Row="1" Padding="4,0,0,0" Background="{DynamicResource {dxdiagt:RulerThemeKey ResourceKey=VerticalBackground}}" BorderThickness="0,0,1,0" BorderBrush="{DynamicResource {dxdiagt:RulerThemeKey ResourceKey=BorderBrush}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;39;26" />
+                        <dx:DXBorder Name="LeftTopBackground" Background="{TemplateBinding Background}" Width="{DynamicResource {dxdiagt:RulerThemeKey ResourceKey=Size}}" Height="{DynamicResource {dxdiagt:RulerThemeKey ResourceKey=Size}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;40;26" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=ShowRulers, RelativeSource={RelativeSource AncestorType=dxdiag:DiagramControl}}" Value="False">
+                            <Setter TargetName="HorizontalRulerArea" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="VerticalRulerArea" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="LeftTopBackground" Property="Visibility" Value="Collapsed" />
+                            <Setter TargetName="Background" Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.DiagramShape}" TargetType="{x:Type dxdiag:DiagramShape}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;54;6" /><Setter Property="MinWidth" Value="{x:Static dxdiagcore:DiagramItemController.ItemMinSize}" />
+        <Setter Property="MinHeight" Value="{x:Static dxdiagcore:DiagramItemController.ItemMinSize}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:DiagramShape}">
+                    <dxdiag:ShapePresenter x:Name="ShapePresenter" Content="{TemplateBinding Content}" ContentPadding="{TemplateBinding Padding}" ShowContent="True" ContentBackground="{TemplateBinding ContentBackground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Stroke="{TemplateBinding Stroke}" StrokeThickness="{TemplateBinding StrokeThickness}" StrokeDashArray="{TemplateBinding StrokeDashArray}" Background="{TemplateBinding Background}" Shape="{TemplateBinding ShapeGeometry}" EditorBounds="{TemplateBinding EditorBounds}" />
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsTextEditMode" Value="True">
+                            <Trigger.Setters>
+                                <Setter TargetName="ShapePresenter" Property="ShowContent" Value="False" />
+                            </Trigger.Setters>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.BaseDiagramContainer}" TargetType="{x:Type dxdiag:BaseDiagramContainer}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;74;6" /><Setter Property="MinWidth" Value="{x:Static dxdiagcore:DiagramItemController.ContainerMinSize}" />
+        <Setter Property="MinHeight" Value="{x:Static dxdiagcore:DiagramItemController.ContainerMinSize}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:BaseDiagramContainer}">
+                    <dx:DXBorder x:Name="Border" Background="{TemplateBinding Background}" Padding="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;80;22">
+                        <Canvas x:Name="ItemsPanel" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;81;26" />
+                    </dx:DXBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.DiagramContainer}" TargetType="{x:Type dxdiag:DiagramContainer}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.BaseDiagramContainer}}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;87;6" /><Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:DiagramContainer}">
+                    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;93;22">
+                        <dxdiag:ShapePresenter x:Name="ShapePresenter" Content="{TemplateBinding Header}" ShowContent="True" ContentPadding="{TemplateBinding HeaderPadding}" ContentBackground="{TemplateBinding ContentBackground}" HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}" Stroke="{TemplateBinding Stroke}" StrokeThickness="{TemplateBinding StrokeThickness}" StrokeDashArray="{TemplateBinding StrokeDashArray}" Background="{TemplateBinding Background}" Shape="{TemplateBinding ShapeGeometry}" EditorBounds="{TemplateBinding EditorBounds}" />
+                        <Canvas x:Name="ItemsPanel" Margin="{TemplateBinding ActualPadding}" ClipToBounds="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;95;26" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsTextEditMode" Value="True">
+                            <Trigger.Setters>
+                                <Setter TargetName="ShapePresenter" Property="ShowContent" Value="False" />
+                            </Trigger.Setters>
+                        </Trigger>
+                        <Trigger Property="ShowHeader" Value="False">
+                            <Trigger.Setters>
+                                <Setter TargetName="ShapePresenter" Property="ShowContent" Value="False" />
+                            </Trigger.Setters>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.DiagramContentItem}" TargetType="{x:Type dxdiag:DiagramContentItem}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;114;6" /><Setter Property="MinWidth" Value="{x:Static dxdiagcore:DiagramItemController.ItemMinSize}" />
+        <Setter Property="MinHeight" Value="{x:Static dxdiagcore:DiagramItemController.ItemMinSize}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:DiagramContentItem}">
+                    <dx:DXBorder Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" CornerRadius="{TemplateBinding CornerRadius}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;120;22">
+                        <ContentPresenter Content="{TemplateBinding Content}" ContentTemplate="{TemplateBinding ContentTemplate}" ContentTemplateSelector="{TemplateBinding ContentTemplateSelector}" Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;121;26" />
+                    </dx:DXBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.DiagramConnector}" TargetType="{x:Type dxdiag:DiagramConnector}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;127;6" /><Setter Property="BeginArrowSize" Value="{DynamicResource {dxdiagt:ControlsThemeKeys ResourceKey=DiagramConnectorArrowSize}}" />
+        <Setter Property="EndArrowSize" Value="{DynamicResource {dxdiagt:ControlsThemeKeys ResourceKey=DiagramConnectorArrowSize}}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="ContentBackground" Value="White" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:DiagramConnector}">
+                    <dxdiag:ScaleCanvas x:Name="PART_ScaleCanvas" Scale="1">
+                        <TextBlock x:Name="Text" Text="{TemplateBinding Content}" Background="{TemplateBinding ContentBackground}" Foreground="{TemplateBinding Foreground}" dxdiag:ScaleCanvas.Position="{TemplateBinding TextPosition}" TextWrapping="Wrap" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;137;26" />
+                    </dxdiag:ScaleCanvas>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsTextEditMode" Value="True">
+                            <Trigger.Setters>
+                                <Setter TargetName="Text" Property="Visibility" Value="Hidden" />
+                            </Trigger.Setters>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.DiagramImage}" TargetType="{x:Type dxdiag:DiagramImage}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;150;6" /><Setter Property="MinWidth" Value="{x:Static dxdiagcore:DiagramItemController.ItemMinSize}" />
+        <Setter Property="MinHeight" Value="{x:Static dxdiagcore:DiagramItemController.ItemMinSize}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="TextAlignment" Value="Center" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:DiagramImage}">
+                    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;158;22">
+                        <dxdiag:ShapePresenter x:Name="ShapePresenter" ClipToBounds="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Shape="{TemplateBinding PlaceholderGeometry}" RenderTransform="{TemplateBinding ImageTransform}" />
+                        <TextBlock Name="PART_TextBlock" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;160;26" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.DiagramRoot}" TargetType="{x:Type dxdiag:DiagramRoot}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;166;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:DiagramRoot}">
+                    <Canvas x:Name="ItemsPanel" Background="Transparent" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;170;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.DragPreview}" TargetType="{x:Type dxdiag:DragPreview}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;175;6" /><Setter Property="Opacity" Value="{DynamicResource {dxdiagt:ControlsThemeKeys ResourceKey=DragPreviewOpacity}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:DragPreview}">
+                    <dx:DXBorder Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;180;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.SelectionPreview}" TargetType="{x:Type dxdiag:SelectionPreview}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;185;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:SelectionPreview}">
+                    <Rectangle Fill="{DynamicResource {dxdiagt:ControlsThemeKeys ResourceKey=SelectionPreviewBackground}}" Stroke="{DynamicResource {dxdiagt:ControlsThemeKeys ResourceKey=SelectionPreviewBorderBrush}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;189;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.ScaleItemsControl}" TargetType="dxdiag:ScaleItemsControl">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;194;6" /><Setter Property="ItemsPanel">
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <dxdiag:ScaleCanvas Scale="{Binding Path=(dxdiag:AdornerLayer.Zoom), RelativeSource={RelativeSource TemplatedParent}}" />
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxdiag:ScaleItemsControl">
+                    <ItemsPresenter dxdiag:AdornerLayer.Zoom="{TemplateBinding Scale}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;205;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Pen x:Key="PageBackgroundPen" Brush="#FFB3B3B3" Thickness="1">
+        <Pen.DashStyle>
+            <DashStyle Offset="3" Dashes="8" />
+        </Pen.DashStyle>
+    </Pen>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.PageBackgroundControl}" TargetType="{x:Type dxdiag:PageBackgroundControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;215;6" /><Setter Property="Background" Value="{DynamicResource {dxdiagt:DiagramControlThemeKeys ResourceKey=PageBackground}}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource {dxdiagt:ControlsThemeKeys ResourceKey=PageBorderThickness}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:PageBackgroundControl}">
+                    <ContentControl Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Template="{DynamicResource {dxdiagt:DiagramControlThemeKeys ResourceKey=PageBackgroundTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;221;22">
+                        <Grid Margin="{Binding Path=BorderThickness, RelativeSource={RelativeSource TemplatedParent}, Converter={dxdiagn:InvertThicknessConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;222;26">
+                            <Viewbox dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;223;30">
+                                <dxdiag:PagesBackgroundControl x:Name="PART_PageBackground" Diagram="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram}" Tag="{Binding Path=(dxdiag:AdornerLayer.Viewbox), RelativeSource={RelativeSource TemplatedParent}}" Width="{Binding Path=Tag.Width, RelativeSource={RelativeSource Self}}" Height="{Binding Path=Tag.Height, RelativeSource={RelativeSource Self}}" BackgroundTemplate="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.BackgroundTemplate}" PageBackgroundTemplate="{Binding Path=Diagram.DiagramPageBackgroundTemplate, RelativeSource={RelativeSource TemplatedParent}}" PageBackgroundTemplateSelector="{Binding Path=Diagram.DiagramPageBackgroundTemplateSelector, RelativeSource={RelativeSource TemplatedParent}}" ItemsOffset="{Binding Path=(dxdiag:AdornerLayer.Location), RelativeSource={RelativeSource TemplatedParent}}" ZoomFactor="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.ZoomFactor}" PageMargin="{Binding Path=Diagram.PageMargin, RelativeSource={RelativeSource TemplatedParent}}" />
+                            </Viewbox>
+                            <dxdiagn:GridPainter x:Name="PART_GridPainter" PageMargin="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.PageMargin}" LineBrush="{DynamicResource {dxdiagt:ControlsThemeKeys ResourceKey=GridLineBrush}}" GridSize="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.GridSize}" ZoomFactor="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.ZoomFactor}" MeasureUnit="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.MeasureUnit}" PageSize="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.PageSize}" Location="{Binding Path=(dxdiag:AdornerLayer.Location), RelativeSource={RelativeSource TemplatedParent}}" Offset="{Binding Path=(dxdiag:AdornerLayer.Offset), RelativeSource={RelativeSource TemplatedParent}}" Viewport="{Binding Path=(dxdiag:AdornerLayer.Viewport), RelativeSource={RelativeSource TemplatedParent}}" />
+                            <dxdiag:PageBorderControl x:Name="PART_PageBorderControl" Margin="{Binding Path=BorderThickness, RelativeSource={RelativeSource TemplatedParent}}" ShowPageBreaks="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.ShowPageBreaks}" ZoomFactor="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.ZoomFactor}" PageMargin="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.PageMargin}" PageSize="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Diagram.PageSize}" Location="{Binding Path=(dxdiag:AdornerLayer.Location), RelativeSource={RelativeSource TemplatedParent}}" Pen="{StaticResource PageBackgroundPen}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;227;30">
+                            </dxdiag:PageBorderControl>
+                        </Grid>
+                    </ContentControl>
+                    <ControlTemplate.Triggers>
+                        <DataTrigger Binding="{Binding Path=ShowPageBreaks, RelativeSource={RelativeSource AncestorType=dxdiag:DiagramControl}}" Value="False">
+                            <Setter TargetName="PART_GridPainter" Property="PageMargin" Value="0" />
+                            <Setter TargetName="PART_PageBorderControl" Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=ShowGrid, RelativeSource={RelativeSource AncestorType=dxdiag:DiagramControl}}" Value="False">
+                            <Setter TargetName="PART_GridPainter" Property="Visibility" Value="Collapsed" />
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.PagesBackgroundControl}" TargetType="{x:Type dxdiag:PagesBackgroundControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;244;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:PagesBackgroundControl}">
+                    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;248;22">
+                        <ContentControl Name="BackgroundPresenter" Content="{TemplateBinding BackgroundInfo}" ContentTemplate="{TemplateBinding BackgroundTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;249;26" />
+                        <ItemsControl Name="PagesPresenter" ItemsSource="{TemplateBinding PagesInfo}" ItemTemplate="{TemplateBinding PageBackgroundTemplate}" ItemTemplateSelector="{TemplateBinding PageBackgroundTemplateSelector}" RenderTransform="{TemplateBinding ItemsTransform}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;250;26">
+                            <ItemsControl.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <Canvas dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;253;38" />
+                                </ItemsPanelTemplate>
+                            </ItemsControl.ItemsPanel>
+                            <ItemsControl.ItemContainerStyle>
+                                <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=ContentPresenter}" TargetType="ContentPresenter">
+                                    <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;257;34" /><Setter Property="Canvas.Left" Value="{Binding Left}" />
+                                    <Setter Property="Canvas.Top" Value="{Binding Top}" />
+                                    <Setter Property="Width" Value="{Binding Width}" />
+                                    <Setter Property="Height" Value="{Binding Height}" />
+                                </Style>
+                            </ItemsControl.ItemContainerStyle>
+                        </ItemsControl>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="BackgroundTemplate" Value="{x:Null}">
+                            <Setter TargetName="BackgroundPresenter" Property="Visibility" Value="Collapsed" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="PageBackgroundTemplate" Value="{x:Null}" />
+                                <Condition Property="PageBackgroundTemplateSelector" Value="{x:Null}" />
+                            </MultiTrigger.Conditions>
+                            <Setter TargetName="PagesPresenter" Property="Visibility" Value="Collapsed" />
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.ItemEditorControl}" TargetType="{x:Type dxdiag:ItemEditorControl}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;282;6" /><Setter Property="Foreground" Value="#FF6E6E6E" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:ItemEditorControl}">
+                    <Grid Background="White" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;287;22">
+                        <Rectangle Stroke="#FFB9B9B9" StrokeThickness="1" StrokeDashArray="2,2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;288;26" />
+                        <TextBox dxcore_unique_xmlns:ThemeManager.ThemeName="None" BorderThickness="0" Background="Transparent" x:Name="Editor" TextWrapping="Wrap" AcceptsReturn="True" AcceptsTab="True" Foreground="{TemplateBinding Foreground}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;289;26" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.Native.ShapeGeometryPresenter}" TargetType="{x:Type dxdiagn:ShapeGeometryPresenter}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;295;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiagn:ShapeGeometryPresenter}">
+                    <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;299;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.ShapePresenter}" TargetType="{x:Type dxdiag:ShapePresenter}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\Controls.xaml;304;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type dxdiag:ShapePresenter}">
+                    <TextBlock x:Name="Text" TextWrapping="Wrap" Margin="{TemplateBinding ContentPadding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\Controls.xaml;308;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

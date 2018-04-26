@@ -1,0 +1,19 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxschv="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UICore.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="MoreButtonsControl.DefaultTemplate" TargetType="dxschv:MoreButtonsControl">
+        <DockPanel LastChildFill="False">
+            <Button DockPanel.Dock="Top" HorizontalAlignment="Right" Style="{DynamicResource {dxscht:SchedulerButtonThemeKey ResourceKey=MoreButton_UpStyle}}" Visibility="{TemplateBinding UpButtonVisibility}" Command="{TemplateBinding GoUpCommand}" />
+            <Button DockPanel.Dock="Bottom" HorizontalAlignment="Right" Style="{DynamicResource {dxscht:SchedulerButtonThemeKey ResourceKey=MoreButton_DownStyle}}" Visibility="{TemplateBinding DownButtonVisibility}" Command="{TemplateBinding GoDownCommand}" />
+        </DockPanel>
+    </ControlTemplate>
+
+    <Style x:Key="MoreButtonsControl.DefaultStyle" TargetType="dxschv:MoreButtonsControl">
+        <Setter Property="Template" Value="{StaticResource MoreButtonsControl.DefaultTemplate}" />
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,22 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.SelectLineBase.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/DXPanel.xaml" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/Generic.XAML}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Bars/Themes/SelectLineBase.XAML}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/TabControl/Themes/SelectLineBase.XAML}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/GroupBoxAndGroupFrame.XAML}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/Generic.XAML}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/SelectLineBase.XAML}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControlStyles.XAML}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/SelectLineBase/Window.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/SelectLineBase/SuperTip.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/SelectLineBase/UserControl.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/SelectLineBase/PopUp.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/SelectLineBase/PseudoWindow.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/SelectLineBase/CustomTemplates.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/SelectLineBase/SearchPanel.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/SelectLineBase/WaitIndicators.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/SelectLineBase/ThemedWindow.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dxc:ThemePartLoader Path=/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/SelectLineBase/DragDrop.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,348 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxschv="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/themekeys" xmlns:dxschc="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UICore.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="MoreButton.DefaultTemplate" TargetType="Button">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;9;10">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Unfocused" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="hover" Storyboard.TargetProperty="Opacity" To="0" Duration="{StaticResource Button.OpacityAnimation.Duration}" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="hover" Storyboard.TargetProperty="Opacity" To="1" Duration="{StaticResource Button.OpacityAnimation.Duration}" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="pressed" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="Opacity" To="0.35" Duration="0:0:0.0" />
+                            <DoubleAnimation Storyboard.TargetName="normal" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.0" />
+                            <DoubleAnimation Storyboard.TargetName="disabled" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.0" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dx:DXBorder x:Name="normal" Background="{StaticResource MoreButton.NormalBackground}" CornerRadius="{StaticResource MoreButton.CornerRadius}" BorderThickness="{StaticResource MoreButton.BorderThickness}" BorderBrush="{StaticResource MoreButton.NormalBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;40;14" />
+            <dx:DXBorder x:Name="hover" Opacity="0" Background="{StaticResource MoreButton.HoverBackground}" CornerRadius="{StaticResource MoreButton.CornerRadius}" BorderThickness="{StaticResource MoreButton.BorderThickness}" BorderBrush="{StaticResource MoreButton.HoverBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;41;14" />
+            <dx:DXBorder x:Name="pressed" Opacity="0" Background="{StaticResource MoreButton.PressedBackground}" CornerRadius="{StaticResource MoreButton.CornerRadius}" BorderThickness="{StaticResource MoreButton.BorderThickness}" BorderBrush="{StaticResource MoreButton.PressedBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;42;14" />
+            <dx:DXBorder x:Name="disabled" Opacity="0" Background="{StaticResource MoreButton.DisabledBackground}" CornerRadius="{StaticResource MoreButton.CornerRadius}" BorderThickness="{StaticResource MoreButton.BorderThickness}" BorderBrush="{StaticResource MoreButton.DisabledBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;43;14" />
+            <ContentPresenter x:Name="content" ContentSource="Content" Margin="{TemplateBinding Padding}" TextBlock.Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;44;14" />
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="NavigationButton.Backward.DefaultTemplate" TargetType="Button">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;48;10">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Unfocused" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="hover" Storyboard.TargetProperty="Opacity" To="0" Duration="{StaticResource Button.OpacityAnimation.Duration}" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="hover" Storyboard.TargetProperty="Opacity" To="1" Duration="{StaticResource Button.OpacityAnimation.Duration}" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="pressed" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="Opacity" To="0.35" Duration="0:0:0.0" />
+                            <DoubleAnimation Storyboard.TargetName="normal" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.0" />
+                            <DoubleAnimation Storyboard.TargetName="disabled" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.0" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dx:DXBorder x:Name="normal" Background="{StaticResource NavigationButton.NormalBackground}" CornerRadius="{StaticResource NavigationButton.Backward.CornerRadius}" BorderThickness="{StaticResource NavigationButton.BorderThickness}" BorderBrush="{StaticResource NavigationButton.NormalBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;79;14" />
+            <dx:DXBorder x:Name="hover" Opacity="0" Background="{StaticResource NavigationButton.HoverBackground}" CornerRadius="{StaticResource NavigationButton.Backward.CornerRadius}" BorderThickness="{StaticResource NavigationButton.BorderThickness}" BorderBrush="{StaticResource NavigationButton.HoverBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;80;14" />
+            <dx:DXBorder x:Name="pressed" Opacity="0" Background="{StaticResource NavigationButton.PressedBackground}" CornerRadius="{StaticResource NavigationButton.Backward.CornerRadius}" BorderThickness="{StaticResource NavigationButton.BorderThickness}" BorderBrush="{StaticResource NavigationButton.PressedBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;81;14" />
+            <dx:DXBorder x:Name="disabled" Opacity="0" Background="{StaticResource NavigationButton.DisabledBackground}" CornerRadius="{StaticResource NavigationButton.Backward.CornerRadius}" BorderThickness="{StaticResource NavigationButton.BorderThickness}" BorderBrush="{StaticResource NavigationButton.DisabledBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;82;14" />
+            <ContentPresenter x:Name="content" ContentSource="Content" Margin="{TemplateBinding Padding}" TextBlock.Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;83;14" />
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="NavigationButton.Forward.DefaultTemplate" TargetType="Button">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;87;10">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Unfocused" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="hover" Storyboard.TargetProperty="Opacity" To="0" Duration="{StaticResource Button.OpacityAnimation.Duration}" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="hover" Storyboard.TargetProperty="Opacity" To="1" Duration="{StaticResource Button.OpacityAnimation.Duration}" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="pressed" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="Opacity" To="0.35" Duration="0:0:0.0" />
+                            <DoubleAnimation Storyboard.TargetName="normal" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.0" />
+                            <DoubleAnimation Storyboard.TargetName="disabled" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.0" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dx:DXBorder x:Name="normal" Background="{StaticResource NavigationButton.NormalBackground}" CornerRadius="{StaticResource NavigationButton.Forward.CornerRadius}" BorderThickness="{StaticResource NavigationButton.BorderThickness}" BorderBrush="{StaticResource NavigationButton.NormalBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;118;14" />
+            <dx:DXBorder x:Name="hover" Opacity="0" Background="{StaticResource NavigationButton.HoverBackground}" CornerRadius="{StaticResource NavigationButton.Forward.CornerRadius}" BorderThickness="{StaticResource NavigationButton.BorderThickness}" BorderBrush="{StaticResource NavigationButton.HoverBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;119;14" />
+            <dx:DXBorder x:Name="pressed" Opacity="0" Background="{StaticResource NavigationButton.PressedBackground}" CornerRadius="{StaticResource NavigationButton.Forward.CornerRadius}" BorderThickness="{StaticResource NavigationButton.BorderThickness}" BorderBrush="{StaticResource NavigationButton.PressedBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;120;14" />
+            <dx:DXBorder x:Name="disabled" Opacity="0" Background="{StaticResource NavigationButton.DisabledBackground}" CornerRadius="{StaticResource NavigationButton.Forward.CornerRadius}" BorderThickness="{StaticResource NavigationButton.BorderThickness}" BorderBrush="{StaticResource NavigationButton.DisabledBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;121;14" />
+            <ContentPresenter x:Name="content" ContentSource="Content" Margin="{TemplateBinding Padding}" TextBlock.Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;122;14" />
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="ResourceNavigatorButton.DefaultTemplate" TargetType="Button">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;126;10">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="FocusStates">
+                    <VisualState x:Name="Focused" />
+                    <VisualState x:Name="Unfocused" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="hover" Storyboard.TargetProperty="Opacity" To="0" Duration="{StaticResource Button.OpacityAnimation.Duration}" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="MouseOver">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="hover" Storyboard.TargetProperty="Opacity" To="1" Duration="{StaticResource Button.OpacityAnimation.Duration}" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="pressed" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Storyboard.TargetName="content" Storyboard.TargetProperty="Opacity" To="0.35" Duration="0:0:0.0" />
+                            <DoubleAnimation Storyboard.TargetName="normal" Storyboard.TargetProperty="Opacity" To="0" Duration="0:0:0.0" />
+                            <DoubleAnimation Storyboard.TargetName="disabled" Storyboard.TargetProperty="Opacity" To="1" Duration="0:0:0.0" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dx:DXBorder x:Name="normal" Background="{StaticResource ResourceNavigatorButton.NormalBackground}" CornerRadius="{StaticResource ResourceNavigatorButton.CornerRadius}" BorderThickness="{StaticResource ResourceNavigatorButton.BorderThickness}" BorderBrush="{StaticResource ResourceNavigatorButton.NormalBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;157;14" />
+            <dx:DXBorder x:Name="hover" Opacity="0" Background="{StaticResource ResourceNavigatorButton.HoverBackground}" CornerRadius="{StaticResource ResourceNavigatorButton.CornerRadius}" BorderThickness="{StaticResource ResourceNavigatorButton.BorderThickness}" BorderBrush="{StaticResource ResourceNavigatorButton.HoverBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;158;14" />
+            <dx:DXBorder x:Name="pressed" Opacity="0" Background="{StaticResource ResourceNavigatorButton.PressedBackground}" CornerRadius="{StaticResource ResourceNavigatorButton.CornerRadius}" BorderThickness="{StaticResource ResourceNavigatorButton.BorderThickness}" BorderBrush="{StaticResource ResourceNavigatorButton.PressedBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;159;14" />
+            <dx:DXBorder x:Name="disabled" Opacity="0" Background="{StaticResource ResourceNavigatorButton.DisabledBackground}" CornerRadius="{StaticResource ResourceNavigatorButton.CornerRadius}" BorderThickness="{StaticResource ResourceNavigatorButton.BorderThickness}" BorderBrush="{StaticResource ResourceNavigatorButton.DisabledBorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;160;14" />
+            <ContentPresenter x:Name="content" ContentSource="Content" Margin="{TemplateBinding Padding}" TextBlock.Foreground="{TemplateBinding Foreground}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;161;14" />
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="MoreButton.BaseStyle" TargetType="Button">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;165;6" /><Setter Property="Padding" Value="0" />
+        <Setter Property="Template" Value="{StaticResource MoreButton.DefaultTemplate}" />
+        <Setter Property="Width" Value="{StaticResource MoreButton.Width}" />
+        <Setter Property="Height" Value="{StaticResource MoreButton.Height}" />
+        <Setter Property="Margin" Value="{StaticResource MoreButton.Margin}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="{StaticResource MoreButton.Normal.Foreground}" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="dxsch:HitTestBehavior.HitTestType" Value="MoreButton" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource MoreButton.Hover.Foreground}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource MoreButton.Pressed.Foreground}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="NavigationButton.BaseStyle" TargetType="Button">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;185;6" /><Setter Property="Padding" Value="0" />
+        <Setter Property="Width" Value="{StaticResource NavigationButton.Width}" />
+        <Setter Property="Height" Value="{StaticResource NavigationButton.Height}" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="{StaticResource NavigationButton.Normal.Foreground}" />
+        <Setter Property="dxsch:HitTestBehavior.HitTestType" Value="NavigationButton" />
+        <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource NavigationButton.Hover.Foreground}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource NavigationButton.Pressed.Foreground}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="ResourceNavigatorButton.BaseStyle" TargetType="Button">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;204;6" /><Setter Property="Padding" Value="0" />
+        <Setter Property="Template" Value="{StaticResource ResourceNavigatorButton.DefaultTemplate}" />
+        <Setter Property="Foreground" Value="{StaticResource ResourceNavigatorButton.Normal.Foreground}" />
+        <Setter Property="Width" Value="{StaticResource ResourceNavigatorButton.Width}" />
+        <Setter Property="Height" Value="{StaticResource ResourceNavigatorButton.Height}" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource ResourceNavigatorButton.Hover.Foreground}" />
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Foreground" Value="{StaticResource ResourceNavigatorButton.Pressed.Foreground}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=MoreButton_UpStyle}" TargetType="Button" BasedOn="{StaticResource MoreButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;223;6" /><Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Up}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;227;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=MoreButton_DownStyle}" TargetType="Button" BasedOn="{StaticResource MoreButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;232;6" /><Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Down}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;236;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=NavigationButton_BackwardStyle}" TargetType="Button" BasedOn="{StaticResource NavigationButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;244;6" /><Setter Property="Template" Value="{StaticResource NavigationButton.Backward.DefaultTemplate}" />
+        <Setter Property="Margin" Value="{StaticResource NavigationButton.Backward.Margin}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Left}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;250;22" />
+                </DataTemplate>
+            </Setter.Value>            
+        </Setter>       
+    </Style>
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=NavigationButton_ForwardStyle}" TargetType="Button" BasedOn="{StaticResource NavigationButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;255;6" /><Setter Property="Template" Value="{StaticResource NavigationButton.Forward.DefaultTemplate}" />
+        <Setter Property="Margin" Value="{StaticResource NavigationButton.Forward.Margin}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Right}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;261;22" />                    
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_FirstStyle}" TargetType="Button" BasedOn="{StaticResource ResourceNavigatorButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;267;6" /><Setter Property="ToolTip" Value="{dxschc:SchedulerLocalizer StringId=Caption_FirstVisibleResources}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Navigation.First}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;272;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_PrevPageStyle}" TargetType="Button" BasedOn="{StaticResource ResourceNavigatorButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;277;6" /><Setter Property="ToolTip" Value="{dxschc:SchedulerLocalizer StringId=Caption_PrevVisibleResourcesPage}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Navigation.PrevPage}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;282;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_PrevItemStyle}" TargetType="Button" BasedOn="{StaticResource ResourceNavigatorButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;287;6" /><Setter Property="ToolTip" Value="{dxschc:SchedulerLocalizer StringId=Caption_PrevVisibleResources}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Navigation.PrevItem}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;292;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_NextItemStyle}" TargetType="Button" BasedOn="{StaticResource ResourceNavigatorButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;297;6" /><Setter Property="ToolTip" Value="{dxschc:SchedulerLocalizer StringId=Caption_NextVisibleResources}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Navigation.NextItem}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;302;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_NextPageStyle}" TargetType="Button" BasedOn="{StaticResource ResourceNavigatorButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;307;6" /><Setter Property="ToolTip" Value="{dxschc:SchedulerLocalizer StringId=Caption_NextVisibleResourcesPage}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Navigation.NextPage}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;312;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_LastStyle}" TargetType="Button" BasedOn="{StaticResource ResourceNavigatorButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;317;6" /><Setter Property="ToolTip" Value="{dxschc:SchedulerLocalizer StringId=Caption_LastVisibleResources}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Navigation.Last}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;322;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_PlusStyle}" TargetType="Button" BasedOn="{StaticResource ResourceNavigatorButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;327;6" /><Setter Property="ToolTip" Value="{dxschc:SchedulerLocalizer StringId=Caption_IncreaseVisibleResourcesCount}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Navigation.Plus}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;332;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerButtonThemeKey ResourceKey=ResourceNavigatorButton_MinusStyle}" TargetType="Button" BasedOn="{StaticResource ResourceNavigatorButton.BaseStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;337;6" /><Setter Property="ToolTip" Value="{dxschc:SchedulerLocalizer StringId=Caption_DecreaseVisibleResourcesCount}" />
+        <Setter Property="ContentTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Path Style="{StaticResource UIShape.Navigation.Minus}" Fill="{Binding '(TextBlock.Foreground)', RelativeSource={RelativeSource Self}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\Controls\Buttons.xaml;342;22" />
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,75 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/charts/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/charts" xmlns:media3D="clr-namespace:System.Windows.Media.Media3D;assembly=PresentationCore" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <media3D:MaterialGroup x:Key="DefaultXYDiagramMaterial">
+        <media3D:DiffuseMaterial />
+    </media3D:MaterialGroup>
+
+    <Style x:Key="Diagram3DStyle" TargetType="local:Diagram3D">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;7;6" /><Setter Property="local:XYDiagram3D.Material" Value="{StaticResource DefaultXYDiagramMaterial}" />
+        <Setter Property="Background" Value="Transparent" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.XYDiagram3D}" TargetType="{x:Type local:XYDiagram3D}" BasedOn="{StaticResource Diagram3DStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;13;6" /><Setter Property="DomainBrush" Value="{DynamicResource {dxt:ChartBrushesThemeKey ResourceKey=Domain3DBrush}}" />
+        <Setter Property="Annotations" Value="{Binding RelativeSource={RelativeSource AncestorType=local:ChartControl}, Path=DiagramAnnotations}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:XYDiagram3D">
+                    <local:ChartContentControl x:Name="XYDiagram3DWrapper" Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Visibility="{TemplateBinding Visibility}" Template="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=XYDiagram3DWrapperTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;19;22">
+                        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;20;26">
+                            <local:VisualContainer Diagram="{Binding RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;21;30" />
+                            <local:ChartItemsControl ItemsSource="{Binding Annotations, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;22;30">
+                                <local:ChartItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <local:AnnotationLayoutPanel />
+                                    </ItemsPanelTemplate>
+                                </local:ChartItemsControl.ItemsPanel>
+                            </local:ChartItemsControl>
+                            <local:SelectionControl IsSelected="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectionInfo.IsSelected}" IsHighlighted="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectionInfo.IsHighlighted}" />
+                        </Grid>
+                    </local:ChartContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Charts.SimpleDiagram3D}" TargetType="{x:Type local:SimpleDiagram3D}" BasedOn="{StaticResource Diagram3DStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;37;6" /><Setter Property="local:XYDiagram3D.Material" Value="{StaticResource DefaultXYDiagramMaterial}" />
+        <Setter Property="Annotations" Value="{Binding RelativeSource={RelativeSource AncestorType=local:ChartControl}, Path=DiagramAnnotations}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type local:SimpleDiagram3D}">
+                    <local:ChartContentControl x:Name="SimpleDiagram3DWrapper" Padding="{TemplateBinding Padding}" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Visibility="{TemplateBinding Visibility}" Template="{DynamicResource {dxt:ChartControlThemeKey ResourceKey=SimpleDiagram3DWrapperTemplate}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;43;22">
+                        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;44;26">
+                            <local:SimpleDiagramItemsControl ItemsSource="{TemplateBinding Series}" DataContext="{Binding RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;45;30">
+                                <local:SimpleDiagramItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <local:SimpleDiagramPanel SimpleDiagram="{Binding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;48;42" />
+                                    </ItemsPanelTemplate>
+                                </local:SimpleDiagramItemsControl.ItemsPanel>
+                                <local:SimpleDiagramItemsControl.ItemTemplate>
+                                    <DataTemplate>
+                                        <local:TitlesLayoutControl Titles="{Binding Path=Content.Titles, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;53;42">
+                                            <local:TitlesLayoutControl.MasterElement>
+                                                <local:VisualContainer Diagram="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type local:Diagram}}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;55;50" />
+                                            </local:TitlesLayoutControl.MasterElement>
+                                        </local:TitlesLayoutControl>
+                                    </DataTemplate>
+                                </local:SimpleDiagramItemsControl.ItemTemplate>
+                            </local:SimpleDiagramItemsControl>
+                            <local:ChartItemsControl ItemsSource="{Binding Annotations, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Charts\Generic\Diagram3D.xaml;61;30">
+                                <local:ChartItemsControl.ItemsPanel>
+                                    <ItemsPanelTemplate>
+                                        <local:AnnotationLayoutPanel />
+                                    </ItemsPanelTemplate>
+                                </local:ChartItemsControl.ItemsPanel>
+                            </local:ChartItemsControl>
+                            <local:SelectionControl IsSelected="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectionInfo.IsSelected}" IsHighlighted="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=SelectionInfo.IsHighlighted}" />
+                        </Grid>
+                    </local:ChartContentControl>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

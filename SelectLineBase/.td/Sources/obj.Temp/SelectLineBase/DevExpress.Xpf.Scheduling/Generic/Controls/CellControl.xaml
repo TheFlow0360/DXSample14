@@ -1,0 +1,41 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxsche="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxschv="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UICore.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UICustom.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="MonthCellControl.ContentTemplate">
+        <dxschv:MonthCellDatePresenter Margin="{StaticResource MonthCellControl.HeaderMargin}" FontSize="{StaticResource MonthCellControl.HeaderFontSize}" />
+    </DataTemplate>
+    <DataTemplate x:Key="Touch.MonthCellControl.ContentTemplate">
+        <dxschv:MonthCellDatePresenter Margin="{StaticResource Touch.MonthCellControl.HeaderMargin}" FontSize="{StaticResource MonthCellControl.HeaderFontSize}" />
+    </DataTemplate>
+
+    <Style x:Key="CellControl.DefaultStyle" TargetType="dxschv:CellControl">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\CellControl.xaml;16;6" /><Setter Property="DefaultBrushSchema" Value="{StaticResource CellBrushSchema.Default}" />
+        <Setter Property="SelectedBackground" Value="{StaticResource CellControl.SelectionBackground}" />
+        <Setter Property="TextBlock.Foreground" Value="{StaticResource CellControl.Foreground}" />
+        <Setter Property="dxsch:HitTestBehavior.HitTestType" Value="Cell" />
+        <Setter Property="LeftBorderThickness" Value="1" />
+        <Setter Property="BottomBorderThickness" Value="1" />
+    </Style>
+    <Style x:Key="DayCellControl.DefaultStyle" TargetType="dxschv:DayCellControl" BasedOn="{StaticResource CellControl.DefaultStyle}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\CellControl.xaml;24;6" /></Style>
+    <Style x:Key="MonthCellControl.DefaultStyle" TargetType="dxschv:MonthCellControl" BasedOn="{StaticResource CellControl.DefaultStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\CellControl.xaml;25;6" /><Setter Property="TodayBorderBackground" Value="{StaticResource MonthCellControl.TodayBackground}" />
+        <Setter Property="TodayBorderThickness" Value="4" />
+        <Setter Property="ContentTemplate" Value="{StaticResource MonthCellControl.ContentTemplate}" />
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="ContentTemplate" Value="{StaticResource Touch.MonthCellControl.ContentTemplate}" />
+                <Setter Property="TodayBorderThickness" Value="8" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="TimelineCellControl.DefaultStyle" TargetType="dxschv:TimelineCellControl" BasedOn="{StaticResource CellControl.DefaultStyle}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\CellControl.xaml;36;6" /></Style>
+    <Style x:Key="AllDayCellControl.DefaultStyle" TargetType="dxschv:AllDayCellControl" BasedOn="{StaticResource CellControl.DefaultStyle}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\Controls\CellControl.xaml;37;6" /><Setter Property="dxsch:HitTestBehavior.HitTestType" Value="AllDayArea" />
+    </Style>
+
+</ResourceDictionary>

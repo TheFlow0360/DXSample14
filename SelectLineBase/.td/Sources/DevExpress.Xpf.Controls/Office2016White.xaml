@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/FadingButton.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/FlipView.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/PageView.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/SlideView.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/CommandButton.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/AppBar.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/MessageBox.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/Flyout.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/TouchNavigator.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/TileNavPane.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/WindowsUI/Office2016White/HamburgerMenu.xaml" />
+        
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Controls/Wizard/Office2016White/Colors.xaml" />        
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

@@ -1,0 +1,98 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxsch="http://schemas.devexpress.com/winfx/2008/xaml/scheduling" xmlns:dxschv="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxschp="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/visual" xmlns:dxscht="http://schemas.devexpress.com/winfx/2008/xaml/scheduling/themekeys" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UICore.xaml}" />
+        <dxdst:ResourceDictionaryEx Source="{dx:SchedulingResource UIPreset.xaml}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="EmptySeparator.DefaultTemplate">
+        <dx:DXBorder dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;9;10" />
+    </DataTemplate>
+    
+    <DataTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=DayView_BorderTemplate}">
+        <dx:DXBorder x:Name="border" BorderBrush="{StaticResource Scheduler.BorderBrush}" BorderThickness="{StaticResource DayView.BorderThickness}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;13;10" />
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path='(dxsch:SchedulerControl.ShowBorder)', RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="border" Property="BorderThickness" Value="{StaticResource DayView.InvisibleBorderThickness}" />
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=MonthView_BorderTemplate}">
+        <dx:DXBorder x:Name="border" BorderBrush="{StaticResource Scheduler.BorderBrush}" BorderThickness="{StaticResource MonthView.BorderThickness}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;21;10" />
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path='(dxsch:SchedulerControl.ShowBorder)', RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="border" Property="BorderThickness" Value="{StaticResource MonthView.InvisibleBorderThickness}" />
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=TimelineView_BorderTemplate}">
+        <dx:DXBorder x:Name="border" BorderBrush="{StaticResource Scheduler.BorderBrush}" BorderThickness="{StaticResource MonthView.BorderThickness}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;29;10" />
+        <DataTemplate.Triggers>
+            <DataTrigger Binding="{Binding Path='(dxsch:SchedulerControl.ShowBorder)', RelativeSource={RelativeSource Self}}" Value="False">
+                <Setter TargetName="border" Property="BorderThickness" Value="{StaticResource MonthView.InvisibleBorderThickness}" />
+            </DataTrigger>
+        </DataTemplate.Triggers>
+    </DataTemplate>
+
+    <Style x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=DayView_AppointmentsContainerStyle}" TargetType="FrameworkElement">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;37;6" /><Setter Property="Margin" Value="{StaticResource DayView.AppointmentsContainer.Margin}" />
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" Value="{StaticResource Touch.DayView.AppointmentsContainer.Margin}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=DayView_AllDayAppointmentsContainerStyle}" TargetType="FrameworkElement">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;45;6" /><Setter Property="Margin" Value="{StaticResource DayView.AllDayAppointmentsContainer.Margin}" />
+    </Style>
+    <Style x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=DayView_DragAppointmentsContainerStyle}" TargetType="FrameworkElement">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;48;6" /><Setter Property="Margin" Value="{StaticResource DayView.DragAppointmentsContainer.Margin}" />
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" Value="{StaticResource Touch.DayView.DragAppointmentsContainer.Margin}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=DayView_AllDayDragAppointmentsContainerStyle}" TargetType="FrameworkElement">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;56;6" /><Setter Property="Margin" Value="{StaticResource DayView.AllDayDragAppointmentsContainer.Margin}" />
+    </Style>
+    <Style x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=MonthView_AppointmentsContainerStyle}" TargetType="FrameworkElement">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;59;6" /><Setter Property="Margin" Value="{StaticResource MonthView.AppointmentsContainer.Margin}" />
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" Value="{StaticResource Touch.MonthView.AppointmentsContainer.Margin}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=MonthView_DragAppointmentsContainerStyle}" TargetType="FrameworkElement">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;67;6" /><Setter Property="Margin" Value="{StaticResource MonthView.DragAppointmentsContainer.Margin}" />
+        <Style.Triggers>
+            <Trigger Property="dx:ThemeManager.IsTouchEnabled" Value="True">
+                <Setter Property="Margin" Value="{StaticResource Touch.MonthView.DragAppointmentsContainer.Margin}" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <DataTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=GroupSeparatorTemplate_Vertical}">
+        <dx:DXBorder BorderBrush="{StaticResource GroupSeparator.BorderBrush}" BorderThickness="{StaticResource GroupSeparator.Vertical.BorderThickness}" Margin="{StaticResource GroupSeparator.Vertical.Margin}" Background="{StaticResource GroupSeparator.Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;77;10" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=GroupSeparatorTemplate_Horizontal}">
+        <dx:DXBorder BorderBrush="{StaticResource GroupSeparator.BorderBrush}" BorderThickness="{StaticResource GroupSeparator.Horizontal.BorderThickness}" Margin="{StaticResource GroupSeparator.Horizontal.Margin}" Background="{StaticResource GroupSeparator.Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;80;10" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=AllDayAreaSeparatorTemplate}">
+        <dx:DXBorder BorderBrush="{StaticResource AllDaySeparator.BorderBrush}" BorderThickness="{StaticResource AllDaySeparator.BorderThickness}" Margin="{StaticResource AllDaySeparator.Margin}" Background="{StaticResource AllDaySeparator.Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;83;10" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=DateHeaderSeparatorTemplate_Horizontal}">
+        <dxschp:DateHeaderControl ShowRightBorder="True" ShowBottomBorder="{StaticResource DateHeaderSeparator.ShowBottomBorder}" Margin="0,0,-1,0" ContentTemplate="{x:Null}" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=ResourceHeaderSeparatorTemplate_Horizontal}">
+        <dxschp:ResourceHeaderControl ShowRightBorder="True" ShowBottomBorder="{StaticResource ResourceHeaderSeparator.ShowBottomBorder}" Margin="0,0,-1,0" ContentTemplate="{x:Null}" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=ResourceHeaderSeparatorTemplate_Vertical}">
+        <dxschp:ResourceHeaderControl ShowRightBorder="True" ShowBottomBorder="{StaticResource ResourceHeaderSeparator.ShowBottomBorder}" Margin="0,-1,0,0" ContentTemplate="{x:Null}" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxscht:SchedulerControlThemeKey ResourceKey=TimeRulerHeaderSeparatorTemplate}">
+        <dx:DXBorder Height="{StaticResource TimeRulerHeaderSeparator.Height}" Margin="{StaticResource TimeRulerHeaderSeparator.Margin}" Background="{StaticResource TimeRulerHeaderSeparator.BorderBrush}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Scheduling\Generic\ViewControls\Common.xaml;95;10" />
+    </DataTemplate>
+
+</ResourceDictionary>

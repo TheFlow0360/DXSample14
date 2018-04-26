@@ -1,0 +1,127 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <!--#region Common-->
+    <Duration x:Key="Scheduler.HScrollAnimation.Duration">0:0:0.075</Duration>
+    <Duration x:Key="Button.OpacityAnimation.Duration">0:0:0.15</Duration>
+
+    <Thickness x:Key="DayAppointmentControl.Padding">3,0,1,1</Thickness>
+    <Thickness x:Key="MonthAppointmentControl.Padding">3,0,1,1</Thickness>
+    <Thickness x:Key="DayAppointmentControl.Margin">1,1,0,0</Thickness>
+    <Thickness x:Key="MonthAppointmentControl.Margin">2,1,9,0</Thickness>
+    <Thickness x:Key="AllDayAppointmentControl.Margin">2,1,8,0</Thickness>
+
+    <Thickness x:Key="MonthCellControl.HeaderMargin">3</Thickness>
+
+    <sys:Double x:Key="TimeRulerCellControl.Hour.Width">22</sys:Double>
+    <sys:Double x:Key="TimeRulerCellControl.Minute.Width">20</sys:Double>
+    <Thickness x:Key="TimeRulerCellControl.Margin">0,-1,0,0</Thickness>
+    <Thickness x:Key="TimeRulerCellControl.Padding">8,-1,0,0</Thickness>
+    <Thickness x:Key="TimeRulerHeaderControl.Margin">4,2,4,2</Thickness>
+    <Thickness x:Key="TimeMarkerControl.Margin">4,0,0,0</Thickness>
+
+    <Thickness x:Key="DayView.AppointmentsContainer.Margin">1,0,8,0</Thickness>
+    <Thickness x:Key="DayView.DragAppointmentsContainer.Margin">1,0,8,0</Thickness>
+    <Thickness x:Key="DayView.AllDayAppointmentsContainer.Margin">0,0,0,0</Thickness>
+    <Thickness x:Key="DayView.AllDayDragAppointmentsContainer.Margin">0,0,0,0</Thickness>
+    <sys:Double x:Key="DayView.AllDayScrollViewer.MinHeight">80</sys:Double>
+    
+    <Thickness x:Key="MonthView.AppointmentsContainer.Margin">1,23,1,8</Thickness>
+    <Thickness x:Key="MonthView.DragAppointmentsContainer.Margin">1,23,1,8</Thickness>
+
+    <Thickness x:Key="GroupSeparator.Vertical.BorderThickness">1,0,1,0</Thickness>
+    <Thickness x:Key="GroupSeparator.Vertical.Margin">0,0,-1,0</Thickness>
+    <Thickness x:Key="GroupSeparator.Horizontal.BorderThickness">0,1,0,1</Thickness>
+    <Thickness x:Key="GroupSeparator.Horizontal.Margin">0,-1,0,0</Thickness>
+    <Thickness x:Key="AllDaySeparator.BorderThickness">0,1,0,1</Thickness>
+    <Thickness x:Key="AllDaySeparator.Margin">0,-1,0,0</Thickness>
+    <sys:Double x:Key="TimeRulerHeaderSeparator.Height">1</sys:Double>
+    <Thickness x:Key="TimeRulerHeaderSeparator.Margin">0,-1,0,0</Thickness>
+
+    <Thickness x:Key="HeaderControl.Padding">5,3,5,3</Thickness>
+    <sys:Boolean x:Key="ResourceHeaderSeparator.ShowBottomBorder">True</sys:Boolean>
+    <sys:Boolean x:Key="DateHeaderSeparator.ShowBottomBorder">True</sys:Boolean>
+    <!--#endregion Common-->
+
+    <!--#region Touch-->
+    <Thickness x:Key="Touch.DayView.AppointmentsContainer.Margin">1,0,16,0</Thickness>
+    <Thickness x:Key="Touch.DayView.DragAppointmentsContainer.Margin">1,0,16,0</Thickness>
+    
+    <Thickness x:Key="Touch.MonthCellControl.HeaderMargin">6</Thickness>
+    <Thickness x:Key="Touch.MonthView.AppointmentsContainer.Margin">1,26,1,8</Thickness>
+    <Thickness x:Key="Touch.MonthView.DragAppointmentsContainer.Margin">1,26,1,8</Thickness>
+
+    <Thickness x:Key="Touch.HeaderControl.Padding">7,12,7,12</Thickness>
+    <!--#endregion Touch-->
+
+    <sys:Double x:Key="DayAppointmentControl.FontSize">11</sys:Double>
+    <sys:Double x:Key="MonthAppointmentControl.FontSize">11</sys:Double>
+    <sys:Double x:Key="MonthCellControl.HeaderFontSize">14</sys:Double>
+    <sys:Double x:Key="TimeRulerCellControl.Hour.FontSize">16</sys:Double>
+    <sys:Double x:Key="TimeRulerCellControl.Minute.FontSize">11</sys:Double>
+    <sys:Double x:Key="TimeRulerHeaderControl.FontSize">12</sys:Double>
+    <FontWeight x:Key="TimeRulerCellControl.Hour.FontWeight">Medium</FontWeight>
+    <FontWeight x:Key="TimeRulerCellControl.Minute.FontWeight">Medium</FontWeight>
+    <FontWeight x:Key="TimeRulerHeaderControl.FontWeight">Medium</FontWeight>
+
+    <!--AppointmentControl-->
+    <sys:Double x:Key="AppointmentControl.StatusContainer.Width">5</sys:Double>
+    <Thickness x:Key="AppointmentControl.StatusContainer.Margin">3,3,0,3</Thickness>
+    <Thickness x:Key="AppointmentControl.StatusContainer.Padding">0</Thickness>
+    <Thickness x:Key="AppointmentControl.StatusContainer.BorderThickness">0</Thickness>
+    <CornerRadius x:Key="AppointmentControl.StatusContainer.CornerRadius">0</CornerRadius>
+    <CornerRadius x:Key="AppointmentControl.Status.CornerRadius">3</CornerRadius>
+    <CornerRadius x:Key="AppointmentControl.CornerRadius">3</CornerRadius>
+    <Thickness x:Key="AppointmentControl.BorderThickness">1</Thickness>
+    <Thickness x:Key="AppointmentControl.SelectionBorderThickness">2</Thickness>
+
+    <!--Buttons & ResourceNavigator-->
+    <CornerRadius x:Key="MoreButton.CornerRadius">3</CornerRadius>
+    <Thickness x:Key="MoreButton.BorderThickness">1</Thickness>
+    <CornerRadius x:Key="ResourceNavigatorButton.CornerRadius">0</CornerRadius>
+    <Thickness x:Key="ResourceNavigatorButton.BorderThickness">0</Thickness>
+    <sys:Double x:Key="ResourceNavigatorButton.Width">20</sys:Double>
+    <sys:Double x:Key="ResourceNavigatorButton.Height">NaN</sys:Double>
+    <sys:Double x:Key="MoreButton.Width">24</sys:Double>
+    <sys:Double x:Key="MoreButton.Height">15</sys:Double>
+    <Thickness x:Key="MoreButton.Margin">1,2,1,2</Thickness>
+    
+    <CornerRadius x:Key="NavigationButton.Backward.CornerRadius">3</CornerRadius>
+    <CornerRadius x:Key="NavigationButton.Forward.CornerRadius">3</CornerRadius>
+    <Thickness x:Key="NavigationButton.BorderThickness">1</Thickness>
+    <Thickness x:Key="NavigationButton.Backward.Margin">2</Thickness>
+    <Thickness x:Key="NavigationButton.Forward.Margin">2</Thickness>
+    <sys:Double x:Key="NavigationButton.Width">15</sys:Double>
+    <sys:Double x:Key="NavigationButton.Height">40</sys:Double>
+    
+    <sys:Double x:Key="ResourceNavigator.MinSize">14</sys:Double>
+    <Thickness x:Key="ResourceNavigator.Padding">0</Thickness>
+    <Thickness x:Key="ResourceNavigator.BorderThickness">1,1,0,0</Thickness>
+    <Thickness x:Key="ResourceNavigator.VerticalBorderThickness">1,0,0,1</Thickness>
+
+    <!--TimeRuler-->
+    <sys:Double x:Key="TimeIndicatorControl.Height">3</sys:Double>
+    <Thickness x:Key="TimeIndicatorControl.BorderThickness">0,1,0,1</Thickness>
+    <sys:Double x:Key="TimeRulerCellControl.Delimiter.Height">1</sys:Double>
+    <sys:Double x:Key="TimeRulerCellControl.Delimiter.Long.Width">32</sys:Double>
+    <sys:Double x:Key="TimeRulerCellControl.Delimiter.Short.Width">18</sys:Double>
+
+    <!--ViewControls-->
+    <Thickness x:Key="DayView.BorderThickness">1</Thickness>
+    <Thickness x:Key="DayView.InvisibleBorderThickness">1,0,0,0</Thickness>
+    <Thickness x:Key="DayView.Margin">3</Thickness>
+    <Thickness x:Key="DayView.InvisibleBorderMargin">-1,0,0,0</Thickness>
+    <Thickness x:Key="DayView.ScrollArea.Margin">0</Thickness>
+
+    <Thickness x:Key="MonthView.BorderThickness">1</Thickness>
+    <Thickness x:Key="MonthView.InvisibleBorderThickness">0,0,0,0</Thickness>
+    <Thickness x:Key="MonthView.Margin">3</Thickness>
+    <Thickness x:Key="MonthView.InvisibleBorderMargin">-1,0,0,0</Thickness>
+    <Thickness x:Key="MonthView.ScrollArea.Margin">0</Thickness>
+    <Thickness x:Key="MonthView.GroupByDate.ResourceHeaders.Margin">0,0,-1,-1</Thickness>
+    <Thickness x:Key="MonthView.GroupByDate.ResourceHeaders.BottomOffset.Margin">0,0,-1,0</Thickness>
+
+    <!--Scheduler-->
+    <Thickness x:Key="Scheduler.BorderThickness">1,1,1,1</Thickness>
+    <CornerRadius x:Key="Scheduler.CornerRadius">5</CornerRadius>
+
+</ResourceDictionary>

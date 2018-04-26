@@ -1,0 +1,17 @@
+﻿<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/ControlBoxElements.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/CustomizationWindow.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/VisualizerElements.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/ControlItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/DockPane.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/LayoutItemsControl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/FloatPane.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/LayoutItemsControl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/TabbedPane.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/DocumentPane.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/AutoHidePanel.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/FixedItem.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Docking/Office2016White/TabbedLayoutGroupPane.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

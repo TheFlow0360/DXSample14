@@ -1,0 +1,337 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxpg="http://schemas.devexpress.com/winfx/2008/xaml/propertygrid" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxei="http://schemas.devexpress.com/winfx/2008/xaml/editors/internal" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxdiag="http://schemas.devexpress.com/winfx/2008/xaml/diagram" xmlns:dxdiagn="http://schemas.devexpress.com/winfx/2008/xaml/diagram/internal" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxdiagcore="clr-namespace:DevExpress.Diagram.Core;assembly=DevExpress.Diagram.v17.2.Core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <dxmvvm:ObjectToObjectConverter x:Key="ObjectToVisibilityConverter" DefaultTarget="Hidden">
+        <dxmvvm:MapItem Source="{x:Null}" Target="Visible" />
+    </dxmvvm:ObjectToObjectConverter>
+    <Style x:Key="defaultComboBoxEditStyle" TargetType="dxe:ComboBoxEdit"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;6;6" /></Style>
+
+    <Style x:Key="PropertyGridArrowEditorStyleBase" TargetType="dxe:ComboBoxEdit">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;8;6" /><Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="ApplyItemTemplateToSelectedItem" Value="True" />
+        <Setter Property="IsTextEditable" Value="False" />
+        <Setter Property="ShowCustomItems" Value="True" />
+        <Setter Property="StyleSettings" Value="{dxe:ComboBoxStyleSettings}" />
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=http://schemas.devexpress.com/winfx/2008/xaml/editors.ListBoxEditItem}" TargetType="dxe:ListBoxEditItem">
+                    <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;17;18" /><Setter Property="Height" Value="{Binding Path=ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:ComboBoxEdit}}}" />
+                    <Setter Property="Width" Value="{Binding Path=ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:ComboBoxEdit}}}" />
+                    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=BeginArrow}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit Name="PART_Editor" ItemsSource="{x:Static dxdiagcore:ArrowDescriptions.Arrows}" Style="{StaticResource PropertyGridArrowEditorStyleBase}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;30;22">
+                        <dxe:ComboBoxEdit.ItemTemplate>
+                            <DataTemplate>
+                                <dxdiagn:ConnectorArrowPresenter Margin="5,0,5,0" ToolTip="{Binding Name}" IsRotatedArrow="True" Stroke="{Binding Foreground, RelativeSource={RelativeSource Self}}" ArrowStyle="{Binding}" />
+                            </DataTemplate>
+                        </dxe:ComboBoxEdit.ItemTemplate>
+                    </dxe:ComboBoxEdit>
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=EndArrow}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit Name="PART_Editor" ItemsSource="{x:Static dxdiagcore:ArrowDescriptions.Arrows}" Style="{StaticResource PropertyGridArrowEditorStyleBase}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;45;22">
+                        <dxe:ComboBoxEdit.ItemTemplate>
+                            <DataTemplate>
+                                <dxdiagn:ConnectorArrowPresenter Margin="5,0,5,0" ToolTip="{Binding Name}" Stroke="{Binding Foreground, RelativeSource={RelativeSource Self}}" ArrowStyle="{Binding}" />
+                            </DataTemplate>
+                        </dxe:ComboBoxEdit.ItemTemplate>
+                    </dxe:ComboBoxEdit>
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=ConnectorType}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit Name="PART_Editor" Style="{StaticResource defaultComboBoxEditStyle}" IsTextEditable="False" DisplayMember="TypeName" ItemsSource="{x:Static dxdiagcore:ConnectorType.RegisteredTypes}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;60;22" />
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=ItemAngle}">
+        <dxpg:PropertyDefinition>
+            <dxpg:PropertyDefinition.EditSettings>
+                <dxe:TextEditSettings Mask="##0.###" MaskType="Numeric" DisplayTextConverter="{dxdiagn:DegreeValueDisplayConverter}" />
+            </dxpg:PropertyDefinition.EditSettings>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=LineJumpPlacement}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True" UseTypeConverterToStringConversion="False">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit x:Name="PART_Editor" Style="{StaticResource defaultComboBoxEditStyle}" IsTextEditable="False" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;76;22">
+                        <dxmvvm:Interaction.Behaviors>
+                            <dxmvvm:EnumItemsSourceBehavior EnumType="{x:Type dxdiagcore:LineJumpPlacement}" NameConverter="{dxdiagn:LineJumpParametersConverter}" />
+                        </dxmvvm:Interaction.Behaviors>
+                    </dxe:ComboBoxEdit>
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=CanvasSizeMode}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True" UseTypeConverterToStringConversion="False">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit Name="PART_Editor" Style="{StaticResource defaultComboBoxEditStyle}" IsTextEditable="False" ValueMember="Mode" DisplayMember="Name" ItemsSource="{x:Static dxdiagn:CanvasSizeModeInfo.Modes}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;89;22" />
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=ThemeSelector}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit Name="PART_Editor" Style="{StaticResource defaultComboBoxEditStyle}" IsTextEditable="False" DisplayMember="Name" ItemsSource="{x:Static dxdiagcore:ThemeRegistrator.Themes}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;98;22" />
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=Padding}">
+        <dxpg:PropertyDefinition UseTypeConverterToStringConversion="True" />
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=HeaderPadding}">
+        <dxpg:PropertyDefinition UseTypeConverterToStringConversion="True" />
+    </DataTemplate>
+
+    <Style x:Key="PropertyGridLineJumpSelectorStyle" TargetType="dxe:ComboBoxEdit">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;110;6" /><Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        <Setter Property="VerticalContentAlignment" Value="Stretch" />
+        <Setter Property="ApplyItemTemplateToSelectedItem" Value="True" />
+        <Setter Property="IsTextEditable" Value="False" />
+        <Setter Property="ItemContainerStyle">
+            <Setter.Value>
+                <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=http://schemas.devexpress.com/winfx/2008/xaml/editors.ListBoxEditItem}" TargetType="dxe:ListBoxEditItem">
+                    <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;117;18" /><Setter Property="Height" Value="{Binding Path=ActualHeight, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:ComboBoxEdit}}}" />
+                    <Setter Property="Width" Value="{Binding Path=ActualWidth, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:ComboBoxEdit}}}" />
+                    <Setter Property="VerticalContentAlignment" Value="Stretch" />
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="ItemTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;128;22">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" MaxWidth="50" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="5" />
+                        </Grid.ColumnDefinitions>
+                        <dxdiagn:LineJumpPresenter Grid.Column="0" Margin="5,0,5,0" Stroke="{Binding Foreground, RelativeSource={RelativeSource Self}}" LineJumpStyle="{Binding}" />
+                        <TextBlock Grid.Column="1" Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Center" TextTrimming="CharacterEllipsis" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;135;26" />
+                    </Grid>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=LineJumpStyle}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit Name="PART_Editor" ItemsSource="{x:Static dxdiagcore:LineJumpDescriptions.LineJumps}" Style="{StaticResource PropertyGridLineJumpSelectorStyle}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;145;22" />
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+
+    <ControlTemplate x:Key="PropertyGridBackgroundColorDisplayTemplate">
+        <dx:DXBorder Margin="2" BorderBrush="{DynamicResource {dxet:PopupBrushEditThemeKey ResourceKey=ChipBorderBrush}}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;152;10">
+            <dxmvvm:Interaction.Behaviors>
+                <dxdiagn:ColorViewerBehavior EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.BackgroundPropertyName}" ColorEditUnit="{Binding Value, Mode=OneWay}" Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxpg:PropertyGridControl}}}" IsPopupOpen="{Binding Path=IsPopupOpen, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:PopupBaseEdit}}, Mode=TwoWay}" />
+            </dxmvvm:Interaction.Behaviors>
+        </dx:DXBorder>
+    </ControlTemplate>
+    <ControlTemplate x:Key="PropertyGridStrokeColorDisplayTemplate">
+        <dx:DXBorder Margin="2" BorderBrush="{DynamicResource {dxet:PopupBrushEditThemeKey ResourceKey=ChipBorderBrush}}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;159;10">
+            <dxmvvm:Interaction.Behaviors>
+                <dxdiagn:ColorViewerBehavior EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.StrokePropertyName}" ColorEditUnit="{Binding Value, Mode=OneWay}" Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxpg:PropertyGridControl}}}" IsPopupOpen="{Binding Path=IsPopupOpen, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:PopupBaseEdit}}, Mode=TwoWay}" />
+            </dxmvvm:Interaction.Behaviors>
+        </dx:DXBorder>
+    </ControlTemplate>
+    <ControlTemplate x:Key="PropertyGridForegroundColorDisplayTemplate">
+        <dx:DXBorder Margin="2" BorderBrush="{DynamicResource {dxet:PopupBrushEditThemeKey ResourceKey=ChipBorderBrush}}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;166;10">
+            <dxmvvm:Interaction.Behaviors>
+                <dxdiagn:ColorViewerBehavior EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.ForegroundPropertyName}" ColorEditUnit="{Binding Value, Mode=OneWay}" Diagram="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxpg:PropertyGridControl}}}" IsPopupOpen="{Binding Path=IsPopupOpen, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:PopupBaseEdit}}, Mode=TwoWay}" />
+            </dxmvvm:Interaction.Behaviors>
+        </dx:DXBorder>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=BackgroundColorSelector}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True" IsReadOnly="False">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:PopupBaseEdit Name="PART_Editor" IsReadOnly="True" DisplayTemplate="{StaticResource PropertyGridBackgroundColorDisplayTemplate}" EditTemplate="{StaticResource PropertyGridBackgroundColorDisplayTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;177;22">
+                        <dxe:PopupBaseEdit.PopupContentTemplate>
+                            <ControlTemplate>
+                                <dxdiagn:ExtendedColorEdit AllowNullInput="True" ShowDefaultColorButton="False" ShowBorder="False">
+                                    <dxmvvm:Interaction.Behaviors>
+                                        <dxdiagn:PopupColorEditBehavior EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.BackgroundPropertyName}" DiagramColor="{Binding Value, Mode=TwoWay}" />
+                                    </dxmvvm:Interaction.Behaviors>
+                                    <dxdiagn:ExtendedColorEdit.Style>
+                                        <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.Native.ExtendedColorEdit}" TargetType="dxdiagn:ExtendedColorEdit"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;185;42" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=IsPopupOpen, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:PopupBaseEdit}}}" Value="True">
+                                                    <Setter Property="Diagram" Value="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxpg:PropertyGridControl}}}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </dxdiagn:ExtendedColorEdit.Style>
+                                </dxdiagn:ExtendedColorEdit>
+                            </ControlTemplate>
+                        </dxe:PopupBaseEdit.PopupContentTemplate>
+                    </dxe:PopupBaseEdit>
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=StrokeColorSelector}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True" IsReadOnly="False">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:PopupBaseEdit Name="PART_Editor" IsReadOnly="True" DisplayTemplate="{StaticResource PropertyGridStrokeColorDisplayTemplate}" EditTemplate="{StaticResource PropertyGridStrokeColorDisplayTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;205;22">
+                        <dxe:PopupBaseEdit.PopupContentTemplate>
+                            <ControlTemplate>
+                                <dxdiagn:ExtendedColorEdit AllowNullInput="True" ShowDefaultColorButton="False" ShowBorder="False">
+                                    <dxmvvm:Interaction.Behaviors>
+                                        <dxdiagn:PopupColorEditBehavior EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.StrokePropertyName}" DiagramColor="{Binding Value, Mode=TwoWay}" />
+                                    </dxmvvm:Interaction.Behaviors>
+                                    <dxdiagn:ExtendedColorEdit.Style>
+                                        <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.Native.ExtendedColorEdit}" TargetType="dxdiagn:ExtendedColorEdit"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;213;42" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=IsPopupOpen, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:PopupBaseEdit}}}" Value="True">
+                                                    <Setter Property="Diagram" Value="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxpg:PropertyGridControl}}}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </dxdiagn:ExtendedColorEdit.Style>
+                                </dxdiagn:ExtendedColorEdit>
+                            </ControlTemplate>
+                        </dxe:PopupBaseEdit.PopupContentTemplate>
+                    </dxe:PopupBaseEdit>
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=ForegroundColorSelector}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True" IsReadOnly="False">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:PopupBaseEdit Name="PART_Editor" IsReadOnly="True" DisplayTemplate="{StaticResource PropertyGridForegroundColorDisplayTemplate}" EditTemplate="{StaticResource PropertyGridForegroundColorDisplayTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;233;22">
+                        <dxe:PopupBaseEdit.PopupContentTemplate>
+                            <ControlTemplate>
+                                <dxdiagn:ExtendedColorEdit AllowNullInput="True" ShowDefaultColorButton="False" ShowBorder="False">
+                                    <dxmvvm:Interaction.Behaviors>
+                                        <dxdiagn:PopupColorEditBehavior EditablePropertyName="{x:Static dxdiagcore:DiagramItemController.ForegroundPropertyName}" DiagramColor="{Binding Value, Mode=TwoWay}" />
+                                    </dxmvvm:Interaction.Behaviors>
+                                    <dxdiagn:ExtendedColorEdit.Style>
+                                        <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Diagram.Native.ExtendedColorEdit}" TargetType="dxdiagn:ExtendedColorEdit"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;241;42" />
+                                            <Style.Triggers>
+                                                <DataTrigger Binding="{Binding Path=IsPopupOpen, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:PopupBaseEdit}}}" Value="True">
+                                                    <Setter Property="Diagram" Value="{Binding Path=(dxdiag:DiagramControl.Diagram), RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxpg:PropertyGridControl}}}" />
+                                                </DataTrigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </dxdiagn:ExtendedColorEdit.Style>
+                                </dxdiagn:ExtendedColorEdit>
+                            </ControlTemplate>
+                        </dxe:PopupBaseEdit.PopupContentTemplate>
+                    </dxe:PopupBaseEdit>
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=SelectedStencils}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True" ShowChildren="False">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit Name="PART_Editor" ShowSizeGrip="False" EditValue="{Binding Path=Value, Converter={dxdiagn:SelectedStencilsConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" DisplayMember="Name" ValueMember="Id" ItemsSource="{x:Static dxdiagcore:DiagramToolboxRegistrator.Stencils}" IsTextEditable="False" ShowCustomItems="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;261;22">
+                        <dxe:ComboBoxEdit.StyleSettings>
+                            <dxe:CheckedComboBoxStyleSettings />
+                        </dxe:ComboBoxEdit.StyleSettings>
+                    </dxe:ComboBoxEdit>
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <ControlTemplate x:Key="PropertyGridBrushDisplayTemplate">
+        <dx:DXBorder Margin="2" BorderBrush="{DynamicResource {dxet:PopupBrushEditThemeKey ResourceKey=ChipBorderBrush}}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;271;10">
+            <dxmvvm:Interaction.Behaviors>
+                <dxdiagn:BrushViewerBehavior Color="{Binding Value, Mode=OneWay, Converter={dxdiagn:DiagramBrushToColorConverter}}" IsPopupOpen="{Binding Path=IsPopupOpen, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxe:PopupBaseEdit}}, Mode=TwoWay}" />
+            </dxmvvm:Interaction.Behaviors>
+        </dx:DXBorder>
+    </ControlTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=BrushEditor}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True" ShowChildren="False">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:PopupBaseEdit Name="PART_Editor" IsReadOnly="True" DisplayTemplate="{StaticResource PropertyGridBrushDisplayTemplate}" EditTemplate="{StaticResource PropertyGridBrushDisplayTemplate}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;281;22">
+                        <dxe:PopupBaseEdit.PopupContentTemplate>
+                            <ControlTemplate>
+                                <dxe:ColorEdit AllowNullInput="True" ShowDefaultColorButton="False" ShowBorder="False" Color="{Binding Value, Mode=TwoWay, Converter={dxdiagn:DiagramBrushToColorConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;284;34" />
+                            </ControlTemplate>
+                        </dxe:PopupBaseEdit.PopupContentTemplate>
+                    </dxe:PopupBaseEdit>
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=Anchors}">
+        <dxpg:PropertyDefinition>
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit Name="PART_Editor" ShowSizeGrip="False" IsTextEditable="False" ShowCustomItems="True" EditValue="{Binding Path=Value, Converter={dxdiagn:SideToSidesConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" FilterCriteria="{dxdiagn:EnumFilterCriteria EnumType=dxdiagcore:Sides, CriteriaString='Id!=\'None\' And Id!=\'All\''}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;296;22">
+                        <dxe:ComboBoxEdit.StyleSettings>
+                            <dxe:CheckedComboBoxStyleSettings />
+                        </dxe:ComboBoxEdit.StyleSettings>
+                        <dxmvvm:Interaction.Behaviors>
+                            <dxmvvm:EnumItemsSourceBehavior EnumType="{x:Type dxdiagcore:Sides}" />
+                            <dxei:DisplayTextProviderBehavior DisplayTextProvider="{dxdiagn:AnchorsEditorDisplayTextProvider}" />
+                        </dxmvvm:Interaction.Behaviors>
+                    </dxe:ComboBoxEdit>
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxdiagn:PropertyGridEditorThemeKeys ResourceKey=DashType}">
+        <dxpg:PropertyDefinition PostOnEditValueChanged="True" AllowInstanceInitializer="False" IsReadOnly="False" UseTypeConverterToStringConversion="True" ShowChildren="False">
+            <dxpg:PropertyDefinition.CellTemplate>
+                <DataTemplate>
+                    <dxe:ComboBoxEdit Name="PART_Editor" DisplayMember="Name" Style="{StaticResource PropertyGridArrowEditorStyleBase}" ItemsSource="{x:Static dxdiagcore:DashTypeDescriptions.DashTypes}" ShowCustomItems="False" EditValue="{Binding Path=Value, Converter={dxdiagn:DashTypeDescriptionConverter}, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;313;22">
+                        <dxe:ComboBoxEdit.ItemTemplate>
+                            <DataTemplate>
+                                <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;316;34">
+                                    <dxdiagn:DashTypePresenter Margin="5,0,5,0" ToolTip="{Binding Name}" Stroke="{Binding Foreground, RelativeSource={RelativeSource Self}}" DashType="{Binding}" />
+                                    <TextBlock Margin="5,0,5,0" VerticalAlignment="Center" Visibility="{Binding Converter={StaticResource ObjectToVisibilityConverter}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;318;38">
+                                        <TextBlock.Style>
+                                            <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=TextBlock}" TargetType="TextBlock"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Diagram\Generic\PropertyGridEditors.xaml;320;46" />
+                                                <Style.Triggers>
+                                                    <DataTrigger Binding="{Binding Path=Visibility, RelativeSource={RelativeSource Self}}" Value="Visible">
+                                                        <Setter Property="Text" Value="{Binding Path=RowData.Value, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type dxpg:CellEditor}}, &#xD;&#xA;                                                            Converter={dxdiagn:DoubleCollectionViewConverter}, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </TextBlock.Style>
+                                    </TextBlock>
+                                </Grid>
+                            </DataTemplate>
+                        </dxe:ComboBoxEdit.ItemTemplate>
+                    </dxe:ComboBoxEdit>
+                </DataTemplate>
+            </dxpg:PropertyDefinition.CellTemplate>
+        </dxpg:PropertyDefinition>
+    </DataTemplate>
+</ResourceDictionary>

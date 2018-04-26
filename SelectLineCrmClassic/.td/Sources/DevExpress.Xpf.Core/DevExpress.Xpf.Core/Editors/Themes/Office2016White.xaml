@@ -1,0 +1,51 @@
+﻿<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Themes/StandardControlStyles.xaml" />
+        <!--
+          skipped
+          Source ={dx:UtilsResource Themes/Office2016White/Popup.xaml}
+          ignoreSource = Popup.xaml-->
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/ButtonEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/SpinEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/SparklineEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/CheckEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/ComboBoxEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/MemoEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/ColorChooser.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/ColorChooser.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/ErrorPresenter.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/BrushEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/PopupBaseEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/PopupListBox.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/TextEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/InplaceBaseEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/DateEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/ListBoxEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/FilterControl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/FPanelCtrlBase.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/ExprEdCtrl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/TrackBarEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/ProgressBarEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/RatingEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/HyperLinkEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/PasswordBoxEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/ColorEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/CalcEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/ImageEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/DateNavigator.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/DataPager.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/RangeControl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/DateTimePicker.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/ColorPicker.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/FontEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/GradientMultiSlider.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/Flyout.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/BarItemTemplates.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/FontComboBoxEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/FontSizeComboBoxEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/AutoCompleteBox.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Office2016White/BarCodeEdit.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/ToggleSwitch.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Core/DevExpress.Xpf.Core/Editors/Themes/Generic/ToggleSwitchEdit.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

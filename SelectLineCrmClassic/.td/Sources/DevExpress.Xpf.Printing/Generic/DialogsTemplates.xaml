@@ -1,0 +1,381 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxlc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:themes="http://schemas.devexpress.com/winfx/2008/xaml/printing/themekeys" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxet="http://schemas.devexpress.com/winfx/2008/xaml/editors/themekeys" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/printing" xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:lines="http://schemas.devexpress.com/winfx/2008/xaml/printing/native" xmlns:dxd="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:dxpn="http://schemas.devexpress.com/winfx/2008/xaml/printing/native" xmlns:native="http://schemas.devexpress.com/winfx/2008/xaml/printing/native" xmlns:sys="clr-namespace:System;assembly=mscorlib" xmlns:dp="clr-namespace:DevExpress.Xpf.Editors.DataPager;assembly=DevExpress.Xpf.Core.v17.2" xmlns:mvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+    <ControlTemplate TargetType="ToggleButton" x:Key="toogleButtonTemplate">
+        <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal" />
+                    <VisualState x:Name="MouseOver" />
+                    <VisualState x:Name="Disabled">
+                        <Storyboard>
+                            <DoubleAnimation Duration="0" To="0.5" Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="IsUnchecked" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Pressed" />
+                </VisualStateGroup>
+                <VisualStateGroup x:Name="CheckStates">
+                    <VisualState x:Name="Unchecked" />
+                    <VisualState x:Name="Checked">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="IsUnchecked">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>
+                                            Collapsed
+                                        </Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                            <ObjectAnimationUsingKeyFrames Duration="0" Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="IsChecked">
+                                <DiscreteObjectKeyFrame KeyTime="0">
+                                    <DiscreteObjectKeyFrame.Value>
+                                        <Visibility>
+                                            Visible
+                                        </Visibility>
+                                    </DiscreteObjectKeyFrame.Value>
+                                </DiscreteObjectKeyFrame>
+                            </ObjectAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Indeterminate" />
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            
+            <Grid Width="16" Height="16" x:Name="Root" Background="Transparent" HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Border x:Name="IsUnchecked" CornerRadius="2" Width="Auto" Height="Auto">
+                    <Path Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Data="F1 M 26,22.0001L 26,14.0001L 30,18.0001L 26,22.0001 Z " HorizontalAlignment="Stretch" Margin="2,0,1,0" VerticalAlignment="Stretch" Width="6" Height="7" />
+                </Border>
+                <Border x:Name="IsChecked" CornerRadius="2" Visibility="Collapsed" Width="9" Height="9">
+                    <Path Stretch="Fill" Fill="{Binding Foreground, RelativeSource={RelativeSource TemplatedParent}}" Data="F1 M 32.9999,14.0001L 40.9999,14.0001L 37,18.0001L 32.9999,14.0001 Z " HorizontalAlignment="Center" Margin="0,1,0,0" VerticalAlignment="Center" Width="7" Height="6" />
+                </Border>
+            </Grid>
+                <TextBlock Grid.Column="1" Text="{local:PrintingStringId StringId=MoreOptions}" TextAlignment="Left" />
+        </Grid>
+    </ControlTemplate>
+
+    <DataTemplate x:Key="{themes:NewDocumentViewerThemeKey ResourceKey=ExportOptionsDialogTemplate}">
+        <Grid Width="450">
+            <dxlc:DockLayoutControl Margin="12,12,12,0">
+                <dxlc:LayoutGroup Name="mainGroup" Orientation="Vertical" ItemLabelsAlignment="Local" dxlc:DockLayoutControl.Dock="Client">
+                    <dxlc:LayoutItem Label="{local:PrintingStringId StringId=ExportFormat}" AddColonToLabel="True">
+                        <dxe:ComboBoxEdit EditValue="{Binding ExportFormat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding AvailableExportFormats}" IsTextEditable="False" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="{local:PrintingStringId StringId=FilePath}" AddColonToLabel="True">
+                        <dxe:ButtonEdit AllowDefaultButton="False" EditValue="{Binding FileName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                            <dxe:ButtonEdit.Buttons>
+                                <dxe:ButtonInfo GlyphKind="Regular" Command="{Binding SelectFileCommand}" />
+                            </dxe:ButtonEdit.Buttons>
+                        </dxe:ButtonEdit>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem>
+                        <dxe:CheckEdit Content="{local:PrintingStringId StringId=OpenFileAfterExport}" EditValue="{Binding OpenFileAfterExport}" IsEnabled="{Binding CanUseActionAfterExport}" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Margin="0,6,0,0" Width="{Binding ActualWidth, Mode=OneWay, ElementName=mainGroup}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <ToggleButton Foreground="{Binding Path=(TextElement.Foreground), RelativeSource={RelativeSource TemplatedParent}}" Margin="-3,0,0,0" Name="expanderButton" HorizontalContentAlignment="Left" IsChecked="False" Template="{StaticResource toogleButtonTemplate}" />
+
+                            <dxc:DXExpander Margin="0,6,0,0" Grid.Row="1" IsExpanded="{Binding ElementName=expanderButton, Path=IsChecked}" HorizontalExpand="None" VerticalExpand="FromTopToBottom">
+                                <native:LinesContainer Lines="{Binding ExportOptionLines}" />
+                            </dxc:DXExpander>
+                        </Grid>
+                    </dxlc:LayoutItem>
+                </dxlc:LayoutGroup>
+            </dxlc:DockLayoutControl>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{themes:NewDocumentViewerThemeKey ResourceKey=PrintStatusDialogTemplate}">
+        <Grid MinWidth="300">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid Margin="24,16,24,22">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Image x:Name="PART_MessageBoxImage" Width="32" Height="32" VerticalAlignment="Top" SnapsToDevicePixels="True" Stretch="UniformToFill" Margin="-6,-1,12,-4" Source="{local:PrintingResourceImage ResourceName=Images/BarItems/Print_32x32.png}" />
+                <TextBlock MaxWidth="{x:Static SystemParameters.MaximizedPrimaryScreenWidth}" Focusable="False" Background="Transparent" TextWrapping="Wrap" VerticalAlignment="Center" Grid.Column="1" Text="{Binding ProgressStatus}" Foreground="{DynamicResource ResourceKey={dxt:DropDownButtonThemeKey ResourceKey=Foreground}}" />
+            </Grid>
+            <Grid Grid.Row="1" HorizontalAlignment="Right" Margin="12,0,12,12">
+                <Grid x:Name="okGrid">
+                    <Button x:Name="PART_OkButton" MinWidth="65" Margin="6,0,0,0" IsDefault="True" IsCancel="True" Command="{Binding CancelCommand}" Content="{dxc:DXMessageBoxStringId StringId=Cancel}" />
+                </Grid>
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{themes:NewDocumentViewerThemeKey ResourceKey=SendOptionsDialogTemplate}">
+        <Grid Width="420">
+            <dxlc:DockLayoutControl AllowItemSizing="True" Margin="12,12,12,0">
+                <dxlc:LayoutGroup Orientation="Vertical" ItemLabelsAlignment="Local" dxlc:DockLayoutControl.Dock="Client" dxlc:DockLayoutControl.AllowHorizontalSizing="True">
+                    <dxlc:LayoutItem Label="{local:PrintingStringId StringId=ExportFormat}" AddColonToLabel="True">
+                        <dxe:ComboBoxEdit EditValue="{Binding ExportFormat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" ItemsSource="{Binding AvailableExportFormats}" IsTextEditable="False" />
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Label="{local:PrintingStringId StringId=FilePath}" AddColonToLabel="True">
+                        <dxe:ButtonEdit AllowDefaultButton="False" EditValue="{Binding FileName, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}">
+                            <dxe:ButtonEdit.Buttons>
+                                <dxe:ButtonInfo GlyphKind="Regular" Command="{Binding SelectFileCommand}" />
+                            </dxe:ButtonEdit.Buttons>
+                        </dxe:ButtonEdit>
+                    </dxlc:LayoutItem>
+                    <dxlc:LayoutItem Margin="0,6,0,0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="auto" />
+                                <RowDefinition Height="auto" />
+                            </Grid.RowDefinitions>
+                            <StackPanel Orientation="Horizontal">
+                                <ToggleButton Margin="-3,0,0,0" Name="expanderButton" HorizontalContentAlignment="Left" IsChecked="False" Template="{StaticResource toogleButtonTemplate}" />
+                            </StackPanel>
+                            <dxc:DXExpander Margin="0,6,0,0" Grid.Row="1" IsExpanded="{Binding ElementName=expanderButton, Path=IsChecked}" HorizontalExpand="None" VerticalExpand="FromTopToBottom">
+                                <native:LinesContainer Lines="{Binding ExportOptionLines}" />
+                            </dxc:DXExpander>
+                        </Grid>
+                    </dxlc:LayoutItem>
+                </dxlc:LayoutGroup>
+            </dxlc:DockLayoutControl>
+        </Grid>
+    </DataTemplate>
+
+    <DataTemplate x:Key="{themes:NewDocumentViewerThemeKey ResourceKey=ScaleDialogTemplate}">
+        <DataTemplate.Resources>
+            <native:ScaleModeToBooleanConverter x:Key="scaleModeToBooleanConverter" />
+            <native:ScaleModeToVisibilityConverter x:Key="scaleModeToVisibilityConverter" />
+            <native:ScaleFactorToPercentsConverter x:Key="scaleToPercentsConverter" />
+        </DataTemplate.Resources>
+        <Grid x:Name="LayoutRoot" Margin="12,12,12,0">
+            <Grid Grid.IsSharedSizeScope="True">
+                <Grid.RowDefinitions>
+                    <RowDefinition />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="auto" />
+                </Grid.ColumnDefinitions>
+                <RadioButton Name="scaleButton" HorizontalContentAlignment="Stretch" Grid.Row="0" IsChecked="True" VerticalAlignment="Center" VerticalContentAlignment="Center">
+                    <TextBlock Text="{local:PrintingStringId StringId=Scaling_Adjust_Start_Label}" VerticalAlignment="Center" />                    
+                </RadioButton>
+
+                <dxe:ComboBoxEdit Margin="9,0,0,0" Width="100" Grid.Column="1" IsEnabled="{Binding IsChecked, ElementName=scaleButton}" AllowNullInput="False" DisplayFormatString="# '%'" ItemsSource="{Binding ScaleFactorValues}" EditValue="{Binding Path=ScaleFactor, Converter={StaticResource scaleToPercentsConverter}, ValidatesOnDataErrors=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <dxe:ComboBoxEdit.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <Binding StringFormat="# '%'" />
+                                </TextBlock.Text>
+                            </TextBlock>
+                        </DataTemplate>
+                    </dxe:ComboBoxEdit.ItemTemplate>
+                </dxe:ComboBoxEdit>
+
+                <TextBlock Grid.Column="2" Margin="9,0,0,0" IsEnabled="{Binding IsChecked, ElementName=scaleButton}" Text="{local:PrintingStringId StringId=Scaling_Adjust_End_Label}" VerticalAlignment="Center" HorizontalAlignment="Stretch" />
+
+                <RadioButton Name="fitButton" Margin="0,9,0,0" Grid.Row="1" HorizontalContentAlignment="Stretch" IsChecked="{Binding ScaleMode, Mode=TwoWay, Converter={StaticResource scaleModeToBooleanConverter},ConverterParameter=FitToPageWidth}" VerticalContentAlignment="Center">
+                    <TextBlock Text="{local:PrintingStringId StringId=Scaling_Fit_Start_Label}" VerticalAlignment="Center" />                    
+                </RadioButton>
+
+                <dxe:ComboBoxEdit Grid.Row="1" Grid.Column="1" x:Name="cmbBxPagesToFit" Margin="9,9,0,0" IsEnabled="{Binding IsChecked, ElementName=fitButton}" AllowNullInput="False" ItemsSource="{Binding PagesToFitValues}" EditValue="{Binding Path=PagesToFit, ValidatesOnDataErrors=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+
+                <TextBlock Grid.Row="1" Grid.Column="2" Margin="9,9,0,0" IsEnabled="{Binding IsChecked, ElementName=fitButton}" Text="{local:PrintingStringId StringId=Scaling_Fit_End_Label}" />
+            </Grid>
+        </Grid>
+    </DataTemplate>
+
+
+    
+    <DataTemplate x:Key="{themes:NewDocumentViewerThemeKey ResourceKey=PrintDialogTemplate}">
+        <DataTemplate.Resources>
+            <native:PrinterTypeToImageConverter x:Key="printerTypeToImageConverter" />
+        </DataTemplate.Resources>
+        <Grid Name="Root">
+            <dxlc:LayoutControl>
+                <dxlc:LayoutControl.Resources>
+                    <Style TargetType="{x:Type dxe:BaseEdit}" x:Key="firstColumnStyle">
+                        <Setter Property="Width" Value="170" />
+                        <Style.Triggers>
+                            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                                <Setter Property="Width" Value="294" />
+                            </Trigger>
+                            <Trigger Property="dxc:ThemeManager.IsTouchlineTheme" Value="True">
+                                <Setter Property="Width" Value="294" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </dxlc:LayoutControl.Resources>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="3*" />
+                    </Grid.ColumnDefinitions>
+                    <dxlc:LayoutGroup ItemLabelsAlignment="Local" x:Name="PART_DockPreviewPart" Orientation="Vertical" dxlc:DockLayoutControl.Dock="Left" Height="{Binding ActualHeight, ElementName=PART_DockClientPart, Mode=OneWay}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <dxc:BackgroundPanel Name="PART_PreviewImage" Margin="0,0,0,10">
+                                <Grid UseLayoutRounding="True" HorizontalAlignment="Center" VerticalAlignment="Center">
+                                    <Image Stretch="None" Source="{Binding PreviewImage}" IsHitTestVisible="False">
+                                        <mvvm:Interaction.Behaviors>
+                                            <native:PreviewAreaProvider />
+                                            <mvvm:EventToCommand Event="Loaded" Command="{Binding UpdatePreviewCommand}" />
+                                        </mvvm:Interaction.Behaviors>
+                                    </Image>
+                                    <Border BorderThickness="1" BorderBrush="#FFC3C3C3" Background="Transparent" />
+                                </Grid>
+                            </dxc:BackgroundPanel>
+                            <dp:DataPager Grid.Row="1" HorizontalAlignment="Center" IsTotalItemCountFixed="True" Source="{Binding DataPagerSource}" PageSize="1" DisplayMode="FirstLastPreviousNext" ShowTotalPageCount="True" PageIndex="{Binding PagePreviewIndex, Mode=TwoWay}">
+                                <dp:DataPager.Resources>
+                                    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=http://schemas.devexpress.com/winfx/2008/xaml/editors.SpinEdit}" TargetType="{x:Type dxe:SpinEdit}">
+                                        <Setter Property="Width" Value="30" />
+                                        <Style.Triggers>
+                                            <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                                                <Setter Property="Width" Value="60" />
+                                            </Trigger>
+                                            <Trigger Property="dxc:ThemeManager.IsTouchlineTheme" Value="True">
+                                                <Setter Property="Width" Value="60" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </dp:DataPager.Resources>
+                            </dp:DataPager>
+                        </Grid>
+                    </dxlc:LayoutGroup>
+                    <dxlc:LayoutGroup x:Name="PART_DockClientPart" VerticalAlignment="Top" Margin="12,0,0,0" ItemLabelsAlignment="Local" Grid.Column="1" Orientation="Vertical" dxlc:DockLayoutControl.Dock="Client">
+                        <dxlc:LayoutItem Label="{local:PrintingStringId StringId=Printer}" AddColonToLabel="True">
+                            <dxlc:LayoutGroup ItemLabelsAlignment="Local">
+                                <dxlc:LayoutItem VerticalAlignment="Stretch" HorizontalAlignment="Left" VerticalContentAlignment="Stretch">
+                                    <dxe:ComboBoxEdit Style="{StaticResource firstColumnStyle}" Margin="5,0,0,0" ItemsSource="{Binding Path=PrinterItems}" ApplyItemTemplateToSelectedItem="True" IsTextEditable="False" EditValue="{Binding SelectedPrinter, UpdateSourceTrigger=PropertyChanged}">
+                                        <dxe:ComboBoxEdit.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="2, 0">
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="auto" />
+                                                        <ColumnDefinition Width="*" />
+                                                    </Grid.ColumnDefinitions>
+                                                    <dxc:DXImage Source="{Binding Path=PrinterType, Converter={StaticResource printerTypeToImageConverter}}" Width="16" Height="16" />
+                                                    <TextBlock Grid.Column="1" VerticalAlignment="Center" Margin="2,0,2,0" Text="{Binding Path=DisplayName}" />
+                                                </Grid>
+                                            </DataTemplate>
+                                        </dxe:ComboBoxEdit.ItemTemplate>
+                                    </dxe:ComboBoxEdit>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem VerticalContentAlignment="Stretch" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
+                                    <Button Command="{Binding Path=PreferencesCommand}" Content="{local:PrintingStringId StringId=Preferences}" />
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="{local:PrintingStringId StringId=PrinterStatus}" AddColonToLabel="True">
+                            <TextBlock Margin="5,0,0,0" Text="{Binding Path=SelectedPrinter.Status}" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="{local:PrintingStringId StringId=PrinterLocation}" AddColonToLabel="True">
+                            <TextBlock Margin="5,0,0,0" Text="{Binding Path=SelectedPrinter.Location}" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="{local:PrintingStringId StringId=PrinterComment}" AddColonToLabel="True">
+                            <TextBlock Margin="5,0,0,0" Text="{Binding Path=SelectedPrinter.Comment}" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Label="{local:PrintingStringId StringId=PrinterQueue}" AddColonToLabel="True">
+                            <TextBlock Margin="5,0,0,0" Text="{Binding Path=SelectedPrinter.PrinterDocumentsInQueue}" />
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Margin="0,6,0,0" Label="{local:PrintingStringId StringId=Copies}" AddColonToLabel="True" IsEnabled="{Binding AllowCopies}">
+                            <dxlc:LayoutGroup Margin="5,0,0,0" Orientation="Horizontal" View="Group">
+                                <dxlc:LayoutItem HorizontalAlignment="Left">
+                                    <dxe:SpinEdit Name="copiesEdit" Style="{StaticResource firstColumnStyle}" EditValueType="{x:Type sys:Int16}" EditValue="{Binding Path=Copies, UpdateSourceTrigger=PropertyChanged}" MinValue="1" MaxValue="{Binding MaxCopies}" IsFloatValue="False" AllowRoundOutOfRangeValue="False" ValidateOnTextInput="True" />
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem Margin="0,0,18,0" VerticalAlignment="Center" HorizontalAlignment="Left">
+                                    <dxe:CheckEdit EditValue="{Binding Collate, Mode=TwoWay}" VerticalAlignment="Center" IsEnabled="{Binding Path=AllowCollate}" Content="{local:PrintingStringId StringId=Collate}" />
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Margin="0,10,0,0" Label="{local:PrintingStringId StringId=PageRange}" AddColonToLabel="True">
+                            <dxlc:LayoutGroup Margin="5,0,0,0" ItemLabelsAlignment="Local" Orientation="Horizontal">
+                                <dxlc:LayoutItem HorizontalAlignment="Left">
+                                    <dxe:ListBoxEdit Style="{StaticResource firstColumnStyle}" Background="{x:Null}" HorizontalContentAlignment="Stretch" ShowBorder="False" EditValue="{Binding Path=PrintRange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                        <dxe:ListBoxEdit.Resources>
+                                            <!--<Style TargetType="FrameworkElement" x:Key="contentLayoutStyle">
+                                                <Setter Property="Height" Value="26" />
+                                                <Setter Property="Margin" Value="6,0,0,0" />
+                                                <Style.Triggers>
+                                                    <Trigger Property="dxc:ThemeManager.IsTouchEnabled" Value="True">
+                                                        <Setter Property="Height" Value="56" />
+                                                    </Trigger>
+                                                    <Trigger Property="dxc:ThemeManager.IsTouchlineTheme" Value="True">
+                                                        <Setter Property="Height" Value="56" />
+                                                    </Trigger>
+                                                </Style.Triggers>
+                                            </Style>-->
+                                        </dxe:ListBoxEdit.Resources>
+                                        <dxe:ListBoxEdit.StyleSettings>
+                                            <dxe:RadioListBoxEditStyleSettings />
+                                        </dxe:ListBoxEdit.StyleSettings>
+                                        <dxe:ListBoxEditItem Height="{Binding ActualHeight, ElementName=rangeItem}" Content="{dxpn:SystemPrintRange Range=AllPages}">
+                                            <dxe:ListBoxEditItem.ContentTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <TextBlock Margin="6,0,0,0" Text="{local:PrintingStringId StringId=AllPages}" VerticalAlignment="Center" />
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </dxe:ListBoxEditItem.ContentTemplate>
+                                        </dxe:ListBoxEditItem>
+                                        <dxe:ListBoxEditItem Height="{Binding ActualHeight, ElementName=rangeItem}" Content="{dxpn:SystemPrintRange Range=CurrentPage}">
+                                            <dxe:ListBoxEditItem.ContentTemplate>
+                                                <DataTemplate>
+                                                    <Grid>
+                                                        <TextBlock Margin="6,0,0,0" Text="{local:PrintingStringId StringId=CurrentPage}" VerticalAlignment="Center" />
+                                                    </Grid>
+                                                </DataTemplate>
+                                            </dxe:ListBoxEditItem.ContentTemplate>
+                                        </dxe:ListBoxEditItem>
+                                        <dxe:ListBoxEditItem x:Name="rangeItem" Content="{dxpn:SystemPrintRange Range=SomePages}">
+                                            <dxe:ListBoxEditItem.ContentTemplate>
+                                                <DataTemplate>
+                                                    <dxlc:LayoutItem Margin="6,0,0,0" Label="{local:PrintingStringId StringId=SomePages}">
+                                                        <dxe:TextEdit Grid.Column="1" Margin="5,0,-2,0" VerticalAlignment="Center" Mask="(\d+(-\d+)?)(,(\d+(-\d+)?))*" MaskType="RegEx" MaskShowPlaceHolders="False" IsEnabled="{Binding IsSelected, RelativeSource={RelativeSource AncestorType=dxe:ListBoxEditItem}}" EditValue="{Binding Path=(DataContext).CustomPageRange, RelativeSource={RelativeSource AncestorType=dxe:ListBoxEdit}, ValidatesOnDataErrors=True, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                        </dxe:TextEdit>
+                                                    </dxlc:LayoutItem>
+                                                </DataTemplate>
+                                            </dxe:ListBoxEditItem.ContentTemplate>
+                                        </dxe:ListBoxEditItem>
+                                    </dxe:ListBoxEdit>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem HorizontalAlignment="Left" Margin="0,0,18,3" Height="{Binding ActualHeight, ElementName=copiesEdit}" VerticalAlignment="Bottom" VerticalContentAlignment="Center">
+                                    <TextBlock Text="{local:PrintingStringId StringId=PageRangeHint}" IsEnabled="False" />
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>
+                            
+                        </dxlc:LayoutItem>
+                        <dxlc:LayoutItem Margin="0,10,0,0" Label="{local:PrintingStringId StringId=PaperSource}" AddColonToLabel="True" HorizontalContentAlignment="Left" HorizontalAlignment="Left">
+                            <dxe:ComboBoxEdit Margin="5,0,0,0" Style="{StaticResource firstColumnStyle}" Grid.Column="0" ItemsSource="{Binding Path=PaperSources}" IsTextEditable="False" EditValue="{Binding PaperSource}" />
+                        </dxlc:LayoutItem>
+
+                        <dxlc:LayoutItem Label="{local:PrintingStringId StringId=FilePath}" Margin="0,6,0,0" AddColonToLabel="True">
+                            <dxlc:LayoutGroup Margin="5,0,0,0" ItemLabelsAlignment="Local">
+                                <dxlc:LayoutItem HorizontalAlignment="Left">
+                                    <dxe:ButtonEdit x:Name="PART_PrintFileSelectButton" Style="{StaticResource firstColumnStyle}" AllowDefaultButton="False" EditValue="{Binding Path=PrintFileName, ValidatesOnDataErrors=True, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}" IsEnabled="{Binding Path=PrintToFile}">
+                                        <dxe:ButtonEdit.Buttons>
+                                            <dxe:ButtonInfo GlyphKind="Regular" Command="{Binding Path=FileSelectCommand}" />
+                                        </dxe:ButtonEdit.Buttons>
+                                    </dxe:ButtonEdit>
+                                </dxlc:LayoutItem>
+                                <dxlc:LayoutItem HorizontalAlignment="Left" Margin="0,0,18,0" VerticalAlignment="Center">
+                                    <dxe:CheckEdit EditValue="{Binding Path=PrintToFile, Mode=TwoWay}" VerticalAlignment="Center" Content="{local:PrintingStringId StringId=PrintToFile}" />
+                                </dxlc:LayoutItem>
+                            </dxlc:LayoutGroup>
+                        </dxlc:LayoutItem>
+                    </dxlc:LayoutGroup>
+                </Grid>
+            </dxlc:LayoutControl>
+        </Grid>
+    </DataTemplate>
+</ResourceDictionary>

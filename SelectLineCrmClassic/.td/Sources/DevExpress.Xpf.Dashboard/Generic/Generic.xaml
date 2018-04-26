@@ -1,0 +1,443 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors" xmlns:dxdash="http://schemas.devexpress.com/winfx/2008/xaml/dashboard" xmlns:dxdasht="http://schemas.devexpress.com/winfx/2008/xaml/dashboard/themekeys" xmlns:dxdashi="http://schemas.devexpress.com/winfx/2008/xaml/dashboard/internal" xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars" xmlns:dxdo="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys">
+
+    <ResourceDictionary.MergedDictionaries>
+        <!--<ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/DeltaValuePresenter.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/CardItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/GridItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/PivotItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/MapItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/ChartItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/ComboBoxItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/ListBoxItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/TreeViewItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/TextBoxItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/ImageItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/BoundImageItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/RangeItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/TreemapItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/GaugeItem.xaml" />
+        <ResourceDictionary Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.Dashboard/Generic/PieItem.xaml" />-->
+        <dxdst:ResourceDictionaryEx Source="{dxdo:DockingDynamicThemeResourceExtension DockLayoutManagerElements.xaml, ResourcePath=Themes, ResourcePathInTheme='DevExpress.Xpf.Docking', TypeInTargetAssembly={x:Type dxdo:LayoutGroup}, UseGeneric=True}" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <ControlTemplate x:Key="{dxdasht:DashboardControlThemeKey ResourceKey=Template}" TargetType="dxdash:DashboardControlBase">
+        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <dxdashi:DashboardTitlePresenter Visibility="{DXBinding '@p.ShowTitle ? `Visible` : `Collapsed`'}" />
+                <dxdash:DashboardLayoutManager Grid.Row="1" AllowCustomization="False" Background="Transparent" Foreground="{TemplateBinding Foreground}">
+                    <dxmvvm:Interaction.Behaviors>
+                        <dxdash:DockLayoutManagerDashboardBehavior GridItemStyle="{Binding GridItemStyle, RelativeSource={RelativeSource TemplatedParent}}" GridItemStyleSelector="{Binding GridItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" PivotItemStyle="{Binding PivotItemStyle, RelativeSource={RelativeSource TemplatedParent}}" PivotItemStyleSelector="{Binding PivotItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" MapItemStyle="{Binding MapItemStyle, RelativeSource={RelativeSource TemplatedParent}}" MapItemStyleSelector="{Binding MapItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" ChartItemStyle="{Binding ChartItemStyle, RelativeSource={RelativeSource TemplatedParent}}" ChartItemStyleSelector="{Binding ChartItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" ImageItemStyle="{Binding ImageItemStyle, RelativeSource={RelativeSource TemplatedParent}}" ImageItemStyleSelector="{Binding ImageItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" ComboBoxItemStyle="{Binding ComboBoxItemStyle, RelativeSource={RelativeSource TemplatedParent}}" ComboBoxItemStyleSelector="{Binding ComboBoxItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" ListBoxItemStyle="{Binding ListBoxItemStyle, RelativeSource={RelativeSource TemplatedParent}}" ListBoxItemStyleSelector="{Binding ListBoxItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" TreeViewItemStyle="{Binding TreeViewItemStyle, RelativeSource={RelativeSource TemplatedParent}}" TreeViewItemStyleSelector="{Binding TreeViewItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" CardItemStyle="{Binding CardItemStyle, RelativeSource={RelativeSource TemplatedParent}}" CardItemStyleSelector="{Binding CardItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" TextBoxItemStyle="{Binding TextBoxItemStyle, RelativeSource={RelativeSource TemplatedParent}}" TextBoxItemStyleSelector="{Binding TextBoxItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" RangeItemStyle="{Binding RangeItemStyle, RelativeSource={RelativeSource TemplatedParent}}" RangeItemStyleSelector="{Binding RangeItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" BoundImageItemStyle="{Binding BoundImageItemStyle, RelativeSource={RelativeSource TemplatedParent}}" BoundImageItemStyleSelector="{Binding BoundImageItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" TreemapItemStyle="{Binding TreemapItemStyle, RelativeSource={RelativeSource TemplatedParent}}" TreemapItemStyleSelector="{Binding TreemapItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" GaugeItemStyle="{Binding GaugeItemStyle, RelativeSource={RelativeSource TemplatedParent}}" GaugeItemStyleSelector="{Binding GaugeItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" PieItemStyle="{Binding PieItemStyle, RelativeSource={RelativeSource TemplatedParent}}" PieItemStyleSelector="{Binding PieItemStyleSelector, RelativeSource={RelativeSource TemplatedParent}}" />
+                    </dxmvvm:Interaction.Behaviors>
+                </dxdash:DashboardLayoutManager>
+            </Grid>
+        </Border>
+    </ControlTemplate>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardControlBase}" TargetType="dxdash:DashboardControlBase">
+        <Setter Property="dx:ScrollBarExtensions.ScrollBarMode" Value="TouchOverlap" />
+        <Setter Property="Template" Value="{DynamicResource {dxdasht:DashboardControlThemeKey ResourceKey=Template}}" />
+        <Setter Property="Background" Value="{DynamicResource {dxdasht:DashboardControlThemeKey ResourceKey=Background}}" />
+        <Setter Property="Focusable" Value="False" />
+    </Style>
+
+    <DataTemplate x:Key="DashboardLayoutGroupThemeKey">
+        <!-- <Border TextBlock.Foreground="Red ... > - for theming -->
+        <Border Background="{DynamicResource {dxdasht:DashboardLayoutItemThemeKey ResourceKey=CaptionBackground}}" HorizontalAlignment="Stretch">
+            <Grid Margin="4,2" Visibility="{DXBinding 'ShowCaption ? `Visible` : `Collapsed`'}" HorizontalAlignment="Stretch">
+                <Grid.Resources>
+                    <DataTemplate x:Key="ActionButtons">
+                        <StackPanel Orientation="Horizontal" dxb:BarNameScope.IsScopeOwner="True">
+                            <dxb:ToolBarControl Margin="4,0,0,0" ShowBackground="False" AllowCustomizationMenu="False" ShowDragWidget="False" AllowQuickCustomization="False" Focusable="False">
+                                <dxb:BarSplitButtonItem AllowGlyphTheming="True" Content="{dxdash:DashboardLocalizationString ActionExportTo}" ToolTip="{dxdash:DashboardLocalizationString ActionExportTo}" ToolTipService.ShowOnDisabled="True" ActAsDropDown="True" Glyph="pack://application:,,,/DevExpress.Xpf.Dashboard.v17.2;component/Images/Print_16x16.png" IsVisible="{Binding AllowPrintDashboardItems}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToButton}">
+                                    <dxb:PopupMenu dxb:BarManager.ShowGlyphsInPopupMenus="False">
+                                        <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToPdf}" Command="{Binding ExportToPdfCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToPdfButton}" />
+                                        <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToImage}" Command="{Binding ExportToImageCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToImageButton}" />
+                                        <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToExcel}" Command="{Binding ExportToExcelCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToExcelButton}" />
+                                    </dxb:PopupMenu>
+                                </dxb:BarSplitButtonItem>
+                            </dxb:ToolBarControl>
+                        </StackPanel>
+                    </DataTemplate>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Content="{Binding Caption}" />
+                <ContentPresenter HorizontalAlignment="Right" Content="{Binding}" ContentTemplate="{StaticResource ActionButtons}" Grid.Column="1" />
+            </Grid>
+        </Border>
+    </DataTemplate>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutGroup}" TargetType="dxdash:DashboardLayoutGroup" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Docking.LayoutGroup}}">
+        <Setter Property="LastChildFill" Value="True" />
+        <Setter Property="AllowSplitters" Value="True" />
+        <Setter Property="LayoutItemInterval" Value="4" />
+        <Setter Property="AllowContextMenu" Value="False" />
+        <Setter Property="CaptionTemplate" Value="{StaticResource DashboardLayoutGroupThemeKey}" />
+        <Setter Property="ShowCaption" Value="{Binding ShowCaption}" />
+        <Setter Property="GroupBorderStyle" Value="{DXBinding 'ShowCaption ? `GroupBox` : `NoBorder`'}" />
+        <Setter Property="CaptionHorizontalAlignment" Value="Stretch" />
+        <Setter Property="Caption" Value="{Binding }" />
+        <Setter Property="ContextMenuTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <dxb:PopupMenu Placement="MousePoint">
+                        <dxb:BarSubItem AllowGlyphTheming="True" Content="{dxdash:DashboardLocalizationString ActionExportTo}" IsVisible="{Binding AllowPrintDashboardItems}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToButton}">
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToPdf}" Command="{Binding ExportToPdfCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToPdfButton}" />
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToImage}" Command="{Binding ExportToImageCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToImageButton}" />
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToExcel}" Command="{Binding ExportToExcelCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToExcelButton}" />
+                        </dxb:BarSubItem>
+                        <dxb:BarSubItem AllowGlyphTheming="True" Content="Export Dashboard" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportDashboardButton}">
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToPdf}" Command="{Binding ExportDashboardToPdfCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportDashboardToPdfButton}" />
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToImage}" Command="{Binding ExportDashboardToImageCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportDashboardToImageButton}" />
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToExcel}" Command="{Binding ExportDashboardToExcelCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportDashboardToExcelButton}" />
+                        </dxb:BarSubItem>
+                    </dxb:PopupMenu>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+
+        <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <ItemsControl>
+                        <dxdash:LayoutItemSizeService UnregisterOnUnloaded="True" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <DataTemplate x:Key="{dxdasht:DashboardLayoutItemThemeKey ResourceKey=CaptionTemplate}">
+        <Border Background="{DynamicResource {dxdasht:DashboardLayoutItemThemeKey ResourceKey=CaptionBackground}}">
+            <Grid Margin="4,2" Visibility="{DXBinding 'ShowCaption ? `Visible` : `Collapsed`'}">
+                <Grid.Resources>
+                    <DataTemplate x:Key="ActionButtons">
+                        <StackPanel Orientation="Horizontal" dxb:BarNameScope.IsScopeOwner="True">
+                            <dxmvvm:Interaction.Behaviors>
+                                <dxb:ControllerBehavior ExecutionMode="OnEvent">
+                                    <dxb:ControllerBehavior.Triggers>
+                                        <dxb:ActionTrigger EventName="Loaded" ExecuteOnce="True" />
+                                    </dxb:ControllerBehavior.Triggers>
+                                    <!--TODO : item caption customization-->
+                                    <!--<dxb:ActionGroup ActionsTemplate="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dashboards:DashboardLayoutItem}}, Path=CaptionMenuCustomizationsTemplate}"/>-->
+                                </dxb:ControllerBehavior>
+                            </dxmvvm:Interaction.Behaviors>
+                            <dxdashi:DashboardItemWaitIndicator Margin="4,0,0,0" IsIndeterminate="True" Visibility="{DXBinding 'IsLoading ? `Visible` : `Collapsed`'}" />
+                            <dxb:ToolBarControl Margin="4,0,0,0" ShowBackground="False" AllowCustomizationMenu="False" ShowDragWidget="False" AllowQuickCustomization="False" Focusable="False">
+                                <!--NAMING RULES: http://gitserver/Serov.Alexey/OfficeUI-->
+                                <dxb:BarButtonItem AllowGlyphTheming="True" Glyph="pack://application:,,,/DevExpress.Xpf.Dashboard.v17.2;component/Images/InitialExtent_16x16.png" Command="{Binding InitialExtentCommand}" IsVisible="{Binding IsInitialExtentButtonVisible}" ToolTip="{dxdash:DashboardLocalizationString InitialExtent}" ToolTipService.ShowOnDisabled="True" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_InitialExtentButton}" />
+                                <dxb:BarButtonItem AllowGlyphTheming="True" Glyph="pack://application:,,,/DevExpress.Xpf.Dashboard.v17.2;component/Images/ClearMasterFilter_16x16.png" Command="{Binding ClearMasterFilterCommand}" IsVisible="{Binding IsClearMasterFilterButtonVisible}" ToolTip="{dxdash:DashboardLocalizationString ActionClearMasterFilter}" ToolTipService.ShowOnDisabled="True" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ClearMasterFilterButton}" />
+                                <dxb:BarButtonItem AllowGlyphTheming="True" Glyph="pack://application:,,,/DevExpress.Xpf.Dashboard.v17.2;component/Images/DrillUp_16x16.png" Command="{Binding DrillUpCommand}" IsVisible="{Binding IsDrillUpButtonVisible}" ToolTip="{dxdash:DashboardLocalizationString ActionDrillUp}" ToolTipService.ShowOnDisabled="True" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_DrillUpButton}" />
+                                <dxb:BarCheckItem AllowGlyphTheming="True" Glyph="pack://application:,,,/DevExpress.Xpf.Dashboard.v17.2;component/Images/MultiSelect_16x16.png" Command="{Binding MultiSelectCommand}" IsVisible="{Binding IsMultiSelectButtonVisible}" ToolTip="{dxdash:DashboardLocalizationString ActionAllowMultiselection}" ToolTipService.ShowOnDisabled="True" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_MultiSelectButton}" />
+                                <dxb:BarSplitButtonItem AllowGlyphTheming="True" ActAsDropDown="True" Glyph="pack://application:,,,/DevExpress.Xpf.Dashboard.v17.2;component/Images/SelectOtherElement_16x16.png" IsVisible="{Binding IsSelectElementButtonVisible}" ToolTip="{dxdash:DashboardLocalizationString ActionOtherValues}" ToolTipService.ShowOnDisabled="True" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_SelectElementButton}">
+                                    <dxb:PopupMenu dxb:BarManager.ShowGlyphsInPopupMenus="True">
+                                        <dxb:BarItemSelector ItemLinksSource="{Binding ItemViewModel.ContentDescription.ElementNames}" AllowEmptySelection="False" SelectedItem="{DXBinding '@c.ItemViewModel.ContentDescription.ElementNames[@c.ItemViewModel.ContentDescription.SelectedElementIndex]', Mode=OneWay}">
+                                            <dxb:BarItemSelector.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ContentControl>
+                                                        <dxb:BarCheckItem Content="{Binding}" Command="{Binding Path=DataContext.SelectElementCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxb:BarItemSelector}}}" CommandParameter="{Binding}" />
+                                                    </ContentControl>
+                                                </DataTemplate>
+                                            </dxb:BarItemSelector.ItemTemplate>
+                                        </dxb:BarItemSelector>
+                                    </dxb:PopupMenu>
+                                </dxb:BarSplitButtonItem>
+                                <dxb:BarSplitButtonItem AllowGlyphTheming="True" Content="{dxdash:DashboardLocalizationString ActionExportTo}" ToolTip="{dxdash:DashboardLocalizationString ActionExportTo}" ToolTipService.ShowOnDisabled="True" ActAsDropDown="True" Glyph="pack://application:,,,/DevExpress.Xpf.Dashboard.v17.2;component/Images/Print_16x16.png" IsVisible="{Binding AllowPrintDashboardItems}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToButton}">
+                                    <dxb:PopupMenu dxb:BarManager.ShowGlyphsInPopupMenus="False">
+                                        <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToPdf}" Command="{Binding ExportToPdfCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToPdfButton}" />
+                                        <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToImage}" Command="{Binding ExportToImageCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToImageButton}" />
+                                        <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToExcel}" Command="{Binding ExportToExcelCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToExcelButton}" />
+                                    </dxb:PopupMenu>
+                                </dxb:BarSplitButtonItem>
+                                <dxb:BarSplitButtonItem AllowGlyphTheming="True" ActAsDropDown="True" Glyph="pack://application:,,,/DevExpress.Xpf.Dashboard.v17.2;component/Images/DateTimePeriods_16x16.png" IsVisible="{Binding IsDateTimePeriodVisible}" ToolTip="{dxdash:DashboardLocalizationString ActionSelectDateTimePeriod}" ToolTipService.ShowOnDisabled="True" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_SelectDateTimePeriod}">
+                                    <dxb:PopupMenu dxb:BarManager.ShowGlyphsInPopupMenus="True">
+                                        <dxb:BarItemSelector ItemLinksSource="{Binding DateTimePeriodNames}" SelectedItem="{DXBinding DateTimePeriodSelectedItem}" AllowEmptySelection="True">
+                                            <dxb:BarItemSelector.ItemTemplate>
+                                                <DataTemplate>
+                                                    <ContentControl>
+                                                        <dxb:BarCheckItem Content="{Binding}" Command="{Binding Path=DataContext.SelectDateTimePeriodCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxb:BarItemSelector}}}" CommandParameter="{Binding}" />
+                                                    </ContentControl>
+                                                </DataTemplate>
+                                            </dxb:BarItemSelector.ItemTemplate>
+                                        </dxb:BarItemSelector>
+                                    </dxb:PopupMenu>
+                                </dxb:BarSplitButtonItem>                                
+                            </dxb:ToolBarControl>
+                        </StackPanel>
+                    </DataTemplate>
+                </Grid.Resources>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ContentPresenter VerticalAlignment="Center" Content="{Binding Caption}" />
+                <ContentPresenter Content="{Binding}" ContentTemplate="{StaticResource ActionButtons}" Grid.Column="1" />
+            </Grid>
+        </Border>
+    </DataTemplate>
+    
+    <ControlTemplate x:Key="{dxdasht:DashboardLayoutItemThemeKey ResourceKey=Template}" TargetType="dxdash:DashboardLayoutItem">
+        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <ContentPresenter ContentSource="Caption" />
+                <ContentPresenter ContentSource="Content" Grid.Row="1" Margin="{TemplateBinding Padding}" />
+            </Grid>
+        </Border>
+    </ControlTemplate>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}" TargetType="dxdash:DashboardLayoutItem">
+        <Setter Property="ItemHeight" Value="*" />
+        <Setter Property="ItemWidth" Value="*" />
+        <Setter Property="Template" Value="{DynamicResource {dxdasht:DashboardLayoutItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="UseLayoutRounding" Value="True" />
+        <Setter Property="Background" Value="{DynamicResource {dxdasht:DashboardLayoutItemThemeKey ResourceKey=Background}}" />
+        <Setter Property="BorderBrush" Value="{DynamicResource {dxdasht:DashboardLayoutItemThemeKey ResourceKey=BorderBrush}}" />
+        <Setter Property="BorderThickness" Value="{DynamicResource {dxdasht:DashboardLayoutItemThemeKey ResourceKey=BorderThickness}}" />
+        <Setter Property="Caption" Value="{Binding }" />
+        <Setter Property="CaptionTemplate" Value="{DynamicResource {dxdasht:DashboardLayoutItemThemeKey ResourceKey=CaptionTemplate}}" />
+        <Setter Property="Focusable" Value="False" />
+        <Setter Property="ContextMenuTemplate">
+            <Setter.Value>
+                <DataTemplate>
+                    <dxb:PopupMenu Placement="MousePoint">
+                        <!--NAMING RULES: http://gitserver/Serov.Alexey/OfficeUI-->
+                        <dxb:BarButtonItem AllowGlyphTheming="True" Command="{Binding InitialExtentCommand}" IsVisible="{Binding IsInitialExtentButtonVisible}" Content="{dxdash:DashboardLocalizationString InitialExtent}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_InitialExtentButton}" />                        
+                        <dxb:BarButtonItem AllowGlyphTheming="True" Command="{Binding ClearMasterFilterCommand}" IsVisible="{Binding IsClearMasterFilterButtonVisible}" Content="{dxdash:DashboardLocalizationString ActionClearMasterFilter}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ClearMasterFilterButton}" />
+                        <dxb:BarButtonItem AllowGlyphTheming="True" Command="{Binding DrillUpCommand}" IsVisible="{Binding IsDrillUpButtonVisible}" Content="{dxdash:DashboardLocalizationString ActionDrillUp}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_DrillUpButton}" />
+                        <dxb:BarCheckItem AllowGlyphTheming="True" Command="{Binding MultiSelectCommand}" IsVisible="{Binding IsMultiSelectButtonVisible}" Content="{dxdash:DashboardLocalizationString ActionAllowMultiselection}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_MultiSelectButton}" />
+                        <dxb:BarSubItem AllowGlyphTheming="True" IsVisible="{Binding IsSelectElementButtonVisible}" Content="{dxdash:DashboardLocalizationString ActionOtherValues}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_SelectElementButton}">
+                            <dxb:BarItemSelector ItemLinksSource="{Binding ItemViewModel.ContentDescription.ElementNames}" AllowEmptySelection="False" SelectedItem="{DXBinding '@c.ItemViewModel.ContentDescription.ElementNames[@c.ItemViewModel.ContentDescription.SelectedElementIndex]', Mode=OneWay}">
+                                <dxb:BarItemSelector.ItemTemplate>
+                                    <DataTemplate>
+                                        <ContentControl>
+                                            <dxb:BarCheckItem Content="{Binding}" Command="{Binding Path=DataContext.SelectElementCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxb:BarItemSelector}}}" CommandParameter="{Binding}" />
+                                        </ContentControl>
+                                    </DataTemplate>
+                                </dxb:BarItemSelector.ItemTemplate>
+                            </dxb:BarItemSelector>
+                        </dxb:BarSubItem>
+                        <dxb:BarSubItem AllowGlyphTheming="True" IsVisible="{Binding IsDateTimePeriodVisible}" Content="{dxdash:DashboardLocalizationString ActionSelectDateTimePeriod}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_SelectDateTimePeriod}">
+                            <dxb:BarItemSelector ItemLinksSource="{Binding DateTimePeriodNames}" AllowEmptySelection="True">
+                                <dxb:BarItemSelector.ItemTemplate>
+                                    <DataTemplate>
+                                        <ContentControl>
+                                            <dxb:BarCheckItem Content="{Binding}" Command="{Binding Path=DataContext.SelectDateTimePeriodCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type dxb:BarItemSelector}}}" CommandParameter="{Binding}" />
+                                        </ContentControl>
+                                    </DataTemplate>
+                                </dxb:BarItemSelector.ItemTemplate>
+                            </dxb:BarItemSelector>
+                        </dxb:BarSubItem>
+                        <dxb:BarSubItem AllowGlyphTheming="True" Content="{dxdash:DashboardLocalizationString ActionExportTo}" IsVisible="{Binding AllowPrintDashboardItems}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToButton}">
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToPdf}" Command="{Binding ExportToPdfCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToPdfButton}" />
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToImage}" Command="{Binding ExportToImageCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToImageButton}" />
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToExcel}" Command="{Binding ExportToExcelCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToExcelButton}" />
+                        </dxb:BarSubItem>
+                        <dxb:BarSubItem AllowGlyphTheming="True" Content="Export Dashboard" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportDashboardButton}">
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToPdf}" Command="{Binding ExportDashboardToPdfCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportDashboardToPdfButton}" />
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToImage}" Command="{Binding ExportDashboardToImageCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportDashboardToImageButton}" />
+                            <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToExcel}" Command="{Binding ExportDashboardToExcelCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportDashboardToExcelButton}" />
+                        </dxb:BarSubItem>
+                    </dxb:PopupMenu>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="dxmvvm:Interaction.BehaviorsTemplate">
+            <Setter.Value>
+                <DataTemplate>
+
+                    <ItemsControl>
+                        <dxdash:LayoutItemSizeService UnregisterOnUnloaded="True" />
+                    </ItemsControl>
+                </DataTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding ShowBorder}" Value="False">
+                <DataTrigger.Setters>
+                    <Setter Property="BorderThickness" Value="0" />
+                    <Setter Property="Background" Value="{DynamicResource {dxdasht:DashboardControlThemeKey ResourceKey=Background}}" />
+                </DataTrigger.Setters>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="WaitIndicatorPathStyle" TargetType="{x:Type Path}">
+        <Setter Property="Data" Value="F1 M 16.1,8.09999C 16.9284,8.09999 17.6,8.77157 17.6,9.59999C 17.6,10.4284 16.9284,11.1 16.1,11.1C 15.2716,11.1 14.6,10.4284 14.6,9.59999C 14.6,8.77157 15.2716,8.09999 16.1,8.09999 Z M 3.1,8.09999C 3.92843,8.09999 4.6,8.77157 4.6,9.59999C 4.6,10.4284 3.92843,11.1 3.1,11.1C 2.27157,11.1 1.6,10.4284 1.6,9.59999C 1.6,8.77157 2.27157,8.09999 3.1,8.09999 Z M 11.1,16.1C 11.1,16.9284 10.4284,17.6 9.6,17.6C 8.77157,17.6 8.1,16.9284 8.1,16.1C 8.1,15.2716 8.77157,14.6 9.6,14.6C 10.4284,14.6 11.1,15.2716 11.1,16.1 Z M 11.1,3.1C 11.1,3.92843 10.4284,4.6 9.6,4.6C 8.77157,4.6 8.1,3.92843 8.1,3.1C 8.1,2.27157 8.77157,1.6 9.6,1.6C 10.4284,1.6 11.1,2.27157 11.1,3.1 Z M 15.2835,13.0925C 15.8738,13.6738 15.881,14.6235 15.2997,15.2137C 14.7183,15.8039 13.7686,15.8112 13.1784,15.2298C 12.5882,14.6485 12.581,13.6988 13.1623,13.1086C 13.7436,12.5184 14.6933,12.5112 15.2835,13.0925 Z M 6.02161,3.97017C 6.61182,4.55149 6.61904,5.50121 6.03772,6.09142C 5.4564,6.68164 4.50668,6.68886 3.91646,6.10754C 3.32624,5.52621 3.31903,4.57649 3.90035,3.98628C 4.48167,3.39606 5.43139,3.38884 6.02161,3.97017 Z M 6.10753,15.2835C 5.52621,15.8738 4.57649,15.881 3.98627,15.2997C 3.39606,14.7183 3.38884,13.7686 3.97016,13.1784C 4.55148,12.5882 5.5012,12.581 6.09142,13.1623C 6.68164,13.7436 6.68885,14.6933 6.10753,15.2835 Z M 15.2298,6.02161C 14.6485,6.61183 13.6988,6.61904 13.1086,6.03772C 12.5184,5.4564 12.5111,4.50668 13.0925,3.91646C 13.6738,3.32625 14.6235,3.31903 15.2137,3.90035C 15.8039,4.48167 15.8112,5.43139 15.2298,6.02161 Z " />
+        <Setter Property="Fill" Value="{DynamicResource {dxdasht:DashboardLayoutItemThemeKey ResourceKey=WaitIndicatorForeground}}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="SnapsToDevicePixels" Value="True" />
+        <Setter Property="Stretch" Value="Fill" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <ControlTemplate x:Key="WaitIndicatorTemplate" TargetType="{x:Type ProgressBar}">
+        <Grid x:Name="Root">
+            <Path x:Name="Content" Style="{StaticResource WaitIndicatorPathStyle}" Width="{TemplateBinding Width}" Height="{TemplateBinding Height}" Margin="{TemplateBinding Margin}" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform />
+                        <SkewTransform />
+                        <RotateTransform Angle="0" />
+                        <TranslateTransform />
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Determinate" />
+                    <VisualState x:Name="Indeterminate">
+                        <Storyboard>
+                            <DoubleAnimationUsingKeyFrames RepeatBehavior="Forever" Storyboard.TargetName="Content" Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[2].(RotateTransform.Angle)">
+                                <EasingDoubleKeyFrame Value="0" KeyTime="0" />
+                                <EasingDoubleKeyFrame Value="359" KeyTime="0:0:1.6" />
+                            </DoubleAnimationUsingKeyFrames>
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </Grid>
+    </ControlTemplate>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.Internal.DashboardItemWaitIndicator}" TargetType="{x:Type dxdashi:DashboardItemWaitIndicator}">
+        <Setter Property="IsHitTestVisible" Value="True" />
+        <Setter Property="Template" Value="{StaticResource WaitIndicatorTemplate}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.Internal.DashboardTitlePresenter}" TargetType="dxdashi:DashboardTitlePresenter">
+        <Setter Property="MaxHeight" Value="50" />
+        <Setter Property="MinHeight" Value="40" />
+        <Setter Property="TitleFontSize" Value="16" />
+        <Setter Property="SubtitleFontSize" Value="14" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxdashi:DashboardTitlePresenter">
+                    <Grid>
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Margin="{TemplateBinding Padding}">
+                            <StackPanel Orientation="Horizontal" HorizontalAlignment="{Binding ActualContent.TitleAlignment, RelativeSource={RelativeSource TemplatedParent}}">
+                                <dx:DXImage Source="{Binding ActualContent.Image, RelativeSource={RelativeSource TemplatedParent}}" Stretch="Uniform" Margin="3,0,0,0" VerticalAlignment="Center" />
+                                <ContentPresenter TextElement.FontSize="{TemplateBinding TitleFontSize}" Content="{Binding ActualContent.Title, RelativeSource={RelativeSource TemplatedParent}}" Margin="4,0,0,0" VerticalAlignment="Center" />
+                                <ContentPresenter TextElement.FontSize="{TemplateBinding SubtitleFontSize}" Opacity="0.75" Content="{Binding ActualContent.MasterFilterValues, RelativeSource={RelativeSource TemplatedParent}}" Margin="8,0,0,0" Visibility="{DXBinding '@p.ActualContent.IsFilterIconVisible ? `Collapsed` : `Visible`'}" VerticalAlignment="Center" />
+                                <dx:DXImage Visibility="{DXBinding '@p.ActualContent.IsFilterIconVisible ? `Visible` : `Collapsed`'}" x:Name="FilterIcon" Margin="4,0,0,0" Source="pack://application:,,,/DevExpress.Xpf.Dashboard.v17.2;component/Images/Filter.png" Stretch="None" VerticalAlignment="Center" dxb:ImageColorizer.IsEnabled="True" dxb:ImageColorizer.Color="{DynamicResource {dxdasht:DashboardControlThemeKey ResourceKey=MasterFilterIconColor}}" />
+                            </StackPanel>
+                        </Border>
+                        <dxb:ToolBarControl Margin="4,0,0,0" ShowBackground="False" AllowCustomizationMenu="False" ShowDragWidget="False" AllowQuickCustomization="False" Focusable="False" HorizontalAlignment="Right" VerticalAlignment="Center" DataContext="{Binding ActualContent, RelativeSource={RelativeSource TemplatedParent}}">
+                            <dxb:BarSplitButtonItem AllowGlyphTheming="True" Content="{dxdash:DashboardLocalizationString ActionExportTo}" ToolTip="{dxdash:DashboardLocalizationString ActionExportTo}" ToolTipService.ShowOnDisabled="True" ActAsDropDown="True" Glyph="pack://application:,,,/DevExpress.Xpf.Dashboard.v17.2;component/Images/Print_16x16.png" IsVisible="True" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToButton}">
+                                <dxb:PopupMenu dxb:BarManager.ShowGlyphsInPopupMenus="False">
+                                    <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToPdf}" Command="{Binding DashboardViewModel.ExportToPdfCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToPdfButton}" />
+                                    <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToImage}" Command="{Binding DashboardViewModel.ExportToImageCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToImageButton}" />
+                                    <dxb:BarButtonItem Content="{dxdash:DashboardLocalizationString ActionExportToExcel}" Command="{Binding DashboardViewModel.ExportToExcelCommand}" dx:XamlHelper.Name="{x:Static Member=dxdash:DefaultBarItemNames.DashboardItemCaption_ExportToExcelButton}" />
+                                </dxb:PopupMenu>
+                            </dxb:BarSplitButtonItem>
+                        </dxb:ToolBarControl>
+                        <dxe:FlyoutControl VerticalOffset="20" PlacementTarget="{Binding ElementName=FilterIcon}" OpenOnHover="True" Content="{Binding ActualContent.MasterFilterValues, RelativeSource={RelativeSource TemplatedParent}}">
+                            <dxe:FlyoutControl.ContentTemplate>
+                                <DataTemplate>
+                                    <ItemsControl ItemsSource="{Binding}">
+                                        <ItemsControl.ItemsPanel>
+                                            <ItemsPanelTemplate>
+                                                <dxdashi:SplitPanel ChildSpacing="8" Orientation="Vertical" />
+                                            </ItemsPanelTemplate>
+                                        </ItemsControl.ItemsPanel>
+                                        <ItemsControl.ItemTemplate>
+                                            <DataTemplate>
+                                                <dxdashi:SplitPanel ChildSpacing="4" Orientation="Vertical">
+                                                    <ContentPresenter Content="{Binding Name}" TextElement.FontWeight="Bold" />
+                                                    <ItemsControl ItemsSource="{Binding Values}">
+                                                        <ItemsControl.ItemsPanel>
+                                                            <ItemsPanelTemplate>
+                                                                <dxdashi:SplitPanel ChildSpacing="4" Orientation="Vertical" />
+                                                            </ItemsPanelTemplate>
+                                                        </ItemsControl.ItemsPanel>
+                                                    </ItemsControl>
+                                                </dxdashi:SplitPanel>
+                                            </DataTemplate>
+                                        </ItemsControl.ItemTemplate>
+                                    </ItemsControl>
+                                </DataTemplate>
+                            </dxe:FlyoutControl.ContentTemplate>
+                        </dxe:FlyoutControl>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.ListBoxDashboardLayoutItem}" TargetType="{x:Type dxdash:ListBoxDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:ListBoxItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:ListBoxItemThemeKey ResourceKey=ViewStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.BoundImageDashboardLayoutItem}" TargetType="{x:Type dxdash:BoundImageDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:BoundImageItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:BoundImageItemThemeKey ResourceKey=ViewStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.CardDashboardLayoutItem}" TargetType="{x:Type dxdash:CardDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:CardItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:CardItemThemeKey ResourceKey=ViewStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.ChartDashboardLayoutItem}" TargetType="{x:Type dxdash:ChartDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=ViewStyle}}" />
+        <Setter Property="DiagramStyle" Value="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=DiagramStyle}}" />
+        <Setter Property="LegendStyle" Value="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=LegendStyle}}" />
+        <Setter Property="AxisXStyle" Value="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=AxisXStyle}}" />
+        <Setter Property="SecondaryAxisYStyle" Value="{DynamicResource {dxdasht:ChartItemThemeKey ResourceKey=SecondaryAxisYStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.ComboBoxDashboardLayoutItem}" TargetType="{x:Type dxdash:ComboBoxDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:ComboBoxItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:ComboBoxItemThemeKey ResourceKey=ViewStyle}}" />
+        <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.GaugeDashboardLayoutItem}" TargetType="{x:Type dxdash:GaugeDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:GaugeItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:GaugeItemThemeKey ResourceKey=ViewStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.GridDashboardLayoutItem}" TargetType="{x:Type dxdash:GridDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:GridItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:GridItemThemeKey ResourceKey=ViewStyle}}" />
+        <Setter Property="GridViewStyle" Value="{DynamicResource {dxdasht:GridItemThemeKey ResourceKey=GridViewStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.ImageDashboardLayoutItem}" TargetType="{x:Type dxdash:ImageDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:ImageItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:ImageItemThemeKey ResourceKey=ViewStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.MapDashboardLayoutItem}" TargetType="{x:Type dxdash:MapDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:MapItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:MapItemThemeKey ResourceKey=ViewStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.PieDashboardLayoutItem}" TargetType="{x:Type dxdash:PieDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:PieItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:PieItemThemeKey ResourceKey=ViewStyle}}" />
+        <Setter Property="ChartStyle" Value="{DynamicResource {dxdasht:PieItemThemeKey ResourceKey=ChartStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.PivotDashboardLayoutItem}" TargetType="{x:Type dxdash:PivotDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:PivotItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:PivotItemThemeKey ResourceKey=ViewStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.RangeDashboardLayoutItem}" TargetType="{x:Type dxdash:RangeDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:RangeItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:RangeItemThemeKey ResourceKey=ViewStyle}}" />
+        <Setter Property="RangeControlClientStyle" Value="{DynamicResource {dxdasht:RangeItemThemeKey ResourceKey=RangeControlClientStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.TextBoxDashboardLayoutItem}" TargetType="{x:Type dxdash:TextBoxDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:TextBoxItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:TextBoxItemThemeKey ResourceKey=ViewStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.TreeMapDashboardLayoutItem}" TargetType="{x:Type dxdash:TreeMapDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:TreemapItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:TreemapItemThemeKey ResourceKey=ViewStyle}}" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.TreeViewDashboardLayoutItem}" TargetType="{x:Type dxdash:TreeViewDashboardLayoutItem}" BasedOn="{StaticResource {dxdst:DefaultStyleThemeKey FullName=DevExpress.DashboardXpf.DashboardLayoutItem}}">
+        <Setter Property="ContentTemplate" Value="{DynamicResource {dxdasht:TreeViewItemThemeKey ResourceKey=Template}}" />
+        <Setter Property="ViewStyle" Value="{DynamicResource {dxdasht:TreeViewItemThemeKey ResourceKey=ViewStyle}}" />
+        <Setter Property="TreeListViewStyle" Value="{DynamicResource {dxdasht:TreeViewItemThemeKey ResourceKey=TreeListViewStyle}}" />
+    </Style>
+</ResourceDictionary>

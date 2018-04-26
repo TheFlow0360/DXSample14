@@ -1,0 +1,9 @@
+﻿<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri">
+    <ResourceDictionary.MergedDictionaries>
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.PivotGrid/Office2016White/PivotGridControl.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.PivotGrid/Office2016White/ScrollableArea.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.PivotGrid/Office2016White/FieldHeaders.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.PivotGrid/Office2016White/ExpandButtons.xaml" />
+        <dxdst:ResourceDictionaryEx Source="/DevExpress.Xpf.Themes.Office2016White.v17.2;component/DevExpress.Xpf.PivotGrid/Office2016White/Colors.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

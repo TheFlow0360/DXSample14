@@ -1,0 +1,12 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:system="clr-namespace:System;assembly=mscorlib" xmlns:collections="clr-namespace:System.Collections;assembly=mscorlib" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dxwui="http://schemas.devexpress.com/winfx/2008/xaml/windowsui" xmlns:dxwuit="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/themekeys" xmlns:dxwuii="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/internal" xmlns:dxwuin="http://schemas.devexpress.com/winfx/2008/xaml/windowsui/navigation" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ControlTemplate TargetType="{x:Type dxwui:NavigationPage}" x:Key="NavigationPageDefaultTemplate">
+        <Grid x:Name="PART_Grid" Background="{TemplateBinding Background}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\WindowsUI\Generic\NavigationPageGeneric.xaml;3;10">
+            <ContentPresenter dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\WindowsUI\Generic\NavigationPageGeneric.xaml;4;14" />
+            <ContentPresenter Content="{TemplateBinding TopAppBar}" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\WindowsUI\Generic\NavigationPageGeneric.xaml;5;14" />
+            <ContentPresenter Content="{TemplateBinding BottomAppBar}" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Controls\WindowsUI\Generic\NavigationPageGeneric.xaml;6;14" />
+        </Grid>
+    </ControlTemplate>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.WindowsUI.NavigationPage}" TargetType="{x:Type dxwui:NavigationPage}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Controls\WindowsUI\Generic\NavigationPageGeneric.xaml;9;6" /><Setter Property="Template" Value="{StaticResource NavigationPageDefaultTemplate}" />
+    </Style>
+</ResourceDictionary>

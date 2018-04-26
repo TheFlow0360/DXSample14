@@ -1,0 +1,103 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/map/themekeys" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/map" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+
+    <local:BoolToVisibilityConverter x:Key="VisibilityConverter" />
+    <local:NavigationElementHorizontalAlignmentToHorizontalAlignmentConverter x:Key="HorizontalAlignmentConverter" />
+    <local:NavigationElementVerticalAlignmentToVerticalAlignmentConverter x:Key="VerticalAlignmentConverter" />
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.OverlayPresentationControl}" TargetType="local:OverlayPresentationControl">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;7;6" /><Setter Property="HorizontalAlignment" Value="{Binding Path=Options.HorizontalAlignment, Converter={StaticResource HorizontalAlignmentConverter}}" />
+        <Setter Property="VerticalAlignment" Value="{Binding Path=Options.VerticalAlignment, Converter={StaticResource VerticalAlignmentConverter}}" />
+        <Setter Property="Margin" Value="{Binding Path=Options.Margin}" />
+        <Setter Property="Visibility" Value="{Binding Path=Options.Visible, Converter={StaticResource VisibilityConverter}}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:OverlayPresentationControl">
+                    <ContentPresenter Content="{TemplateBinding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;15;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.MapCoordinatesPanelLayoutControl}" TargetType="local:MapCoordinatesPanelLayoutControl">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;21;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:MapCoordinatesPanelLayoutControl">
+                    <ContentPresenter Content="{Binding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;25;22">
+                        <ContentPresenter.ContentTemplateSelector>
+                            <local:CoordinatesPanelTemplateSelector>
+                                <local:CoordinatesPanelTemplateSelector.GeoCoordinatesPanelTemplate>
+                                    <DataTemplate>
+                                        <local:MapGeoCoordinatesPanel CoordPoint="{Binding CoordPoint}" />
+                                    </DataTemplate>
+                                </local:CoordinatesPanelTemplateSelector.GeoCoordinatesPanelTemplate>
+                                <local:CoordinatesPanelTemplateSelector.CartesianCoordinatesPanelTemplate>
+                                    <DataTemplate>
+                                        <local:MapCartesianCoordinatesPanel CoordPoint="{Binding CoordPoint}" MeasureUnit="{Binding MeasureUnit}" />
+                                    </DataTemplate>
+                                </local:CoordinatesPanelTemplateSelector.CartesianCoordinatesPanelTemplate>
+                            </local:CoordinatesPanelTemplateSelector>
+                        </ContentPresenter.ContentTemplateSelector>
+                    </ContentPresenter>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.MapGeoCoordinatesPanel}" TargetType="local:MapGeoCoordinatesPanel">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;46;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:MapGeoCoordinatesPanel">
+                    <Grid Margin="2" MinHeight="29" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;50;22">
+                        <dx:DXBorder Background="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayBackground}}" CornerRadius="{DynamicResource {dxt:MapThemeKey ResourceKey=OverlayRadius}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;51;26" />
+                        <Grid HorizontalAlignment="Center" Margin="16,0" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;52;26">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="6" />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="6" />
+                                <ColumnDefinition Width="60" />
+                                <ColumnDefinition Width="16" />
+                                <ColumnDefinition Width="6" />
+                                <ColumnDefinition Width="40" />
+                                <ColumnDefinition Width="6" />
+                                <ColumnDefinition Width="30" />
+                                <ColumnDefinition Width="6" />
+                                <ColumnDefinition Width="60" />
+                                <ColumnDefinition Width="16" />
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementAccentColor}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextWrapping="Wrap" Text="{Binding LatitudeDegrees, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;68;30" />
+                            <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementAccentColor}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Grid.Column="2" Text="{Binding LatitudeMinutes, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;69;30" />
+                            <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Grid.Column="4" Text="{Binding LatitudeSeconds, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;70;30" />
+                            <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Grid.Column="5" Opacity="0.62" Text="{Binding LatitudeCardinalPoint, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;71;30" />
+                            <TextBlock Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementAccentColor}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextWrapping="Wrap" Grid.Column="7" Text="{Binding LongitudeDegrees, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;72;30" />
+                            <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementAccentColor}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Grid.Column="9" Text="{Binding LongitudeMinutes, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;73;30" />
+                            <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Grid.Column="11" Text="{Binding LongitudeSeconds, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;74;30" />
+                            <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Grid.Column="13" Opacity="0.62" Text="{Binding LongitudeCardinalPoint, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;75;30" />
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter> 
+    </Style>
+
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Map.MapCartesianCoordinatesPanel}" TargetType="local:MapCartesianCoordinatesPanel">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;83;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:MapCartesianCoordinatesPanel">
+                    <Grid Margin="2" MinHeight="29" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;87;22">
+                        <dx:DXBorder Background="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayBackground}}" CornerRadius="{DynamicResource {dxt:MapThemeKey ResourceKey=OverlayRadius}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;88;26" />
+                        <Grid HorizontalAlignment="Center" Margin="16,0" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;89;26">
+                            <StackPanel Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;90;30">
+                                <TextBlock Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementAccentColor}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" TextWrapping="Wrap" Text="{Binding CoordX, RelativeSource={RelativeSource TemplatedParent}}" Margin="4,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;91;34" />
+                                <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Opacity="0.62" Text="{Binding MeasureUnit, RelativeSource={RelativeSource TemplatedParent}}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;92;34" />
+                                <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementAccentColor}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Text="{Binding CoordY, RelativeSource={RelativeSource TemplatedParent}}" Margin="32,0,0,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;93;34" />
+                                <TextBlock TextWrapping="Wrap" Foreground="{DynamicResource {dxt:MapBrushesThemeKey ResourceKey=OverlayElementForeground}}" HorizontalAlignment="Right" VerticalAlignment="Center" FontSize="16" Opacity="0.62" Text="{Binding MeasureUnit, RelativeSource={RelativeSource TemplatedParent}}" Margin="4,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Map\Generic\Navigation\MapCoordinatesPanel.xaml;94;34" />
+                            </StackPanel>
+                        </Grid>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

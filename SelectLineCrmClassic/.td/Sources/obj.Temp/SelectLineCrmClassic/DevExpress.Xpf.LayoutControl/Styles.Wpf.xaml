@@ -1,0 +1,12 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:lc="http://schemas.devexpress.com/winfx/2008/xaml/layoutcontrol" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Styles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.LayoutControl.LayerSeparator}" TargetType="{x:Type lc:LayerSeparator}" BasedOn="{StaticResource LayerSeparator.Style}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.LayoutControl\Styles.Wpf.xaml;5;6" /></Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.LayoutControl.ElementSizer}" TargetType="{x:Type lc:ElementSizer}" BasedOn="{StaticResource ElementSizer.Style}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.LayoutControl\Styles.Wpf.xaml;6;6" /></Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.LayoutControl.GroupBoxButton}" TargetType="{x:Type lc:GroupBoxButton}" BasedOn="{StaticResource GroupBoxButton.Style}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.LayoutControl\Styles.Wpf.xaml;7;6" /></Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.LayoutControl.GroupBox}" TargetType="{x:Type lc:GroupBox}" BasedOn="{StaticResource GroupBox.Style}">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.LayoutControl\Styles.Wpf.xaml;8;6" /><Setter Property="Background" Value="#00000000" cs:Name="Setter_0001" cs:id="Setter_0000" />
+    </Style>
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.LayoutControl.GroupSeparator}" TargetType="{x:Type lc:GroupSeparator}" BasedOn="{StaticResource GroupSeparator.Style}"><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.LayoutControl\Styles.Wpf.xaml;11;6" /></Style>
+</ResourceDictionary>

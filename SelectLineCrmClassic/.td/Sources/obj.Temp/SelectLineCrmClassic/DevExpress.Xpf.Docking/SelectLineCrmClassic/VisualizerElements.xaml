@@ -1,0 +1,1017 @@
+<ResourceDictionary mc:Ignorable="cs" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="http://schemas.devexpress.com/winfx/2008/xaml/docking" xmlns:ve="http://schemas.devexpress.com/winfx/2008/xaml/docking/visualelements" xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/docking/themekeys" xmlns:dxp="http://schemas.devexpress.com/winfx/2008/xaml/docking/platform" xmlns:dxdst="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys" xmlns:dxcn="http://schemas.devexpress.com/winfx/2008/xaml/core/internal" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:cs="colorscheme_ignorable_uri" xmlns:dxcore_unique_xmlns="http://schemas.devexpress.com/winfx/2008/xaml/core" xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core">
+    <SolidColorBrush x:Key="TabHint.BorderBrush" Color="#FFAA1948" cs:Name="SolidColorBrush_0001" />
+    <SolidColorBrush x:Key="TabHint.Background" Color="#3F0072C6" cs:Name="SolidColorBrush_0002" />
+    <SolidColorBrush x:Key="TabHint.PanelBackground" Color="#FF333333" cs:Name="SolidColorBrush_0003" />
+    <SolidColorBrush x:Key="BrushHot" Color="#FF94C8E7" cs:Name="SolidColorBrush_0004" />
+    <SolidColorBrush x:Key="BrushNormal" Color="#FFC3C3C3" cs:Name="SolidColorBrush_0005" />
+    <Color x:Key="ColorHot" cs:Name="Color_0001">#FF94C8E7</Color>
+    <Color x:Key="ColorNormal" cs:Name="Color_0002">#FFC3C3C3</Color>
+    <ControlTemplate x:Key="{dxt:TabHintThemeKey ResourceKey=Tab}" TargetType="dxp:TabHint">
+        <dx:DXBorder Background="{StaticResource TabHint.Background}" BorderBrush="{StaticResource TabHint.BorderBrush}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;10;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxt:TabHintThemeKey ResourceKey=TabHeader}" TargetType="dxp:TabHeaderHint">
+        <Grid UseLayoutRounding="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;13;10">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="TabHeaderStates">
+                    <VisualState x:Name="Left">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness" dxcn:ValueSetter.Thickness="1,1,0,1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Top">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness" dxcn:ValueSetter.Thickness="1,1,1,0" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Right">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness" dxcn:ValueSetter.Thickness="0,1,1,1" />
+                        </Storyboard>
+                    </VisualState>
+                    <VisualState x:Name="Bottom">
+                        <Storyboard>
+                            <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Border" Storyboard.TargetProperty="BorderThickness" dxcn:ValueSetter.Thickness="1,0,1,1" />
+                        </Storyboard>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <dx:DXBorder x:Name="Border" Background="{StaticResource TabHint.Background}" BorderBrush="{StaticResource TabHint.BorderBrush}" BorderThickness="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;38;14" />
+        </Grid>
+    </ControlTemplate>
+    <Style TargetType="dxp:ShadowResizeBackground" cs:Key="dxp:ShadowResizeBackground">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;41;6" /><Setter Property="Background" Value="{StaticResource BrushNormal}" />
+        <Setter Property="Opacity" Value="0.7" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxp:ShadowResizeBackground">
+                    <dx:DXBorder Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;47;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="dxp:ShadowResizePointer" cs:Key="dxp:ShadowResizePointer">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;52;6" /><Setter Property="Background" Value="{StaticResource BrushHot}" />
+        <Setter Property="Opacity" Value="0.7" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxp:ShadowResizePointer">
+                    <dx:DXBorder Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;58;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="dxp:AutoHideResizePointer" cs:Key="dxp:AutoHideResizePointer">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;63;6" /><Setter Property="Background" Value="{StaticResource BrushNormal}" />
+        <Setter Property="Opacity" Value="0.7" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxp:AutoHideResizePointer">
+                    <dx:DXBorder Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}" BorderBrush="{StaticResource BrushHot}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;69;22">
+                        <dx:DXBorder.BorderThickness>
+                            <Binding Path="Dock" RelativeSource="{RelativeSource Mode=TemplatedParent}">
+                                <Binding.Converter>
+                                    <ve:DockTypeToThicknessConverter All="5" Inverted="True" />
+                                </Binding.Converter>
+                            </Binding>
+                        </dx:DXBorder.BorderThickness>
+                    </dx:DXBorder>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style TargetType="dxp:FloatingResizePointer" cs:Key="dxp:FloatingResizePointer">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;82;6" /><Setter Property="Background" Value="{StaticResource BrushNormal}" />
+        <Setter Property="Opacity" Value="0.7" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="dxp:FloatingResizePointer">
+                    <dx:DXBorder Background="{TemplateBinding Background}" Opacity="{TemplateBinding Opacity}" BorderBrush="{StaticResource BrushHot}" BorderThickness="5" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;88;22" />
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-bottom" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;93;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;97;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1" cs:Name="Border_0001" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;127;26">
+                            <dx:DXBorder x:Name="Dock" Background="{StaticResource BrushNormal}" Height="9" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;128;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-bottomhide" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;135;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;139;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1,0,1,1" cs:Name="Border_0002" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;169;26">
+                            <dx:DXBorder x:Name="Hide" Background="{StaticResource BrushNormal}" VerticalAlignment="Bottom" Height="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;170;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-top" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;177;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;181;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1" cs:Name="Border_0003" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;211;26">
+                            <dx:DXBorder x:Name="Dock" Background="{StaticResource BrushNormal}" Height="9" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;212;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-tophide" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;219;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;223;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1,1,1,0" cs:Name="Border_0004" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;253;26">
+                            <dx:DXBorder x:Name="Hide" Background="{StaticResource BrushNormal}" Height="3" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;254;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-right" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;261;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;265;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1" cs:Name="Border_0005" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;295;26">
+                            <dx:DXBorder x:Name="Dock" Background="{StaticResource BrushNormal}" Width="9" HorizontalAlignment="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;296;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-righthide" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;303;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;307;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="0,1,1,1" cs:Name="Border_0006" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;337;26">
+                            <dx:DXBorder x:Name="Hide" Background="{StaticResource BrushNormal}" Width="3" HorizontalAlignment="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;338;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-left" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;345;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;349;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Dock">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1" cs:Name="Border_0007" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;379;26">
+                            <dx:DXBorder x:Name="Dock" Background="{StaticResource BrushNormal}" Width="9" HorizontalAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;380;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-lefthide" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;387;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="#00000000" SnapsToDevicePixels="True" cs:Name="Grid_0001" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;391;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Hide">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1,1,0,1" cs:Name="Border_0008" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;421;26">
+                            <dx:DXBorder x:Name="Hide" Background="{StaticResource BrushNormal}" Width="3" HorizontalAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;422;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-left-2" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;429;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;433;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" cs:Name="Border_0009" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;463;26">
+                            <dx:DXBorder x:Name="Border" Background="{StaticResource BrushNormal}" Margin="1" Width="9" HorizontalAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;464;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-right-2" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;471;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="#00000000" SnapsToDevicePixels="True" cs:Name="Grid_0002" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;475;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" cs:Name="Border_0010" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;505;26">
+                            <dx:DXBorder x:Name="Border" Background="{StaticResource BrushNormal}" Margin="1" Width="9" HorizontalAlignment="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;506;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-bottom-2" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;513;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="#00000000" SnapsToDevicePixels="True" cs:Name="Grid_0003" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;517;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" cs:Name="Border_0011" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;547;26">
+                            <dx:DXBorder x:Name="Border" Background="{StaticResource BrushNormal}" Margin="1" Height="9" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;548;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-top-2" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;555;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="#00000000" SnapsToDevicePixels="True" cs:Name="Grid_0004" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;559;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1" cs:Name="Border_0012" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;589;26">
+                            <dx:DXBorder x:Name="Border" Background="{StaticResource BrushNormal}" Height="9" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;590;30" />
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-left-3" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;597;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;601;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1" cs:Name="Border_0013" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;631;26">
+                            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;632;30">
+                                <dx:DXBorder x:Name="Border" Background="{StaticResource BrushNormal}" Width="13" HorizontalAlignment="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;633;34" />
+                                <dx:DXBorder x:Name="Separator" BorderBrush="#FFF0F0F0" BorderThickness="0,0,1,0" Width="4" HorizontalAlignment="Left" cs:Name="Border_0014" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;634;34" />
+                            </Grid>
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-right-3" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;642;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="#00000000" SnapsToDevicePixels="True" cs:Name="Grid_0005" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;646;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1" cs:Name="Border_0015" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;676;26">
+                            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;677;30">
+                                <dx:DXBorder x:Name="Border" Background="{StaticResource BrushNormal}" Width="13" HorizontalAlignment="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;678;34" />
+                                <dx:DXBorder x:Name="Separator" BorderBrush="#FFF0F0F0" BorderThickness="1,0,0,0" Width="4" HorizontalAlignment="Right" cs:Name="Border_0016" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;679;34" />
+                            </Grid>
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-bottom-3" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;687;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="#00000000" SnapsToDevicePixels="True" cs:Name="Grid_0006" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;691;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1" cs:Name="Border_0017" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;721;26">
+                            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;722;30">
+                                <dx:DXBorder x:Name="Border" Background="{StaticResource BrushNormal}" Height="13" VerticalAlignment="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;723;34" />
+                                <dx:DXBorder x:Name="Separator" BorderBrush="#FFF0F0F0" BorderThickness="0,1,0,0" Height="4" VerticalAlignment="Bottom" cs:Name="Border_0018" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;724;34" />
+                            </Grid>
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-top-3" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;732;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid x:Name="Root" Background="#00000000" SnapsToDevicePixels="True" cs:Name="Grid_0007" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;736;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetName="Root" Storyboard.TargetProperty="Visibility" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="Root" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="Background" Background="#FFF0F0F0" Padding="1" cs:Name="Border_0019" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;766;26">
+                            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;767;30">
+                                <dx:DXBorder x:Name="Border" Background="{StaticResource BrushNormal}" Height="13" VerticalAlignment="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;768;34" />
+                                <dx:DXBorder x:Name="Separator" BorderBrush="#FFF0F0F0" BorderThickness="0,0,0,1" Height="4" VerticalAlignment="Top" cs:Name="Border_0020" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;769;34" />
+                            </Grid>
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Style x:Key="button-center" BasedOn="{x:Null}" TargetType="ve:DockHintButton">
+        <Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;777;6" /><Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ve:DockHintButton">
+                    <Grid Background="#00000000" cs:Name="Grid_0008" cs:id="Grid_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;781;22">
+                        <VisualStateManager.VisualStateGroups>
+                            <VisualStateGroup x:Name="CommonStates">
+                                <VisualState x:Name="Normal" />
+                                <VisualState x:Name="Disabled">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Visibility)" Storyboard.TargetName="BorderRoot" dxcn:ValueSetter.Visibility="Collapsed" />
+                                    </Storyboard>
+                                </VisualState>
+                                <VisualState x:Name="MouseOver">
+                                    <Storyboard>
+                                        <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.Background)" Storyboard.TargetName="Border1">
+                                            <DiscreteObjectKeyFrame KeyTime="0">
+                                                <DiscreteObjectKeyFrame.Value>
+                                                    <SolidColorBrush Color="{StaticResource ColorHot}" />
+                                                </DiscreteObjectKeyFrame.Value>
+                                            </DiscreteObjectKeyFrame>
+                                        </ObjectAnimationUsingKeyFrames>
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                            <VisualStateGroup x:Name="AvailableStates">
+                                <VisualState x:Name="Available" />
+                                <VisualState x:Name="Unavailable">
+                                    <Storyboard>
+                                        <DoubleAnimation Storyboard.TargetName="BorderRoot" Storyboard.TargetProperty="Opacity" Duration="0" To="0.5" />
+                                    </Storyboard>
+                                </VisualState>
+                            </VisualStateGroup>
+                        </VisualStateManager.VisualStateGroups>
+                        <dx:DXBorder x:Name="BorderRoot" Background="#FFF0F0F0" Padding="1" cs:Name="Border_0021" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;811;26">
+                            <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;812;30">
+                                <dx:DXBorder x:Name="Border1" Background="{StaticResource BrushNormal}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;813;34" />
+                                <dx:DXBorder x:Name="Border2" Background="#FFF0F0F0" Width="16" Height="4" VerticalAlignment="Bottom" HorizontalAlignment="Right" cs:Name="Border_0022" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;814;34" />
+                            </Grid>
+                        </dx:DXBorder>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <Thickness x:Key="{dxt:DockVisualizerThemeKey ResourceKey=RenameHintMargin}">-7 -3</Thickness>
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=RenameHint}" TargetType="dxp:RenameHint">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;824;10">
+            <dx:DXBorder Background="#26000000" CornerRadius="2" Margin="2,2,0,0" cs:Name="Border_0023" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;825;14" />
+            <dx:DXBorder Background="#3F000000" CornerRadius="2" Margin="1" cs:Name="Border_0024" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;826;14">
+                <dx:DXBorder Background="#FFFFFFFF" Margin="1" CornerRadius="1" Padding="2,0" cs:Name="Border_0025" cs:id="Border_0002" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;827;18">
+                    <TextBox x:Name="PART_Text" BorderThickness="0" Padding="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;828;22" />
+                </dx:DXBorder>
+            </dx:DXBorder>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Selection}" TargetType="dxp:SelectionHint">
+        <Rectangle x:Name="PART_Selection" Stretch="Fill" Fill="#FFAA1948" RadiusX="3" RadiusY="3" IsHitTestVisible="False" Opacity="0.15" cs:Name="Rectangle_0001" cs:id="Rectangle_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;834;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=DockZone}">
+        <dx:DXBorder Background="{StaticResource TabHint.Background}" BorderBrush="{StaticResource TabHint.BorderBrush}" BorderThickness="1" Margin="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;837;10" />
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Left}">
+        <Grid Background="{StaticResource TabHint.PanelBackground}" Width="34" Height="34" HorizontalAlignment="Left" VerticalAlignment="Center" dxp:DockHintElement.DockType="Left" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;840;10">
+            <Grid Margin="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;841;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <ve:DockHintButton x:Name="PART_Dock" Style="{StaticResource button-left}" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;846;18" />
+                <ve:DockHintButton x:Name="PART_Hide" Style="{StaticResource button-lefthide}" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;847;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Right}">
+        <Grid Background="{StaticResource TabHint.PanelBackground}" Width="34" Height="34" HorizontalAlignment="Right" VerticalAlignment="Center" dxp:DockHintElement.DockType="Right" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;852;10">
+            <Grid Margin="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;853;14">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="Auto" />
+                </Grid.ColumnDefinitions>
+                <ve:DockHintButton x:Name="PART_Hide" Style="{StaticResource button-righthide}" Grid.Column="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;858;18" />
+                <ve:DockHintButton x:Name="PART_Dock" Style="{StaticResource button-right}" Grid.Column="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;859;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Top}">
+        <Grid Background="{StaticResource TabHint.PanelBackground}" Width="34" Height="34" HorizontalAlignment="Center" VerticalAlignment="Top" dxp:DockHintElement.DockType="Top" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;864;10">
+            <Grid Margin="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;865;14">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                <ve:DockHintButton x:Name="PART_Hide" Style="{StaticResource button-tophide}" Grid.Row="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;870;18" />
+                <ve:DockHintButton x:Name="PART_Dock" Style="{StaticResource button-top}" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;871;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Bottom}">
+        <Grid Background="{StaticResource TabHint.PanelBackground}" Width="34" Height="34" HorizontalAlignment="Center" VerticalAlignment="Bottom" dxp:DockHintElement.DockType="Bottom" SnapsToDevicePixels="True" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;876;10">
+            <Grid Margin="3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;877;14">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+                <ve:DockHintButton x:Name="PART_Dock" Style="{StaticResource button-bottom}" Grid.Row="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;882;18" />
+                <ve:DockHintButton x:Name="PART_Hide" Style="{StaticResource button-bottomhide}" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;883;18" />
+            </Grid>
+        </Grid>
+    </ControlTemplate>
+    <ControlTemplate x:Key="{dxt:DockVisualizerThemeKey ResourceKey=Center}">
+        <Grid HorizontalAlignment="Center" VerticalAlignment="Center" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;888;10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="34" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto" />
+                <ColumnDefinition Width="34" />
+                <ColumnDefinition Width="Auto" />
+            </Grid.ColumnDefinitions>
+            
+            <Ellipse Fill="{StaticResource TabHint.PanelBackground}" StrokeThickness="0" Margin="-22" Grid.Column="1" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;900;14" />
+            
+            <dx:DXBorder x:Name="gridTop" Background="{StaticResource TabHint.PanelBackground}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;902;14">
+                <Grid Margin="3,3,3,0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;903;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ve:DockHintButton x:Name="PART_Top" Width="28" Height="28" Margin="0,0,0,3" Style="{StaticResource button-top-3}" Grid.Row="0" dxp:DockHintElement.DockType="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;908;22" />
+                    <ve:DockHintButton x:Name="PART_TabTop" Width="28" Height="28" Style="{StaticResource button-top-2}" Grid.Row="1" dxp:DockHintElement.DockType="Top" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;909;22" />
+                </Grid>
+            </dx:DXBorder>
+            <dx:DXBorder x:Name="gridBottom" Background="{StaticResource TabHint.PanelBackground}" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Column="1" Grid.Row="2" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;912;14">
+                <Grid Margin="3,0,3,3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;913;18">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <ve:DockHintButton x:Name="PART_TabBottom" Width="28" Height="28" Style="{StaticResource button-bottom-2}" Grid.Row="0" dxp:DockHintElement.DockType="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;918;22" />
+                    <ve:DockHintButton x:Name="PART_Bottom" Width="28" Height="28" Margin="0,3,0,0" Style="{StaticResource button-bottom-3}" Grid.Row="1" dxp:DockHintElement.DockType="Bottom" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;919;22" />
+                </Grid>
+            </dx:DXBorder>
+            <dx:DXBorder x:Name="gridLeft" Background="{StaticResource TabHint.PanelBackground}" HorizontalAlignment="Right" VerticalAlignment="Center" Grid.Column="0" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;922;14">
+                <Grid Margin="3,3,0,3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;923;18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ve:DockHintButton x:Name="PART_Left" Width="28" Height="28" Margin="0,0,3,0" Style="{StaticResource button-left-3}" Grid.Column="0" dxp:DockHintElement.DockType="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;928;22" />
+                    <ve:DockHintButton x:Name="PART_TabLeft" Width="28" Height="28" Style="{StaticResource button-left-2}" Grid.Column="1" dxp:DockHintElement.DockType="Left" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;929;22" />
+                </Grid>
+            </dx:DXBorder>
+            <dx:DXBorder x:Name="gridRight" Background="{StaticResource TabHint.PanelBackground}" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.Column="2" Grid.Row="1" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;932;14">
+                <Grid Margin="0,3,3,3" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;933;18">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <ve:DockHintButton x:Name="PART_TabRight" Width="28" Height="28" Style="{StaticResource button-right-2}" Grid.Column="0" dxp:DockHintElement.DockType="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;938;22" />
+                    <ve:DockHintButton x:Name="PART_Right" Width="28" Height="28" Margin="3,0,0,0" Style="{StaticResource button-right-3}" Grid.Column="1" dxp:DockHintElement.DockType="Right" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;939;22" />
+                </Grid>
+            </dx:DXBorder>
+            <ve:DockHintButton x:Name="PART_Fill" Width="28" Height="28" HorizontalAlignment="Center" VerticalAlignment="Center" Style="{StaticResource button-center}" Grid.Column="1" Grid.Row="1" dxp:DockHintElement.DockType="Fill" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;942;14" />
+        </Grid>
+    </ControlTemplate>
+    
+    <Style x:Key="{dxdst:DefaultStyleThemeKey FullName=DevExpress.Xpf.Docking.VisualElements.DocumentSelectorContainer}" TargetType="{x:Type ve:DocumentSelectorContainer}">
+        <Style.Setters><Setter Property="dxcore_unique_xmlns:BlendHelper2.StyleInfo" Value="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;946;6" />
+            <Setter Property="Foreground" Value="#FF3C3C3C" cs:Name="Setter_0001" cs:id="Setter_0000" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ve:DocumentSelectorContainer}">
+                        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;952;26">
+                            <dx:DXBorder x:Name="Window" Background="#FFD6D6D6" cs:Name="Border_0026" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;953;30">
+                                <dx:DXBorder Background="#FFFFFFFF" Margin="1" cs:Name="Border_0027" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;954;34">
+                                    <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;955;38">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition />
+                                            <RowDefinition Height="Auto" />
+                                        </Grid.RowDefinitions>
+                                        <dx:DXBorder x:Name="Header" Background="#FFF0F0F0" Margin="1,1,1,0" cs:Name="Border_0028" cs:id="Border_0002" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;961;42">
+                                            <StackPanel Margin="12,8" VerticalAlignment="Center" HorizontalAlignment="Left" Orientation="Horizontal" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;962;46">
+                                                <Image Margin="0,0,6,0" Stretch="None" VerticalAlignment="Top" HorizontalAlignment="Left" Source="{Binding Path=(local:DockLayoutManager.LayoutItem).CaptionImage}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;963;50" />
+                                                <StackPanel dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;964;50">
+                                                    <ContentControl Content="{Binding Path=(local:DockLayoutManager.LayoutItem).Caption}" ContentTemplate="{Binding Path=(local:DockLayoutManager.LayoutItem).CaptionTemplate}" ContentTemplateSelector="{Binding Path=(local:DockLayoutManager.LayoutItem).CaptionTemplateSelector}" Foreground="#FFAA1948" VerticalAlignment="Bottom" HorizontalAlignment="Left" FontWeight="Light" FontSize="18" Focusable="False" cs:Name="ContentControl_0001" cs:id="ContentControl_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;965;54" />
+                                                    <TextBlock TextWrapping="Wrap" HorizontalAlignment="Left" VerticalAlignment="Top" Text="{Binding Path=(local:DockLayoutManager.LayoutItem).Description}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;966;54" />
+                                                </StackPanel>
+                                            </StackPanel>
+                                        </dx:DXBorder>
+                                        <dx:DXBorder x:Name="Content" Background="#FFFFFFFF" Grid.Row="1" cs:Name="Border_0029" cs:id="Border_0003" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;970;42">
+                                            <ContentPresenter x:Name="PART_ContainerContent" Content="{Binding}" Margin="12" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;971;46" />
+                                        </dx:DXBorder>
+                                        <dx:DXBorder x:Name="Footer" Background="#FFF0F0F0" Margin="1,0,1,1" MinHeight="24" Grid.Row="2" cs:Name="Border_0030" cs:id="Border_0004" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;973;42">
+                                            <ContentPresenter HorizontalAlignment="Left" VerticalAlignment="Center" Margin="12,0,0,0" Content="{Binding Path=(local:DockLayoutManager.LayoutItem).FooterDescription}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;974;46" />
+                                        </dx:DXBorder>
+                                    </Grid>
+                                </dx:DXBorder>
+                            </dx:DXBorder>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style.Setters>
+    </Style>
+    <ControlTemplate x:Key="{dxt:DocumentSelectorElementsThemeKey ResourceKey=ListBoxItem}" TargetType="{x:Type ListBoxItem}">
+        <Grid dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;986;10">
+            <Grid x:Name="HoverState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;987;14">
+                <dx:DXBorder Background="#FFCDE6F7" Margin="0,0,0,1" cs:Name="Border_0031" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;988;18" />
+            </Grid>
+            <Grid x:Name="SelectedState" Opacity="0" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;990;14">
+                <dx:DXBorder Background="#FF92C0E0" Margin="0,0,0,1" cs:Name="Border_0032" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;991;18" />
+            </Grid>
+            <dx:DXBorder Padding="{TemplateBinding Padding}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;993;14">
+                <ve:TemplatedCaptionControl x:Name="caption" LayoutItem="{Binding}" Margin="3,2" />
+            </dx:DXBorder>
+        </Grid>
+        <ControlTemplate.Triggers>
+            <Trigger Property="IsSelected" Value="True">
+                <Setter Property="Opacity" TargetName="SelectedState" Value="1" />
+            </Trigger>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Opacity" TargetName="HoverState" Value="1" />
+            </Trigger>
+        </ControlTemplate.Triggers>
+    </ControlTemplate>
+    <DataTemplate x:Key="{dxt:DockPaneElementsThemeKey ResourceKey=ContentPreview}">
+        <dx:DXBorder Background="#FFFFFFFF" BorderBrush="#FF3C3C3C" BorderThickness="1" Padding="12" cs:Name="Border_0034" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;1007;10">
+            <ContentPresenter Content="{TemplateBinding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;1008;14" />
+        </dx:DXBorder>
+    </DataTemplate>
+    <DataTemplate x:Key="{dxt:DocumentElementsThemeKey ResourceKey=ContentPreview}">
+        <dx:DXBorder Background="#FFFFFFFF" BorderBrush="#FF3C3C3C" BorderThickness="1" Padding="1" cs:Name="Border_0036" cs:id="Border_0001" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;1012;10">
+            <ContentPresenter Content="{TemplateBinding Content}" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Docking\Office2016White\VisualizerElements.xaml;1013;14" />
+        </dx:DXBorder>
+    </DataTemplate>
+    
+</ResourceDictionary>
