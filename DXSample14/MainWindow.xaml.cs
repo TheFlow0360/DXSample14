@@ -1,4 +1,5 @@
-﻿using DevExpress.Xpf.Bars;
+﻿using System;
+using DevExpress.Xpf.Bars;
 
 namespace DXSample14
 {
@@ -12,6 +13,18 @@ namespace DXSample14
         private void ModalWindowOpen_OnItemClick(object sender, ItemClickEventArgs e)
         {
             var window = new ModalWindow();
+            window.ShowDialog();
+        }
+
+        private void LegacyRibbonOpen_OnItemClick(Object sender, ItemClickEventArgs e)
+        {
+            var window = new LegacyRibbonWindow();
+            window.Show();
+        }
+
+        private void LegacyModalOpen_OnItemClick(Object sender, ItemClickEventArgs e)
+        {
+            var window = new LegacyWindow();
             window.ShowDialog();
         }
     }

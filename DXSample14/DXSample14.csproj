@@ -35,15 +35,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DevExpress.Xpf.Core.v17.2" />
-    <Reference Include="DevExpress.Data.v17.2" />
-    <Reference Include="DevExpress.Xpf.Ribbon.v17.2" />
-    <Reference Include="DevExpress.Printing.v17.2.Core" />
-    <Reference Include="DevExpress.Images.v17.2" />
-    <Reference Include="DevExpress.Mvvm.v17.2" />
-    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v17.2" />
-    <Reference Include="DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2">
-      <HintPath>..\lib\DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2.dll</HintPath>
+    <Reference Include="DevExpress.Xpf.Core.v18.1" />
+    <Reference Include="DevExpress.Data.v18.1" />
+    <Reference Include="DevExpress.Xpf.Ribbon.v18.1" />
+    <Reference Include="DevExpress.Printing.v18.1.Core" />
+    <Reference Include="DevExpress.Images.v18.1" />
+    <Reference Include="DevExpress.Mvvm.v18.1" />
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v18.1" />
+    <Reference Include="DevExpress.Xpf.Themes.SelectLineCrmClassic.v18.1">
+      <HintPath>..\lib\DevExpress.Xpf.Themes.SelectLineCrmClassic.v18.1.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -64,6 +64,21 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="LegacyRibbonWindow.xaml.cs">
+      <DependentUpon>LegacyRibbonWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LegacyWindow.xaml.cs">
+      <DependentUpon>LegacyWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ThemedWindowEx.cs" />
+    <Page Include="LegacyRibbonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LegacyWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

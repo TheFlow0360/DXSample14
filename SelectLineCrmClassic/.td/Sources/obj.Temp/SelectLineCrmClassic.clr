@@ -1,8 +1,8 @@
 {
   "Theme": "SelectLineCrmClassic",
-  "Hash": "67fbe817f7cc4f9f36fefedc917d3cf6f07824b5",
+  "Hash": "b41c18c843193cc80cdb3d35ccbfc12347b75491",
   "BaseTheme": "Office2016White",
-  "BaseThemeHash": "245a1ddea9766f42c0ea63971d6b2709dae36224",
+  "BaseThemeHash": "b41c18c843193cc80cdb3d35ccbfc12347b75491",
   "Palette": [],
   "Colors": [
     {
@@ -557,6 +557,11 @@
     },
     {
       "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=ActiveHeaderBackground}']/@Color",
+      "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
       "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=BorderEffectActiveColor}']/@Color",
       "Color": "#FF787878"
     },
@@ -569,6 +574,11 @@
       "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
       "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=FloatingContainerInactiveBorder}']/@Color",
       "Color": "#FF999999"
+    },
+    {
+      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
+      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=InactiveHeaderBackground}']/@Color",
+      "Color": "#FFAA1948"
     },
     {
       "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
@@ -588,7 +598,7 @@
     {
       "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
       "Path": "//*[@x:Key='{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDragWidgetTemplate}']//*[@cs:id='Border_0000']/@Background",
-      "Color": "#FFAA1948"
+      "Color": "#00000000"
     },
     {
       "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\ThemedWindow.xaml",
@@ -1144,6 +1154,16 @@
       "File": "DevExpress.Xpf.Grid\\Office2016White\\ColumnHeaderDragIndicator.xaml",
       "Path": "//*[@x:Key='{dxgt:GridColumnHeaderThemeKey ResourceKey=DragIndicatorTemplate}']//*[@cs:id='Path_0001']/@Fill",
       "Color": "#FFAA1948"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridRowThemeKey ResourceKey=BorderFocusedBrush}']/@Color",
+      "Color": "#FFCCE4F7"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridRowThemeKey ResourceKey=BorderSelectedBrush}']/@Color",
+      "Color": "#FFA4D5F7"
     },
     {
       "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
@@ -9162,16 +9182,6 @@
     },
     {
       "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
-      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=ActiveHeaderBackground}']/@Color",
-      "Color": "#FFFBFBFB"
-    },
-    {
-      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
-      "Path": "//*[@x:Key='{dxt:DXWindowThemeKey ResourceKey=InactiveHeaderBackground}']/@Color",
-      "Color": "#FFFBFBFB"
-    },
-    {
-      "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\PseudoWindow.xaml",
       "Path": "//*[@x:Key='{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonForegroundNormalState}']/@Color",
       "Color": "#FF222222"
     },
@@ -11854,16 +11864,6 @@
       "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
       "Path": "//*[@x:Key='{dxgt:GridRowThemeKey ResourceKey=BorderNoneBrush}']/@Color",
       "Color": "#FFFFFFFF"
-    },
-    {
-      "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
-      "Path": "//*[@x:Key='{dxgt:GridRowThemeKey ResourceKey=BorderSelectedBrush}']/@Color",
-      "Color": "#FFCDE6F7"
-    },
-    {
-      "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
-      "Path": "//*[@x:Key='{dxgt:GridRowThemeKey ResourceKey=BorderFocusedBrush}']/@Color",
-      "Color": "#FFB1D6F0"
     },
     {
       "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",

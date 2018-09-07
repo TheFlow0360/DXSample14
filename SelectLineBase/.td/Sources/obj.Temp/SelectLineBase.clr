@@ -1,8 +1,8 @@
 {
   "Theme": "SelectLineBase",
-  "Hash": "01a1cb171155e67d33bed854fe48711fea75bcc7",
+  "Hash": "97d2bbae6b55616eb6595986493ce50b4a0eb9cf",
   "BaseTheme": "Office2016White",
-  "BaseThemeHash": "4436848bdf725f2cb95b00bf4297216d1b470afd",
+  "BaseThemeHash": "97d2bbae6b55616eb6595986493ce50b4a0eb9cf",
   "Palette": [],
   "Colors": [
     {
@@ -29,6 +29,16 @@
       "File": "DevExpress.Xpf.Core\\DevExpress.Xpf.Core\\Themes\\Office2016White\\ThemedWindow.xaml",
       "Path": "//*[@x:Key='{dxt:ThemedWindowThemeKey ResourceKey=WindowInactiveBorderBrush}']/@Color",
       "Color": "#FF999999"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridRowThemeKey ResourceKey=BorderFocusedBrush}']/@Color",
+      "Color": "#FFCCE4F7"
+    },
+    {
+      "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
+      "Path": "//*[@x:Key='{dxgt:GridRowThemeKey ResourceKey=BorderSelectedBrush}']/@Color",
+      "Color": "#FFA4D5F7"
     },
     {
       "File": "DevExpress.Xpf.Accordion\\Office2016White\\Colors.xaml",
@@ -11154,16 +11164,6 @@
       "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
       "Path": "//*[@x:Key='{dxgt:GridRowThemeKey ResourceKey=BorderNoneBrush}']/@Color",
       "Color": "#FFFFFFFF"
-    },
-    {
-      "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
-      "Path": "//*[@x:Key='{dxgt:GridRowThemeKey ResourceKey=BorderSelectedBrush}']/@Color",
-      "Color": "#FFCDE6F7"
-    },
-    {
-      "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",
-      "Path": "//*[@x:Key='{dxgt:GridRowThemeKey ResourceKey=BorderFocusedBrush}']/@Color",
-      "Color": "#FFB1D6F0"
     },
     {
       "File": "DevExpress.Xpf.Grid\\Office2016White\\Constants.xaml",

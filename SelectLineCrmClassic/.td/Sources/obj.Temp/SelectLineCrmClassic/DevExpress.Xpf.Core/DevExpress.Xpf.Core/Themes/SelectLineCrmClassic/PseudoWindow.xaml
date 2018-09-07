@@ -26,8 +26,8 @@
     <SolidColorBrush x:Key="{dxt:DXWindowThemeKey ResourceKey=FloatingContainerInactiveBorder}" Color="#FF999999" cs:Name="SolidColorBrush_0006" />
     <SolidColorBrush x:Key="{dxt:DXWindowThemeKey ResourceKey=FloatingContainerBackground}" Color="#FFFBFBFB" cs:Name="SolidColorBrush_0007" />
     <SolidColorBrush x:Key="{dxt:DXWindowThemeKey ResourceKey=FloatingContainerInactiveBackground}" Color="#FFFBFBFB" cs:Name="SolidColorBrush_0008" />
-    <SolidColorBrush x:Key="{dxt:DXWindowThemeKey ResourceKey=ActiveHeaderBackground}" Color="#FFFBFBFB" cs:Name="SolidColorBrush_0009" />
-    <SolidColorBrush x:Key="{dxt:DXWindowThemeKey ResourceKey=InactiveHeaderBackground}" Color="#FFFBFBFB" cs:Name="SolidColorBrush_0010" />
+    <SolidColorBrush x:Key="{dxt:DXWindowThemeKey ResourceKey=ActiveHeaderBackground}" Color="#FFAA1948" cs:Name="SolidColorBrush_0009" />
+    <SolidColorBrush x:Key="{dxt:DXWindowThemeKey ResourceKey=InactiveHeaderBackground}" Color="#FFAA1948" cs:Name="SolidColorBrush_0010" />
     <SolidColorBrush x:Key="{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonForegroundNormalState}" Color="#FF222222" cs:Name="SolidColorBrush_0011" />
     <SolidColorBrush x:Key="{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonForegroundMouseOverState}" Color="#FFFFFFFF" cs:Name="SolidColorBrush_0012" />
     <SolidColorBrush x:Key="{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDefaultButtonForegroundPressedState}" Color="#FFFFFFFF" cs:Name="SolidColorBrush_0013" />
@@ -36,7 +36,7 @@
     <SolidColorBrush x:Key="{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerCloseButtonForegroundPressedState}" Color="#FFFFFFFF" cs:Name="SolidColorBrush_0016" />
     
     <ControlTemplate x:Key="{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerDragWidgetTemplate}" TargetType="{x:Type Thumb}">
-        <dx:DXBorder Background="#FFAA1948" cs:Name="Border_0001" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Office2016White\PseudoWindow.xaml;39;10" />
+        <dx:DXBorder Background="#00000000" cs:Name="Border_0001" cs:id="Border_0000" dxcore_unique_xmlns:BlendHelper2.ThemeInfo="DevExpress.Xpf.Core\DevExpress.Xpf.Core\Themes\Office2016White\PseudoWindow.xaml;39;10" />
     </ControlTemplate>
     
     <ControlTemplate x:Key="{dxt:FloatingContainerThemeKey ResourceKey=FloatingContainerSizeGripTemplate}" TargetType="{x:Type Thumb}">

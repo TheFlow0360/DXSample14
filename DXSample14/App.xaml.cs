@@ -10,7 +10,7 @@ namespace DXSample14
             base.OnStartup(e);
             var theme = new Theme("SelectLineCrmClassic", "SelectLine Crm Classic", "SelectLine Themes")
             {
-                AssemblyName = "DevExpress.Xpf.Themes.SelectLineCrmClassic.v17.2"
+                AssemblyName = "DevExpress.Xpf.Themes.SelectLineCrmClassic.v18.1"
             };
             Theme.RegisterTheme(theme);
             ApplicationThemeHelper.ApplicationThemeName = theme.Name;

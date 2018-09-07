@@ -45,8 +45,8 @@
     <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=GridDataRowDelimiterBrush}" Color="{StaticResource GridDataRowDelimiterColor}" cs:Name="SolidColorBrush_0015" />
     <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=RowBreakBrush}" Color="{StaticResource GridDataRowDelimiterColor}" />
     <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=BorderNoneBrush}" Color="#FFFFFFFF" cs:Name="SolidColorBrush_0016" />
-    <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=BorderSelectedBrush}" Color="#FFCDE6F7" cs:Name="SolidColorBrush_0017" />
-    <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=BorderFocusedBrush}" Color="#FFB1D6F0" cs:Name="SolidColorBrush_0018" />
+    <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=BorderSelectedBrush}" Color="#FFA4D5F7" cs:Name="SolidColorBrush_0017" />
+    <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=BorderFocusedBrush}" Color="#FFCCE4F7" cs:Name="SolidColorBrush_0018" />
     <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=TextUnfocusedBrush}" Color="#FF3C3C3C" cs:Name="SolidColorBrush_0019" />
     <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=TextFocusedBrush}" Color="#FF3C3C3C" cs:Name="SolidColorBrush_0020" />
     <SolidColorBrush x:Key="{dxgt:GridRowThemeKey ResourceKey=TextRowSelectedBrush}" Color="#FF3C3C3C" cs:Name="SolidColorBrush_0021" />
